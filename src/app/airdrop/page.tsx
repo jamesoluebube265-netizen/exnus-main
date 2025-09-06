@@ -1,6 +1,6 @@
 import ScrollReveal from "@/components/scroll-reveal";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Gift, Bot, Users } from "lucide-react";
+import { ArrowRight, Gift, Bot, Users, Award, Shield, UserPlus, FileText } from "lucide-react";
 import Link from "next/link";
 
 const steps = [
@@ -19,6 +19,29 @@ const steps = [
       title: "3. Earn Airdrop Points",
       description: "For every task you complete, you'll earn points. The more points you collect, the larger your share of the airdrop will be.",
     },
+];
+
+const airdropDetails = [
+  {
+    icon: <Award className="w-8 h-8 text-accent" />,
+    title: "Airdrop Eligibility",
+    description: "Participation is open to everyone. To be eligible for rewards, users must complete the required tasks in the Telegram mini-app and have a valid Solana-compatible wallet address linked to their account before the distribution date."
+  },
+  {
+    icon: <UserPlus className="w-8 h-8 text-accent" />,
+    title: "Referral Program",
+    description: "Invite your friends to join the Exnus community and earn bonus points for every successful referral. Your unique referral link can be found inside the Telegram mini-app. The more friends you bring, the more points you earn!"
+  },
+  {
+    icon: <Shield className="w-8 h-8 text-accent" />,
+    title: "Fairness and Anti-Cheat",
+    description: "We are committed to a fair airdrop for all participants. We have implemented anti-cheat mechanisms to detect and disqualify any participants attempting to gain an unfair advantage through bots, multiple accounts, or other fraudulent activities."
+  },
+  {
+    icon: <FileText className="w-8 h-8 text-accent" />,
+    title: "Terms & Conditions",
+    description: "Exnus Protocol reserves the right to modify the airdrop rules or terminate the campaign at any time. All decisions made by the Exnus team are final. Participation in the airdrop constitutes acceptance of these terms."
+  }
 ];
 
 export default function AirdropPage() {
@@ -77,7 +100,38 @@ export default function AirdropPage() {
               </div>
           </div>
       </section>
-      <section className="py-20">
+      <section className="py-20 md:py-28">
+        <div className="container px-4 md:px-6">
+          <ScrollReveal>
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+                Airdrop Campaign Details
+              </h2>
+              <p className="mt-4 text-foreground/70">
+                Everything you need to know about participating in the Exnus Protocol airdrop and maximizing your rewards.
+              </p>
+            </div>
+          </ScrollReveal>
+          <div className="max-w-5xl mx-auto mt-12 grid md:grid-cols-2 gap-8 text-left">
+            {airdropDetails.map((detail, index) => (
+              <ScrollReveal key={detail.title} delay={index * 150}>
+                <div className="p-6 border border-border/50 rounded-lg flex items-start gap-4 h-full">
+                  <div className="p-2 bg-accent/10 rounded-full mt-1">
+                    {detail.icon}
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-xl text-accent">{detail.title}</h3>
+                    <p className="mt-2 text-foreground/80">
+                      {detail.description}
+                    </p>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="py-20 border-t border-border/50">
         <div className="container px-4 md:px-6">
           <ScrollReveal>
             <div className="max-w-3xl mx-auto p-8 border border-border/50 rounded-lg bg-card text-center">
