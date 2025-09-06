@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useMemo, useEffect } from "react";
@@ -117,7 +118,7 @@ export default function MarketTable() {
                                     <TableRow onClick={() => handleRowClick(coin)} className="cursor-pointer">
                                         <TableCell className="font-medium pl-6">
                                             <div className="flex items-center gap-3">
-                                                <Image src={coin.image} alt={coin.name} width={32} height={32} className="w-8 h-8 rounded-full" />
+                                                <Image src={coin.image} alt={coin.name} width={24} height={24} className="w-6 h-6 rounded-full" />
                                                 <div>
                                                     {coin.name}
                                                     <span className="text-muted-foreground ml-2">{coin.symbol.toUpperCase()}</span>

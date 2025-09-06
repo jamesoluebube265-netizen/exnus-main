@@ -1,3 +1,4 @@
+
 import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
@@ -24,7 +25,7 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'assets.coingecko.com',
+        hostname: 'coin-images.coingecko.com',
         port: '',
         pathname: '/coins/images/**',
       }
