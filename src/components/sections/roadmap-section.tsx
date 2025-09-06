@@ -14,6 +14,12 @@ const roadmapData = [
     description: "This quarter is focused on creating a detailed project plan, defining scope, and assembling the core team to execute the vision.",
     isComplete: false,
   },
+  {
+    quarter: "Q3 2025",
+    title: "Whitepaper Release & Airdrop System Launch",
+    description: "Publication of the official whitepaper detailing the protocol's architecture and tokenomics, alongside the launch of the airdrop task system to begin community engagement.",
+    isComplete: false,
+  },
 ];
 
 export default function RoadmapSection() {
