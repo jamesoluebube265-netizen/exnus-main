@@ -4,6 +4,7 @@ import { StakingDiagram } from "@/components/sections/diagrams/staking-diagram";
 import { SecurityDiagram } from "@/components/sections/diagrams/security-diagram";
 import { RewardingDiagram } from "@/components/sections/diagrams/rewarding-diagram";
 import { TokenomicsDiagram } from "@/components/sections/diagrams/tokenomics-diagram";
+import { StakingRewardsDiagram } from "@/components/sections/diagrams/staking-rewards-diagram";
 import ScrollReveal from "@/components/scroll-reveal";
 
 export default function ProtocolPage() {
@@ -278,6 +279,12 @@ export default function ProtocolPage() {
             <p>
                 The 1.93 billion tokens allocated for staking rewards are subject to a structured vesting schedule to ensure the long-term health and stability of the network. The rewards will be distributed linearly over a period of ten years (120 months) starting from the Token Generation Event (TGE).
             </p>
+            <div className="not-prose my-8">
+                <div className="overflow-hidden p-6 md:p-8 bg-card rounded-lg">
+                   <StakingRewardsDiagram />
+                </div>
+                <p className="text-center text-sm text-foreground/60 mt-2">Diagram: An overview of the staking rewards distribution model.</p>
+            </div>
             <ul className="list-disc pl-6 space-y-2 mt-4">
                 <li><strong>Total Vesting Period:</strong> 10 years (120 months).</li>
                 <li><strong>Monthly Distribution:</strong> Approximately 16.08 million tokens will be released to the staking rewards pool each month.</li>
