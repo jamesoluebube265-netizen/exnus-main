@@ -50,15 +50,15 @@ export function TokenomicsDiagram() {
   return (
     <div className="relative w-full font-sans">
         <h3 className="text-center font-bold text-lg mb-6 text-accent">Token Allocation Overview</h3>
-        <div className="w-full h-[450px]">
+        <div className="w-full h-[500px]">
             <ResponsiveContainer width="100%" height="100%">
                 <PieChart margin={{ top: 20, right: 30, left: 30, bottom: 20 }}>
                     <Pie
                         data={data}
                         cx="50%"
                         cy="50%"
-                        outerRadius={100}
-                        innerRadius={50}
+                        outerRadius={80}
+                        innerRadius={40}
                         fill="#8884d8"
                         dataKey="value"
                         paddingAngle={2}
