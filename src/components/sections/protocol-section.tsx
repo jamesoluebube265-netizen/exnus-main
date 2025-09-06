@@ -56,7 +56,7 @@ export default function ProtocolSection() {
         </ScrollReveal>
 
         <ScrollReveal delay={200}>
-          <Card className="max-w-3xl mx-auto bg-card/60 backdrop-blur-lg border border-white/10">
+          <Card className="max-w-3xl mx-auto bg-white/5 backdrop-blur-xl border border-white/10">
             <CardHeader>
               <CardTitle>Ask the AI</CardTitle>
             </CardHeader>
@@ -72,7 +72,7 @@ export default function ProtocolSection() {
                         <FormControl>
                           <Textarea
                             placeholder="e.g., How does the consensus mechanism work?"
-                            className="min-h-[100px]"
+                            className="min-h-[100px] bg-transparent"
                             {...field}
                           />
                         </FormControl>
@@ -94,7 +94,7 @@ export default function ProtocolSection() {
               </Form>
 
               {explanation && (
-                <div className="mt-8 p-6 bg-background/50 rounded-lg border">
+                <div className="mt-8 p-6 bg-black/20 rounded-lg border border-white/10">
                   <h3 className="text-lg font-bold mb-4 flex items-center gap-2 text-accent">
                     <Sparkles className="w-5 h-5" />
                     AI Explanation

@@ -30,7 +30,7 @@ const roadmapData = [
 
 export default function RoadmapSection() {
   return (
-    <section id="roadmap" className="py-20 md:py-28 bg-background">
+    <section id="roadmap" className="py-20 md:py-28 bg-background/80 backdrop-blur-sm">
       <div className="container mx-auto px-4 md:px-6">
         <ScrollReveal className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold">Our Roadmap</h2>
@@ -46,9 +46,9 @@ export default function RoadmapSection() {
               <div className="relative pl-12 mb-10">
                 <div className="absolute left-5 top-2 -translate-x-1/2">
                   {item.isComplete ? (
-                    <CheckCircle className="w-5 h-5 text-primary bg-background" />
+                    <CheckCircle className="w-5 h-5 text-primary bg-background/80" />
                   ) : (
-                    <Circle className="w-5 h-5 text-border bg-background" />
+                    <Circle className="w-5 h-5 text-border bg-background/80" />
                   )}
                 </div>
                 <p className="text-sm font-semibold text-accent">{item.quarter}</p>
