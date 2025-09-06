@@ -13,7 +13,6 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/documents', label: 'Documents' },
   { href: '/roadmap', label: 'Roadmap' },
-  { href: '/#team', label: 'Team' },
 ];
 
 export default function Header() {
