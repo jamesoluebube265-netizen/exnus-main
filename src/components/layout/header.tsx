@@ -19,21 +19,10 @@ const navLinks = [
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
-  const [activeLink, setActiveLink] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
-      
-      const sections = navLinks.map(link => link.href.startsWith('/#') ? link.href.substring(2) : null).filter(Boolean);
-      let currentSection = '';
-      for (const sectionId of sections) {
-        const section = document.getElementById(sectionId!);
-        if (section && window.scrollY >= section.offsetTop - 150) {
-          currentSection = `/#${sectionId}`;
-        }
-      }
-      setActiveLink(currentSection);
     };
     
     window.addEventListener('scroll', handleScroll);
@@ -43,7 +32,7 @@ export default function Header() {
   }, []);
 
   const getLinkClass = (href: string) => {
-    const isActive = pathname === href || (href.startsWith('/#') && activeLink === href);
+    const isActive = pathname === href;
     return cn(
       'text-sm font-medium transition-colors',
       isActive ? 'text-foreground font-bold' : 'text-foreground/80 hover:text-foreground'
