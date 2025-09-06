@@ -5,7 +5,6 @@ import { SecurityDiagram } from "@/components/sections/diagrams/security-diagram
 import { RewardingDiagram } from "@/components/sections/diagrams/rewarding-diagram";
 import { TokenomicsDiagram } from "@/components/sections/diagrams/tokenomics-diagram";
 import ScrollReveal from "@/components/scroll-reveal";
-import { DownloadButton } from "@/components/download-button";
 
 export default function ProtocolPage() {
   return (
@@ -20,9 +19,6 @@ export default function ProtocolPage() {
         <p className="text-lg text-foreground/70 max-w-4xl mx-auto px-4">
           An in-depth exploration of the mechanisms, architecture, and strategic vision behind the protocol.
         </p>
-        <div className="mt-8">
-            <DownloadButton />
-        </div>
       </div>
 
       <div id="download-content" className="prose max-w-none">
