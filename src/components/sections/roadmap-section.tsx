@@ -4,14 +4,20 @@ import ScrollReveal from "../scroll-reveal";
 const roadmapData = [
   {
     quarter: "Q1 2025",
-    title: "Foundation & Ecosystem Seeding",
-    description: "The first quarter is dedicated to fortifying the protocol's core infrastructure and initiating strategic ecosystem growth. Key objectives include completing a full-stack security audit, forming initial DeFi partnerships, and launching the community-governed grants program to spur early development.",
+    title: "Project Kickstart & Core Development",
+    description: "The first quarter will be dedicated to the foundational development of the Exnus Protocol. Key objectives include building the core architecture, finalizing the whitepaper, and initiating community building efforts.",
     isComplete: false,
   },
   {
     quarter: "Q2 2025",
-    title: "Community Governance Launch",
-    description: "Launch of the on-chain DAO, empowering the community to shape the future of the protocol.",
+    title: "Alpha Release & Private Testing",
+    description: "Launch of the internal alpha version of the protocol. We will begin private testing with a select group of early supporters and partners to gather initial feedback and identify key areas for improvement.",
+    isComplete: false,
+  },
+  {
+    quarter: "Q3 2025",
+    title: "Public Testnet & Community Building",
+    description: "Deployment of the public testnet, allowing for broader community participation and testing. The focus will be on gathering user feedback, iterating on features, and expanding our community channels.",
     isComplete: false,
   },
 ];
