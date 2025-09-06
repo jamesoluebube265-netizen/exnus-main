@@ -15,77 +15,61 @@ import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { DetailedCoinChart } from "../charts/detailed-coin-chart";
+import { getMarketData } from "@/app/market/actions";
+import Image from "next/image";
 
-const generateMockData = (count: number) => {
-    const data = [];
-    const baseCoins = [
-        { name: 'Bitcoin', ticker: 'BTC', price: 68123.45, change: 2.5, marketCap: 1.34e12 },
-        { name: 'Ethereum', ticker: 'ETH', price: 3456.78, change: -1.2, marketCap: 415.2e9 },
-        { name: 'Solana', ticker: 'SOL', price: 165.21, change: 5.8, marketCap: 76.1e9 },
-        { name: 'Cardano', ticker: 'ADA', price: 0.45, change: 0.5, marketCap: 16.2e9 },
-        { name: 'Ripple', ticker: 'XRP', price: 0.52, change: -0.8, marketCap: 28.9e9 },
-        { name: 'Dogecoin', ticker: 'DOGE', price: 0.15, change: 10.2, marketCap: 21.7e9 },
-        { name: 'Avalanche', ticker: 'AVAX', price: 35.6, change: -3.1, marketCap: 14.1e9 },
-        { name: 'Polkadot', ticker: 'DOT', price: 7.15, change: 1.5, marketCap: 10.2e9 },
-        { name: 'Chainlink', ticker: 'LINK', price: 18.5, change: 4.2, marketCap: 11.1e9 },
-        { name: 'Polygon', ticker: 'MATIC', price: 0.75, change: -0.5, marketCap: 7.5e9 },
-    ];
-
-    for (let i = 0; i < count; i++) {
-        const base = baseCoins[i % baseCoins.length];
-        const randomFactor = 1 + (Math.random() - 0.5) * 0.2; // +/- 10%
-        
-        const priceHistory = Array.from({ length: 30 }, (_, day) => {
-            const date = new Date();
-            date.setDate(date.getDate() - (29 - day));
-            const randomPriceFactor = 1 + (Math.random() - 0.5) * 0.4;
-            return {
-                date: date.toISOString().split('T')[0],
-                price: base.price * randomPriceFactor,
-            };
-        });
-
-        data.push({
-            name: `${base.name}${i >= baseCoins.length ? ` ${Math.floor(i / baseCoins.length)}` : ''}`,
-            ticker: `${base.ticker}${i >= baseCoins.length ? `${Math.floor(i / baseCoins.length)}` : ''}`,
-            price: base.price * randomFactor,
-            change: (Math.random() - 0.5) * 20, // -10% to 10%
-            marketCap: (base.marketCap * randomFactor).toExponential(2).replace('e+', 'e'),
-            chartData: priceHistory.map(d => d.price),
-            priceHistory,
-        });
-    }
-    return data;
-};
-
-const formatMarketCap = (marketCapStr: string) => {
-    const num = parseFloat(marketCapStr);
-    if (num >= 1e12) return `${(num / 1e12).toFixed(2)}T`;
-    if (num >= 1e9) return `${(num / 1e9).toFixed(2)}B`;
-    if (num >= 1e6) return `${(num / 1e6).toFixed(2)}M`;
-    return num.toString();
+const formatMarketCap = (marketCap: number) => {
+    if (marketCap >= 1e12) return `${(marketCap / 1e12).toFixed(2)}T`;
+    if (marketCap >= 1e9) return `${(marketCap / 1e9).toFixed(2)}B`;
+    if (marketCap >= 1e6) return `${(marketCap / 1e6).toFixed(2)}M`;
+    return marketCap.toString();
 };
 
 const ITEMS_PER_PAGE = 20;
 
-type CoinData = ReturnType<typeof generateMockData>[0];
+export interface CoinData {
+    id: string;
+    name: string;
+    symbol: string;
+    image: string;
+    current_price: number;
+    price_change_percentage_24h: number;
+    market_cap: number;
+    sparkline_in_7d: {
+        price: number[];
+    };
+    price_history?: { date: string, price: number }[];
+}
+
 
 export default function MarketTable() {
     const [currentPage, setCurrentPage] = useState(1);
-    const [mockData, setMockData] = useState<any[]>([]);
+    const [marketData, setMarketData] = useState<CoinData[]>([]);
     const [selectedCoin, setSelectedCoin] = useState<CoinData | null>(null);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        setMockData(generateMockData(100));
+        const fetchData = async () => {
+            setLoading(true);
+            try {
+                const data = await getMarketData();
+                setMarketData(data);
+            } catch (error) {
+                console.error("Failed to fetch market data:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchData();
     }, []);
 
-    const totalPages = Math.ceil(mockData.length / ITEMS_PER_PAGE);
+    const totalPages = Math.ceil(marketData.length / ITEMS_PER_PAGE);
 
     const paginatedData = useMemo(() => {
         const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
         const endIndex = startIndex + ITEMS_PER_PAGE;
-        return mockData.slice(startIndex, endIndex);
-    }, [currentPage, mockData]);
+        return marketData.slice(startIndex, endIndex);
+    }, [currentPage, marketData]);
 
     const handleNextPage = () => {
         setCurrentPage((prev) => Math.min(prev + 1, totalPages));
@@ -95,7 +79,21 @@ export default function MarketTable() {
         setCurrentPage((prev) => Math.max(prev - 1, 1));
     };
 
-    if (mockData.length === 0) {
+    const handleRowClick = async (coin: CoinData) => {
+        // For detailed view, we can use the 7d data for now,
+        // but a more detailed API call could be made here if needed.
+        const priceHistory = coin.sparkline_in_7d.price.map((price, index) => {
+            const date = new Date();
+            date.setDate(date.getDate() - (coin.sparkline_in_7d.price.length - 1 - index));
+            return {
+                date: date.toISOString().split('T')[0],
+                price: price,
+            };
+        });
+        setSelectedCoin({ ...coin, price_history: priceHistory });
+    };
+
+    if (loading) {
         return <div className="text-center py-10">Loading market data...</div>;
     }
 
@@ -115,31 +113,29 @@ export default function MarketTable() {
                         </TableHeader>
                         <TableBody>
                             {paginatedData.map((coin) => (
-                                <DialogTrigger asChild key={coin.ticker}>
-                                    <TableRow onClick={() => setSelectedCoin(coin)} className="cursor-pointer">
+                                <DialogTrigger asChild key={coin.id}>
+                                    <TableRow onClick={() => handleRowClick(coin)} className="cursor-pointer">
                                         <TableCell className="font-medium pl-6">
                                             <div className="flex items-center gap-3">
-                                                <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center font-bold text-sm">
-                                                    {coin.ticker.charAt(0)}
-                                                </div>
+                                                <Image src={coin.image} alt={coin.name} width={32} height={32} className="w-8 h-8 rounded-full" />
                                                 <div>
                                                     {coin.name}
-                                                    <span className="text-muted-foreground ml-2">{coin.ticker}</span>
+                                                    <span className="text-muted-foreground ml-2">{coin.symbol.toUpperCase()}</span>
                                                 </div>
                                             </div>
                                         </TableCell>
-                                        <TableCell>${coin.price.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</TableCell>
+                                        <TableCell>${coin.current_price.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</TableCell>
                                         <TableCell>
-                                            <Badge variant={coin.change >= 0 ? "default" : "destructive"} className={coin.change >= 0 ? 'bg-green-500/20 text-green-500' : 'bg-red-500/20 text-red-500'}>
-                                                {coin.change >= 0 ? '+' : ''}{coin.change.toFixed(2)}%
+                                            <Badge variant={coin.price_change_percentage_24h >= 0 ? "default" : "destructive"} className={coin.price_change_percentage_24h >= 0 ? 'bg-green-500/20 text-green-500' : 'bg-red-500/20 text-red-500'}>
+                                                {coin.price_change_percentage_24h >= 0 ? '+' : ''}{coin.price_change_percentage_24h.toFixed(2)}%
                                             </Badge>
                                         </TableCell>
-                                        <TableCell>${formatMarketCap(coin.marketCap)}</TableCell>
+                                        <TableCell>${formatMarketCap(coin.market_cap)}</TableCell>
                                         <TableCell className="text-right pr-6">
                                             <div className="h-10 w-32 ml-auto">
                                                 <SparklineChart 
-                                                    data={coin.chartData.map((val: number) => ({ value: val }))} 
-                                                    color={coin.change >= 0 ? 'hsl(var(--primary))' : 'hsl(var(--destructive))'}
+                                                    data={coin.sparkline_in_7d.price.map((val: number) => ({ value: val }))} 
+                                                    color={coin.price_change_percentage_24h >= 0 ? 'hsl(var(--primary))' : 'hsl(var(--destructive))'}
                                                 />
                                             </div>
                                         </TableCell>
@@ -166,10 +162,10 @@ export default function MarketTable() {
             {selectedCoin && (
                 <DialogContent className="sm:max-w-3xl">
                     <DialogHeader>
-                        <DialogTitle>{selectedCoin.name} ({selectedCoin.ticker}) Price Chart</DialogTitle>
+                        <DialogTitle>{selectedCoin.name} ({selectedCoin.symbol.toUpperCase()}) Price Chart</DialogTitle>
                     </DialogHeader>
                     <div className="h-[400px] w-full pt-4">
-                        <DetailedCoinChart data={selectedCoin.priceHistory} />
+                        <DetailedCoinChart data={selectedCoin.price_history || []} />
                     </div>
                 </DialogContent>
             )}
