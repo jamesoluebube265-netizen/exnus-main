@@ -273,6 +273,7 @@ export default function ProtocolPage() {
                 <li><strong>DAO Treasury (2%):</strong> 50 Million Tokens. The DAO treasury is designed to fund community-driven initiatives and governance proposals, fostering decentralization and community participation.</li>
                 <li><strong>Advisors Allocation (0.8%):</strong> 20 Million Tokens. This allocation rewards strategic advisors for their guidance and expertise in the project's development and market strategy.</li>
             </ul>
+
             <h3 className="text-2xl font-semibold text-accent mt-6 mb-3">Staking Reward Distribution Schedule</h3>
             <p>
                 The 1.93 billion tokens allocated for staking rewards are subject to a structured vesting schedule to ensure the long-term health and stability of the network. The rewards will be distributed linearly over a period of five years (60 months) starting from the Token Generation Event (TGE).
@@ -284,7 +285,8 @@ export default function ProtocolPage() {
             <p className="mt-4">
                 This linear distribution model is designed to create a predictable and sustainable rewards flow, preventing market inflation while consistently incentivizing long-term stakers. By aligning rewards with the protocol's growth over an extended period, we ensure that our most committed community members are continuously recognized and compensated for their role in securing the network and participating in governance.
             </p>
-             <h3 className="text-2xl font-semibold text-accent mt-6 mb-3">Team Allocation Vesting Schedule</h3>
+            
+            <h3 className="text-2xl font-semibold text-accent mt-6 mb-3">Team Allocation Vesting Schedule</h3>
             <p>
                 To ensure long-term commitment and alignment with the project's success, the 100 million tokens allocated to the team are subject to a strategic vesting schedule. This structure is designed to foster confidence among our community and stakeholders.
             </p>
@@ -295,6 +297,18 @@ export default function ProtocolPage() {
             </ul>
             <p className="mt-4">
                 This vesting schedule ensures that the team is incentivized to focus on the long-term growth and stability of the Exnus Protocol, aligning their interests with those of our entire community.
+            </p>
+
+            <h3 className="text-2xl font-semibold text-accent mt-6 mb-3">Community Airdrop Vesting Schedule</h3>
+            <p>
+                To ensure a fair and stable market entry, the 200 million tokens allocated for the community airdrop will be distributed with a structured vesting schedule. This approach rewards early participants while promoting long-term ecosystem health.
+            </p>
+            <ul className="list-disc pl-6 space-y-2 mt-4">
+                <li><strong>Initial Unlock at TGE:</strong> 60% of the airdrop allocation (120 million tokens) will be unlocked and available to claim at the Token Generation Event (TGE).</li>
+                <li><strong>Linear Vesting:</strong> The remaining 40% (80 million tokens) will vest linearly on a monthly basis over the subsequent 8 months. This means an additional 10 million tokens will become available to airdrop recipients each month.</li>
+            </ul>
+            <p className="mt-4">
+                This vesting schedule is designed to empower our community from day one while encouraging sustained engagement and mitigating initial market volatility.
             </p>
           </section>
         </ScrollReveal>
@@ -311,5 +325,3 @@ export default function ProtocolPage() {
     </div>
   );
 }
-
-    
