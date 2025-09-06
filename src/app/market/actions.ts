@@ -1,11 +1,12 @@
 'use server';
 
+import 'dotenv/config';
 import type { CoinData } from "@/components/sections/market-table";
 
 export async function getMarketData(): Promise<CoinData[]> {
     const apiKey = process.env.COINGECKO_API_KEY;
     if (!apiKey) {
-        throw new Error("CoinGecko API key not found.");
+        throw new Error("CoinGecko API key not found. Please ensure it is set in your .env file.");
     }
 
     const url = `https://pro-api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=true&price_change_percentage=24h`;
@@ -19,8 +20,14 @@ export async function getMarketData(): Promise<CoinData[]> {
         });
         
         if (!response.ok) {
-            const errorData = await response.json();
-            throw new Error(`Failed to fetch from CoinGecko: ${response.statusText} - ${errorData.error || 'Unknown error'}`);
+            let errorDetails = 'Unknown error';
+            try {
+                const errorData = await response.json();
+                errorDetails = errorData.error || JSON.stringify(errorData);
+            } catch (e) {
+                errorDetails = response.statusText;
+            }
+            throw new Error(`Failed to fetch from CoinGecko: ${response.status} ${response.statusText} - ${errorDetails}`);
         }
         
         const data = await response.json();
@@ -28,6 +35,7 @@ export async function getMarketData(): Promise<CoinData[]> {
 
     } catch (error) {
         console.error("Error fetching market data from CoinGecko:", error);
+        // Re-throw the error to be handled by the caller
         throw error;
     }
 }
