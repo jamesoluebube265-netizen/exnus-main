@@ -10,8 +10,8 @@ const roadmapData = [
   },
   {
     quarter: "Q4 2024",
-    title: "Mainnet Alpha & Pre-sale Event",
-    description: "The official launch of the Exnus Protocol mainnet with core functionalities and the start of our public pre-sale.",
+    title: "Mainnet Alpha & Token Generation Event",
+    description: "The official launch of the Exnus Protocol mainnet with core functionalities and token distribution.",
     isComplete: false,
   },
   {

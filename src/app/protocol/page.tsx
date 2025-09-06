@@ -30,7 +30,7 @@ export default function ProtocolPage() {
                 The rapid evolution of decentralized technologies has transformed the way communities and networks operate, placing greater emphasis on user participation and shared governance. Within this landscape, the Exnus protocol introduces an innovative reward system designed to actively incentivize users to contribute meaningfully to the growth and development of the ecosystem. Unlike traditional models that often prioritize passive engagement, Exnus fosters a culture of collaboration and continuous improvement by recognizing and rewarding the diverse efforts of its community members.
               </p>
               <p>
-                At its core, the Exnus protocol aims to cultivate a vibrant and inclusive environment where users feel a genuine sense of ownership and belonging. By aligning individual incentives with the collective success of the network, Exnus not only encourages sustained participation but also drives innovation that benefits all stakeholders. This white paper delves into the mechanisms, architecture, and strategic vision behind the protocol, outlining how Exnus stands poised to redefine user engagement within the Web3 space, leveraging the power and scalability of the Solana blockchain. Through this comprehensive exploration, presale investors, community members, and ecosystem participants will gain insight into the unique value proposition of Exnus, its technical foundations, and the roadmap that will guide its evolution into a cornerstone of the ecosystem’s future.
+                At its core, the Exnus protocol aims to cultivate a vibrant and inclusive environment where users feel a genuine sense of ownership and belonging. By aligning individual incentives with the collective success of the network, Exnus not only encourages sustained participation but also drives innovation that benefits all stakeholders. This white paper delves into the mechanisms, architecture, and strategic vision behind the protocol, outlining how Exnus stands poised to redefine user engagement within the Web3 space, leveraging the power and scalability of the Solana blockchain. Through this comprehensive exploration, community members and ecosystem participants will gain insight into the unique value proposition of Exnus, its technical foundations, and the roadmap that will guide its evolution into a cornerstone of the ecosystem’s future.
               </p>
             </section>
           </div>
@@ -152,16 +152,14 @@ export default function ProtocolPage() {
               
               <h3 className="text-2xl font-semibold text-accent mt-6 mb-3">Allocation Breakdown</h3>
               <ul className="list-disc pl-6 space-y-2 mt-6">
-                <li><strong>Community Airdrop (4%):</strong> 100 Million Tokens. A significant portion of tokens is reserved for community engagement through airdrops, incentivizing early adopters and community members.</li>
-                <li><strong>Pre-sale Allocation (28%):</strong> 700 Million Tokens. The pre-sale serves as a crucial fundraising mechanism that allows investors to acquire tokens at an early stage, providing liquidity for the project’s development and marketing efforts.</li>
-                <li><strong>Team Allocation (2.4%):</strong> 60 Million Tokens. A small allocation to the team ensures that the core development group is incentivized and aligned with the long-term success of Exnus Protocol.</li>
-                <li><strong>DAO Treasury (2%):</strong> 50 Million Tokens. The DAO treasury is designed to fund community-driven initiatives and governance proposals, fostering decentralization and community participation.</li>
-                <li><strong>Liquidity Provision (16%):</strong> 400 Million Tokens. A substantial allocation to liquidity provision ensures that there will be sufficient tokens available in the market, enhancing trading efficiency and stability.</li>
-                <li><strong>Advisors Allocation (0.8%):</strong> 20 Million Tokens. This allocation rewards strategic advisors for their guidance and expertise in the project's development and market strategy.</li>
-                <li><strong>Staking Rewards (46.8%):</strong> 1.170 Billion Tokens. The largest portion of tokens is set aside for staking rewards, encouraging token holders to participate in network validation and governance while earning additional tokens.</li>
+                  <li><strong>Staking Rewards (74.8%):</strong> 1.870 Billion Tokens. The largest portion of tokens is set aside for staking rewards, encouraging token holders to participate in network validation and governance while earning additional tokens.</li>
+                  <li><strong>Liquidity Provision (16%):</strong> 400 Million Tokens. A substantial allocation to liquidity provision ensures that there will be sufficient tokens available in the market, enhancing trading efficiency and stability.</li>
+                  <li><strong>Community Airdrop (8%):</strong> 200 Million Tokens. A significant portion of tokens is reserved for community engagement through airdrops, incentivizing early adopters and community members.</li>
+                  <li><strong>Team Allocation (2.4%):</strong> 60 Million Tokens. A small allocation to the team ensures that the core development group is incentivized and aligned with the long-term success of Exnus Protocol.</li>
+                  <li><strong>DAO Treasury (2%):</strong> 50 Million Tokens. The DAO treasury is designed to fund community-driven initiatives and governance proposals, fostering decentralization and community participation.</li>
+                  <li><strong>Advisors Allocation (0.8%):</strong> 20 Million Tokens. This allocation rewards strategic advisors for their guidance and expertise in the project's development and market strategy.</li>
               </ul>
-              <p className="mt-4">The Exnus Protocol tokenomics is carefully crafted to ensure a balanced and sustainable ecosystem. The pre-sale is a pivotal opportunity for early investors to participate in the project's growth, as it provides access to tokens before they become limited and potentially more expensive after the pre-sale concludes.</p>
-              <p className="mt-4">As interest in the Exnus token grows and its utility in the ecosystem expands, we anticipate an increase in demand, ultimately leading to a scarcity that enhances its value. We encourage all potential investors to seize the opportunity to participate in the upcoming pre-sale event.</p>
+              <p className="mt-4">The Exnus Protocol tokenomics is carefully crafted to ensure a balanced and sustainable ecosystem, with a primary focus on rewarding long-term stakeholders and community participants.</p>
 
             </section>
           </div>
@@ -179,5 +177,3 @@ export default function ProtocolPage() {
     </div>
   );
 }
-
-    

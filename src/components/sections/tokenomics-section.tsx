@@ -13,23 +13,21 @@ import {
 import ScrollReveal from '../scroll-reveal';
 
 const tokenomicsData = [
-  { name: 'Staking Rewards', value: 46.8, color: 'hsl(var(--primary))' },
-  { name: 'Pre-sale', value: 28, color: 'hsl(var(--accent))' },
+  { name: 'Staking Rewards', value: 74.8, color: 'hsl(var(--primary))' },
   { name: 'Liquidity', value: 16, color: 'hsl(var(--foreground))' },
-  { name: 'Airdrop', value: 4, color: 'hsl(var(--secondary))' },
+  { name: 'Airdrop', value: 8, color: 'hsl(var(--secondary))' },
   { name: 'Team', value: 2.4, color: 'hsl(var(--muted-foreground))' },
   { name: 'DAO', value: 2, color: 'hsl(var(--card-foreground))' },
   { name: 'Advisors', value: 0.8, color: 'hsl(var(--border))' },
 ];
 
 const allocationDetails = [
-    { name: 'Community Airdrop', percentage: '4%', amount: '100 Million Tokens', description: 'A significant portion of tokens is reserved for community engagement through airdrops, incentivizing early adopters and community members.' },
-    { name: 'Pre-sale Allocation', percentage: '28%', amount: '700 Million Tokens', description: 'The pre-sale serves as a crucial fundraising mechanism that allows investors to acquire tokens at an early stage, providing liquidity for the project’s development and marketing efforts.' },
+    { name: 'Staking Rewards', percentage: '74.8%', amount: '1.870 Billion Tokens', description: 'The largest portion of tokens is set aside for staking rewards, encouraging token holders to participate in network validation and governance while earning additional tokens.' },
+    { name: 'Liquidity Provision', percentage: '16%', amount: '400 Million Tokens', description: 'A substantial allocation to liquidity provision ensures that there will be sufficient tokens available in the market, enhancing trading efficiency and stability.' },
+    { name: 'Community Airdrop', percentage: '8%', amount: '200 Million Tokens', description: 'A significant portion of tokens is reserved for community engagement through airdrops, incentivizing early adopters and community members.' },
     { name: 'Team Allocation', percentage: '2.4%', amount: '60 Million Tokens', description: 'A small allocation to the team ensures that the core development group is incentivized and aligned with the long-term success of Exnus Protocol.' },
     { name: 'DAO Treasury', percentage: '2%', amount: '50 Million Tokens', description: 'The DAO treasury is designed to fund community-driven initiatives and governance proposals, fostering decentralization and community participation.' },
-    { name: 'Liquidity Provision', percentage: '16%', amount: '400 Million Tokens', description: 'A substantial allocation to liquidity provision ensures that there will be sufficient tokens available in the market, enhancing trading efficiency and stability.' },
     { name: 'Advisors Allocation', percentage: '0.8%', amount: '20 Million Tokens', description: 'This allocation rewards strategic advisors for their guidance and expertise in the project\'s development and market strategy.' },
-    { name: 'Staking Rewards', percentage: '46.8%', amount: '1.170 Billion Tokens', description: 'The largest portion of tokens is set aside for staking rewards, encouraging token holders to participate in network validation and governance while earning additional tokens.' },
 ];
 
 const totalTokens = "2.5 Billion Tokens";
@@ -91,7 +89,7 @@ export default function TokenomicsSection() {
                 </div>
             </div>
              <p className="text-sm text-center mt-8 text-foreground/60 max-w-5xl mx-auto">
-                The pre-sale is a pivotal opportunity for early investors to participate in the project's growth, as it provides access to tokens before they become limited and potentially more expensive after the pre-sale concludes. As interest in the Exnus token grows and its utility in the ecosystem expands, we anticipate an increase in demand, ultimately leading to a scarcity that enhances its value.
+                The tokenomics are designed to foster long-term growth and reward community participation, creating a robust and self-sustaining decentralized ecosystem.
               </p>
         </ScrollReveal>
       </div>

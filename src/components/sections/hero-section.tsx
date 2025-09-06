@@ -33,7 +33,7 @@ export default function HeroSection() {
           <div className="flex gap-4 justify-center">
             <Button size="lg" asChild>
               <Link href="/tokenomics">
-                Join Presale
+                View Tokenomics
               </Link>
             </Button>
             <Dialog>
