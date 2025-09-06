@@ -3,9 +3,9 @@ import ScrollReveal from "@/components/scroll-reveal";
 
 export default function MarketPage() {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div>
       <ScrollReveal>
-        <div className="text-center pt-8 md:pt-12 mb-10">
+        <div className="text-center pt-16 md:pt-24 mb-10">
             <h1 className="text-4xl md:text-5xl font-bold text-accent mb-4">
             Crypto Market
             </h1>

@@ -8,7 +8,6 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { SparklineChart } from "@/components/charts/sparkline-chart";
 import { Badge } from "@/components/ui/badge";
 
@@ -65,55 +64,50 @@ const mockData = [
 
 export default function MarketTable() {
     return (
-        <Card>
-            <CardHeader>
-                <CardTitle>Top Cryptocurrencies</CardTitle>
-            </CardHeader>
-            <CardContent>
-                <Table>
-                    <TableHeader>
-                        <TableRow>
-                            <TableHead className="w-[200px]">Name</TableHead>
-                            <TableHead>Price</TableHead>
-                            <TableHead>24h Change</TableHead>
-                            <TableHead>Market Cap</TableHead>
-                            <TableHead className="text-right">7-Day Chart</TableHead>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <Table>
+                <TableHeader>
+                    <TableRow>
+                        <TableHead className="w-[200px]">Name</TableHead>
+                        <TableHead>Price</TableHead>
+                        <TableHead>24h Change</TableHead>
+                        <TableHead>Market Cap</TableHead>
+                        <TableHead className="text-right">7-Day Chart</TableHead>
+                    </TableRow>
+                </TableHeader>
+                <TableBody>
+                    {mockData.map((coin) => (
+                        <TableRow key={coin.ticker}>
+                            <TableCell className="font-medium">
+                                <div className="flex items-center gap-3">
+                                    <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center font-bold text-sm">
+                                        {coin.ticker.charAt(0)}
+                                    </div>
+                                    <div>
+                                        {coin.name}
+                                        <span className="text-muted-foreground ml-2">{coin.ticker}</span>
+                                    </div>
+                                </div>
+                            </TableCell>
+                            <TableCell>${coin.price.toLocaleString()}</TableCell>
+                            <TableCell>
+                                <Badge variant={coin.change >= 0 ? "default" : "destructive"} className={coin.change >= 0 ? 'bg-green-500/20 text-green-500' : 'bg-red-500/20 text-red-500'}>
+                                    {coin.change > 0 ? '+' : ''}{coin.change}%
+                                </Badge>
+                            </TableCell>
+                            <TableCell>${coin.marketCap}</TableCell>
+                            <TableCell className="text-right">
+                                <div className="h-10 w-32 ml-auto">
+                                    <SparklineChart 
+                                        data={coin.chartData.map(val => ({ value: val }))} 
+                                        color={coin.change >= 0 ? 'hsl(var(--primary))' : 'hsl(var(--destructive))'}
+                                    />
+                                </div>
+                            </TableCell>
                         </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                        {mockData.map((coin) => (
-                            <TableRow key={coin.ticker}>
-                                <TableCell className="font-medium">
-                                    <div className="flex items-center gap-3">
-                                        <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center font-bold text-sm">
-                                            {coin.ticker.charAt(0)}
-                                        </div>
-                                        <div>
-                                            {coin.name}
-                                            <span className="text-muted-foreground ml-2">{coin.ticker}</span>
-                                        </div>
-                                    </div>
-                                </TableCell>
-                                <TableCell>${coin.price.toLocaleString()}</TableCell>
-                                <TableCell>
-                                    <Badge variant={coin.change >= 0 ? "default" : "destructive"} className={coin.change >= 0 ? 'bg-green-500/20 text-green-500' : 'bg-red-500/20 text-red-500'}>
-                                        {coin.change > 0 ? '+' : ''}{coin.change}%
-                                    </Badge>
-                                </TableCell>
-                                <TableCell>${coin.marketCap}</TableCell>
-                                <TableCell className="text-right">
-                                    <div className="h-10 w-32 ml-auto">
-                                        <SparklineChart 
-                                            data={coin.chartData.map(val => ({ value: val }))} 
-                                            color={coin.change >= 0 ? 'hsl(var(--primary))' : 'hsl(var(--destructive))'}
-                                        />
-                                    </div>
-                                </TableCell>
-                            </TableRow>
-                        ))}
-                    </TableBody>
-                </Table>
-            </CardContent>
-        </Card>
+                    ))}
+                </TableBody>
+            </Table>
+        </div>
     )
 }
