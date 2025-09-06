@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import ScrollReveal from "@/components/scroll-reveal";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import ProtocolDialog from "./protocol-dialog";
 
 export default function HeroSection() {
   return (
@@ -28,12 +27,12 @@ export default function HeroSection() {
                 Join Presale
               </Link>
             </Button>
-            <ProtocolDialog>
-              <Button size="lg" variant="outline">
+            <Button size="lg" variant="outline" asChild>
+              <Link href="/protocol">
                 Explore Protocol
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </ProtocolDialog>
+              </Link>
+            </Button>
           </div>
         </ScrollReveal>
       </div>
