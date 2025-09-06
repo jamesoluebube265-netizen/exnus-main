@@ -24,45 +24,17 @@ const CustomTooltip = ({ active, payload }: any) => {
   return null;
 };
 
-const RADIAN = Math.PI / 180;
-const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }: any) => {
-  const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
-  const x = cx + radius * Math.cos(-midAngle * RADIAN);
-  const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-  const sin = Math.sin(-RADIAN * midAngle);
-  const cos = Math.cos(-RADIAN * midAngle);
-  const sx = cx + (outerRadius + 10) * cos;
-  const sy = cy + (outerRadius + 10) * sin;
-  const mx = cx + (outerRadius + 20) * cos;
-  const my = cy + (outerRadius + 20) * sin;
-  const ex = mx + (cos >= 0 ? 1 : -1) * 12;
-  const ey = my;
-  const textAnchor = cos >= 0 ? 'start' : 'end';
-
-  return (
-    <g>
-      <path d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`} stroke="hsl(var(--border))" fill="none" />
-      <circle cx={ex} cy={ey} r={2} fill="hsl(var(--border))" stroke="none" />
-      <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} textAnchor={textAnchor} fill="#333" className="text-xs">{`${name} ${value}%`}</text>
-    </g>
-  );
-};
-
-
 export function TokenomicsDiagram() {
   return (
     <div className="relative w-full text-black font-sans">
         <h3 className="text-center font-bold text-lg mb-6 text-accent">Token Allocation Overview</h3>
         <div className="w-full h-[400px]">
             <ResponsiveContainer width="100%" height="100%">
-                <PieChart margin={{ top: 20, right: 120, bottom: 20, left: 120 }}>
+                <PieChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
                     <Pie
                         data={data}
                         cx="50%"
                         cy="50%"
-                        labelLine={false}
-                        label={renderCustomizedLabel}
                         outerRadius={120}
                         fill="#8884d8"
                         dataKey="value"
@@ -72,7 +44,13 @@ export function TokenomicsDiagram() {
                         ))}
                     </Pie>
                     <Tooltip content={<CustomTooltip />} />
-                    <Legend wrapperStyle={{fontSize: "14px", paddingTop: '20px'}}/>
+                    <Legend 
+                      iconSize={10} 
+                      layout="vertical" 
+                      verticalAlign="middle" 
+                      align="right"
+                      wrapperStyle={{fontSize: "14px", paddingLeft: '20px'}}
+                    />
                 </PieChart>
             </ResponsiveContainer>
         </div>
