@@ -30,9 +30,8 @@ export default function ProtocolPage() {
               At its core, the Exnus protocol aims to cultivate a vibrant and inclusive environment where users feel a genuine sense of ownership and belonging. By aligning individual incentives with the collective success of the network, Exnus not only encourages sustained participation but also drives innovation that benefits all stakeholders. This white paper delves into the mechanisms, architecture, and strategic vision behind the protocol, outlining how Exnus stands poised to redefine user engagement within the Web3 space, leveraging the power and scalability of the Solana blockchain. Through this comprehensive exploration, community members and ecosystem participants will gain insight into the unique value proposition of Exnus, its technical foundations, and the roadmap that will guide its evolution into a cornerstone of the ecosystem’s future.
             </p>
           </section>
-        </div>
-        <div className="a4-page">
-          <section id="market-analysis">
+          
+          <section id="market-analysis" className="mt-12">
             <h2 className="text-3xl font-bold text-accent border-b border-accent/30 pb-2 mb-4">[ 2 ] Market Analysis</h2>
             <p>
               The blockchain and Web3 sectors are witnessing unprecedented growth, with decentralized applications (dApps) and ecosystems expanding rapidly. However, despite this growth, many projects face significant challenges in cultivating active and engaged user bases. User retention and meaningful participation remain critical hurdles, often limiting the potential for sustained network effects and long-term success.
@@ -48,9 +47,8 @@ export default function ProtocolPage() {
               The Exnus protocol is positioned to address these challenges by introducing a comprehensive reward system that incentivizes active, quality contributions across multiple facets of the ecosystem. By leveraging Solana’s high-performance blockchain, Exnus can deliver fast, cost-effective transactions that support scalable reward distribution.
             </p>
           </section>
-        </div>
-        <div className="a4-page">
-          <section id="challenges-solutions">
+
+          <section id="challenges-solutions" className="mt-12">
             <h2 className="text-3xl font-bold text-accent border-b border-accent/30 pb-2 mb-4">[ 3 ] Web3 Challenges and Exnus Solutions</h2>
             <p>The Web3 space, while brimming with potential, faces several inherent challenges that impede the growth and sustainability of decentralized ecosystems. The Exnus protocol is designed specifically to address these obstacles through innovative solutions that foster engagement, security, and scalability.</p>
             <div className="space-y-4 mt-6">
@@ -61,9 +59,8 @@ export default function ProtocolPage() {
               <p><strong>Challenge 5: Lack of User Ownership.</strong> Through token rewards and staking, Exnus fosters a sense of ownership, aligning individual contributions with the network’s success and promoting long-term commitment.</p>
             </div>
           </section>
-        </div>
-        <div className="a4-page">
-          <section id="technical-architecture">
+
+          <section id="technical-architecture" className="mt-12">
             <h2 className="text-3xl font-bold text-accent border-b border-accent/30 pb-2 mb-4">[ 4 ] Technical Architecture</h2>
             <p>The Exnus protocol is engineered with a modular and scalable architecture designed to efficiently manage user contributions, reward calculations, and secure token distribution. Its technical framework ensures high performance, security, and seamless integration with the Solana blockchain.</p>
             <div className="not-prose my-8 text-black">
@@ -81,9 +78,8 @@ export default function ProtocolPage() {
                   <li><strong>Analytics Dashboard:</strong> Provides real-time insights into contributions, rewards, and network health.</li>
               </ul>
           </section>
-        </div>
-        <div className="a4-page">
-          <section id="smart-contracts">
+
+          <section id="smart-contracts" className="mt-12">
               <h2 className="text-3xl font-bold text-accent border-b border-accent/30 pb-2 mb-4">[ 5 ] Smart Contract Design and Security</h2>
               <p>The Exnus protocol’s smart contract framework is central to its ability to securely and transparently manage user rewards, staking, and governance. Designed with a multi-layered security approach, the contracts ensure trustless interactions and immutable enforcement of protocol rules.</p>
               <div className="not-prose my-8 text-black">
@@ -101,9 +97,8 @@ export default function ProtocolPage() {
                   <li><strong>Immutable Logic with Upgradability:</strong> While core contract logic is immutable for predictability, the protocol uses a proxy pattern to allow for secure, DAO-approved upgrades.</li>
               </ul>
           </section>
-        </div>
-        <div className="a4-page">
-          <section id="rewarding-system">
+
+          <section id="rewarding-system" className="mt-12">
               <h2 className="text-3xl font-bold text-accent border-b border-accent/30 pb-2 mb-4">[ 6 ] Rewarding System</h2>
               <p>The Exnus protocol’s rewarding system is a cornerstone of its strategy to drive active participation and sustained growth. By recognizing and compensating diverse user contributions, Exnus fosters a vibrant, collaborative community where every effort is valued.</p>
               <div className="not-prose my-8 text-black">
@@ -120,9 +115,8 @@ export default function ProtocolPage() {
                   <li><strong>Staking:</strong> Locking tokens to support network security and stability.</li>
               </ul>
           </section>
-        </div>
-        <div className="a4-page">
-          <section id="solana-integration">
+
+          <section id="solana-integration" className="mt-12">
               <h2 className="text-3xl font-bold text-accent border-b border-accent/30 pb-2 mb-4">[ 7 ] Integration with Solana Blockchain</h2>
               <p>The Exnus protocol’s integration with the Solana blockchain is a strategic choice that enhances its performance, security, and scalability. Solana’s cutting-edge technology provides the foundational infrastructure that enables Exnus to deliver a seamless and efficient user experience.</p>
                <h3 className="text-2xl font-semibold text-accent mt-6 mb-3">Benefits of Solana Integration</h3>
@@ -133,9 +127,8 @@ export default function ProtocolPage() {
                   <li><strong>Interoperability:</strong> Seamless interaction with other projects in the Solana ecosystem.</li>
               </ul>
           </section>
-        </div>
-        <div className="a4-page">
-          <section id="staking">
+
+          <section id="staking" className="mt-12">
               <h2 className="text-3xl font-bold text-accent border-b border-accent/30 pb-2 mb-4">[ 8 ] Staking Mechanism</h2>
               <p>The Exnus protocol incorporates a robust staking mechanism designed to incentivize long-term commitment and active participation. By allowing users to lock their tokens, staking not only rewards loyalty but also strengthens network security and governance.</p>
                <div className="not-prose my-8 text-black">
@@ -152,9 +145,8 @@ export default function ProtocolPage() {
                   <li><strong>Flexible Options:</strong> Multiple staking tiers with varying lock-up durations and reward rates.</li>
               </ul>
           </section>
-        </div>
-        <div className="a4-page">
-          <section id="tokenomics-details">
+
+          <section id="tokenomics-details" className="mt-12">
             <h2 className="text-3xl font-bold text-accent border-b border-accent/30 pb-2 mb-4">[ 9 ] Tokenomics</h2>
             <p>Total Supply: 2.5 Billion Tokens.</p>
             <p>The total supply of Exnus tokens is strategically allocated to ensure sustainability, community engagement, and rewards for stakeholders. Below is the detailed breakdown of the token allocation:</p>
@@ -176,9 +168,8 @@ export default function ProtocolPage() {
             <p className="mt-4">The Exnus Protocol tokenomics is carefully crafted to ensure a balanced and sustainable ecosystem, with a primary focus on rewarding long-term stakeholders and community participants.</p>
 
           </section>
-        </div>
-        <div className="a4-page">
-          <section id="conclusion">
+
+          <section id="conclusion" className="mt-12">
             <h2 className="text-3xl font-bold text-accent border-b border-accent/30 pb-2 mb-4">[ 10 ] Conclusion</h2>
             <p>
               The Exnus protocol represents a forward-thinking model for decentralized ecosystem growth that prioritizes active user participation and equitable reward distribution. By integrating with Solana’s blockchain and implementing a secure, transparent smart contract infrastructure, Exnus fosters a collaborative community that drives continuous innovation and shared success within the ecosystem. This white paper outlines a comprehensive vision for sustainable network development powered by its users.
