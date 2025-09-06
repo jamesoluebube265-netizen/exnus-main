@@ -1,5 +1,5 @@
 
-import { Twitter, Github, Linkedin } from "lucide-react";
+import { Twitter, Github, Linkedin, Send } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -14,6 +14,7 @@ export default function Footer() {
           </p>
           <div className="flex gap-4">
             <a href="https://x.com/exnusprotocol?t=erRcFQecZLsl-pW3MGFC9g&s=09" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><Twitter className="w-5 h-5 text-foreground/60 hover:text-foreground" /></a>
+            <a href="https://t.me/Exnusprotocol" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><Send className="w-5 h-5 text-foreground/60 hover:text-foreground" /></a>
             <a href="#" aria-label="GitHub"><Github className="w-5 h-5 text-foreground/60 hover:text-foreground" /></a>
             <a href="#" aria-label="LinkedIn"><Linkedin className="w-5 h-5 text-foreground/60 hover:text-foreground" /></a>
           </div>
