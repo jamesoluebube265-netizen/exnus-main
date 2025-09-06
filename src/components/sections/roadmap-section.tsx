@@ -14,12 +14,6 @@ const roadmapData = [
     description: "Launch of the internal alpha version of the protocol. We will begin private testing with a select group of early supporters and partners to gather initial feedback and identify key areas for improvement.",
     isComplete: false,
   },
-  {
-    quarter: "Q3 2025",
-    title: "Public Testnet & Community Building",
-    description: "Deployment of the public testnet, allowing for broader community participation and testing. The focus will be on gathering user feedback, iterating on features, and expanding our community channels.",
-    isComplete: false,
-  },
 ];
 
 export default function RoadmapSection() {
