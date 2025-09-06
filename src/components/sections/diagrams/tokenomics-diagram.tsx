@@ -57,7 +57,7 @@ export function TokenomicsDiagram() {
                         data={data}
                         cx="50%"
                         cy="50%"
-                        outerRadius={120}
+                        outerRadius={100}
                         innerRadius={50}
                         fill="#8884d8"
                         dataKey="value"
