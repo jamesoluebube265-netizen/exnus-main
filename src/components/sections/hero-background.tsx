@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { cn } from '@/lib/utils';
 
 const SPARKLE_COUNT = 30;
 
@@ -20,19 +21,27 @@ export function HeroBackground() {
   }, []);
 
   return (
-    <div className="absolute inset-0 -z-10 bg-black">
+    <div className="absolute inset-0 -z-10 bg-black overflow-hidden">
+        {/* God-ray effect from the top */}
+        <div 
+            className="absolute top-0 left-1/2 -translate-x-1/2 w-[200%] h-[300px] bg-no-repeat"
+            style={{
+                backgroundImage: 'radial-gradient(ellipse 50% 100% at 50% 0%, hsl(var(--primary) / 0.15), transparent 60%)',
+            }}
+        />
+
       <div className="absolute inset-0 flex items-center justify-center">
         <div 
             className="sphere-animation absolute w-[500px] h-[500px] bg-transparent rounded-full" 
             style={{
                 transformStyle: 'preserve-3d',
                 backgroundImage: `
-                    radial-gradient(circle at center, transparent 60%, hsl(var(--primary) / 0.3)),
-                    repeating-conic-gradient(from 0deg, hsl(var(--primary) / 0.5) 0deg 2deg, transparent 2deg 20deg)
+                    radial-gradient(circle at center, transparent 65%, hsl(var(--primary) / 0.3)),
+                    repeating-conic-gradient(from 0deg, hsl(var(--primary) / 0.5) 0deg 1.5deg, transparent 1.5deg 15deg)
                 `,
             }}
         >
-            <div className="absolute inset-0 rounded-full border-2 border-primary/40"></div>
+            <div className="absolute inset-0 rounded-full border border-primary/30"></div>
         </div>
       </div>
       <div className="absolute inset-0">
