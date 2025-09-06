@@ -37,7 +37,7 @@ const totalTokens = "2.5 Billion Tokens";
 export default function TokenomicsSection() {
   return (
     <section id="tokenomics" className="py-20 md:py-28">
-      <div className="px-4 md:px-6">
+      <div className="container px-4 md:px-6">
         <ScrollReveal>
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-foreground">
             Exnus Tokenomics

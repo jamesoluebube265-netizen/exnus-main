@@ -12,7 +12,7 @@ import { usePathname } from 'next/navigation';
 const navLinks = [
   { href: '/#features', label: 'Features' },
   { href: '/protocol', label: 'Protocol' },
-  { href: '/#tokenomics', label: 'Tokenomics' },
+  { href: '/tokenomics', label: 'Tokenomics' },
   { href: '/#roadmap', label: 'Roadmap' },
   { href: '/#team', label: 'Team' },
 ];
@@ -56,7 +56,7 @@ export default function Header() {
       "sticky top-0 z-50 w-full transition-all duration-300",
       isScrolled ? "bg-background/95 backdrop-blur-sm border-b border-black/10" : "bg-transparent"
     )}>
-      <div className="flex h-20 items-center justify-between px-4 md:px-6">
+      <div className="container flex h-20 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2 font-headline text-2xl font-bold">
           <Zap className="h-7 w-7 text-primary" />
           <span className="text-foreground">Exnus</span>

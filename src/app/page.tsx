@@ -4,7 +4,6 @@ import HeroSection from '@/components/sections/hero-section';
 import FeaturesSection from '@/components/sections/features-section';
 import HowItWorksSection from '@/components/sections/how-it-works-section';
 import CtaSection from '@/components/sections/cta-section';
-import TokenomicsSection from '@/components/sections/tokenomics-section';
 import RoadmapSection from '@/components/sections/roadmap-section';
 import TeamSection from '@/components/sections/team-section';
 
@@ -16,7 +15,6 @@ export default function Home() {
         <HeroSection />
         <FeaturesSection />
         <HowItWorksSection />
-        <TokenomicsSection />
         <RoadmapSection />
         <TeamSection />
         <CtaSection />
