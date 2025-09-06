@@ -1,7 +1,7 @@
 
 'use client';
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import {
     Table,
     TableBody,
@@ -53,11 +53,15 @@ const formatMarketCap = (marketCapStr: string) => {
     return num.toString();
 };
 
-const mockData = generateMockData(100);
 const ITEMS_PER_PAGE = 20;
 
 export default function MarketTable() {
     const [currentPage, setCurrentPage] = useState(1);
+    const [mockData, setMockData] = useState<any[]>([]);
+
+    useEffect(() => {
+        setMockData(generateMockData(100));
+    }, []);
 
     const totalPages = Math.ceil(mockData.length / ITEMS_PER_PAGE);
 
@@ -65,7 +69,7 @@ export default function MarketTable() {
         const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
         const endIndex = startIndex + ITEMS_PER_PAGE;
         return mockData.slice(startIndex, endIndex);
-    }, [currentPage]);
+    }, [currentPage, mockData]);
 
     const handleNextPage = () => {
         setCurrentPage((prev) => Math.min(prev + 1, totalPages));
@@ -74,6 +78,10 @@ export default function MarketTable() {
     const handlePrevPage = () => {
         setCurrentPage((prev) => Math.max(prev - 1, 1));
     };
+
+    if (mockData.length === 0) {
+        return <div className="text-center py-10">Loading market data...</div>;
+    }
 
     return (
         <div className="w-full">
