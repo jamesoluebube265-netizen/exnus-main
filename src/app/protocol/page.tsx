@@ -5,6 +5,7 @@ import { ArchitectureDiagram } from "@/components/sections/diagrams/architecture
 import { StakingDiagram } from "@/components/sections/diagrams/staking-diagram";
 import { SecurityDiagram } from "@/components/sections/diagrams/security-diagram";
 import { RewardingDiagram } from "@/components/sections/diagrams/rewarding-diagram";
+import { TokenomicsDiagram } from "@/components/sections/diagrams/tokenomics-diagram";
 
 export default function ProtocolPage() {
   return (
@@ -163,7 +164,12 @@ export default function ProtocolPage() {
               <h2 className="text-3xl font-bold text-accent border-b border-accent/30 pb-2 mb-4">[ 9 ] Tokenomics</h2>
               <p>Total Supply: 2.5 Billion Tokens.</p>
               <p>The total supply of Exnus tokens is strategically allocated to ensure sustainability, community engagement, and rewards for stakeholders. Below is the detailed breakdown of the token allocation:</p>
-              
+              <div className="not-prose my-8 text-black">
+                  <div className="overflow-hidden p-6 md:p-8">
+                     <TokenomicsDiagram />
+                  </div>
+                  <p className="text-center text-sm text-black/60 mt-2">Diagram: An overview of the token allocation for the Exnus Protocol.</p>
+              </div>
               <h3 className="text-2xl font-semibold text-accent mt-6 mb-3">Allocation Breakdown</h3>
               <ul className="list-disc pl-6 space-y-2 mt-6">
                   <li><strong>Staking Rewards (77.2%):</strong> 1.930 Billion Tokens. The largest portion of tokens is set aside for staking rewards, encouraging token holders to participate in network validation and governance while earning additional tokens.</li>
