@@ -39,7 +39,7 @@ export default function FeaturesSection() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
             <ScrollReveal key={feature.title} delay={index * 150}>
-              <div className="h-full bg-card/50 backdrop-blur-xl border border-white/10 hover:border-accent/50 transition-all duration-300 hover:shadow-2xl hover:shadow-accent/10 rounded-lg p-6">
+              <div className="h-full border border-white/10 hover:border-accent/50 transition-all duration-300 hover:shadow-2xl hover:shadow-accent/10 rounded-lg p-6">
                  <div className="p-4 bg-accent/10 rounded-full mb-4 w-fit">
                   {feature.icon}
                 </div>

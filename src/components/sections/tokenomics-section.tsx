@@ -47,7 +47,7 @@ export default function TokenomicsSection() {
           </p>
         </ScrollReveal>
         <ScrollReveal delay={200}>
-          <div className="max-w-5xl mx-auto bg-card/50 backdrop-blur-xl border-white/10 mt-12 rounded-lg p-6">
+          <div className="max-w-5xl mx-auto border-white/10 mt-12 rounded-lg p-6">
             <h3 className="text-white text-xl font-bold">Token Allocation Chart</h3>
             <div className="w-full h-[400px] mt-4">
               <ResponsiveContainer width="100%" height="100%">
@@ -76,7 +76,7 @@ export default function TokenomicsSection() {
         </ScrollReveal>
 
         <ScrollReveal delay={400} className="mt-12">
-            <div className="max-w-5xl mx-auto bg-card/50 backdrop-blur-xl border-white/10 rounded-lg p-6">
+            <div className="max-w-5xl mx-auto border-white/10 rounded-lg p-6">
                 <h3 className="text-white text-xl font-bold">Allocation Breakdown</h3>
                 <p className="text-white/70 mt-1">
                     The Exnus Protocol tokenomics is carefully crafted to ensure a balanced and sustainable ecosystem.

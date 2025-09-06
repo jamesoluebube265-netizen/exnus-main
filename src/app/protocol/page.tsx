@@ -67,7 +67,7 @@ export default function ProtocolPage() {
               <h2 className="text-3xl font-bold text-accent border-b border-accent/30 pb-2 mb-4">[ 4 ] Technical Architecture</h2>
               <p>The Exnus protocol is engineered with a modular and scalable architecture designed to efficiently manage user contributions, reward calculations, and secure token distribution. Its technical framework ensures high performance, security, and seamless integration with the Solana blockchain.</p>
               <div className="not-prose my-8">
-                <div className="overflow-hidden bg-card/50 backdrop-blur-xl border border-white/10 rounded-lg p-6 md:p-8">
+                <div className="overflow-hidden border border-white/10 rounded-lg p-6 md:p-8">
                     <ArchitectureDiagram />
                 </div>
                 <p className="text-center text-sm text-white/60 mt-2">Diagram: High-level overview of the Exnus technical architecture.</p>
@@ -123,7 +123,7 @@ export default function ProtocolPage() {
                 <h2 className="text-3xl font-bold text-accent border-b border-accent/30 pb-2 mb-4">[ 8 ] Staking Mechanism</h2>
                 <p>The Exnus protocol incorporates a robust staking mechanism designed to incentivize long-term commitment and active participation. By allowing users to lock their tokens, staking not only rewards loyalty but also strengthens network security and governance.</p>
                  <div className="not-prose my-8">
-                    <div className="overflow-hidden bg-card/50 backdrop-blur-xl border border-white/10 rounded-lg p-6 md:p-8">
+                    <div className="overflow-hidden border border-white/10 rounded-lg p-6 md:p-8">
                        <StakingDiagram />
                     </div>
                     <p className="text-center text-sm text-white/60 mt-2">Diagram: The staking flow for users and its benefits to the network.</p>

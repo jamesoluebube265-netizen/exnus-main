@@ -55,7 +55,7 @@ export default function ProtocolSection() {
         </ScrollReveal>
 
         <ScrollReveal delay={200}>
-          <div className="max-w-3xl mx-auto bg-card/50 backdrop-blur-xl border border-white/10 rounded-lg p-6">
+          <div className="max-w-3xl mx-auto border border-white/10 rounded-lg p-6">
             <h3 className="text-white text-xl font-bold mb-4">Ask the AI Assistant</h3>
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
