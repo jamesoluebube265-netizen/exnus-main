@@ -67,7 +67,7 @@ export default function ProtocolPage() {
             <h2 className="text-3xl font-bold text-accent border-b border-accent/30 pb-2 mb-4">[ 4 ] Technical Architecture</h2>
             <p>The Exnus protocol is engineered with a modular and scalable architecture designed to efficiently manage user contributions, reward calculations, and secure token distribution. Its technical framework ensures high performance, security, and seamless integration with the Solana blockchain.</p>
             <div className="not-prose my-8 text-black">
-              <div className="overflow-hidden p-6 md:p-8">
+              <div className="overflow-hidden p-0 md:p-4 bg-gray-50 rounded-lg">
                   <ArchitectureDiagram />
               </div>
               <p className="text-center text-sm text-black/60 mt-2">Diagram: High-level overview of the Exnus technical architecture.</p>
