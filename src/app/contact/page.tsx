@@ -214,7 +214,7 @@ export default function ContactPage() {
                                     <Twitter className="w-5 h-5"/>
                                     Twitter
                                 </a>
-                                <a href="https://t.me/Exnuspoint_bot" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-black hover:text-accent transition-colors">
+                                <a href="https://t.me/Exnusprotocol" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-black hover:text-accent transition-colors">
                                     <Send className="w-5 h-5"/>
                                     Telegram
                                 </a>

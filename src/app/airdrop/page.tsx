@@ -1,3 +1,4 @@
+
 import ScrollReveal from "@/components/scroll-reveal";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Gift, Bot, Users, Award, Shield, UserPlus, FileText } from "lucide-react";
@@ -63,7 +64,7 @@ export default function AirdropPage() {
               </ScrollReveal>
               <ScrollReveal delay={400}>
                   <Button size="lg" asChild>
-                      <a href="https://t.me/Exnuspoint_bot" target="_blank" rel="noopener noreferrer">
+                      <a href="https://t.me/Exnusprotocol" target="_blank" rel="noopener noreferrer">
                           Join Airdrop Now
                           <ArrowRight className="ml-2 h-5 w-5" />
                       </a>
