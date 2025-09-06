@@ -276,11 +276,11 @@ export default function ProtocolPage() {
 
             <h3 className="text-2xl font-semibold text-accent mt-6 mb-3">Staking Reward Distribution Schedule</h3>
             <p>
-                The 1.93 billion tokens allocated for staking rewards are subject to a structured vesting schedule to ensure the long-term health and stability of the network. The rewards will be distributed linearly over a period of five years (60 months) starting from the Token Generation Event (TGE).
+                The 1.93 billion tokens allocated for staking rewards are subject to a structured vesting schedule to ensure the long-term health and stability of the network. The rewards will be distributed linearly over a period of ten years (120 months) starting from the Token Generation Event (TGE).
             </p>
             <ul className="list-disc pl-6 space-y-2 mt-4">
-                <li><strong>Total Vesting Period:</strong> 5 years (60 months).</li>
-                <li><strong>Monthly Distribution:</strong> Approximately 32.17 million tokens will be released to the staking rewards pool each month.</li>
+                <li><strong>Total Vesting Period:</strong> 10 years (120 months).</li>
+                <li><strong>Monthly Distribution:</strong> Approximately 16.08 million tokens will be released to the staking rewards pool each month.</li>
             </ul>
             <p className="mt-4">
                 This linear distribution model is designed to create a predictable and sustainable rewards flow, preventing market inflation while consistently incentivizing long-term stakers. By aligning rewards with the protocol's growth over an extended period, we ensure that our most committed community members are continuously recognized and compensated for their role in securing the network and participating in governance.
