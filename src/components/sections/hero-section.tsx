@@ -21,7 +21,7 @@ export default function HeroSection() {
       <div className="px-4 md:px-6 relative">
         <ScrollReveal>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-6 text-foreground">
-            <span className="text-accent text-glow">Exnus Protocol:</span> Fostering Innovation Through Incentivized Participation.
+            <span className="text-accent">Exnus Protocol:</span> Fostering Innovation Through Incentivized Participation.
           </h1>
         </ScrollReveal>
         <ScrollReveal delay={200}>
