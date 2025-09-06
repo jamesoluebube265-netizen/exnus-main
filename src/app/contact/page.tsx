@@ -18,7 +18,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import ScrollReveal from "@/components/scroll-reveal";
 import { sendMessage } from "./actions";
-import { ArrowRight, Mail, MessageSquare, User, HelpCircle, Briefcase, Gift, Info, Star, MessageCircle } from "lucide-react";
+import { ArrowRight, Mail, MessageSquare, User, HelpCircle, Briefcase, Gift, Info, Star, MessageCircle, HeartHandshake, Zap, Volume2 } from "lucide-react";
 import { useState } from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Twitter, Send, GitMerge } from "lucide-react";
@@ -68,6 +68,24 @@ const faqItems = [
       question: "How can I stay updated with the latest news?",
       answer: "Follow our official Twitter account and join our Telegram announcement channel. We regularly post updates on our development progress, partnerships, and upcoming events.",
       icon: <MessageCircle className="w-5 h-5 text-accent" />
+    }
+];
+
+const commitmentPoints = [
+    {
+        icon: <Volume2 className="w-8 h-8 text-accent" />,
+        title: "Transparency",
+        description: "We believe in open dialogue. Whether you have feedback, questions, or concerns, we are here to listen and provide clear, honest answers."
+    },
+    {
+        icon: <Zap className="w-8 h-8 text-accent" />,
+        title: "Responsiveness",
+        description: "We are committed to addressing your inquiries promptly. Our team monitors all channels to ensure you receive timely and helpful support."
+    },
+    {
+        icon: <HeartHandshake className="w-8 h-8 text-accent" />,
+        title: "Community Focus",
+        description: "Our community is at the heart of everything we do. Your input is invaluable in shaping the future of the Exnus Protocol, and we are dedicated to fostering a collaborative environment."
     }
 ];
 
@@ -253,6 +271,35 @@ export default function ContactPage() {
             </ScrollReveal>
         </div>
       </section>
+
+      <section className="py-20 md:py-28 border-t border-border/50 bg-card">
+          <div className="container px-4 md:px-6">
+              <ScrollReveal>
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+                  Our Commitment to Open Communication
+              </h2>
+              <p className="max-w-3xl mx-auto text-center text-foreground/70 mb-12">
+                  At Exnus Protocol, we believe that clear, consistent communication is the cornerstone of a healthy and thriving decentralized community. We are dedicated to maintaining an open dialogue with our users, partners, and supporters.
+              </p>
+              </ScrollReveal>
+              <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                  {commitmentPoints.map((point, index) => (
+                      <ScrollReveal key={point.title} delay={index * 150}>
+                          <div className="h-full p-6 text-center border border-border/50 rounded-lg">
+                              <div className="flex justify-center mb-4">
+                                  <div className="p-4 bg-accent/10 rounded-full w-fit">
+                                      {point.icon}
+                                  </div>
+                              </div>
+                              <h3 className="text-xl font-bold text-accent">{point.title}</h3>
+                              <p className="text-foreground/80 mt-2">{point.description}</p>
+                          </div>
+                      </ScrollReveal>
+                  ))}
+              </div>
+          </div>
+      </section>
+
       <AlertDialog open={showSuccessDialog} onOpenChange={setShowSuccessDialog}>
         <AlertDialogContent>
           <AlertDialogHeader>
