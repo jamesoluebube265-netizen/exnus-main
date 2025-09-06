@@ -5,9 +5,6 @@ import Link from "next/link";
 
 const pageLinks = [
     { href: '/protocol', title: 'Protocol Details', description: 'Dive deep into the technical architecture and smart contracts.' },
-    { href: '/tokenomics', title: 'Tokenomics', description: 'Explore our token allocation and economic model.' },
-    { href: '/roadmap', title: 'Roadmap', description: 'Follow our journey and upcoming milestones.' },
-    { href: '/team', title: 'The Team', description: 'Meet the minds building the Exnus Protocol.' },
 ]
 
 export default function CtaSection() {
@@ -20,7 +17,7 @@ export default function CtaSection() {
                 Learn more about the core components of our protocol and what makes Exnus a revolutionary platform.
             </p>
         </ScrollReveal>
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-1 gap-8 max-w-xl mx-auto">
             {pageLinks.map((link, index) => (
                 <ScrollReveal key={link.href} delay={index * 150}>
                     <Link href={link.href}>

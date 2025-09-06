@@ -10,29 +10,44 @@ import { cn } from '@/lib/utils';
 import { usePathname } from 'next/navigation';
 
 const navLinks = [
-  { href: '/features', label: 'Features' },
+  { href: '/#features', label: 'Features' },
   { href: '/protocol', label: 'Protocol' },
-  { href: '/tokenomics', label: 'Tokenomics' },
-  { href: '/roadmap', label: 'Roadmap' },
-  { href: '/team', label: 'Team' },
+  { href: '/#tokenomics', label: 'Tokenomics' },
+  { href: '/#roadmap', label: 'Roadmap' },
+  { href: '/#team', label: 'Team' },
 ];
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
+  const [activeLink, setActiveLink] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
+      
+      const sections = navLinks.map(link => link.href.startsWith('/#') ? link.href.substring(2) : null).filter(Boolean);
+      let currentSection = '';
+      for (const sectionId of sections) {
+        const section = document.getElementById(sectionId!);
+        if (section && window.scrollY >= section.offsetTop - 150) {
+          currentSection = `/#${sectionId}`;
+        }
+      }
+      setActiveLink(currentSection);
     };
+    
     window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const getLinkClass = (href: string) => {
+    const isActive = pathname === href || (href.startsWith('/#') && activeLink === href);
     return cn(
       'text-sm font-medium transition-colors',
-      pathname === href ? 'text-foreground font-bold' : 'text-foreground/80 hover:text-foreground'
+      isActive ? 'text-foreground font-bold' : 'text-foreground/80 hover:text-foreground'
     );
   };
 
