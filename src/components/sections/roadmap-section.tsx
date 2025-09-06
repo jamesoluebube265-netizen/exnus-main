@@ -10,8 +10,8 @@ const roadmapData = [
   },
   {
     quarter: "Q2 2025",
-    title: "Alpha Release & Private Testing",
-    description: "Launch of the internal alpha version of the protocol. We will begin private testing with a select group of early supporters and partners to gather initial feedback and identify key areas for improvement.",
+    title: "Project Plan & Team Formation",
+    description: "This quarter is focused on creating a detailed project plan, defining scope, and assembling the core team to execute the vision.",
     isComplete: false,
   },
 ];
