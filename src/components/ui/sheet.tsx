@@ -4,8 +4,6 @@ import * as React from "react"
 import * as SheetPrimitive from "@radix-ui/react-dialog"
 import { cva, type VariantProps } from "class-variance-authority"
 import { X } from "lucide-react"
-import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
-
 
 import { cn } from "@/lib/utils"
 
@@ -71,10 +69,6 @@ const SheetContent = React.forwardRef<
         <X className="h-4 w-4" />
         <span className="sr-only">Close</span>
       </SheetPrimitive.Close>
-       <VisuallyHidden.Root>
-        <SheetPrimitive.Title />
-        <SheetPrimitive.Description />
-      </VisuallyHidden.Root>
     </SheetPrimitive.Content>
   </SheetPortal>
 ))

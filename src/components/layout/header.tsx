@@ -3,7 +3,8 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from '@/components/ui/sheet';
+import * as VisuallyHidden from '@radix-ui/react-visually-hidden';
 import { Menu, Zap } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -56,6 +57,10 @@ export default function Header() {
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="bg-background/90 backdrop-blur-sm">
+                <VisuallyHidden.Root>
+                  <SheetTitle>Menu</SheetTitle>
+                  <SheetDescription>Main navigation menu</SheetDescription>
+                </VisuallyHidden.Root>
                 <div className="flex flex-col gap-6 p-6">
                   <Link href="/" className="flex items-center gap-2 font-headline text-2xl font-bold">
                     <Zap className="h-7 w-7 text-primary" />
