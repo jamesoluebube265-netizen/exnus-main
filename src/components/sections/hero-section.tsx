@@ -3,6 +3,7 @@ import ScrollReveal from "@/components/scroll-reveal";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
+
 export default function HeroSection() {
   return (
     <section className="relative py-24 md:py-32 lg:py-48 text-center overflow-hidden">
@@ -23,11 +24,11 @@ export default function HeroSection() {
         <ScrollReveal delay={400}>
           <div className="flex gap-4 justify-center">
             <Button size="lg" asChild>
-              <Link href="#tokenomics">
+              <Link href="/tokenomics">
                 Join Presale
               </Link>
             </Button>
-            <Button size="lg" variant="outline" asChild>
+             <Button size="lg" variant="outline" asChild>
               <Link href="/protocol">
                 Explore Protocol
                 <ArrowRight className="ml-2 h-5 w-5" />

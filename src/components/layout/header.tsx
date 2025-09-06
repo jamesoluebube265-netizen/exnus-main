@@ -7,17 +7,19 @@ import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from 
 import * as VisuallyHidden from '@radix-ui/react-visually-hidden';
 import { Menu, Zap } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { usePathname } from 'next/navigation';
 
 const navLinks = [
-  { href: '#features', label: 'Features' },
-  { href: '#protocol', label: 'Protocol' },
-  { href: '#tokenomics', label: 'Tokenomics' },
-  { href: '#roadmap', label: 'Roadmap' },
-  { href: '#team', label: 'Team' },
+  { href: '/features', label: 'Features' },
+  { href: '/protocol', label: 'Protocol' },
+  { href: '/tokenomics', label: 'Tokenomics' },
+  { href: '/roadmap', label: 'Roadmap' },
+  { href: '/team', label: 'Team' },
 ];
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,6 +28,13 @@ export default function Header() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const getLinkClass = (href: string) => {
+    return cn(
+      'text-sm font-medium transition-colors',
+      pathname === href ? 'text-white font-bold' : 'text-white/80 hover:text-white'
+    );
+  };
 
   return (
     <header className={cn(
@@ -40,14 +49,16 @@ export default function Header() {
 
         <nav className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className="text-sm font-medium text-white/80 hover:text-white transition-colors">
+            <Link key={link.href} href={link.href} className={getLinkClass(link.href)}>
               {link.label}
             </Link>
           ))}
         </nav>
 
         <div className="flex items-center gap-4">
-          <Button>View Whitepaper</Button>
+          <Button asChild>
+            <Link href="/protocol">View Whitepaper</Link>
+          </Button>
           <div className="md:hidden">
             <Sheet>
               <SheetTrigger asChild>
@@ -56,7 +67,7 @@ export default function Header() {
                   <span className="sr-only">Toggle navigation menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="bg-background/90 backdrop-blur-sm">
+              <SheetContent side="right" className="bg-background/90 backdrop-blur-sm w-[250px]">
                  <VisuallyHidden.Root>
                   <SheetTitle>Menu</SheetTitle>
                   <SheetDescription>Main navigation menu</SheetDescription>
@@ -66,9 +77,9 @@ export default function Header() {
                     <Zap className="h-7 w-7 text-primary" />
                     <span className="text-white">Exnus</span>
                   </Link>
-                  <nav className="flex flex-col gap-4">
+                  <nav className="flex flex-col gap-4 mt-4">
                     {navLinks.map((link) => (
-                      <Link key={link.href} href={link.href} className="text-lg font-medium text-white">
+                      <Link key={link.href} href={link.href} className={getLinkClass(link.href)}>
                         {link.label}
                       </Link>
                     ))}
