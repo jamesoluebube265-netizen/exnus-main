@@ -63,7 +63,7 @@ export default function TokenomicsSection() {
                     tick={{ fill: 'hsl(var(--foreground))', fontSize: 14 }}
                     width={120}
                   />
-                  <Bar dataKey="value" background={{ fill: 'hsl(var(--background))' }}>
+                  <Bar dataKey="value" background={{ fill: 'hsl(var(--card))' }}>
                     <LabelList dataKey="value" position="right" formatter={(value: number) => `${value}%`} style={{ fill: 'hsl(var(--foreground))', fontSize: 14 }}/>
                     {tokenomicsData.map((entry, index) => (
                       <Cell key={`cell-${index}`} fill={entry.color} />

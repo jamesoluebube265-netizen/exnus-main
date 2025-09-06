@@ -2,12 +2,12 @@ import { Share2, Database, Users, GitBranch, ShieldCheck, FileText, Zap } from "
 import { Card } from "@/components/ui/card";
 
 const DiagramNode = ({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) => (
-  <Card className="bg-card/70 border-accent/20 p-4 text-center flex flex-col items-center justify-center">
+  <Card className="bg-card/70 border-accent/20 p-4 text-center flex flex-col items-center justify-center text-black">
     <div className="p-2 bg-accent/10 rounded-full mb-2 w-fit">
       {icon}
     </div>
-    <p className="font-bold text-sm text-foreground">{title}</p>
-    <p className="text-xs text-foreground/60">{description}</p>
+    <p className="font-bold text-sm text-black">{title}</p>
+    <p className="text-xs text-black/60">{description}</p>
   </Card>
 );
 
@@ -17,7 +17,7 @@ const Connector = ({ className = "" }: { className?: string }) => (
 
 export function ArchitectureDiagram() {
   return (
-    <div className="relative w-full text-foreground font-sans">
+    <div className="relative w-full text-black font-sans">
       <h3 className="text-center font-bold text-lg mb-6 text-accent">Exnus Protocol Architecture</h3>
       
       {/* Connectors */}
