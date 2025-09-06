@@ -21,7 +21,7 @@ export function HeroBackground() {
   }, []);
 
   return (
-    <div className="absolute inset-0 -z-10 bg-black overflow-hidden">
+    <div className="absolute inset-0 -z-10 overflow-hidden">
         {/* God-ray effect from the top */}
         <div 
             className="absolute top-0 left-1/2 -translate-x-1/2 w-[200%] h-[300px] bg-no-repeat"

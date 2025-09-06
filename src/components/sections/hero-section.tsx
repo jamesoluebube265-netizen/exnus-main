@@ -15,7 +15,7 @@ import { HeroBackground } from "./hero-background";
 
 export default function HeroSection() {
   return (
-    <section className="relative py-24 md:py-32 lg:py-48 text-center overflow-hidden bg-black">
+    <section className="relative py-24 md:py-32 lg:py-48 text-center overflow-hidden">
       <HeroBackground />
       
       <div className="px-4 md:px-6 relative">
