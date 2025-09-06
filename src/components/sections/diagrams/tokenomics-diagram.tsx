@@ -3,15 +3,16 @@
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from 'recharts';
 
 const data = [
-  { name: 'Staking Rewards', value: 77.2 },
-  { name: 'Community Airdrop', value: 8 },
-  { name: 'Liquidity Provision', value: 8 },
-  { name: 'Team Allocation', value: 4 },
+  { name: 'Staking Rewards', value: 46.8 },
+  { name: 'Pre-sale Allocation', value: 28 },
+  { name: 'Liquidity Provision', value: 16 },
+  { name: 'Community Airdrop', value: 4 },
+  { name: 'Team Allocation', value: 2.4 },
   { name: 'DAO Treasury', value: 2 },
   { name: 'Advisors Allocation', value: 0.8 },
 ];
 
-const COLORS = ['hsl(var(--primary))', '#6b7280', '#f59e0b', '#10b981', '#3b82f6', '#ef4444'];
+const COLORS = ['hsl(var(--primary))', '#6b7280', '#f59e0b', '#10b981', '#3b82f6', '#ef4444', '#8b5cf6'];
 
 const CustomTooltip = ({ active, payload }: any) => {
   if (active && payload && payload.length) {
@@ -26,7 +27,6 @@ const CustomTooltip = ({ active, payload }: any) => {
 
 const RADIAN = Math.PI / 180;
 const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, name }: any) => {
-  const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
   const labelRadius = outerRadius + 30;
   const x = cx + labelRadius * Math.cos(-midAngle * RADIAN);
   const y = cy + labelRadius * Math.sin(-midAngle * RADIAN);
@@ -52,7 +52,7 @@ export function TokenomicsDiagram() {
         <h3 className="text-center font-bold text-lg mb-6 text-accent">Token Allocation Overview</h3>
         <div className="w-full h-[500px]">
             <ResponsiveContainer width="100%" height="100%">
-                <PieChart margin={{ top: 20, right: 30, left: 30, bottom: 20 }}>
+                <PieChart margin={{ top: 40, right: 50, left: 50, bottom: 40 }}>
                     <Pie
                         data={data}
                         cx="50%"
