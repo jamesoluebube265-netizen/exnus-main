@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from '@/components/ui/sheet';
 import * as VisuallyHidden from '@radix-ui/react-visually-hidden';
-import { Menu, Zap } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { usePathname } from 'next/navigation';
 
@@ -46,7 +46,6 @@ export default function Header() {
     )}>
       <div className="container flex h-20 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2 font-headline text-2xl font-bold">
-          <Zap className="h-7 w-7 text-primary" />
           <span className="text-foreground">Exnus</span>
         </Link>
 
@@ -73,7 +72,6 @@ export default function Header() {
                 </VisuallyHidden.Root>
                 <div className="flex flex-col gap-6 p-6">
                   <Link href="/" className="flex items-center gap-2 font-headline text-2xl font-bold">
-                    <Zap className="h-7 w-7 text-primary" />
                     <span className="text-foreground">Exnus</span>
                   </Link>
                   <nav className="flex flex-col gap-4 mt-4">

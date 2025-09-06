@@ -1,4 +1,4 @@
-import { Zap, Twitter, Github, Linkedin } from "lucide-react";
+import { Twitter, Github, Linkedin } from "lucide-react";
 import Link from 'next/link';
 
 export default function Footer() {
@@ -7,7 +7,6 @@ export default function Footer() {
       <div className="px-4 md:px-6 py-8">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2 font-headline text-lg font-bold">
-            <Zap className="h-6 w-6 text-primary" />
             <span className="text-foreground">Exnus Protocol</span>
           </div>
           <p className="text-sm text-foreground/60">
