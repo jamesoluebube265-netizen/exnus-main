@@ -218,7 +218,7 @@ export default function ContactPage() {
                                     <Send className="w-5 h-5"/>
                                     Telegram
                                 </a>
-                                <a href="#" className="flex items-center gap-2 text-black hover:text-accent transition-colors">
+                                <a href="https://discord.gg/v8MpYYFdP8" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-black hover:text-accent transition-colors">
                                     <GitMerge className="w-5 h-5"/>
                                     Discord
                                 </a>
