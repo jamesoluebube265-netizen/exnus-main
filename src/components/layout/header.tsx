@@ -32,19 +32,19 @@ export default function Header() {
   const getLinkClass = (href: string) => {
     return cn(
       'text-sm font-medium transition-colors',
-      pathname === href ? 'text-white font-bold' : 'text-white/80 hover:text-white'
+      pathname === href ? 'text-foreground font-bold' : 'text-foreground/80 hover:text-foreground'
     );
   };
 
   return (
     <header className={cn(
       "sticky top-0 z-50 w-full transition-all duration-300",
-      isScrolled ? "bg-background/95 backdrop-blur-sm border-b border-white/10" : "bg-transparent"
+      isScrolled ? "bg-background/95 backdrop-blur-sm border-b border-black/10" : "bg-transparent"
     )}>
       <div className="flex h-20 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2 font-headline text-2xl font-bold">
           <Zap className="h-7 w-7 text-primary" />
-          <span className="text-white">Exnus</span>
+          <span className="text-foreground">Exnus</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-6">
@@ -75,7 +75,7 @@ export default function Header() {
                 <div className="flex flex-col gap-6 p-6">
                   <Link href="/" className="flex items-center gap-2 font-headline text-2xl font-bold">
                     <Zap className="h-7 w-7 text-primary" />
-                    <span className="text-white">Exnus</span>
+                    <span className="text-foreground">Exnus</span>
                   </Link>
                   <nav className="flex flex-col gap-4 mt-4">
                     {navLinks.map((link) => (

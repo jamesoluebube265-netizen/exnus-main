@@ -33,8 +33,8 @@ export default function RoadmapSection() {
     <section id="roadmap" className="py-20 md:py-28 bg-background/50 backdrop-blur-sm">
       <div className="px-4 md:px-6">
         <ScrollReveal className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white">Our Roadmap</h2>
-          <p className="max-w-2xl mx-auto text-white/70 mt-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground">Our Roadmap</h2>
+          <p className="max-w-2xl mx-auto text-foreground/70 mt-4">
             Follow our journey as we build the future of decentralized technology, one milestone at a time.
           </p>
         </ScrollReveal>
@@ -52,8 +52,8 @@ export default function RoadmapSection() {
                   )}
                 </div>
                 <p className="text-sm font-semibold text-accent">{item.quarter}</p>
-                <h3 className="font-bold text-lg mt-1 text-white">{item.title}</h3>
-                <p className="text-white/70 mt-1">{item.description}</p>
+                <h3 className="font-bold text-lg mt-1 text-foreground">{item.title}</h3>
+                <p className="text-foreground/70 mt-1">{item.description}</p>
               </div>
             </ScrollReveal>
           ))}

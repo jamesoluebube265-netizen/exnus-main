@@ -48,15 +48,15 @@ export default function ProtocolSection() {
     <section id="protocol" className="py-20 md:py-28">
       <div className="px-4 md:px-6">
         <ScrollReveal>
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">Explore the Technical Architecture</h2>
-          <p className="max-w-2xl mx-auto text-center text-white/70 mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-foreground">Explore the Technical Architecture</h2>
+          <p className="max-w-2xl mx-auto text-center text-foreground/70 mb-12">
             Ask our AI assistant for a simplified explanation of any aspect of the Exnus Protocol, from its smart contract design to its integration with Solana.
           </p>
         </ScrollReveal>
 
         <ScrollReveal delay={200}>
           <div className="max-w-3xl mx-auto">
-            <h3 className="text-white text-xl font-bold mb-4">Ask the AI Assistant</h3>
+            <h3 className="text-foreground text-xl font-bold mb-4">Ask the AI Assistant</h3>
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                 <FormField
@@ -64,11 +64,11 @@ export default function ProtocolSection() {
                   name="query"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-white/80">Your Question</FormLabel>
+                      <FormLabel className="text-foreground/80">Your Question</FormLabel>
                       <FormControl>
                         <Textarea
                           placeholder="e.g., How does the staking mechanism work?"
-                          className="min-h-[100px] bg-transparent text-white"
+                          className="min-h-[100px] bg-transparent text-foreground"
                           {...field}
                         />
                       </FormControl>
@@ -90,12 +90,12 @@ export default function ProtocolSection() {
             </Form>
 
             {explanation && (
-              <div className="mt-8 p-6 bg-black/20 rounded-lg border border-white/10">
+              <div className="mt-8 p-6 bg-black/5 rounded-lg border border-black/10">
                 <h3 className="text-lg font-bold mb-4 flex items-center gap-2 text-accent">
                   <Sparkles className="w-5 h-5" />
                   AI Explanation
                 </h3>
-                <div className="space-y-4 text-white/90">
+                <div className="space-y-4 text-foreground/90">
                   {explanation.explanation.split('\n').filter(p => p.trim() !== "").map((paragraph, i) => <p key={i}>{paragraph}</p>)}
                 </div>
               </div>

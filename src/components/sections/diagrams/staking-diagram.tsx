@@ -10,8 +10,8 @@ const FlowStep = ({ icon, title, description, isArrow = false }: { icon?: React.
         <div className="p-3 bg-accent/10 rounded-full mb-3 w-fit">
           {icon}
         </div>
-        <p className="font-bold text-sm text-white">{title}</p>
-        <p className="text-xs text-white/60">{description}</p>
+        <p className="font-bold text-sm text-foreground">{title}</p>
+        <p className="text-xs text-foreground/60">{description}</p>
       </Card>
     )}
   </div>
@@ -19,7 +19,7 @@ const FlowStep = ({ icon, title, description, isArrow = false }: { icon?: React.
 
 export function StakingDiagram() {
   return (
-     <div className="relative w-full text-white font-sans">
+     <div className="relative w-full text-foreground font-sans">
       <h3 className="text-center font-bold text-lg mb-6 text-accent">Staking & Governance Flow</h3>
       <div className="grid grid-cols-1 md:grid-cols-5 gap-4 items-start">
         <FlowStep 
@@ -53,11 +53,9 @@ export function StakingDiagram() {
       <div className="flex justify-center mt-6">
         <div className="flex items-center gap-3 text-center">
             <TrendingUp className="w-5 h-5 text-primary" />
-            <p className="font-semibold text-sm text-white/80">Result: Enhanced Network Security & Decentralized Growth</p>
+            <p className="font-semibold text-sm text-foreground/80">Result: Enhanced Network Security & Decentralized Growth</p>
         </div>
       </div>
     </div>
   )
 }
-
-    

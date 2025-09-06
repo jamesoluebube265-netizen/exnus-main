@@ -15,8 +15,8 @@ export default function TeamSection() {
     <section id="team" className="py-20 md:py-28">
       <div className="px-4 md:px-6">
         <ScrollReveal className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-white">Meet the Team</h2>
-          <p className="max-w-2xl mx-auto text-white/70 mt-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground">Meet the Team</h2>
+          <p className="max-w-2xl mx-auto text-foreground/70 mt-4">
             The brilliant minds behind the Exnus Protocol, dedicated to building a decentralized future.
           </p>
         </ScrollReveal>
@@ -40,9 +40,9 @@ export default function TeamSection() {
                    </div>
                 </div>
                 <div className="flex justify-center gap-4 mt-4">
-                  <Link href={member.socials.twitter}><Twitter className="w-5 h-5 text-white/60 hover:text-white" /></Link>
-                  <Link href={member.socials.linkedin}><Linkedin className="w-5 h-5 text-white/60 hover:text-white" /></Link>
-                  <Link href={member.socials.github}><Github className="w-5 h-5 text-white/60 hover:text-white" /></Link>
+                  <Link href={member.socials.twitter}><Twitter className="w-5 h-5 text-foreground/60 hover:text-foreground" /></Link>
+                  <Link href={member.socials.linkedin}><Linkedin className="w-5 h-5 text-foreground/60 hover:text-foreground" /></Link>
+                  <Link href={member.socials.github}><Github className="w-5 h-5 text-foreground/60 hover:text-foreground" /></Link>
                 </div>
               </div>
             </ScrollReveal>

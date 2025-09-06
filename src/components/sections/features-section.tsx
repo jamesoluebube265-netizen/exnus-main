@@ -29,10 +29,10 @@ export default function FeaturesSection() {
     <section id="features" className="py-20 md:py-28">
       <div className="px-4 md:px-6">
         <ScrollReveal>
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-foreground">
             Overcoming Web3's Core Challenges
           </h2>
-          <p className="max-w-3xl mx-auto text-center text-white/70 mb-12">
+          <p className="max-w-3xl mx-auto text-center text-foreground/70 mb-12">
             The Exnus protocol is engineered to solve critical hurdles that limit ecosystem growth, from low user engagement and fragmented incentives to pervasive security vulnerabilities and a lack of user ownership.
           </p>
         </ScrollReveal>
@@ -43,8 +43,8 @@ export default function FeaturesSection() {
                  <div className="p-4 bg-accent/10 rounded-full mb-4 w-fit">
                   {feature.icon}
                 </div>
-                <h3 className="text-xl text-white font-bold">{feature.title}</h3>
-                <p className="text-white/70 mt-2">{feature.description}</p>
+                <h3 className="text-xl text-foreground font-bold">{feature.title}</h3>
+                <p className="text-foreground/70 mt-2">{feature.description}</p>
               </div>
             </ScrollReveal>
           ))}

@@ -27,8 +27,8 @@ export default function HowItWorksSection() {
     <section id="how-it-works" className="py-20 md:py-28 bg-background/50 backdrop-blur-sm">
       <div className="px-4 md:px-6">
         <ScrollReveal className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-white">How to Engage with the Exnus Ecosystem</h2>
-          <p className="max-w-2xl mx-auto text-white/70 mt-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground">How to Engage with the Exnus Ecosystem</h2>
+          <p className="max-w-2xl mx-auto text-foreground/70 mt-4">
             Our protocol creates a powerful feedback loop where active participation is recognized, rewarded, and empowers the community to drive innovation and growth.
           </p>
         </ScrollReveal>
@@ -39,7 +39,7 @@ export default function HowItWorksSection() {
               <div className={`flex flex-col gap-8 md:gap-12 items-center ${index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
                 <div className="md:w-1/2">
                   <h3 className="text-2xl md:text-3xl font-bold mb-4 text-accent">{step.title}</h3>
-                  <p className="text-white/80 text-lg">{step.description}</p>
+                  <p className="text-foreground/80 text-lg">{step.description}</p>
                 </div>
                 <div className="md:w-1/2">
                   <div className="overflow-hidden rounded-lg">

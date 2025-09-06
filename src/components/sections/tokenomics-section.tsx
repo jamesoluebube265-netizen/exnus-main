@@ -39,16 +39,16 @@ export default function TokenomicsSection() {
     <section id="tokenomics" className="py-20 md:py-28">
       <div className="px-4 md:px-6">
         <ScrollReveal>
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-foreground">
             Exnus Tokenomics
           </h2>
-          <p className="max-w-2xl mx-auto text-center text-white/70 mb-2">
+          <p className="max-w-2xl mx-auto text-center text-foreground/70 mb-2">
             A strategically allocated total supply of <span className="text-accent font-bold">{totalTokens}</span> to ensure a balanced, sustainable, and community-driven ecosystem.
           </p>
         </ScrollReveal>
         <ScrollReveal delay={200}>
           <div className="max-w-5xl mx-auto mt-12">
-            <h3 className="text-white text-xl font-bold">Token Allocation Chart</h3>
+            <h3 className="text-foreground text-xl font-bold">Token Allocation Chart</h3>
             <div className="w-full h-[400px] mt-4">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={tokenomicsData} layout="vertical" margin={{ left: 20, right: 60 }}>
@@ -77,20 +77,20 @@ export default function TokenomicsSection() {
 
         <ScrollReveal delay={400} className="mt-12">
             <div className="max-w-5xl mx-auto">
-                <h3 className="text-white text-xl font-bold">Allocation Breakdown</h3>
-                <p className="text-white/70 mt-1">
+                <h3 className="text-foreground text-xl font-bold">Allocation Breakdown</h3>
+                <p className="text-foreground/70 mt-1">
                     The Exnus Protocol tokenomics is carefully crafted to ensure a balanced and sustainable ecosystem.
                 </p>
                 <div className="space-y-6 mt-6">
                     {allocationDetails.map((item) => (
                         <div key={item.name}>
-                            <h4 className="font-bold text-lg text-accent">{item.name} ({item.percentage}) - <span className="font-mono text-base text-white/80">{item.amount}</span></h4>
-                            <p className="text-white/80 mt-1">{item.description}</p>
+                            <h4 className="font-bold text-lg text-accent">{item.name} ({item.percentage}) - <span className="font-mono text-base text-foreground/80">{item.amount}</span></h4>
+                            <p className="text-foreground/80 mt-1">{item.description}</p>
                         </div>
                     ))}
                 </div>
             </div>
-             <p className="text-sm text-center mt-8 text-white/60 max-w-5xl mx-auto">
+             <p className="text-sm text-center mt-8 text-foreground/60 max-w-5xl mx-auto">
                 The pre-sale is a pivotal opportunity for early investors to participate in the project's growth, as it provides access to tokens before they become limited and potentially more expensive after the pre-sale concludes. As interest in the Exnus token grows and its utility in the ecosystem expands, we anticipate an increase in demand, ultimately leading to a scarcity that enhances its value.
               </p>
         </ScrollReveal>
