@@ -10,7 +10,7 @@ import { cn } from '@/lib/utils';
 import { usePathname } from 'next/navigation';
 
 const navLinks = [
-  { href: '/#features', label: 'Features' },
+  { href: '/', label: 'Home' },
   { href: '/documents', label: 'Documents' },
   { href: '/tokenomics', label: 'Tokenomics' },
   { href: '/#roadmap', label: 'Roadmap' },
