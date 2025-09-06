@@ -10,7 +10,7 @@ import {
   XAxis,
   YAxis,
 } from 'recharts';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import ScrollReveal from '../scroll-reveal';
 
 const tokenomicsData = [
@@ -21,6 +21,16 @@ const tokenomicsData = [
   { name: 'Team', value: 2.4, color: 'hsl(var(--muted-foreground))' },
   { name: 'DAO', value: 2, color: 'hsl(var(--card-foreground))' },
   { name: 'Advisors', value: 0.8, color: 'hsl(var(--border))' },
+];
+
+const allocationDetails = [
+    { name: 'Community Airdrop', percentage: '4%', amount: '100 Million Tokens', description: 'A significant portion of tokens is reserved for community engagement through airdrops, incentivizing early adopters and community members.' },
+    { name: 'Pre-sale Allocation', percentage: '28%', amount: '700 Million Tokens', description: 'The pre-sale serves as a crucial fundraising mechanism that allows investors to acquire tokens at an early stage, providing liquidity for the project’s development and marketing efforts.' },
+    { name: 'Team Allocation', percentage: '2.4%', amount: '60 Million Tokens', description: 'A small allocation to the team ensures that the core development group is incentivized and aligned with the long-term success of Exnus Protocol.' },
+    { name: 'DAO Treasury', percentage: '2%', amount: '50 Million Tokens', description: 'The DAO treasury is designed to fund community-driven initiatives and governance proposals, fostering decentralization and community participation.' },
+    { name: 'Liquidity Provision', percentage: '16%', amount: '400 Million Tokens', description: 'A substantial allocation to liquidity provision ensures that there will be sufficient tokens available in the market, enhancing trading efficiency and stability.' },
+    { name: 'Advisors Allocation', percentage: '0.8%', amount: '20 Million Tokens', description: 'This allocation rewards strategic advisors for their guidance and expertise in the project\'s development and market strategy.' },
+    { name: 'Staking Rewards', percentage: '46.8%', amount: '1.170 Billion Tokens', description: 'The largest portion of tokens is set aside for staking rewards, encouraging token holders to participate in network validation and governance while earning additional tokens.' },
 ];
 
 const totalTokens = "2.5 Billion Tokens";
@@ -40,7 +50,7 @@ export default function TokenomicsSection() {
         <ScrollReveal delay={200}>
           <Card className="max-w-5xl mx-auto bg-card/50 backdrop-blur-xl border-white/10 mt-12">
             <CardHeader>
-              <CardTitle className="text-white">Token Allocation</CardTitle>
+              <CardTitle className="text-white">Token Allocation Chart</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="w-full h-[400px]">
@@ -66,11 +76,30 @@ export default function TokenomicsSection() {
                   </BarChart>
                 </ResponsiveContainer>
               </div>
-              <p className="text-sm text-center mt-4 text-white/60">
-                The pre-sale is a pivotal opportunity for early investors. As interest and utility expand, we anticipate an increase in demand, ultimately enhancing token value through scarcity.
-              </p>
             </CardContent>
           </Card>
+        </ScrollReveal>
+
+        <ScrollReveal delay={400} className="mt-12">
+            <Card className="max-w-5xl mx-auto bg-card/50 backdrop-blur-xl border-white/10">
+                <CardHeader>
+                    <CardTitle className="text-white">Allocation Breakdown</CardTitle>
+                    <CardDescription className="text-white/70">
+                        The Exnus Protocol tokenomics is carefully crafted to ensure a balanced and sustainable ecosystem.
+                    </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                    {allocationDetails.map((item) => (
+                        <div key={item.name}>
+                            <h3 className="font-bold text-lg text-accent">{item.name} ({item.percentage}) - <span className="font-mono text-base text-white/80">{item.amount}</span></h3>
+                            <p className="text-white/80 mt-1">{item.description}</p>
+                        </div>
+                    ))}
+                </CardContent>
+            </Card>
+             <p className="text-sm text-center mt-8 text-white/60 max-w-5xl mx-auto">
+                The pre-sale is a pivotal opportunity for early investors to participate in the project's growth, as it provides access to tokens before they become limited and potentially more expensive after the pre-sale concludes. As interest in the Exnus token grows and its utility in the ecosystem expands, we anticipate an increase in demand, ultimately leading to a scarcity that enhances its value.
+              </p>
         </ScrollReveal>
       </div>
     </section>

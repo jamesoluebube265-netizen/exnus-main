@@ -144,17 +144,22 @@ export default function ProtocolPage() {
 
             <section id="tokenomics-details">
               <h2 className="text-3xl font-bold text-accent border-b border-accent/30 pb-2 mb-4">[ 9 ] Tokenomics</h2>
-              <p>The total supply of 2.5 Billion Exnus tokens is strategically allocated to ensure sustainability, community engagement, and rewards for stakeholders.</p>
+              <p>Total Supply: 2.5 Billion Tokens.</p>
+              <p>The total supply of Exnus tokens is strategically allocated to ensure sustainability, community engagement, and rewards for stakeholders. Below is the detailed breakdown of the token allocation:</p>
+              
+              <h3 className="text-2xl font-semibold text-white mt-6 mb-3">Allocation Breakdown</h3>
               <ul className="list-disc pl-6 space-y-2 mt-6">
-                <li><strong>Community Airdrop:</strong> 100 Million Tokens (4%)</li>
-                <li><strong>Pre-sale Allocation:</strong> 700 Million Tokens (28%)</li>
-                <li><strong>Team Allocation:</strong> 60 Million Tokens (2.4%)</li>
-                <li><strong>DAO Treasury:</strong> 50 Million Tokens (2%)</li>
-                <li><strong>Liquidity Provision:</strong> 400 Million Tokens (16%)</li>
-                <li><strong>Advisors Allocation:</strong> 20 Million Tokens (0.8%)</li>
-                <li><strong>Staking Rewards:</strong> 1.170 Billion Tokens (46.8%)</li>
+                <li><strong>Community Airdrop (4%):</strong> 100 Million Tokens. A significant portion of tokens is reserved for community engagement through airdrops, incentivizing early adopters and community members.</li>
+                <li><strong>Pre-sale Allocation (28%):</strong> 700 Million Tokens. The pre-sale serves as a crucial fundraising mechanism that allows investors to acquire tokens at an early stage, providing liquidity for the project’s development and marketing efforts.</li>
+                <li><strong>Team Allocation (2.4%):</strong> 60 Million Tokens. A small allocation to the team ensures that the core development group is incentivized and aligned with the long-term success of Exnus Protocol.</li>
+                <li><strong>DAO Treasury (2%):</strong> 50 Million Tokens. The DAO treasury is designed to fund community-driven initiatives and governance proposals, fostering decentralization and community participation.</li>
+                <li><strong>Liquidity Provision (16%):</strong> 400 Million Tokens. A substantial allocation to liquidity provision ensures that there will be sufficient tokens available in the market, enhancing trading efficiency and stability.</li>
+                <li><strong>Advisors Allocation (0.8%):</strong> 20 Million Tokens. This allocation rewards strategic advisors for their guidance and expertise in the project's development and market strategy.</li>
+                <li><strong>Staking Rewards (46.8%):</strong> 1.170 Billion Tokens. The largest portion of tokens is set aside for staking rewards, encouraging token holders to participate in network validation and governance while earning additional tokens.</li>
               </ul>
-              <p className="mt-4">The pre-sale is a pivotal opportunity for early investors. As interest in the Exnus token grows and its utility expands, we anticipate an increase in demand, ultimately leading to a scarcity that enhances its value.</p>
+              <p className="mt-4">The Exnus Protocol tokenomics is carefully crafted to ensure a balanced and sustainable ecosystem. The pre-sale is a pivotal opportunity for early investors to participate in the project's growth, as it provides access to tokens before they become limited and potentially more expensive after the pre-sale concludes.</p>
+              <p className="mt-4">As interest in the Exnus token grows and its utility in the ecosystem expands, we anticipate an increase in demand, ultimately leading to a scarcity that enhances its value. We encourage all potential investors to seize the opportunity to participate in the upcoming pre-sale event.</p>
+
             </section>
 
             <section id="conclusion">
@@ -170,5 +175,3 @@ export default function ProtocolPage() {
     </div>
   );
 }
-
-    
