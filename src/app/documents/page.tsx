@@ -19,7 +19,7 @@ export default function ProtocolPage() {
         </p>
       </div>
 
-      <div className="prose prose-lg max-w-none text-black mx-auto">
+      <div className="prose max-w-none text-black mx-auto">
         <div className="a4-page">
           <section id="introduction">
             <h2 className="text-3xl font-bold text-accent border-b border-accent/30 pb-2 mb-4">[ 1 ] Introduction</h2>
