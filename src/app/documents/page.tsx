@@ -284,6 +284,18 @@ export default function ProtocolPage() {
             <p className="mt-4">
                 This linear distribution model is designed to create a predictable and sustainable rewards flow, preventing market inflation while consistently incentivizing long-term stakers. By aligning rewards with the protocol's growth over an extended period, we ensure that our most committed community members are continuously recognized and compensated for their role in securing the network and participating in governance.
             </p>
+             <h3 className="text-2xl font-semibold text-accent mt-6 mb-3">Team Allocation Vesting Schedule</h3>
+            <p>
+                To ensure long-term commitment and alignment with the project's success, the 100 million tokens allocated to the team are subject to a strategic vesting schedule. This structure is designed to foster confidence among our community and stakeholders.
+            </p>
+            <ul className="list-disc pl-6 space-y-2 mt-4">
+                <li><strong>Initial Lock-up Period:</strong> 100% of the team's tokens will be locked for 12 months from the date of the Token Generation Event (TGE). No tokens can be sold or transferred during this time.</li>
+                <li><strong>Initial Unlock:</strong> Following the 12-month lock-up, 50% of the team allocation (50 million tokens) will be unlocked immediately.</li>
+                <li><strong>Linear Vesting:</strong> The remaining 50% of the team allocation (50 million tokens) will vest linearly on a monthly basis over the subsequent 16 months.</li>
+            </ul>
+            <p className="mt-4">
+                This vesting schedule ensures that the team is incentivized to focus on the long-term growth and stability of the Exnus Protocol, aligning their interests with those of our entire community.
+            </p>
           </section>
         </ScrollReveal>
         
@@ -299,3 +311,5 @@ export default function ProtocolPage() {
     </div>
   );
 }
+
+    
