@@ -18,7 +18,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import ScrollReveal from "@/components/scroll-reveal";
 import { sendMessage } from "./actions";
-import { ArrowRight, MessageSquare, User, HelpCircle, Briefcase, Gift, Info, Star, MessageCircle, HeartHandshake, Zap, Volume2 } from "lucide-react";
+import { ArrowRight, MessageSquare, User, HelpCircle, Briefcase, Gift, Info, Star, MessageCircle, HeartHandshake, Zap, Volume2, Mail } from "lucide-react";
 import { useState } from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Twitter, Send, GitMerge } from "lucide-react";
@@ -308,3 +308,5 @@ export default function ContactPage() {
     </div>
   );
 }
+
+    
