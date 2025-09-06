@@ -79,12 +79,20 @@ export default function AirdropPage() {
                         </ScrollReveal>
                     ))}
                 </div>
-                 <p className="text-center text-black/60 mt-12 max-w-2xl mx-auto">
-                    Airdrop rewards will be distributed after the Token Generation Event (TGE). Stay tuned to our official channels for more announcements.
-                 </p>
             </div>
         </section>
-
+        <section className="py-20">
+          <div className="container px-4 md:px-6">
+            <ScrollReveal>
+              <div className="max-w-3xl mx-auto p-8 border border-border/50 rounded-lg bg-card text-center">
+                <h3 className="font-bold text-xl text-accent">Important Notice</h3>
+                <p className="mt-4 text-foreground/70">
+                    Airdrop rewards will be distributed after the Token Generation Event (TGE). The number of tokens you receive will be proportional to the points you accumulate. Stay tuned to our official channels for more announcements.
+                </p>
+              </div>
+            </ScrollReveal>
+          </div>
+        </section>
       </main>
       <Footer />
     </div>
