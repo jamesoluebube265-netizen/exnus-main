@@ -29,7 +29,7 @@ export default function Header() {
   return (
     <header className={cn(
       "sticky top-0 z-50 w-full transition-all duration-300",
-      isScrolled ? "bg-background/80 backdrop-blur-lg border-b border-white/10" : "bg-transparent"
+      isScrolled ? "bg-background/80 backdrop-blur-sm border-b border-white/10" : "bg-transparent"
     )}>
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2 font-headline text-2xl font-bold">
@@ -55,7 +55,7 @@ export default function Header() {
                   <span className="sr-only">Toggle navigation menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="bg-background/90 backdrop-blur-lg">
+              <SheetContent side="right" className="bg-background/90 backdrop-blur-sm">
                 <div className="flex flex-col gap-6 p-6">
                   <Link href="/" className="flex items-center gap-2 font-headline text-2xl font-bold">
                     <Zap className="h-7 w-7 text-primary" />

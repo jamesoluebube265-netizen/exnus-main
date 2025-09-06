@@ -56,7 +56,7 @@ export default function ProtocolSection() {
         </ScrollReveal>
 
         <ScrollReveal delay={200}>
-          <Card className="max-w-3xl mx-auto bg-white/5 backdrop-blur-xl border border-white/10">
+          <Card className="max-w-3xl mx-auto bg-card/50 backdrop-blur-xl border border-white/10">
             <CardHeader>
               <CardTitle>Ask the AI</CardTitle>
             </CardHeader>

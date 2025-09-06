@@ -25,7 +25,7 @@ const steps = [
 
 export default function HowItWorksSection() {
   return (
-    <section id="how-it-works" className="py-20 md:py-28 bg-background/80 backdrop-blur-sm">
+    <section id="how-it-works" className="py-20 md:py-28 bg-background/50 backdrop-blur-sm">
       <div className="container mx-auto px-4 md:px-6">
         <ScrollReveal className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold">Get Started with Exnus</h2>
@@ -43,7 +43,7 @@ export default function HowItWorksSection() {
                   <p className="text-foreground/80 text-lg">{step.description}</p>
                 </div>
                 <div className="md:w-1/2">
-                   <Card className="overflow-hidden bg-white/5 backdrop-blur-xl border border-white/10">
+                   <Card className="overflow-hidden bg-card/50 backdrop-blur-xl border border-white/10">
                      <CardContent className="p-0">
                       <Image
                         src={step.image}
