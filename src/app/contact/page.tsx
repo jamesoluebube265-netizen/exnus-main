@@ -61,84 +61,66 @@ export default function ContactPage() {
   }
 
   return (
-    <>
-      <section className="relative py-24 md:py-32 text-center overflow-hidden">
-          <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background"></div>
-          
-          <div className="container px-4 md:px-6 relative">
-              <ScrollReveal>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-6 text-foreground">
-                  Contact <span className="text-accent">Us</span>
-              </h1>
-              </ScrollReveal>
-              <ScrollReveal delay={200}>
-              <p className="max-w-3xl mx-auto text-lg md:text-xl text-foreground/80 mb-10">
-                  Have a question, a partnership proposal, or just want to say hello? We would love to hear from you.
-              </p>
-              </ScrollReveal>
-          </div>
-      </section>
-
-      <section className="py-20 md:py-28">
-        <div className="container px-4 md:px-6">
-            <div className="max-w-xl mx-auto">
-                <ScrollReveal>
-                <div className="p-8 border border-border/50 rounded-lg bg-card shadow-lg">
-                    <h2 className="text-2xl font-bold text-accent mb-2">Send us a Message</h2>
-                    <p className="text-foreground/70 mb-6">Fill out the form below and we'll get back to you as soon as possible.</p>
-                    <Form {...form}>
-                        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                        <FormField
-                            control={form.control}
-                            name="name"
-                            render={({ field }) => (
-                            <FormItem>
-                                <FormLabel className="flex items-center gap-2"><User className="w-4 h-4" /> Name</FormLabel>
-                                <FormControl>
-                                <Input placeholder="Enter your name" {...field} />
-                                </FormControl>
-                                <FormMessage />
-                            </FormItem>
-                            )}
-                        />
-                        <FormField
-                            control={form.control}
-                            name="email"
-                            render={({ field }) => (
-                            <FormItem>
-                                <FormLabel className="flex items-center gap-2"><Mail className="w-4 h-4" /> Email</FormLabel>
-                                <FormControl>
-                                <Input placeholder="Enter your email address" {...field} />
-                                </FormControl>
-                                <FormMessage />
-                            </FormItem>
-                            )}
-                        />
-                        <FormField
-                            control={form.control}
-                            name="message"
-                            render={({ field }) => (
-                            <FormItem>
-                                <FormLabel className="flex items-center gap-2"><MessageSquare className="w-4 h-4" /> Message</FormLabel>
-                                <FormControl>
-                                <Textarea placeholder="Type your message here..." {...field} rows={6} />
-                                </FormControl>
-                                <FormMessage />
-                            </FormItem>
-                            )}
-                        />
-                        <Button type="submit" disabled={isSubmitting} className="w-full">
-                            {isSubmitting ? 'Sending...' : 'Send Message'}
-                            {!isSubmitting && <ArrowRight className="ml-2 h-5 w-5" />}
-                        </Button>
-                        </form>
-                    </Form>
-                </div>
-                </ScrollReveal>
+    <div className="relative min-h-[calc(100vh-theme(spacing.20))] w-full flex items-center justify-center p-4">
+      <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background"></div>
+      <div className="w-full max-w-2xl z-10">
+        <ScrollReveal>
+          <div className="p-8 border border-border/50 rounded-lg bg-card shadow-2xl shadow-accent/5">
+            <div className="text-center mb-8">
+                <h1 className="text-3xl md:text-4xl font-bold text-accent mb-2">Get in Touch</h1>
+                <p className="text-foreground/70">Fill out the form below and we'll get back to you as soon as possible.</p>
             </div>
-        </div>
-      </section>
-    </>
+            <Form {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                <FormField
+                    control={form.control}
+                    name="name"
+                    render={({ field }) => (
+                    <FormItem>
+                        <FormLabel className="flex items-center gap-2"><User className="w-4 h-4" /> Name</FormLabel>
+                        <FormControl>
+                        <Input placeholder="Enter your name" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                    </FormItem>
+                    )}
+                />
+                <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                    <FormItem>
+                        <FormLabel className="flex items-center gap-2"><Mail className="w-4 h-4" /> Email</FormLabel>
+                        <FormControl>
+                        <Input placeholder="Enter your email address" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                    </FormItem>
+                    )}
+                />
+                <FormField
+                    control={form.control}
+                    name="message"
+                    render={({ field }) => (
+                    <FormItem>
+                        <FormLabel className="flex items-center gap-2"><MessageSquare className="w-4 h-4" /> Message</FormLabel>
+                        <FormControl>
+                        <Textarea placeholder="Type your message here..." {...field} rows={6} />
+                        </FormControl>
+                        <FormMessage />
+                    </FormItem>
+                    )}
+                />
+                <Button type="submit" disabled={isSubmitting} className="w-full">
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                    {!isSubmitting && <ArrowRight className="ml-2 h-5 w-5" />}
+                </Button>
+                </form>
+            </Form>
+          </div>
+        </ScrollReveal>
+      </div>
+    </div>
   );
 }
