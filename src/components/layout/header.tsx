@@ -13,6 +13,7 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/documents', label: 'Documents' },
   { href: '/roadmap', label: 'Roadmap' },
+  { href: '/airdrop', label: 'Airdrop' },
 ];
 
 export default function Header() {
