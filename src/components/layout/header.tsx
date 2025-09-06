@@ -56,9 +56,6 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center gap-4">
-          <Button asChild>
-            <Link href="/protocol">View Whitepaper</Link>
-          </Button>
           <div className="md:hidden">
             <Sheet>
               <SheetTrigger asChild>
