@@ -54,32 +54,32 @@ export default function AirdropPage() {
             </div>
         </section>
 
-        <section id="how-to-participate" className="py-20 md:py-28 bg-background/50">
+        <section id="how-to-participate" className="py-20 md:py-28 bg-white text-black">
             <div className="container px-4 md:px-6">
                 <ScrollReveal>
-                <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-foreground">
+                <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
                     How to Participate
                 </h2>
-                <p className="max-w-3xl mx-auto text-center text-foreground/70 mb-12">
+                <p className="max-w-3xl mx-auto text-center text-black/70 mb-12">
                     Earning your share of the Exnus airdrop is simple. Just follow these three easy steps to get started.
                 </p>
                 </ScrollReveal>
                 <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                     {steps.map((step, index) => (
                         <ScrollReveal key={step.title} delay={index * 150}>
-                        <div className="h-full p-6 text-center border border-border/50 rounded-lg">
+                        <div className="h-full p-6 text-center border border-gray-200/80 rounded-lg">
                             <div className="flex justify-center mb-4">
                                 <div className="p-4 bg-accent/10 rounded-full w-fit">
                                     {step.icon}
                                 </div>
                             </div>
-                            <h3 className="text-xl text-foreground font-bold">{step.title}</h3>
-                            <p className="text-foreground/70 mt-2">{step.description}</p>
+                            <h3 className="text-xl font-bold">{step.title}</h3>
+                            <p className="text-black/70 mt-2">{step.description}</p>
                         </div>
                         </ScrollReveal>
                     ))}
                 </div>
-                 <p className="text-center text-foreground/60 mt-12 max-w-2xl mx-auto">
+                 <p className="text-center text-black/60 mt-12 max-w-2xl mx-auto">
                     Airdrop rewards will be distributed after the Token Generation Event (TGE). Stay tuned to our official channels for more announcements.
                  </p>
             </div>
