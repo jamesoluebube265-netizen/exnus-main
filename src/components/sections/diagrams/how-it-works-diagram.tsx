@@ -10,10 +10,12 @@ const DiagramIcon = ({ icon: Icon, label }: { icon: React.ElementType, label: st
 );
 
 const AnimatedArrow = () => (
-    <div className="relative w-full h-1">
-        <svg width="100%" height="2" viewBox="0 0 100 2" preserveAspectRatio="none" className="text-border absolute top-1/2 -translate-y-1/2">
-            <line x1="0" y1="1" x2="100" y2="1" stroke="currentColor" strokeWidth="2" strokeDasharray="4 4" />
-        </svg>
+    <div className="flex items-center justify-center w-full h-16">
+        <div className="flex gap-2">
+            <div className="w-2 h-2 rounded-full bg-border animate-pulse" style={{ animationDelay: '0s' }}></div>
+            <div className="w-2 h-2 rounded-full bg-border animate-pulse" style={{ animationDelay: '0.2s' }}></div>
+            <div className="w-2 h-2 rounded-full bg-border animate-pulse" style={{ animationDelay: '0.4s' }}></div>
+        </div>
     </div>
 );
 
