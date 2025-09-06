@@ -67,7 +67,7 @@
   }
   @media (max-width: 768px) {
     .a4-page {
-      @apply p-8 my-4;
+      @apply p-4 my-2;
     }
   }
 }
