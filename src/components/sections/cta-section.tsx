@@ -4,7 +4,7 @@ import { ArrowRight, BookOpen } from "lucide-react";
 import Link from "next/link";
 
 const pageLinks = [
-    { href: '/protocol', title: 'Protocol Details', description: 'Dive deep into the technical architecture and smart contracts.' },
+    { href: '/documents', title: 'Protocol Details', description: 'Dive deep into the technical architecture and smart contracts.' },
 ]
 
 export default function CtaSection() {

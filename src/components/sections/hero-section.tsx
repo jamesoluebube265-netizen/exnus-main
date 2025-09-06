@@ -70,7 +70,7 @@ export default function HeroSection() {
                 </div>
                  <div className="text-center pt-4">
                   <Button asChild>
-                    <Link href="/protocol">
+                    <Link href="/documents">
                       Read Full Whitepaper
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
