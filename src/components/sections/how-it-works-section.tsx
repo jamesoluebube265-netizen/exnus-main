@@ -27,8 +27,6 @@ const steps = [
 export default function HowItWorksSection() {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const activeStep = steps[activeIndex];
-
   return (
     <section id="how-it-works" className="py-20 md:py-28 bg-white">
       <div className="px-4 md:px-6">

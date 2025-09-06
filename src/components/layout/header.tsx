@@ -29,10 +29,7 @@ export default function Header() {
   }, []);
 
   const getLinkClass = (href: string) => {
-    if (!isClient) {
-      return 'text-sm font-medium transition-colors text-white/80 hover:text-white';
-    }
-    const isActive = pathname === href;
+    const isActive = isClient && pathname === href;
     return cn(
       'text-sm font-medium transition-colors',
       isActive ? 'text-white font-bold' : 'text-white/80 hover:text-white'
@@ -40,10 +37,7 @@ export default function Header() {
   };
 
   const getMobileLinkClass = (href: string) => {
-    if (!isClient) {
-      return 'text-sm font-medium transition-colors text-foreground/80 hover:text-foreground';
-    }
-    const isActive = pathname === href;
+    const isActive = isClient && pathname === href;
     return cn(
       'text-sm font-medium transition-colors',
       isActive ? 'text-foreground font-bold' : 'text-foreground/80 hover:text-foreground'
