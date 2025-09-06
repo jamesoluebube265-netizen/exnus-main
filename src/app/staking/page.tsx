@@ -3,7 +3,6 @@ import ScrollReveal from "@/components/scroll-reveal";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Award, ShieldCheck, Lock, TrendingUp, Handshake, BrainCircuit } from "lucide-react";
-import Link from "next/link";
 
 const stakingBenefits = [
     {
@@ -129,9 +128,9 @@ export default function StakingPage() {
               </p>
                <div className="mt-8">
                   <Button asChild>
-                    <Link href="/roadmap">
+                    <a href="/roadmap">
                       View Roadmap
-                    </Link>
+                    </a>
                   </Button>
                 </div>
             </div>

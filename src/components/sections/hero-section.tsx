@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import ScrollReveal from "@/components/scroll-reveal";
 import { ArrowRight } from "lucide-react";
-import Link from "next/link";
 import {
   Dialog,
   DialogContent,
@@ -32,9 +31,9 @@ export default function HeroSection() {
         <ScrollReveal delay={400}>
           <div className="flex gap-4 justify-center">
             <Button size="lg" asChild>
-              <Link href="/documents">
+              <a href="/documents">
                 View Documents
-              </Link>
+              </a>
             </Button>
             <Dialog>
               <DialogTrigger asChild>
@@ -70,10 +69,10 @@ export default function HeroSection() {
                 </div>
                  <div className="text-center pt-4">
                   <Button asChild>
-                    <Link href="/documents">
+                    <a href="/documents">
                       Read Full Whitepaper
                       <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
+                    </a>
                   </Button>
                  </div>
               </DialogContent>

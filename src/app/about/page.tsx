@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Lightbulb, Rocket, Users, Shield, Handshake, GitCommit, Scale, Zap, ThumbsUp, Puzzle } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 
 const values = [
     {
@@ -168,9 +167,9 @@ export default function AboutPage() {
               </p>
                <div className="mt-8">
                   <Button asChild>
-                    <Link href="/airdrop">
+                    <a href="/airdrop">
                       Participate in Airdrop
-                    </Link>
+                    </a>
                   </Button>
                 </div>
             </div>

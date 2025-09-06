@@ -1,8 +1,8 @@
 
+
 'use client';
 
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from '@/components/ui/sheet';
 import * as VisuallyHidden from '@radix-ui/react-visually-hidden';
@@ -49,15 +49,15 @@ export default function Header() {
       isScrolled ? "bg-background/95 backdrop-blur-sm border-b border-black/10" : "bg-transparent"
     )}>
       <div className="container flex h-20 items-center justify-between px-4 md:px-6">
-        <Link href="/" className="flex items-center gap-2 font-headline text-2xl font-bold">
+        <a href="/" className="flex items-center gap-2 font-headline text-2xl font-bold">
           <span className="text-foreground">Exnus</span>
-        </Link>
+        </a>
 
         <nav className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className={getLinkClass(link.href)}>
+            <a key={link.href} href={link.href} className={getLinkClass(link.href)}>
               {link.label}
-            </Link>
+            </a>
           ))}
         </nav>
 
@@ -75,14 +75,14 @@ export default function Header() {
                   <SheetDescription>Main navigation menu</SheetDescription>
                 </VisuallyHidden.Root>
                 <div className="flex flex-col gap-6 p-6">
-                  <Link href="/" className="flex items-center gap-2 font-headline text-2xl font-bold">
+                  <a href="/" className="flex items-center gap-2 font-headline text-2xl font-bold">
                     <span className="text-foreground">Exnus</span>
-                  </Link>
+                  </a>
                   <nav className="flex flex-col gap-4 mt-4">
                     {navLinks.map((link) => (
-                      <Link key={link.href} href={link.href} className={getLinkClass(link.href)}>
+                      <a key={link.href} href={link.href} className={getLinkClass(link.href)}>
                         {link.label}
-                      </Link>
+                      </a>
                     ))}
                   </nav>
                 </div>
