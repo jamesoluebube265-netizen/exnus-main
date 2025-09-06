@@ -20,11 +20,20 @@ import { getMarketData } from "@/app/market/actions";
 import Image from "next/image";
 import { Input } from "../ui/input";
 
-const formatMarketCap = (marketCap: number) => {
-    if (marketCap >= 1e12) return `${(marketCap / 1e12).toFixed(2)}T`;
-    if (marketCap >= 1e9) return `${(marketCap / 1e9).toFixed(2)}B`;
-    if (marketCap >= 1e6) return `${(marketCap / 1e6).toFixed(2)}M`;
-    return marketCap.toString();
+const formatCurrency = (amount: number) => {
+    return new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+    }).format(amount);
+}
+
+const formatLargeNumber = (num: number) => {
+    if (num >= 1e12) return `$${(num / 1e12).toFixed(2)}T`;
+    if (num >= 1e9) return `$${(num / 1e9).toFixed(2)}B`;
+    if (num >= 1e6) return `$${(num / 1e6).toFixed(2)}M`;
+    return `$${num.toLocaleString()}`;
 };
 
 const ITEMS_PER_PAGE = 20;
@@ -37,6 +46,9 @@ export interface CoinData {
     current_price: number;
     price_change_percentage_24h: number;
     market_cap: number;
+    total_volume: number;
+    high_24h: number;
+    low_24h: number;
     sparkline_in_7d: {
         price: number[];
     };
@@ -126,9 +138,12 @@ export default function MarketTable() {
                     <Table>
                         <TableHeader>
                             <TableRow>
-                                <TableHead className="w-[250px] pl-6">Name</TableHead>
+                                <TableHead className="w-[200px] pl-6 sticky left-0 bg-background">Name</TableHead>
                                 <TableHead>Price</TableHead>
-                                <TableHead>24h Change</TableHead>
+                                <TableHead>24h %</TableHead>
+                                <TableHead>24h High</TableHead>
+                                <TableHead>24h Low</TableHead>
+                                <TableHead>24h Volume</TableHead>
                                 <TableHead>Market Cap</TableHead>
                                 <TableHead className="text-right pr-6">7-Day Chart</TableHead>
                             </TableRow>
@@ -137,7 +152,7 @@ export default function MarketTable() {
                             {paginatedData.map((coin) => (
                                 <DialogTrigger asChild key={coin.id}>
                                     <TableRow onClick={() => handleRowClick(coin)} className="cursor-pointer">
-                                        <TableCell className="font-medium pl-6">
+                                        <TableCell className="font-medium pl-6 sticky left-0 bg-background/95 backdrop-blur-sm">
                                             <div className="flex items-center gap-3">
                                                 <Image src={coin.image} alt={coin.name} width={24} height={24} className="w-6 h-6 rounded-full" />
                                                 <div>
@@ -146,13 +161,16 @@ export default function MarketTable() {
                                                 </div>
                                             </div>
                                         </TableCell>
-                                        <TableCell>${coin.current_price.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</TableCell>
+                                        <TableCell>{formatCurrency(coin.current_price)}</TableCell>
                                         <TableCell>
                                             <Badge variant={coin.price_change_percentage_24h >= 0 ? "default" : "destructive"} className={coin.price_change_percentage_24h >= 0 ? 'bg-green-500/20 text-green-500' : 'bg-red-500/20 text-red-500'}>
                                                 {coin.price_change_percentage_24h >= 0 ? '+' : ''}{coin.price_change_percentage_24h.toFixed(2)}%
                                             </Badge>
                                         </TableCell>
-                                        <TableCell>${formatMarketCap(coin.market_cap)}</TableCell>
+                                        <TableCell>{formatCurrency(coin.high_24h)}</TableCell>
+                                        <TableCell>{formatCurrency(coin.low_24h)}</TableCell>
+                                        <TableCell>{formatLargeNumber(coin.total_volume)}</TableCell>
+                                        <TableCell>{formatLargeNumber(coin.market_cap)}</TableCell>
                                         <TableCell className="text-right pr-6">
                                             <div className="h-10 w-32 ml-auto">
                                                 <SparklineChart 
