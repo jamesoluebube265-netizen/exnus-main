@@ -18,7 +18,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import ScrollReveal from "@/components/scroll-reveal";
 import { sendMessage } from "./actions";
-import { ArrowRight, Mail, MessageSquare, User, HelpCircle, Briefcase, Gift } from "lucide-react";
+import { ArrowRight, Mail, MessageSquare, User, HelpCircle, Briefcase, Gift, Info, Star, MessageCircle } from "lucide-react";
 import { useState } from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Twitter, Send, GitMerge } from "lucide-react";
@@ -26,21 +26,39 @@ import { Twitter, Send, GitMerge } from "lucide-react";
 const faqItems = [
     {
       value: "item-1",
+      question: "What is Exnus Protocol?",
+      answer: "Exnus Protocol is a decentralized incentive layer built on Solana. Our mission is to empower Web3 projects to build vibrant, engaged communities by rewarding all forms of meaningful participation—from development contributions to community governance.",
+      icon: <Info className="w-5 h-5 text-accent" />
+    },
+    {
+      value: "item-2",
       question: "How can I partner with Exnus Protocol?",
       answer: "We are always open to collaborating with innovative projects. Please fill out the contact form with your partnership proposal, and our team will get back to you to discuss potential synergies.",
       icon: <Briefcase className="w-5 h-5 text-accent" />
     },
     {
-      value: "item-2",
+      value: "item-3",
       question: "Where can I find support if I have a technical issue?",
       answer: "For technical support, we recommend joining our official Discord or Telegram channels, where our community and support staff are available to help you. For specific inquiries, you can also use the contact form.",
       icon: <HelpCircle className="w-5 h-5 text-accent" />
     },
     {
-      value: "item-3",
+      value: "item-4",
       question: "When will the airdrop rewards be distributed?",
       answer: "Airdrop rewards will be distributed after the Token Generation Event (TGE). Please follow our official social media channels for the latest announcements on dates and procedures.",
       icon: <Gift className="w-5 h-5 text-accent" />
+    },
+    {
+      value: "item-5",
+      question: "How can I get involved in the community?",
+      answer: "The best way to get involved is by joining our community channels like Telegram and Discord. You can also participate in our airdrop campaign, contribute to discussions, and follow our social media for the latest updates and events.",
+      icon: <Star className="w-5 h-5 text-accent" />
+    },
+    {
+      value: "item-6",
+      question: "How can I stay updated with the latest news?",
+      answer: "Follow our official Twitter account and join our Telegram announcement channel. We regularly post updates on our development progress, partnerships, and upcoming events.",
+      icon: <MessageCircle className="w-5 h-5 text-accent" />
     }
 ];
 
@@ -212,7 +230,7 @@ export default function ContactPage() {
                 <Accordion type="single" collapsible className="w-full">
                     {faqItems.map((item) => (
                     <AccordionItem value={item.value} key={item.value} className="border-b border-border/50">
-                        <AccordionTrigger className="text-lg font-semibold text-foreground/90 hover:text-accent">
+                        <AccordionTrigger className="text-lg font-semibold text-foreground/90 hover:text-accent text-left">
                           <div className="flex items-center gap-4">
                             {item.icon}
                             {item.question}
