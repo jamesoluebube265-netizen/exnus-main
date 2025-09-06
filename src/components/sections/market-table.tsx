@@ -175,7 +175,7 @@ export default function MarketTable() {
                                             <div className="h-10 w-32 ml-auto">
                                                 <SparklineChart 
                                                     data={coin.sparkline_in_7d.price.map((val: number) => ({ value: val }))} 
-                                                    color={coin.price_change_percentage_24h >= 0 ? 'hsl(var(--primary))' : 'hsl(var(--destructive))'}
+                                                    color={coin.price_change_percentage_24h >= 0 ? '#22c55e' : 'hsl(var(--destructive))'}
                                                 />
                                             </div>
                                         </TableCell>
