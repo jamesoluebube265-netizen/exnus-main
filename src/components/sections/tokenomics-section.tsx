@@ -13,19 +13,19 @@ import {
 import ScrollReveal from '../scroll-reveal';
 
 const tokenomicsData = [
-  { name: 'Staking Rewards', value: 74.8, color: 'hsl(var(--primary))' },
-  { name: 'Liquidity', value: 16, color: 'hsl(var(--foreground))' },
-  { name: 'Airdrop', value: 8, color: 'hsl(var(--secondary))' },
-  { name: 'Team', value: 2.4, color: 'hsl(var(--muted-foreground))' },
+  { name: 'Staking Rewards', value: 77.2, color: 'hsl(var(--primary))' },
+  { name: 'Airdrop', value: 8, color: 'hsl(var(--foreground))' },
+  { name: 'Liquidity', value: 8, color: 'hsl(var(--secondary))' },
+  { name: 'Team', value: 4, color: 'hsl(var(--muted-foreground))' },
   { name: 'DAO', value: 2, color: 'hsl(var(--card-foreground))' },
   { name: 'Advisors', value: 0.8, color: 'hsl(var(--border))' },
 ];
 
 const allocationDetails = [
-    { name: 'Staking Rewards', percentage: '74.8%', amount: '1.870 Billion Tokens', description: 'The largest portion of tokens is set aside for staking rewards, encouraging token holders to participate in network validation and governance while earning additional tokens.' },
-    { name: 'Liquidity Provision', percentage: '16%', amount: '400 Million Tokens', description: 'A substantial allocation to liquidity provision ensures that there will be sufficient tokens available in the market, enhancing trading efficiency and stability.' },
+    { name: 'Staking Rewards', percentage: '77.2%', amount: '1.930 Billion Tokens', description: 'The largest portion of tokens is set aside for staking rewards, encouraging token holders to participate in network validation and governance while earning additional tokens.' },
     { name: 'Community Airdrop', percentage: '8%', amount: '200 Million Tokens', description: 'A significant portion of tokens is reserved for community engagement through airdrops, incentivizing early adopters and community members.' },
-    { name: 'Team Allocation', percentage: '2.4%', amount: '60 Million Tokens', description: 'A small allocation to the team ensures that the core development group is incentivized and aligned with the long-term success of Exnus Protocol.' },
+    { name: 'Liquidity Provision', percentage: '8%', amount: '200 Million Tokens', description: 'A substantial allocation to liquidity provision ensures that there will be sufficient tokens available in the market, enhancing trading efficiency and stability.' },
+    { name: 'Team Allocation', percentage: '4%', amount: '100 Million Tokens', description: 'A small allocation to the team ensures that the core development group is incentivized and aligned with the long-term success of Exnus Protocol.' },
     { name: 'DAO Treasury', percentage: '2%', amount: '50 Million Tokens', description: 'The DAO treasury is designed to fund community-driven initiatives and governance proposals, fostering decentralization and community participation.' },
     { name: 'Advisors Allocation', percentage: '0.8%', amount: '20 Million Tokens', description: 'This allocation rewards strategic advisors for their guidance and expertise in the project\'s development and market strategy.' },
 ];

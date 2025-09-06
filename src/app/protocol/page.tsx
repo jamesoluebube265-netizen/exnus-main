@@ -152,10 +152,10 @@ export default function ProtocolPage() {
               
               <h3 className="text-2xl font-semibold text-accent mt-6 mb-3">Allocation Breakdown</h3>
               <ul className="list-disc pl-6 space-y-2 mt-6">
-                  <li><strong>Staking Rewards (74.8%):</strong> 1.870 Billion Tokens. The largest portion of tokens is set aside for staking rewards, encouraging token holders to participate in network validation and governance while earning additional tokens.</li>
-                  <li><strong>Liquidity Provision (16%):</strong> 400 Million Tokens. A substantial allocation to liquidity provision ensures that there will be sufficient tokens available in the market, enhancing trading efficiency and stability.</li>
+                  <li><strong>Staking Rewards (77.2%):</strong> 1.930 Billion Tokens. The largest portion of tokens is set aside for staking rewards, encouraging token holders to participate in network validation and governance while earning additional tokens.</li>
                   <li><strong>Community Airdrop (8%):</strong> 200 Million Tokens. A significant portion of tokens is reserved for community engagement through airdrops, incentivizing early adopters and community members.</li>
-                  <li><strong>Team Allocation (2.4%):</strong> 60 Million Tokens. A small allocation to the team ensures that the core development group is incentivized and aligned with the long-term success of Exnus Protocol.</li>
+                  <li><strong>Liquidity Provision (8%):</strong> 200 Million Tokens. A substantial allocation to liquidity provision ensures that there will be sufficient tokens available in the market, enhancing trading efficiency and stability.</li>
+                  <li><strong>Team Allocation (4%):</strong> 100 Million Tokens. A small allocation to the team ensures that the core development group is incentivized and aligned with the long-term success of Exnus Protocol.</li>
                   <li><strong>DAO Treasury (2%):</strong> 50 Million Tokens. The DAO treasury is designed to fund community-driven initiatives and governance proposals, fostering decentralization and community participation.</li>
                   <li><strong>Advisors Allocation (0.8%):</strong> 20 Million Tokens. This allocation rewards strategic advisors for their guidance and expertise in the project's development and market strategy.</li>
               </ul>
