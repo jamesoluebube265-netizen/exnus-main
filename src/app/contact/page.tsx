@@ -207,14 +207,6 @@ export default function ContactPage() {
                 <ScrollReveal delay={200}>
                     <div className="space-y-8">
                          <div className="p-8 border border-border/50 rounded-lg bg-card">
-                             <h3 className="text-2xl font-bold text-accent mb-4">Contact Information</h3>
-                             <p className="text-foreground/70 mb-6">For general inquiries, partnerships, or media requests, please reach out to us at:</p>
-                              <a href="mailto:contact@exnus.protocol" className="inline-flex items-center gap-3 text-lg font-semibold text-foreground hover:text-accent transition-colors">
-                                  <Mail className="w-5 h-5" />
-                                  contact@exnus.protocol
-                              </a>
-                         </div>
-                         <div className="p-8 border border-border/50 rounded-lg bg-card">
                              <h3 className="text-2xl font-bold text-accent mb-4">Join Our Community</h3>
                              <p className="text-foreground/70 mb-6">Stay updated and engage with the community on our social platforms:</p>
                              <div className="flex gap-6">
