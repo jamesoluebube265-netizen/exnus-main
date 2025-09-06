@@ -1,5 +1,4 @@
 
-
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -23,14 +22,33 @@ const navLinks = [
 
 export default function Header() {
   const pathname = usePathname();
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const getLinkClass = (href: string) => {
+    if (!isClient) {
+      return 'text-sm font-medium transition-colors text-white/80 hover:text-white';
+    }
     const isActive = pathname === href;
     return cn(
       'text-sm font-medium transition-colors',
       isActive ? 'text-white font-bold' : 'text-white/80 hover:text-white'
     );
   };
+
+  const getMobileLinkClass = (href: string) => {
+    if (!isClient) {
+      return 'text-sm font-medium transition-colors text-foreground/80 hover:text-foreground';
+    }
+    const isActive = pathname === href;
+    return cn(
+      'text-sm font-medium transition-colors',
+      isActive ? 'text-foreground font-bold' : 'text-foreground/80 hover:text-foreground'
+    );
+  }
 
   return (
     <header className="sticky top-0 z-50 w-full bg-animated-gradient">
@@ -66,10 +84,7 @@ export default function Header() {
                   </a>
                   <nav className="flex flex-col gap-4 mt-4">
                     {navLinks.map((link) => (
-                      <a key={link.href} href={link.href} className={cn(
-                        'text-sm font-medium transition-colors',
-                        pathname === link.href ? 'text-foreground font-bold' : 'text-foreground/80 hover:text-foreground'
-                      )}>
+                      <a key={link.href} href={link.href} className={getMobileLinkClass(link.href)}>
                         {link.label}
                       </a>
                     ))}

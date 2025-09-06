@@ -1,6 +1,6 @@
 
 'use client';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import ScrollReveal from '../scroll-reveal';
 import { HowItWorksDiagram } from './diagrams/how-it-works-diagram';
 import { Button } from '../ui/button';
@@ -27,13 +27,6 @@ const steps = [
 export default function HowItWorksSection() {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveIndex((current) => (current + 1) % steps.length);
-    }, 5000); // Change step every 5 seconds
-    return () => clearInterval(interval);
-  }, []);
-  
   const activeStep = steps[activeIndex];
 
   return (
