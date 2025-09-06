@@ -4,18 +4,10 @@ import 'dotenv/config';
 import type { CoinData } from "@/components/sections/market-table";
 
 export async function getMarketData(): Promise<CoinData[]> {
-    const apiKey = process.env.COINGECKO_API_KEY;
-    if (!apiKey) {
-        throw new Error("CoinGecko API key not found. Please ensure it is set in your .env file.");
-    }
-
-    const url = `https://pro-api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=true&price_change_percentage=24h`;
+    const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=true&price_change_percentage=24h`;
 
     try {
         const response = await fetch(url, {
-            headers: {
-                'x-cg-pro-api-key': apiKey,
-            },
             next: { revalidate: 60 } // Revalidate every 60 seconds
         });
         
