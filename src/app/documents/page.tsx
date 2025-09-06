@@ -1,6 +1,5 @@
 import Footer from "@/components/layout/footer";
 import Header from "@/components/layout/header";
-import { Zap } from "lucide-react";
 import { ArchitectureDiagram } from "@/components/sections/diagrams/architecture-diagram";
 import { StakingDiagram } from "@/components/sections/diagrams/staking-diagram";
 import { SecurityDiagram } from "@/components/sections/diagrams/security-diagram";
@@ -14,7 +13,6 @@ export default function ProtocolPage() {
       <main className="flex-grow">
         <div className="text-center pt-16 md:pt-24 mb-12">
           <div className="inline-flex items-center gap-3 font-headline text-3xl font-bold mb-4">
-            <Zap className="h-8 w-8 text-primary" />
             <span className="text-foreground">Exnus Protocol</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-accent text-glow mb-4">
