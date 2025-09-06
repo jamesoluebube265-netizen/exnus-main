@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Lightbulb, Rocket, Users, Shield, Handshake, GitCommit, Scale, Zap, ThumbsUp, Puzzle } from "lucide-react";
 import Image from "next/image";
+import { RewardingDiagram } from "@/components/sections/diagrams/rewarding-diagram";
 
 const values = [
     {
@@ -83,14 +84,11 @@ export default function AboutPage() {
                       </div>
                   </ScrollReveal>
                   <ScrollReveal delay={200}>
-                      <Image 
-                        src="https://picsum.photos/600/400"
-                        alt="Our Team"
-                        width={600}
-                        height={400}
-                        className="rounded-lg shadow-lg"
-                        data-ai-hint="team collaboration"
-                      />
+                    <div className="not-prose my-8">
+                        <div className="overflow-hidden p-6 md:p-8 bg-card rounded-lg shadow-lg">
+                            <RewardingDiagram />
+                        </div>
+                    </div>
                   </ScrollReveal>
               </div>
           </div>
