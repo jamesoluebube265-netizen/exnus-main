@@ -1,3 +1,4 @@
+
 import { Users, GitCommit, MessageSquare, Award, Cpu, ShieldCheck, Scale, Vote } from 'lucide-react';
 
 const DiagramIcon = ({ icon: Icon, label }: { icon: React.ElementType, label: string }) => (
@@ -12,9 +13,9 @@ const DiagramIcon = ({ icon: Icon, label }: { icon: React.ElementType, label: st
 const AnimatedArrow = () => (
     <div className="flex items-center justify-center w-full h-16">
         <div className="flex gap-2">
-            <div className="w-2 h-2 rounded-full bg-border animate-pulse" style={{ animationDelay: '0s' }}></div>
-            <div className="w-2 h-2 rounded-full bg-border animate-pulse" style={{ animationDelay: '0.2s' }}></div>
-            <div className="w-2 h-2 rounded-full bg-border animate-pulse" style={{ animationDelay: '0.4s' }}></div>
+            <div className="w-2 h-2 rounded-full bg-accent sparkle-animation" style={{ animationDelay: '0s' }}></div>
+            <div className="w-2 h-2 rounded-full bg-accent sparkle-animation" style={{ animationDelay: '0.2s' }}></div>
+            <div className="w-2 h-2 rounded-full bg-accent sparkle-animation" style={{ animationDelay: '0.4s' }}></div>
         </div>
     </div>
 );
