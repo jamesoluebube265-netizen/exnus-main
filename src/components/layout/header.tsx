@@ -13,6 +13,7 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/documents', label: 'Documents' },
   { href: '/roadmap', label: 'Roadmap' },
+  { href: '/market', label: 'Market' },
   { href: '/airdrop', label: 'Airdrop' },
 ];
 
