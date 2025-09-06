@@ -28,28 +28,30 @@ export function TokenomicsDiagram() {
   return (
     <div className="relative w-full text-black font-sans">
         <h3 className="text-center font-bold text-lg mb-6 text-accent">Token Allocation Overview</h3>
-        <div className="w-full h-[400px]">
+        <div className="w-full h-[450px]">
             <ResponsiveContainer width="100%" height="100%">
-                <PieChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
+                <PieChart>
                     <Pie
                         data={data}
                         cx="50%"
                         cy="50%"
-                        outerRadius={120}
+                        outerRadius={140}
+                        innerRadius={60}
                         fill="#8884d8"
                         dataKey="value"
+                        paddingAngle={2}
                     >
                         {data.map((entry, index) => (
-                            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} stroke={COLORS[index % COLORS.length]} />
                         ))}
                     </Pie>
                     <Tooltip content={<CustomTooltip />} />
                     <Legend 
                       iconSize={10} 
-                      layout="vertical" 
-                      verticalAlign="middle" 
-                      align="right"
-                      wrapperStyle={{fontSize: "14px", paddingLeft: '20px'}}
+                      layout="horizontal" 
+                      verticalAlign="bottom" 
+                      align="center"
+                      wrapperStyle={{fontSize: "12px", paddingTop: '20px'}}
                     />
                 </PieChart>
             </ResponsiveContainer>
