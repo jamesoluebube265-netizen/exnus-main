@@ -27,19 +27,19 @@ export function HeroBackground() {
             style={{
                 transformStyle: 'preserve-3d',
                 backgroundImage: `
-                    radial-gradient(circle at center, transparent 60%, hsl(var(--primary) / 0.1)),
-                    repeating-conic-gradient(from 0deg, hsl(var(--primary) / 0.2) 0deg 2deg, transparent 2deg 20deg)
+                    radial-gradient(circle at center, transparent 60%, hsl(var(--primary) / 0.3)),
+                    repeating-conic-gradient(from 0deg, hsl(var(--primary) / 0.5) 0deg 2deg, transparent 2deg 20deg)
                 `,
             }}
         >
-            <div className="absolute inset-0 rounded-full border-2 border-primary/20"></div>
+            <div className="absolute inset-0 rounded-full border-2 border-primary/40"></div>
         </div>
       </div>
       <div className="absolute inset-0">
         {sparkles.map((sparkle, i) => (
           <div
             key={i}
-            className="absolute w-1 h-1 rounded-full bg-primary/80 sparkle-animation"
+            className="absolute w-1 h-1 rounded-full bg-primary sparkle-animation"
             style={{
               top: sparkle.top,
               left: sparkle.left,
@@ -49,7 +49,7 @@ export function HeroBackground() {
           />
         ))}
       </div>
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
     </div>
   );
 }
