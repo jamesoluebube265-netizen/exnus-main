@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useMemo, useEffect } from "react";
@@ -14,6 +13,8 @@ import { SparklineChart } from "@/components/charts/sparkline-chart";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { DetailedCoinChart } from "../charts/detailed-coin-chart";
 
 const generateMockData = (count: number) => {
     const data = [];
@@ -33,13 +34,25 @@ const generateMockData = (count: number) => {
     for (let i = 0; i < count; i++) {
         const base = baseCoins[i % baseCoins.length];
         const randomFactor = 1 + (Math.random() - 0.5) * 0.2; // +/- 10%
+        
+        const priceHistory = Array.from({ length: 30 }, (_, day) => {
+            const date = new Date();
+            date.setDate(date.getDate() - (29 - day));
+            const randomPriceFactor = 1 + (Math.random() - 0.5) * 0.4;
+            return {
+                date: date.toISOString().split('T')[0],
+                price: base.price * randomPriceFactor,
+            };
+        });
+
         data.push({
             name: `${base.name}${i >= baseCoins.length ? ` ${Math.floor(i / baseCoins.length)}` : ''}`,
             ticker: `${base.ticker}${i >= baseCoins.length ? `${Math.floor(i / baseCoins.length)}` : ''}`,
             price: base.price * randomFactor,
             change: (Math.random() - 0.5) * 20, // -10% to 10%
             marketCap: (base.marketCap * randomFactor).toExponential(2).replace('e+', 'e'),
-            chartData: Array.from({ length: 7 }, () => base.price * (1 + (Math.random() - 0.5) * 0.1)),
+            chartData: priceHistory.map(d => d.price),
+            priceHistory,
         });
     }
     return data;
@@ -55,9 +68,12 @@ const formatMarketCap = (marketCapStr: string) => {
 
 const ITEMS_PER_PAGE = 20;
 
+type CoinData = ReturnType<typeof generateMockData>[0];
+
 export default function MarketTable() {
     const [currentPage, setCurrentPage] = useState(1);
     const [mockData, setMockData] = useState<any[]>([]);
+    const [selectedCoin, setSelectedCoin] = useState<CoinData | null>(null);
 
     useEffect(() => {
         setMockData(generateMockData(100));
@@ -84,65 +100,79 @@ export default function MarketTable() {
     }
 
     return (
-        <div className="w-full">
-            <div className="overflow-x-auto">
-                <Table>
-                    <TableHeader>
-                        <TableRow>
-                            <TableHead className="w-[250px] pl-6">Name</TableHead>
-                            <TableHead>Price</TableHead>
-                            <TableHead>24h Change</TableHead>
-                            <TableHead>Market Cap</TableHead>
-                            <TableHead className="text-right pr-6">7-Day Chart</TableHead>
-                        </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                        {paginatedData.map((coin) => (
-                            <TableRow key={coin.ticker}>
-                                <TableCell className="font-medium pl-6">
-                                    <div className="flex items-center gap-3">
-                                        <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center font-bold text-sm">
-                                            {coin.ticker.charAt(0)}
-                                        </div>
-                                        <div>
-                                            {coin.name}
-                                            <span className="text-muted-foreground ml-2">{coin.ticker}</span>
-                                        </div>
-                                    </div>
-                                </TableCell>
-                                <TableCell>${coin.price.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</TableCell>
-                                <TableCell>
-                                    <Badge variant={coin.change >= 0 ? "default" : "destructive"} className={coin.change >= 0 ? 'bg-green-500/20 text-green-500' : 'bg-red-500/20 text-red-500'}>
-                                        {coin.change >= 0 ? '+' : ''}{coin.change.toFixed(2)}%
-                                    </Badge>
-                                </TableCell>
-                                <TableCell>${formatMarketCap(coin.marketCap)}</TableCell>
-                                <TableCell className="text-right pr-6">
-                                    <div className="h-10 w-32 ml-auto">
-                                        <SparklineChart 
-                                            data={coin.chartData.map(val => ({ value: val }))} 
-                                            color={coin.change >= 0 ? 'hsl(var(--primary))' : 'hsl(var(--destructive))'}
-                                        />
-                                    </div>
-                                </TableCell>
+        <Dialog>
+            <div className="w-full">
+                <div className="overflow-x-auto">
+                    <Table>
+                        <TableHeader>
+                            <TableRow>
+                                <TableHead className="w-[250px] pl-6">Name</TableHead>
+                                <TableHead>Price</TableHead>
+                                <TableHead>24h Change</TableHead>
+                                <TableHead>Market Cap</TableHead>
+                                <TableHead className="text-right pr-6">7-Day Chart</TableHead>
                             </TableRow>
-                        ))}
-                    </TableBody>
-                </Table>
+                        </TableHeader>
+                        <TableBody>
+                            {paginatedData.map((coin) => (
+                                <DialogTrigger asChild key={coin.ticker}>
+                                    <TableRow onClick={() => setSelectedCoin(coin)} className="cursor-pointer">
+                                        <TableCell className="font-medium pl-6">
+                                            <div className="flex items-center gap-3">
+                                                <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center font-bold text-sm">
+                                                    {coin.ticker.charAt(0)}
+                                                </div>
+                                                <div>
+                                                    {coin.name}
+                                                    <span className="text-muted-foreground ml-2">{coin.ticker}</span>
+                                                </div>
+                                            </div>
+                                        </TableCell>
+                                        <TableCell>${coin.price.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</TableCell>
+                                        <TableCell>
+                                            <Badge variant={coin.change >= 0 ? "default" : "destructive"} className={coin.change >= 0 ? 'bg-green-500/20 text-green-500' : 'bg-red-500/20 text-red-500'}>
+                                                {coin.change >= 0 ? '+' : ''}{coin.change.toFixed(2)}%
+                                            </Badge>
+                                        </TableCell>
+                                        <TableCell>${formatMarketCap(coin.marketCap)}</TableCell>
+                                        <TableCell className="text-right pr-6">
+                                            <div className="h-10 w-32 ml-auto">
+                                                <SparklineChart 
+                                                    data={coin.chartData.map((val: number) => ({ value: val }))} 
+                                                    color={coin.change >= 0 ? 'hsl(var(--primary))' : 'hsl(var(--destructive))'}
+                                                />
+                                            </div>
+                                        </TableCell>
+                                    </TableRow>
+                                </DialogTrigger>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </div>
+                <div className="flex items-center justify-center gap-4 py-8">
+                    <Button variant="outline" size="icon" onClick={handlePrevPage} disabled={currentPage === 1}>
+                        <ChevronLeft className="h-4 w-4" />
+                        <span className="sr-only">Previous page</span>
+                    </Button>
+                    <span className="text-sm text-foreground/80">
+                        Page {currentPage} of {totalPages}
+                    </span>
+                    <Button variant="outline" size="icon" onClick={handleNextPage} disabled={currentPage === totalPages}>
+                        <ChevronRight className="h-4 w-4" />
+                        <span className="sr-only">Next page</span>
+                    </Button>
+                </div>
             </div>
-            <div className="flex items-center justify-center gap-4 py-8">
-                <Button variant="outline" size="icon" onClick={handlePrevPage} disabled={currentPage === 1}>
-                    <ChevronLeft className="h-4 w-4" />
-                    <span className="sr-only">Previous page</span>
-                </Button>
-                <span className="text-sm text-foreground/80">
-                    Page {currentPage} of {totalPages}
-                </span>
-                <Button variant="outline" size="icon" onClick={handleNextPage} disabled={currentPage === totalPages}>
-                    <ChevronRight className="h-4 w-4" />
-                    <span className="sr-only">Next page</span>
-                </Button>
-            </div>
-        </div>
+            {selectedCoin && (
+                <DialogContent className="sm:max-w-3xl">
+                    <DialogHeader>
+                        <DialogTitle>{selectedCoin.name} ({selectedCoin.ticker}) Price Chart</DialogTitle>
+                    </DialogHeader>
+                    <div className="h-[400px] w-full pt-4">
+                        <DetailedCoinChart data={selectedCoin.priceHistory} />
+                    </div>
+                </DialogContent>
+            )}
+        </Dialog>
     )
 }
