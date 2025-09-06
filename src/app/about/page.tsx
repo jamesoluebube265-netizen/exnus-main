@@ -2,7 +2,7 @@
 import ScrollReveal from "@/components/scroll-reveal";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Lightbulb, Rocket, Users, Shield, Handshake, GitCommit, Scale } from "lucide-react";
+import { Lightbulb, Rocket, Users, Shield, Handshake, GitCommit, Scale, Zap, ThumbsUp, Puzzle } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -29,30 +29,21 @@ const values = [
     }
 ];
 
-const teamMembers = [
+const philosophyPoints = [
     {
-        name: "Alex Johnson",
-        role: "Lead Protocol Architect",
-        avatar: "https://picsum.photos/200/200?random=1",
-        dataAiHint: "man portrait"
+        icon: <ThumbsUp className="w-8 h-8 text-accent" />,
+        title: "Solving Low Engagement",
+        description: "Many platforms struggle with passive users. Exnus introduces a dynamic reward system that incentivizes meaningful contributions, turning users into active stakeholders who drive ecosystem growth."
     },
     {
-        name: "Maria Garcia",
-        role: "Head of Smart Contracts",
-        avatar: "https://picsum.photos/200/200?random=2",
-        dataAiHint: "woman portrait"
+        icon: <Puzzle className="w-8 h-8 text-accent" />,
+        title: "Unifying Fragmented Incentives",
+        description: "We replace siloed and confusing reward models with a single, comprehensive framework. All valuable contributions—from development to governance—are recognized and rewarded, creating a cohesive and motivating environment."
     },
     {
-        name: "Sam Chen",
-        role: "Community & Growth Lead",
-        avatar: "https://picsum.photos/200/200?random=3",
-        dataAiHint: "person portrait"
-    },
-     {
-        name: "Jane Doe",
-        role: "Frontend Engineer",
-        avatar: "https://picsum.photos/200/200?random=4",
-        dataAiHint: "woman portrait"
+        icon: <Zap className="w-8 h-8 text-accent" />,
+        title: "Fostering True Ownership",
+        description: "We believe the future of the web is user-owned. By aligning rewards with the network's success, Exnus gives users a tangible stake in the ecosystem, fostering long-term loyalty and a shared sense of purpose."
     }
 ]
 
@@ -138,36 +129,34 @@ export default function AboutPage() {
         </div>
       </section>
 
-       <section id="team" className="py-20 md:py-28 bg-white text-black">
+      <section id="philosophy" className="py-20 md:py-28 bg-white text-black">
           <div className="container px-4 md:px-6">
               <ScrollReveal>
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-                  Meet the Team
+                  The Exnus Philosophy
               </h2>
               <p className="max-w-3xl mx-auto text-center text-black/70 mb-12">
-                  We are a diverse group of engineers, designers, and strategists united by a shared passion for decentralization.
+                  We built Exnus to solve the fundamental challenges that hold back the growth of decentralized ecosystems. Our philosophy is rooted in three core solutions.
               </p>
               </ScrollReveal>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
-                  {teamMembers.map((member, index) => (
-                      <ScrollReveal key={member.name} delay={index * 150}>
-                          <div className="text-center">
-                              <Image 
-                                src={member.avatar} 
-                                alt={member.name} 
-                                width={120} 
-                                height={120} 
-                                className="rounded-full mx-auto mb-4 shadow-md"
-                                data-ai-hint={member.dataAiHint}
-                              />
-                              <h3 className="text-xl font-bold">{member.name}</h3>
-                              <p className="text-accent font-semibold">{member.role}</p>
+              <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                  {philosophyPoints.map((point, index) => (
+                      <ScrollReveal key={point.title} delay={index * 150}>
+                          <div className="h-full p-6 text-center border border-gray-200/80 rounded-lg">
+                              <div className="flex justify-center mb-4">
+                                  <div className="p-4 bg-accent/10 rounded-full w-fit">
+                                      {point.icon}
+                                  </div>
+                              </div>
+                              <h3 className="text-xl font-bold">{point.title}</h3>
+                              <p className="text-black/70 mt-2">{point.description}</p>
                           </div>
                       </ScrollReveal>
                   ))}
               </div>
           </div>
       </section>
+
 
       <section className="py-20 border-t border-border/50">
         <div className="container px-4 md:px-6">
