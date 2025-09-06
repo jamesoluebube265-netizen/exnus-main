@@ -31,7 +31,7 @@ const roadmapData = [
 export default function RoadmapSection() {
   return (
     <section id="roadmap" className="py-20 md:py-28 bg-background/50 backdrop-blur-sm">
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="px-4 md:px-6">
         <ScrollReveal className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white">Our Roadmap</h2>
           <p className="max-w-2xl mx-auto text-white/70 mt-4">

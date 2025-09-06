@@ -5,17 +5,17 @@ const features = [
   {
     icon: <Award className="w-10 h-10 text-accent" />,
     title: "Holistic Reward Framework",
-    description: "Unlike platforms that focus on staking, Exnus rewards a broad spectrum of activities, including development, governance, and community building, fostering a well-rounded and engaged user base.",
+    description: "Exnus rewards a broad spectrum of activities—including development, governance, and community building—to foster a well-rounded, engaged user base that drives sustainable growth.",
   },
   {
     icon: <Users className="w-10 h-10 text-accent" />,
     title: "User Ownership and Empowerment",
-    description: "By aligning incentives with meaningful contributions, Exnus cultivates a strong sense of ownership that encourages long-term participation and loyalty, making users true stakeholders.",
+    description: "By aligning incentives with meaningful contributions, Exnus cultivates a strong sense of ownership that encourages long-term participation and transforms users into true stakeholders.",
   },
   {
     icon: <Zap className="w-10 h-10 text-accent" />,
     title: "Scalability and Efficiency",
-    description: "Built on the high-performance Solana blockchain, Exnus leverages rapid transaction speeds and low costs to support a growing, active user base without compromising on performance or security.",
+    description: "Built on Solana, Exnus leverages rapid transaction speeds and low costs to support a growing, active user base without compromising performance or security.",
   },
   {
     icon: <ShieldCheck className="w-10 h-10 text-accent" />,
@@ -27,7 +27,7 @@ const features = [
 export default function FeaturesSection() {
   return (
     <section id="features" className="py-20 md:py-28">
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="px-4 md:px-6">
         <ScrollReveal>
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">
             Overcoming Web3's Core Challenges
@@ -39,7 +39,7 @@ export default function FeaturesSection() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
             <ScrollReveal key={feature.title} delay={index * 150}>
-              <div className="h-full border border-white/10 hover:border-accent/50 transition-all duration-300 hover:shadow-2xl hover:shadow-accent/10 rounded-lg p-6">
+              <div className="h-full p-6">
                  <div className="p-4 bg-accent/10 rounded-full mb-4 w-fit">
                   {feature.icon}
                 </div>

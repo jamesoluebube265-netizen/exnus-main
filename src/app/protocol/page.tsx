@@ -8,7 +8,7 @@ export default function ProtocolPage() {
   return (
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
-      <main className="flex-grow container mx-auto px-4 md:px-6 py-16 md:py-24">
+      <main className="flex-grow px-4 md:px-6 py-16 md:py-24">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-3 font-headline text-3xl font-bold mb-4">

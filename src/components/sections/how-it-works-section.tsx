@@ -25,7 +25,7 @@ const steps = [
 export default function HowItWorksSection() {
   return (
     <section id="how-it-works" className="py-20 md:py-28 bg-background/50 backdrop-blur-sm">
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="px-4 md:px-6">
         <ScrollReveal className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-white">How to Engage with the Exnus Ecosystem</h2>
           <p className="max-w-2xl mx-auto text-white/70 mt-4">
@@ -42,7 +42,7 @@ export default function HowItWorksSection() {
                   <p className="text-white/80 text-lg">{step.description}</p>
                 </div>
                 <div className="md:w-1/2">
-                  <div className="overflow-hidden rounded-lg border border-white/10">
+                  <div className="overflow-hidden rounded-lg">
                     <Image
                       src={step.image}
                       alt={step.title}

@@ -46,7 +46,7 @@ export default function ProtocolSection() {
 
   return (
     <section id="protocol" className="py-20 md:py-28">
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="px-4 md:px-6">
         <ScrollReveal>
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">Explore the Technical Architecture</h2>
           <p className="max-w-2xl mx-auto text-center text-white/70 mb-12">
@@ -55,7 +55,7 @@ export default function ProtocolSection() {
         </ScrollReveal>
 
         <ScrollReveal delay={200}>
-          <div className="max-w-3xl mx-auto border border-white/10 rounded-lg p-6">
+          <div className="max-w-3xl mx-auto">
             <h3 className="text-white text-xl font-bold mb-4">Ask the AI Assistant</h3>
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">

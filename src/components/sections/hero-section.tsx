@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import ScrollReveal from "@/components/scroll-reveal";
-import { ArrowRight, FileText } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import {
   Dialog,
@@ -18,7 +18,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background"></div>
       
-      <div className="container mx-auto px-4 md:px-6 relative">
+      <div className="px-4 md:px-6 relative">
         <ScrollReveal>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-6 text-white">
             <span className="text-accent text-glow">Exnus Protocol:</span> Fostering Innovation Through Incentivized Participation.
@@ -36,12 +36,48 @@ export default function HeroSection() {
                 Join Presale
               </Link>
             </Button>
-            <Button size="lg" variant="outline" asChild>
-              <Link href="/protocol">
-                View Whitepaper
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button size="lg" variant="outline">
+                  Explore Protocol
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-[625px] bg-background/95 backdrop-blur-sm border-white/10 text-white">
+                <DialogHeader>
+                  <DialogTitle className="text-2xl text-accent">Exnus Protocol</DialogTitle>
+                  <DialogDescription className="text-white/70 pt-2">
+                    A brief overview of our mission and the technology we're building. For a complete technical deep-dive, please refer to our full whitepaper.
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="grid gap-4 py-4 text-left">
+                  <h3 className="font-bold text-lg text-white">What is Exnus?</h3>
+                  <p className="text-white/80">
+                    Exnus is a decentralized protocol built on Solana that introduces a novel incentive layer for Web3 ecosystems. Our primary goal is to solve the persistent problem of low user engagement by creating a framework that rewards all forms of meaningful participation—from software development and governance to community support and content creation.
+                  </p>
+                  <h3 className="font-bold text-lg text-white">What Are We Building?</h3>
+                  <p className="text-white/80">
+                    We are building a highly scalable and secure platform that allows any project to integrate our reward system. Key components include:
+                  </p>
+                  <ul className="list-disc list-inside text-white/80 space-y-2">
+                    <li><span className="font-semibold text-white/90">A Dynamic Reward Engine:</span> Smart contracts that can be configured to distribute token rewards based on a project's specific goals.</li>
+                    <li><span className="font-semibold text-white/90">Contribution Tracking:</span> A combination of on-chain and off-chain tools to verify and value user contributions fairly.</li>
+                    <li><span className="font-semibold text-white/90">Decentralized Governance:</span> A DAO structure that empowers the community to guide the protocol's evolution and treasury.</li>
+                  </ul>
+                  <p className="text-white/80 pt-2">
+                    By rewarding the actions that create real value, Exnus aims to help projects build stronger, more active, and more loyal communities.
+                  </p>
+                </div>
+                 <div className="text-center pt-4">
+                  <Button asChild>
+                    <Link href="/protocol">
+                      Read Full Whitepaper
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                 </div>
+              </DialogContent>
+            </Dialog>
           </div>
         </ScrollReveal>
       </div>
