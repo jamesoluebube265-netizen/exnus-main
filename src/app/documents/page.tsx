@@ -15,7 +15,7 @@ export default function ProtocolPage() {
           <div className="inline-flex items-center gap-3 font-headline text-3xl font-bold mb-4">
             <span className="text-foreground">Exnus Protocol</span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-accent text-glow mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-accent mb-4">
             Technical Documents
           </h1>
           <p className="text-lg text-foreground/70 max-w-4xl mx-auto px-4">
