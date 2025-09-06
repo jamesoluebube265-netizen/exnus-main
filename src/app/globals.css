@@ -121,3 +121,7 @@
 .prose-invert ul > li::before {
   @apply bg-foreground;
 }
+
+.bg-black-10 {
+  background-color: rgba(0, 0, 0, 0.1);
+}
