@@ -273,7 +273,17 @@ export default function ProtocolPage() {
                 <li><strong>DAO Treasury (2%):</strong> 50 Million Tokens. The DAO treasury is designed to fund community-driven initiatives and governance proposals, fostering decentralization and community participation.</li>
                 <li><strong>Advisors Allocation (0.8%):</strong> 20 Million Tokens. This allocation rewards strategic advisors for their guidance and expertise in the project's development and market strategy.</li>
             </ul>
-            <p className="mt-4">The Exnus Protocol tokenomics is carefully crafted to ensure a balanced and sustainable ecosystem. As interest in the Exnus token grows and its utility in the ecosystem expands, we anticipate an increase in demand, ultimately leading to a scarcity that enhances its value.</p>
+            <h3 className="text-2xl font-semibold text-accent mt-6 mb-3">Staking Reward Distribution Schedule</h3>
+            <p>
+                The 1.93 billion tokens allocated for staking rewards are subject to a structured vesting schedule to ensure the long-term health and stability of the network. The rewards will be distributed linearly over a period of five years (60 months) starting from the Token Generation Event (TGE).
+            </p>
+            <ul className="list-disc pl-6 space-y-2 mt-4">
+                <li><strong>Total Vesting Period:</strong> 5 years (60 months).</li>
+                <li><strong>Monthly Distribution:</strong> Approximately 32.17 million tokens will be released to the staking rewards pool each month.</li>
+            </ul>
+            <p className="mt-4">
+                This linear distribution model is designed to create a predictable and sustainable rewards flow, preventing market inflation while consistently incentivizing long-term stakers. By aligning rewards with the protocol's growth over an extended period, we ensure that our most committed community members are continuously recognized and compensated for their role in securing the network and participating in governance.
+            </p>
           </section>
         </ScrollReveal>
         
