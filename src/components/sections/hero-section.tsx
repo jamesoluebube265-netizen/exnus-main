@@ -32,8 +32,8 @@ export default function HeroSection() {
         <ScrollReveal delay={400}>
           <div className="flex gap-4 justify-center">
             <Button size="lg" asChild>
-              <Link href="/tokenomics">
-                View Tokenomics
+              <Link href="/documents">
+                View Documents
               </Link>
             </Button>
             <Dialog>

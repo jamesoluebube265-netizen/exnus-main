@@ -12,7 +12,6 @@ import { usePathname } from 'next/navigation';
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/documents', label: 'Documents' },
-  { href: '/tokenomics', label: 'Tokenomics' },
   { href: '/roadmap', label: 'Roadmap' },
   { href: '/#team', label: 'Team' },
 ];
