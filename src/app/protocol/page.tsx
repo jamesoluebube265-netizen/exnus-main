@@ -6,24 +6,24 @@ import { StakingDiagram } from "@/components/sections/diagrams/staking-diagram";
 
 export default function ProtocolPage() {
   return (
-    <div className="flex flex-col min-h-screen bg-background">
+    <div className="flex flex-col min-h-screen bg-secondary">
       <Header />
-      <main className="flex-grow px-4 md:px-6 py-16 md:py-24">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-3 font-headline text-3xl font-bold mb-4">
-              <Zap className="h-8 w-8 text-primary" />
-              <span className="text-foreground">Exnus Protocol</span>
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-accent text-glow mb-4">
-              Technical Whitepaper
-            </h1>
-            <p className="text-lg text-foreground/70">
-              An in-depth exploration of the mechanisms, architecture, and strategic vision behind the protocol.
-            </p>
+      <main className="flex-grow">
+        <div className="text-center pt-16 md:pt-24 mb-12">
+          <div className="inline-flex items-center gap-3 font-headline text-3xl font-bold mb-4">
+            <Zap className="h-8 w-8 text-primary" />
+            <span className="text-foreground">Exnus Protocol</span>
           </div>
+          <h1 className="text-4xl md:text-5xl font-bold text-accent text-glow mb-4">
+            Technical Whitepaper
+          </h1>
+          <p className="text-lg text-foreground/70 max-w-4xl mx-auto px-4">
+            An in-depth exploration of the mechanisms, architecture, and strategic vision behind the protocol.
+          </p>
+        </div>
 
-          <div className="prose prose-invert prose-lg max-w-none text-foreground/80 mx-auto space-y-12">
+        <div className="prose prose-invert prose-lg max-w-none text-foreground/80 mx-auto">
+          <div className="a4-page">
             <section id="introduction">
               <h2 className="text-3xl font-bold text-accent border-b border-accent/30 pb-2 mb-4">[ 1 ] Introduction</h2>
               <p>
@@ -33,7 +33,8 @@ export default function ProtocolPage() {
                 At its core, the Exnus protocol aims to cultivate a vibrant and inclusive environment where users feel a genuine sense of ownership and belonging. By aligning individual incentives with the collective success of the network, Exnus not only encourages sustained participation but also drives innovation that benefits all stakeholders. This white paper delves into the mechanisms, architecture, and strategic vision behind the protocol, outlining how Exnus stands poised to redefine user engagement within the Web3 space, leveraging the power and scalability of the Solana blockchain. Through this comprehensive exploration, presale investors, community members, and ecosystem participants will gain insight into the unique value proposition of Exnus, its technical foundations, and the roadmap that will guide its evolution into a cornerstone of the ecosystem’s future.
               </p>
             </section>
-
+          </div>
+          <div className="a4-page">
             <section id="market-analysis">
               <h2 className="text-3xl font-bold text-accent border-b border-accent/30 pb-2 mb-4">[ 2 ] Market Analysis</h2>
               <p>
@@ -50,7 +51,8 @@ export default function ProtocolPage() {
                 The Exnus protocol is positioned to address these challenges by introducing a comprehensive reward system that incentivizes active, quality contributions across multiple facets of the ecosystem. By leveraging Solana’s high-performance blockchain, Exnus can deliver fast, cost-effective transactions that support scalable reward distribution.
               </p>
             </section>
-            
+          </div>
+          <div className="a4-page">
             <section id="challenges-solutions">
               <h2 className="text-3xl font-bold text-accent border-b border-accent/30 pb-2 mb-4">[ 3 ] Web3 Challenges and Exnus Solutions</h2>
               <p>The Web3 space, while brimming with potential, faces several inherent challenges that impede the growth and sustainability of decentralized ecosystems. The Exnus protocol is designed specifically to address these obstacles through innovative solutions that foster engagement, security, and scalability.</p>
@@ -62,12 +64,13 @@ export default function ProtocolPage() {
                 <p><strong>Challenge 5: Lack of User Ownership.</strong> Through token rewards and staking, Exnus fosters a sense of ownership, aligning individual contributions with the network’s success and promoting long-term commitment.</p>
               </div>
             </section>
-
+          </div>
+          <div className="a4-page">
             <section id="technical-architecture">
               <h2 className="text-3xl font-bold text-accent border-b border-accent/30 pb-2 mb-4">[ 4 ] Technical Architecture</h2>
               <p>The Exnus protocol is engineered with a modular and scalable architecture designed to efficiently manage user contributions, reward calculations, and secure token distribution. Its technical framework ensures high performance, security, and seamless integration with the Solana blockchain.</p>
               <div className="not-prose my-8">
-                <div className="overflow-hidden border border-black/10 rounded-lg p-6 md:p-8">
+                <div className="overflow-hidden p-6 md:p-8">
                     <ArchitectureDiagram />
                 </div>
                 <p className="text-center text-sm text-foreground/60 mt-2">Diagram: High-level overview of the Exnus technical architecture.</p>
@@ -81,7 +84,8 @@ export default function ProtocolPage() {
                     <li><strong>Analytics Dashboard:</strong> Provides real-time insights into contributions, rewards, and network health.</li>
                 </ul>
             </section>
-
+          </div>
+          <div className="a4-page">
             <section id="smart-contracts">
                 <h2 className="text-3xl font-bold text-accent border-b border-accent/30 pb-2 mb-4">[ 5 ] Smart Contract Design and Security</h2>
                 <p>The Exnus protocol’s smart contract framework is central to its ability to securely and transparently manage user rewards, staking, and governance. Designed with security, efficiency, and scalability in mind, the smart contracts ensure trustless interactions and immutable enforcement of protocol rules.</p>
@@ -94,7 +98,8 @@ export default function ProtocolPage() {
                     <li><strong>Immutable Logic:</strong> Core contract logic is immutable, ensuring consistent and tamper-proof enforcement of rules.</li>
                 </ul>
             </section>
-
+          </div>
+          <div className="a4-page">
             <section id="rewarding-system">
                 <h2 className="text-3xl font-bold text-accent border-b border-accent/30 pb-2 mb-4">[ 6 ] Rewarding System</h2>
                 <p>The Exnus protocol’s rewarding system is a cornerstone of its strategy to drive active participation and sustained growth. By recognizing and compensating diverse user contributions, Exnus fosters a vibrant, collaborative community where every effort is valued.</p>
@@ -106,7 +111,8 @@ export default function ProtocolPage() {
                     <li><strong>Staking:</strong> Locking tokens to support network security and stability.</li>
                 </ul>
             </section>
-
+          </div>
+          <div className="a4-page">
             <section id="solana-integration">
                 <h2 className="text-3xl font-bold text-accent border-b border-accent/30 pb-2 mb-4">[ 7 ] Integration with Solana Blockchain</h2>
                 <p>The Exnus protocol’s integration with the Solana blockchain is a strategic choice that enhances its performance, security, and scalability. Solana’s cutting-edge technology provides the foundational infrastructure that enables Exnus to deliver a seamless and efficient user experience.</p>
@@ -118,12 +124,13 @@ export default function ProtocolPage() {
                     <li><strong>Interoperability:</strong> Seamless interaction with other projects in the Solana ecosystem.</li>
                 </ul>
             </section>
-
+          </div>
+          <div className="a4-page">
             <section id="staking">
                 <h2 className="text-3xl font-bold text-accent border-b border-accent/30 pb-2 mb-4">[ 8 ] Staking Mechanism</h2>
                 <p>The Exnus protocol incorporates a robust staking mechanism designed to incentivize long-term commitment and active participation. By allowing users to lock their tokens, staking not only rewards loyalty but also strengthens network security and governance.</p>
                  <div className="not-prose my-8">
-                    <div className="overflow-hidden border border-black/10 rounded-lg p-6 md:p-8">
+                    <div className="overflow-hidden p-6 md:p-8">
                        <StakingDiagram />
                     </div>
                     <p className="text-center text-sm text-foreground/60 mt-2">Diagram: The staking flow for users and its benefits to the network.</p>
@@ -136,7 +143,8 @@ export default function ProtocolPage() {
                     <li><strong>Flexible Options:</strong> Multiple staking tiers with varying lock-up durations and reward rates.</li>
                 </ul>
             </section>
-
+          </div>
+          <div className="a4-page">
             <section id="tokenomics-details">
               <h2 className="text-3xl font-bold text-accent border-b border-accent/30 pb-2 mb-4">[ 9 ] Tokenomics</h2>
               <p>Total Supply: 2.5 Billion Tokens.</p>
@@ -156,7 +164,8 @@ export default function ProtocolPage() {
               <p className="mt-4">As interest in the Exnus token grows and its utility in the ecosystem expands, we anticipate an increase in demand, ultimately leading to a scarcity that enhances its value. We encourage all potential investors to seize the opportunity to participate in the upcoming pre-sale event.</p>
 
             </section>
-
+          </div>
+          <div className="a4-page">
             <section id="conclusion">
               <h2 className="text-3xl font-bold text-accent border-b border-accent/30 pb-2 mb-4">[ 10 ] Conclusion</h2>
               <p>
