@@ -1,6 +1,10 @@
+
 'use client';
+import { useState, useEffect } from 'react';
 import ScrollReveal from '../scroll-reveal';
 import { HowItWorksDiagram } from './diagrams/how-it-works-diagram';
+import { Button } from '../ui/button';
+import { cn } from '@/lib/utils';
 
 const steps = [
   {
@@ -21,6 +25,17 @@ const steps = [
 ];
 
 export default function HowItWorksSection() {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((current) => (current + 1) % steps.length);
+    }, 5000); // Change step every 5 seconds
+    return () => clearInterval(interval);
+  }, []);
+  
+  const activeStep = steps[activeIndex];
+
   return (
     <section id="how-it-works" className="py-20 md:py-28 bg-white">
       <div className="px-4 md:px-6">
@@ -31,22 +46,44 @@ export default function HowItWorksSection() {
           </p>
         </ScrollReveal>
         
-        <div className="space-y-16">
-          {steps.map((step, index) => (
-            <ScrollReveal key={step.title} delay={index * 150}>
-              <div className={`flex flex-col gap-8 md:gap-12 items-center ${index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
-                <div className="md:w-1/2">
-                  <h3 className="text-2xl md:text-3xl font-bold mb-4 text-accent">{step.title}</h3>
-                  <p className="text-black/80 text-lg">{step.description}</p>
-                </div>
-                <div className="md:w-1/2">
-                  <div className="w-full aspect-video rounded-lg bg-gray-100/50 border border-gray-200/80 p-8 flex items-center justify-center">
-                    {step.diagram}
+        <div className="flex flex-col md:flex-row gap-4 mb-8 justify-center">
+            {steps.map((step, index) => (
+                <Button
+                    key={step.title}
+                    variant={activeIndex === index ? 'default' : 'outline'}
+                    onClick={() => setActiveIndex(index)}
+                    className={cn(
+                        "transition-all duration-300",
+                        activeIndex === index ? "bg-accent text-accent-foreground" : "bg-transparent text-black border-gray-300 hover:bg-gray-100"
+                    )}
+                >
+                    {step.title.split('. ')[1]}
+                </Button>
+            ))}
+        </div>
+
+        <div className="relative h-[450px] md:h-[350px] overflow-hidden">
+            {steps.map((step, index) => (
+                <div
+                  key={step.title}
+                  className={cn(
+                    "absolute top-0 left-0 w-full h-full transition-opacity duration-700 ease-in-out",
+                    activeIndex === index ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                  )}
+                >
+                  <div className={`flex flex-col gap-8 md:gap-12 items-center ${index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
+                      <div className="md:w-1/2">
+                        <h3 className="text-2xl md:text-3xl font-bold mb-4 text-accent">{step.title}</h3>
+                        <p className="text-black/80 text-lg">{step.description}</p>
+                      </div>
+                      <div className="md:w-1/2">
+                        <div className="w-full aspect-video rounded-lg bg-gray-100/50 border border-gray-200/80 p-8 flex items-center justify-center">
+                          {step.diagram}
+                        </div>
+                      </div>
                   </div>
                 </div>
-              </div>
-            </ScrollReveal>
-          ))}
+            ))}
         </div>
       </div>
     </section>
