@@ -4,8 +4,8 @@ import ScrollReveal from "../scroll-reveal";
 const roadmapData = [
   {
     quarter: "Q1 2025",
-    title: "Protocol Enhancement & Strategic DeFi Integration",
-    description: "Implement core protocol upgrades for enhanced security and efficiency. Initiate partnerships with leading Solana DeFi platforms for seamless integration. Launch the first phase of the liquidity mining program to bootstrap ecosystem liquidity.",
+    title: "Foundation & Ecosystem Seeding",
+    description: "The first quarter is dedicated to fortifying the protocol's core infrastructure and initiating strategic ecosystem growth. Key objectives include completing a full-stack security audit, forming initial DeFi partnerships, and launching the community-governed grants program to spur early development.",
     isComplete: false,
   },
   {
