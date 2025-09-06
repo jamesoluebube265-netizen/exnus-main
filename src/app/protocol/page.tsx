@@ -3,6 +3,7 @@ import Header from "@/components/layout/header";
 import { Zap } from "lucide-react";
 import { ArchitectureDiagram } from "@/components/sections/diagrams/architecture-diagram";
 import { StakingDiagram } from "@/components/sections/diagrams/staking-diagram";
+import { SecurityDiagram } from "@/components/sections/diagrams/security-diagram";
 
 export default function ProtocolPage() {
   return (
@@ -88,14 +89,20 @@ export default function ProtocolPage() {
           <div className="a4-page">
             <section id="smart-contracts">
                 <h2 className="text-3xl font-bold text-accent border-b border-accent/30 pb-2 mb-4">[ 5 ] Smart Contract Design and Security</h2>
-                <p>The Exnus protocol’s smart contract framework is central to its ability to securely and transparently manage user rewards, staking, and governance. Designed with security, efficiency, and scalability in mind, the smart contracts ensure trustless interactions and immutable enforcement of protocol rules.</p>
+                <p>The Exnus protocol’s smart contract framework is central to its ability to securely and transparently manage user rewards, staking, and governance. Designed with a multi-layered security approach, the contracts ensure trustless interactions and immutable enforcement of protocol rules.</p>
+                <div className="not-prose my-8 text-black">
+                  <div className="overflow-hidden p-6 md:p-8">
+                     <SecurityDiagram />
+                  </div>
+                  <p className="text-center text-sm text-black/60 mt-2">Diagram: An overview of the multi-layered security approach for Exnus smart contracts.</p>
+                </div>
                 <h3 className="text-2xl font-semibold text-accent mt-6 mb-3">Security Measures</h3>
                  <ul className="list-disc pl-6 space-y-2">
-                    <li><strong>Comprehensive Audits:</strong> All smart contracts undergo multiple rounds of security audits by reputable third-party firms.</li>
-                    <li><strong>Formal Verification:</strong> Critical contract logic is subjected to formal verification processes to mathematically prove correctness.</li>
-                    <li><strong>Fail-safe Mechanisms:</strong> Contracts include emergency pause functions and rollback capabilities to mitigate the impact of attacks.</li>
-                    <li><strong>Sybil Attack Prevention:</strong> Incorporates identity verification and contribution validation to prevent manipulation through fake accounts.</li>
-                    <li><strong>Immutable Logic:</strong> Core contract logic is immutable, ensuring consistent and tamper-proof enforcement of rules.</li>
+                    <li><strong>Comprehensive Audits:</strong> All smart contracts undergo multiple rounds of security audits by reputable third-party firms to identify and remediate potential vulnerabilities before deployment.</li>
+                    <li><strong>Formal Verification:</strong> Critical contract logic is subjected to formal verification processes, using mathematical models to prove correctness and prevent unexpected behaviors.</li>
+                    <li><strong>Fail-safe Mechanisms:</strong> Contracts include emergency functionalities, such as a pause function, that can be triggered by a decentralized council to mitigate the impact of any unforeseen exploits.</li>
+                    <li><strong>Sybil Attack Prevention:</strong> The protocol incorporates mechanisms to validate contributions and user identity, minimizing the risk of manipulation through fake accounts.</li>
+                    <li><strong>Immutable Logic with Upgradability:</strong> While core contract logic is immutable for predictability, the protocol uses a proxy pattern to allow for secure, DAO-approved upgrades.</li>
                 </ul>
             </section>
           </div>
