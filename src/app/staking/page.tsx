@@ -23,7 +23,7 @@ const stakingBenefits = [
     },
     {
       icon: <TrendingUp className="w-8 h-8 text-accent" />,
-      title-="Network Stability",
+      title: "Network Stability",
       description: "Incentivizing token locking reduces market volatility and fosters a stable, long-term token economy, benefiting all ecosystem participants."
     }
 ];
