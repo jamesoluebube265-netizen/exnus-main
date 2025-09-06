@@ -3,18 +3,6 @@ import ScrollReveal from "../scroll-reveal";
 
 const roadmapData = [
   {
-    quarter: "Q3 2024",
-    title: "Testnet Launch",
-    description: "Public testnet release, allowing developers to build and test applications.",
-    isComplete: true,
-  },
-  {
-    quarter: "Q4 2024",
-    title: "Mainnet Alpha & Token Generation Event",
-    description: "The official launch of the Exnus Protocol mainnet with core functionalities and token distribution.",
-    isComplete: false,
-  },
-  {
     quarter: "Q1 2025",
     title: "DeFi Integration & Liquidity Mining",
     description: "Integration with major DeFi protocols and the launch of liquidity provision programs.",
