@@ -1,3 +1,4 @@
+
 import { Twitter, Github, Linkedin } from "lucide-react";
 
 export default function Footer() {
@@ -12,7 +13,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Exnus Protocol. All rights reserved.
           </p>
           <div className="flex gap-4">
-            <a href="#" aria-label="Twitter"><Twitter className="w-5 h-5 text-foreground/60 hover:text-foreground" /></a>
+            <a href="https://x.com/exnusprotocol?t=erRcFQecZLsl-pW3MGFC9g&s=09" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><Twitter className="w-5 h-5 text-foreground/60 hover:text-foreground" /></a>
             <a href="#" aria-label="GitHub"><Github className="w-5 h-5 text-foreground/60 hover:text-foreground" /></a>
             <a href="#" aria-label="LinkedIn"><Linkedin className="w-5 h-5 text-foreground/60 hover:text-foreground" /></a>
           </div>

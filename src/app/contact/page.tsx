@@ -210,11 +210,11 @@ export default function ContactPage() {
                              <h3 className="text-2xl font-bold text-accent mb-4">Join Our Community</h3>
                              <p className="text-black/70 mb-6">Stay updated and engage with the community on our social platforms:</p>
                              <div className="flex gap-6">
-                                 <a href="#" className="flex items-center gap-2 text-black hover:text-accent transition-colors">
+                                 <a href="https://x.com/exnusprotocol?t=erRcFQecZLsl-pW3MGFC9g&s=09" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-black hover:text-accent transition-colors">
                                     <Twitter className="w-5 h-5"/>
                                     Twitter
                                 </a>
-                                <a href="https://t.me/Exnuspoint_bot" className="flex items-center gap-2 text-black hover:text-accent transition-colors">
+                                <a href="https://t.me/Exnuspoint_bot" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-black hover:text-accent transition-colors">
                                     <Send className="w-5 h-5"/>
                                     Telegram
                                 </a>
@@ -308,5 +308,3 @@ export default function ContactPage() {
     </div>
   );
 }
-
-    
