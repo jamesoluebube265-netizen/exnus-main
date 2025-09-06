@@ -18,7 +18,7 @@ export default function ProtocolPage() {
             <span className="text-foreground">Exnus Protocol</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-accent text-glow mb-4">
-            Technical Whitepaper
+            Technical Documents
           </h1>
           <p className="text-lg text-foreground/70 max-w-4xl mx-auto px-4">
             An in-depth exploration of the mechanisms, architecture, and strategic vision behind the protocol.
