@@ -2,18 +2,18 @@ import { Share2, Database, Users, GitBranch, ShieldCheck, FileText, Zap, ArrowDo
 import { Card } from "@/components/ui/card";
 
 const DiagramNode = ({ icon, title, description, className }: { icon: React.ReactNode, title: string, description: string, className?: string }) => (
-  <Card className={`bg-card/70 border-accent/20 p-4 text-center flex flex-col items-center justify-center text-black ${className}`}>
+  <Card className={`bg-card/70 border-accent/20 p-4 text-center flex flex-col items-center justify-center text-card-foreground ${className}`}>
     <div className="p-2 bg-accent/10 rounded-full mb-2 w-fit">
       {icon}
     </div>
-    <p className="font-bold text-sm text-black">{title}</p>
-    <p className="text-xs text-black/60">{description}</p>
+    <p className="font-bold text-sm text-card-foreground">{title}</p>
+    <p className="text-xs text-muted-foreground">{description}</p>
   </Card>
 );
 
 const DiagramGroup = ({ title, children }: { title: string, children: React.ReactNode }) => (
     <div className="w-full">
-        <h4 className="text-center text-sm font-semibold text-black/70 mb-2">{title}</h4>
+        <h4 className="text-center text-sm font-semibold text-foreground/70 mb-2">{title}</h4>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {children}
         </div>
@@ -28,7 +28,7 @@ const Arrow = () => (
 
 export function ArchitectureDiagram() {
   return (
-    <div className="w-full text-black font-sans p-4 bg-white rounded-lg">
+    <div className="w-full font-sans p-4 bg-card rounded-lg">
       <h3 className="text-center font-bold text-lg mb-6 text-accent">Exnus Protocol Architecture</h3>
       
       <div className="flex flex-col items-center gap-4">

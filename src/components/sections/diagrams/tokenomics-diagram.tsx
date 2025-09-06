@@ -16,7 +16,7 @@ const COLORS = ['hsl(var(--primary))', '#6b7280', '#f59e0b', '#10b981', '#3b82f6
 const CustomTooltip = ({ active, payload }: any) => {
   if (active && payload && payload.length) {
     return (
-      <div className="p-2 border rounded-lg bg-white/80 backdrop-blur-sm shadow-lg text-black">
+      <div className="p-2 border rounded-lg bg-background/80 backdrop-blur-sm shadow-lg text-foreground">
         <p className="label font-bold">{`${payload[0].name} : ${payload[0].value}%`}</p>
       </div>
     );
@@ -26,7 +26,7 @@ const CustomTooltip = ({ active, payload }: any) => {
 
 export function TokenomicsDiagram() {
   return (
-    <div className="relative w-full text-black font-sans">
+    <div className="relative w-full font-sans">
         <h3 className="text-center font-bold text-lg mb-6 text-accent">Token Allocation Overview</h3>
         <div className="w-full h-[450px]">
             <ResponsiveContainer width="100%" height="100%">
@@ -51,7 +51,7 @@ export function TokenomicsDiagram() {
                       layout="horizontal" 
                       verticalAlign="bottom" 
                       align="center"
-                      wrapperStyle={{fontSize: "12px", paddingTop: '20px'}}
+                      wrapperStyle={{fontSize: "12px", paddingTop: '20px', color: 'hsl(var(--foreground))'}}
                     />
                 </PieChart>
             </ResponsiveContainer>

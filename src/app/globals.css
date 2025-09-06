@@ -78,3 +78,24 @@
     background-size: 2.5rem 2.5rem;
   }
 }
+
+/* Invert prose for dark mode */
+.prose-invert h1,
+.prose-invert h2,
+.prose-invert h3,
+.prose-invert h4,
+.prose-invert h5,
+.prose-invert h6,
+.prose-invert p,
+.prose-invert strong,
+.prose-invert a {
+  @apply text-foreground;
+}
+
+.prose-invert blockquote {
+  @apply border-l-border;
+}
+
+.prose-invert ul > li::before {
+  @apply bg-foreground;
+}
