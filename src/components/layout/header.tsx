@@ -18,6 +18,7 @@ const navLinks = [
   { href: '/market', label: 'Market' },
   { href: '/staking', label: 'Staking' },
   { href: '/airdrop', label: 'Airdrop' },
+  { href: '/contact', label: 'Contact' },
 ];
 
 export default function Header() {
