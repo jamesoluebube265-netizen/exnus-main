@@ -3,7 +3,6 @@ import { StakingDiagram } from "@/components/sections/diagrams/staking-diagram";
 import { SecurityDiagram } from "@/components/sections/diagrams/security-diagram";
 import { RewardingDiagram } from "@/components/sections/diagrams/rewarding-diagram";
 import { TokenomicsDiagram } from "@/components/sections/diagrams/tokenomics-diagram";
-import { RustCodeSnippet } from "@/components/sections/rust-code-snippet";
 
 export default function ProtocolPage() {
   return (
@@ -202,9 +201,6 @@ export default function ProtocolPage() {
                 <li><strong>Oracles and Off-Chain Data:</strong> Solana-compatible oracles facilitate secure off-chain data feeds, enabling accurate tracking of user contributions and external metrics essential for reward calculations.</li>
                 <li><strong>Cross-Program Invocations (CPI):</strong> Exnus utilizes Solana’s CPI feature to interact with other on-chain programs, enabling modular functionality and extensibility.</li>
             </ul>
-            <div className="not-prose my-8">
-                <RustCodeSnippet />
-            </div>
             <h3 className="text-2xl font-semibold text-accent mt-6 mb-3">Impact on User Experience</h3>
             <p>By leveraging Solana, Exnus offers users fast, cost-effective, and reliable interactions with the protocol. This integration removes common barriers such as high fees and slow confirmations, making participation in rewarding, staking, and governance processes smooth and accessible.</p>
         </section>
