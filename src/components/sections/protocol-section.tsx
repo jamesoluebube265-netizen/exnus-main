@@ -25,7 +25,7 @@ export default function ProtocolSection() {
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      query: 'Give me a general overview of the Exnus Protocol.',
+      query: 'Explain the technical architecture of the Exnus Protocol.',
     },
   });
 
@@ -49,16 +49,16 @@ export default function ProtocolSection() {
     <section id="protocol" className="py-20 md:py-28">
       <div className="container mx-auto px-4 md:px-6">
         <ScrollReveal>
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Understand the Protocol</h2>
-          <p className="max-w-2xl mx-auto text-center text-foreground/70 mb-12">
-            Have questions about the Exnus Protocol? Ask our AI assistant for a simplified explanation.
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">Explore the Technical Architecture</h2>
+          <p className="max-w-2xl mx-auto text-center text-white/70 mb-12">
+            Ask our AI assistant for a simplified explanation of any aspect of the Exnus Protocol, from its smart contract design to its integration with Solana.
           </p>
         </ScrollReveal>
 
         <ScrollReveal delay={200}>
           <Card className="max-w-3xl mx-auto bg-card/50 backdrop-blur-xl border border-white/10">
             <CardHeader>
-              <CardTitle>Ask the AI</CardTitle>
+              <CardTitle className="text-white">Ask the AI Assistant</CardTitle>
             </CardHeader>
             <CardContent>
               <Form {...form}>
@@ -68,11 +68,11 @@ export default function ProtocolSection() {
                     name="query"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Your Question</FormLabel>
+                        <FormLabel className="text-white/80">Your Question</FormLabel>
                         <FormControl>
                           <Textarea
-                            placeholder="e.g., How does the consensus mechanism work?"
-                            className="min-h-[100px] bg-transparent"
+                            placeholder="e.g., How does the staking mechanism work?"
+                            className="min-h-[100px] bg-transparent text-white"
                             {...field}
                           />
                         </FormControl>
@@ -84,10 +84,10 @@ export default function ProtocolSection() {
                     {isLoading ? (
                       <>
                         <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                        Generating...
+                        Generating Explanation...
                       </>
                     ) : (
-                      'Explain'
+                      'Explain Now'
                     )}
                   </Button>
                 </form>
@@ -99,7 +99,7 @@ export default function ProtocolSection() {
                     <Sparkles className="w-5 h-5" />
                     AI Explanation
                   </h3>
-                  <div className="space-y-4 text-foreground/90">
+                  <div className="space-y-4 text-white/90">
                     {explanation.explanation.split('\n').filter(p => p.trim() !== "").map((paragraph, i) => <p key={i}>{paragraph}</p>)}
                   </div>
                 </div>

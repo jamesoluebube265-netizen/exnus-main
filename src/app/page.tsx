@@ -4,8 +4,9 @@ import HeroSection from '@/components/sections/hero-section';
 import FeaturesSection from '@/components/sections/features-section';
 import HowItWorksSection from '@/components/sections/how-it-works-section';
 import ProtocolSection from '@/components/sections/protocol-section';
-import RoadmapSection from '@/components/sections/roadmap-section';
+import TokenomicsSection from '@/components/sections/tokenomics-section';
 import TeamSection from '@/components/sections/team-section';
+import RoadmapSection from '@/components/sections/roadmap-section';
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <FeaturesSection />
         <HowItWorksSection />
         <ProtocolSection />
+        <TokenomicsSection />
         <RoadmapSection />
         <TeamSection />
       </main>

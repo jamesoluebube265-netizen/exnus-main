@@ -11,22 +11,29 @@ export default function HeroSection() {
       
       <div className="container mx-auto px-4 md:px-6 relative">
         <ScrollReveal>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-6">
-            <span className="text-accent text-glow">Exnus Protocol:</span> Decentralizing the Future, Securely.
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-6 text-white">
+            <span className="text-accent text-glow">Exnus Protocol:</span> Fostering Innovation Through Incentivized Participation.
           </h1>
         </ScrollReveal>
         <ScrollReveal delay={200}>
-          <p className="max-w-3xl mx-auto text-lg md:text-xl text-foreground/80 mb-10">
-            Discover the next-generation web3 protocol designed for unparalleled security, scalability, and efficiency. Join us in building a truly decentralized world.
+          <p className="max-w-3xl mx-auto text-lg md:text-xl text-white/80 mb-10">
+            Exnus introduces a revolutionary reward system on Solana, designed to cultivate a vibrant, collaborative ecosystem by rewarding meaningful contributions from every community member.
           </p>
         </ScrollReveal>
         <ScrollReveal delay={400}>
-          <Button size="lg" asChild>
-            <Link href="#how-it-works">
-              Explore the Protocol
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
+          <div className="flex gap-4 justify-center">
+            <Button size="lg" asChild>
+              <Link href="#tokenomics">
+                Join Presale
+              </Link>
+            </Button>
+            <Button size="lg" variant="outline" asChild>
+              <Link href="#protocol">
+                Explore Protocol
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+          </div>
         </ScrollReveal>
       </div>
     </section>

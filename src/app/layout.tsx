@@ -4,7 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
   title: 'Exnus Protocol',
-  description: 'The future of decentralized protocols.',
+  description: 'Redefining user engagement within the Web3 space.',
 };
 
 export default function RootLayout({
