@@ -1,8 +1,9 @@
 import Footer from "@/components/layout/footer";
 import Header from "@/components/layout/header";
-import { Zap } from "lucide-react";
-import Image from 'next/image';
+import { Zap, Share2, Database, Users, GitBranch, ShieldCheck, FileText, ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { ArchitectureDiagram } from "@/components/sections/diagrams/architecture-diagram";
+import { StakingDiagram } from "@/components/sections/diagrams/staking-diagram";
 
 export default function ProtocolPage() {
   return (
@@ -68,15 +69,8 @@ export default function ProtocolPage() {
               <p>The Exnus protocol is engineered with a modular and scalable architecture designed to efficiently manage user contributions, reward calculations, and secure token distribution. Its technical framework ensures high performance, security, and seamless integration with the Solana blockchain.</p>
               <div className="not-prose my-8">
                 <Card className="overflow-hidden bg-card/50 backdrop-blur-xl border border-white/10">
-                  <CardContent className="p-0">
-                    <Image
-                      src="https://picsum.photos/800/450"
-                      alt="Exnus Protocol Technical Architecture"
-                      width={800}
-                      height={450}
-                      data-ai-hint="network diagram"
-                      className="w-full h-auto object-cover"
-                    />
+                  <CardContent className="p-6 md:p-8">
+                    <ArchitectureDiagram />
                   </CardContent>
                 </Card>
                 <p className="text-center text-sm text-white/60 mt-2">Diagram: High-level overview of the Exnus technical architecture.</p>
@@ -133,15 +127,8 @@ export default function ProtocolPage() {
                 <p>The Exnus protocol incorporates a robust staking mechanism designed to incentivize long-term commitment and active participation. By allowing users to lock their tokens, staking not only rewards loyalty but also strengthens network security and governance.</p>
                  <div className="not-prose my-8">
                     <Card className="overflow-hidden bg-card/50 backdrop-blur-xl border border-white/10">
-                      <CardContent className="p-0">
-                        <Image
-                          src="https://picsum.photos/800/451"
-                          alt="Exnus Protocol Staking Mechanism"
-                          width={800}
-                          height={450}
-                          data-ai-hint="flowchart diagram"
-                          className="w-full h-auto object-cover"
-                        />
+                       <CardContent className="p-6 md:p-8">
+                        <StakingDiagram />
                       </CardContent>
                     </Card>
                     <p className="text-center text-sm text-white/60 mt-2">Diagram: The staking flow for users and its benefits to the network.</p>
@@ -183,3 +170,5 @@ export default function ProtocolPage() {
     </div>
   );
 }
+
+    
