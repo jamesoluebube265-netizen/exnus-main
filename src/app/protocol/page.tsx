@@ -22,7 +22,7 @@ export default function ProtocolPage() {
           </p>
         </div>
 
-        <div className="prose prose-invert prose-lg max-w-none text-black/80 mx-auto">
+        <div className="prose prose-lg max-w-none text-black mx-auto">
           <div className="a4-page">
             <section id="introduction">
               <h2 className="text-3xl font-bold text-accent border-b border-accent/30 pb-2 mb-4">[ 1 ] Introduction</h2>
@@ -40,13 +40,13 @@ export default function ProtocolPage() {
               <p>
                 The blockchain and Web3 sectors are witnessing unprecedented growth, with decentralized applications (dApps) and ecosystems expanding rapidly. However, despite this growth, many projects face significant challenges in cultivating active and engaged user bases. User retention and meaningful participation remain critical hurdles, often limiting the potential for sustained network effects and long-term success.
               </p>
-              <h3 className="text-2xl font-semibold text-foreground mt-6 mb-3">Current Landscape</h3>
+              <h3 className="text-2xl font-semibold text-accent mt-6 mb-3">Current Landscape</h3>
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>User Engagement Deficit:</strong> Many decentralized platforms struggle to maintain high levels of user activity beyond initial onboarding phases. Passive users contribute little to network development, resulting in stagnation.</li>
                 <li><strong>Inadequate Incentive Models:</strong> Existing reward systems frequently focus on token distribution without adequately tying incentives to impactful contributions. This can lead to reward dilution and diminished motivation.</li>
                 <li><strong>Fragmented Ecosystems:</strong> The lack of integrated reward mechanisms that encompass development, governance, and community engagement leads to fragmented user experiences and limited cross-functional collaboration.</li>
               </ul>
-              <h3 className="text-2xl font-semibold text-foreground mt-6 mb-3">Opportunity for Exnus</h3>
+              <h3 className="text-2xl font-semibold text-accent mt-6 mb-3">Opportunity for Exnus</h3>
               <p>
                 The Exnus protocol is positioned to address these challenges by introducing a comprehensive reward system that incentivizes active, quality contributions across multiple facets of the ecosystem. By leveraging Solana’s high-performance blockchain, Exnus can deliver fast, cost-effective transactions that support scalable reward distribution.
               </p>
@@ -75,7 +75,7 @@ export default function ProtocolPage() {
                 </div>
                 <p className="text-center text-sm text-black/60 mt-2">Diagram: High-level overview of the Exnus technical architecture.</p>
               </div>
-                <h3 className="text-2xl font-semibold text-black mt-6 mb-3">Core Components</h3>
+                <h3 className="text-2xl font-semibold text-accent mt-6 mb-3">Core Components</h3>
                  <ul className="list-disc pl-6 space-y-2">
                     <li><strong>User Contribution Tracking Module:</strong> Monitors and validates user activities across multiple domains.</li>
                     <li><strong>Reward Calculation Engine:</strong> Dynamically computes rewards based on the type, frequency, and impact of contributions.</li>
@@ -89,7 +89,7 @@ export default function ProtocolPage() {
             <section id="smart-contracts">
                 <h2 className="text-3xl font-bold text-accent border-b border-accent/30 pb-2 mb-4">[ 5 ] Smart Contract Design and Security</h2>
                 <p>The Exnus protocol’s smart contract framework is central to its ability to securely and transparently manage user rewards, staking, and governance. Designed with security, efficiency, and scalability in mind, the smart contracts ensure trustless interactions and immutable enforcement of protocol rules.</p>
-                <h3 className="text-2xl font-semibold text-black mt-6 mb-3">Security Measures</h3>
+                <h3 className="text-2xl font-semibold text-accent mt-6 mb-3">Security Measures</h3>
                  <ul className="list-disc pl-6 space-y-2">
                     <li><strong>Comprehensive Audits:</strong> All smart contracts undergo multiple rounds of security audits by reputable third-party firms.</li>
                     <li><strong>Formal Verification:</strong> Critical contract logic is subjected to formal verification processes to mathematically prove correctness.</li>
@@ -103,7 +103,7 @@ export default function ProtocolPage() {
             <section id="rewarding-system">
                 <h2 className="text-3xl font-bold text-accent border-b border-accent/30 pb-2 mb-4">[ 6 ] Rewarding System</h2>
                 <p>The Exnus protocol’s rewarding system is a cornerstone of its strategy to drive active participation and sustained growth. By recognizing and compensating diverse user contributions, Exnus fosters a vibrant, collaborative community where every effort is valued.</p>
-                <h3 className="text-2xl font-semibold text-black mt-6 mb-3">Types of Rewarded Contributions</h3>
+                <h3 className="text-2xl font-semibold text-accent mt-6 mb-3">Types of Rewarded Contributions</h3>
                  <ul className="list-disc pl-6 space-y-2">
                     <li><strong>Development:</strong> Code commits, bug fixes, feature proposals, and documentation.</li>
                     <li><strong>Community Engagement:</strong> Moderating forums, creating content, organizing events, and supporting new users.</li>
@@ -116,7 +116,7 @@ export default function ProtocolPage() {
             <section id="solana-integration">
                 <h2 className="text-3xl font-bold text-accent border-b border-accent/30 pb-2 mb-4">[ 7 ] Integration with Solana Blockchain</h2>
                 <p>The Exnus protocol’s integration with the Solana blockchain is a strategic choice that enhances its performance, security, and scalability. Solana’s cutting-edge technology provides the foundational infrastructure that enables Exnus to deliver a seamless and efficient user experience.</p>
-                 <h3 className="text-2xl font-semibold text-black mt-6 mb-3">Benefits of Solana Integration</h3>
+                 <h3 className="text-2xl font-semibold text-accent mt-6 mb-3">Benefits of Solana Integration</h3>
                  <ul className="list-disc pl-6 space-y-2">
                     <li><strong>High Throughput:</strong> Over 65,000 TPS with sub-second finality.</li>
                     <li><strong>Low Costs:</strong> Minimal gas fees make frequent user interactions economically viable.</li>
@@ -135,7 +135,7 @@ export default function ProtocolPage() {
                     </div>
                     <p className="text-center text-sm text-black/60 mt-2">Diagram: The staking flow for users and its benefits to the network.</p>
                   </div>
-                 <h3 className="text-2xl font-semibold text-black mt-6 mb-3">Staking Features</h3>
+                 <h3 className="text-2xl font-semibold text-accent mt-6 mb-3">Staking Features</h3>
                  <ul className="list-disc pl-6 space-y-2">
                     <li><strong>Token Locking:</strong> Stake tokens for predetermined periods.</li>
                     <li><strong>Reward Accrual:</strong> Earn additional tokens based on the amount and duration of staking.</li>
@@ -150,7 +150,7 @@ export default function ProtocolPage() {
               <p>Total Supply: 2.5 Billion Tokens.</p>
               <p>The total supply of Exnus tokens is strategically allocated to ensure sustainability, community engagement, and rewards for stakeholders. Below is the detailed breakdown of the token allocation:</p>
               
-              <h3 className="text-2xl font-semibold text-black mt-6 mb-3">Allocation Breakdown</h3>
+              <h3 className="text-2xl font-semibold text-accent mt-6 mb-3">Allocation Breakdown</h3>
               <ul className="list-disc pl-6 space-y-2 mt-6">
                 <li><strong>Community Airdrop (4%):</strong> 100 Million Tokens. A significant portion of tokens is reserved for community engagement through airdrops, incentivizing early adopters and community members.</li>
                 <li><strong>Pre-sale Allocation (28%):</strong> 700 Million Tokens. The pre-sale serves as a crucial fundraising mechanism that allows investors to acquire tokens at an early stage, providing liquidity for the project’s development and marketing efforts.</li>
@@ -179,3 +179,5 @@ export default function ProtocolPage() {
     </div>
   );
 }
+
+    
