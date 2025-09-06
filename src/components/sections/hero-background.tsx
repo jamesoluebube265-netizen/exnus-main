@@ -7,6 +7,7 @@ const SPARKLE_COUNT = 30;
 
 export function HeroBackground() {
   const [sparkles, setSparkles] = useState<{ top: string; left: string; delay: string; duration: string; }[]>([]);
+  const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
     const generateSparkles = () => {
@@ -18,10 +19,19 @@ export function HeroBackground() {
       }));
     };
     setSparkles(generateSparkles());
+
+    const timer = setTimeout(() => {
+        setIsReady(true);
+    }, 500); // Delay to match content animation
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (
-    <div className="absolute inset-0 -z-10 overflow-hidden">
+    <div className={cn(
+        "absolute inset-0 -z-10 overflow-hidden transition-opacity duration-1000",
+        isReady ? "opacity-100" : "opacity-0"
+    )}>
         {/* God-ray effect from the top */}
         <div 
             className="absolute top-0 left-1/2 -translate-x-1/2 w-[200%] h-[300px] bg-no-repeat"
