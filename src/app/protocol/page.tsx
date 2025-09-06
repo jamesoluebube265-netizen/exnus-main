@@ -1,6 +1,8 @@
 import Footer from "@/components/layout/footer";
 import Header from "@/components/layout/header";
 import { Zap } from "lucide-react";
+import Image from 'next/image';
+import { Card, CardContent } from "@/components/ui/card";
 
 export default function ProtocolPage() {
   return (
@@ -64,6 +66,21 @@ export default function ProtocolPage() {
             <section id="technical-architecture">
               <h2 className="text-3xl font-bold text-accent border-b border-accent/30 pb-2 mb-4">[ 4 ] Technical Architecture</h2>
               <p>The Exnus protocol is engineered with a modular and scalable architecture designed to efficiently manage user contributions, reward calculations, and secure token distribution. Its technical framework ensures high performance, security, and seamless integration with the Solana blockchain.</p>
+              <div className="not-prose my-8">
+                <Card className="overflow-hidden bg-card/50 backdrop-blur-xl border border-white/10">
+                  <CardContent className="p-0">
+                    <Image
+                      src="https://picsum.photos/800/450"
+                      alt="Exnus Protocol Technical Architecture"
+                      width={800}
+                      height={450}
+                      data-ai-hint="network diagram"
+                      className="w-full h-auto object-cover"
+                    />
+                  </CardContent>
+                </Card>
+                <p className="text-center text-sm text-white/60 mt-2">Diagram: High-level overview of the Exnus technical architecture.</p>
+              </div>
                 <h3 className="text-2xl font-semibold text-white mt-6 mb-3">Core Components</h3>
                  <ul className="list-disc pl-6 space-y-2">
                     <li><strong>User Contribution Tracking Module:</strong> Monitors and validates user activities across multiple domains.</li>
@@ -114,6 +131,21 @@ export default function ProtocolPage() {
             <section id="staking">
                 <h2 className="text-3xl font-bold text-accent border-b border-accent/30 pb-2 mb-4">[ 8 ] Staking Mechanism</h2>
                 <p>The Exnus protocol incorporates a robust staking mechanism designed to incentivize long-term commitment and active participation. By allowing users to lock their tokens, staking not only rewards loyalty but also strengthens network security and governance.</p>
+                 <div className="not-prose my-8">
+                    <Card className="overflow-hidden bg-card/50 backdrop-blur-xl border border-white/10">
+                      <CardContent className="p-0">
+                        <Image
+                          src="https://picsum.photos/800/451"
+                          alt="Exnus Protocol Staking Mechanism"
+                          width={800}
+                          height={450}
+                          data-ai-hint="flowchart diagram"
+                          className="w-full h-auto object-cover"
+                        />
+                      </CardContent>
+                    </Card>
+                    <p className="text-center text-sm text-white/60 mt-2">Diagram: The staking flow for users and its benefits to the network.</p>
+                  </div>
                  <h3 className="text-2xl font-semibold text-white mt-6 mb-3">Staking Features</h3>
                  <ul className="list-disc pl-6 space-y-2">
                     <li><strong>Token Locking:</strong> Stake tokens for predetermined periods.</li>
