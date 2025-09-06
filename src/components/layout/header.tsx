@@ -58,8 +58,7 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-4">
-          <div className="md:hidden">
+        <div className="md:hidden">
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="outline" size="icon">
@@ -87,7 +86,6 @@ export default function Header() {
                 </div>
               </SheetContent>
             </Sheet>
-          </div>
         </div>
       </div>
     </header>
