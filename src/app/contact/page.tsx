@@ -22,6 +22,15 @@ import { ArrowRight, Mail, MessageSquare, User, HelpCircle, Briefcase, Gift, Inf
 import { useState } from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Twitter, Send, GitMerge } from "lucide-react";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
 
 const faqItems = [
     {
@@ -71,6 +80,7 @@ const formSchema = z.object({
 export default function ContactPage() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccessDialog, setShowSuccessDialog] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -85,10 +95,7 @@ export default function ContactPage() {
     setIsSubmitting(true);
     try {
       await sendMessage(values);
-      toast({
-        title: "Message Sent!",
-        description: "Thank you for contacting us. We will get back to you shortly.",
-      });
+      setShowSuccessDialog(true);
       form.reset();
     } catch (error) {
       toast({
@@ -246,6 +253,19 @@ export default function ContactPage() {
             </ScrollReveal>
         </div>
       </section>
+      <AlertDialog open={showSuccessDialog} onOpenChange={setShowSuccessDialog}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Message Sent!</AlertDialogTitle>
+            <AlertDialogDescription>
+              Thank you for contacting us. We have received your message and will get back to you shortly.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogAction onClick={() => setShowSuccessDialog(false)}>OK</AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </>
   );
 }
