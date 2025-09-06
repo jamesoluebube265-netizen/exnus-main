@@ -63,11 +63,11 @@
     @apply font-headline;
   }
   .a4-page {
-    @apply bg-white shadow-lg my-4 p-16 w-full max-w-[210mm] min-h-[297mm] mx-auto;
+    @apply bg-white shadow-lg my-4 p-16 w-full max-w-[210mm] min-h-[297mm] mx-auto text-sm;
   }
   @media (max-width: 768px) {
     .a4-page {
-      @apply p-6 my-4 min-h-0;
+      @apply p-8 my-4 min-h-0;
     }
   }
 }
@@ -76,6 +76,28 @@
   .bg-grid-pattern {
     background-image: linear-gradient(hsl(var(--border) / 0.1) 1px, transparent 1px), linear-gradient(to right, hsl(var(--border) / 0.1) 1px, transparent 1px);
     background-size: 2.5rem 2.5rem;
+  }
+  
+  @keyframes rotate-sphere {
+    0% {
+      transform: rotateY(0deg) rotateX(0deg);
+    }
+    100% {
+      transform: rotateY(360deg) rotateX(360deg);
+    }
+  }
+
+  @keyframes sparkle {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+  }
+
+  .sphere-animation {
+    animation: rotate-sphere 40s linear infinite;
+  }
+
+  .sparkle-animation {
+    animation: sparkle 4s ease-in-out infinite;
   }
 }
 
