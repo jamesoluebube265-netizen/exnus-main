@@ -13,11 +13,12 @@ import {
 import { SparklineChart } from "@/components/charts/sparkline-chart";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Search } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { DetailedCoinChart } from "../charts/detailed-coin-chart";
 import { getMarketData } from "@/app/market/actions";
 import Image from "next/image";
+import { Input } from "../ui/input";
 
 const formatMarketCap = (marketCap: number) => {
     if (marketCap >= 1e12) return `${(marketCap / 1e12).toFixed(2)}T`;
@@ -48,6 +49,7 @@ export default function MarketTable() {
     const [marketData, setMarketData] = useState<CoinData[]>([]);
     const [selectedCoin, setSelectedCoin] = useState<CoinData | null>(null);
     const [loading, setLoading] = useState(true);
+    const [searchQuery, setSearchQuery] = useState("");
 
     useEffect(() => {
         const fetchData = async () => {
@@ -64,13 +66,24 @@ export default function MarketTable() {
         fetchData();
     }, []);
 
-    const totalPages = Math.ceil(marketData.length / ITEMS_PER_PAGE);
+    const filteredData = useMemo(() => {
+        return marketData.filter(coin =>
+            coin.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            coin.symbol.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+    }, [marketData, searchQuery]);
+
+    const totalPages = Math.ceil(filteredData.length / ITEMS_PER_PAGE);
 
     const paginatedData = useMemo(() => {
         const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
         const endIndex = startIndex + ITEMS_PER_PAGE;
-        return marketData.slice(startIndex, endIndex);
-    }, [currentPage, marketData]);
+        return filteredData.slice(startIndex, endIndex);
+    }, [currentPage, filteredData]);
+    
+    useEffect(() => {
+        setCurrentPage(1);
+    }, [searchQuery]);
 
     const handleNextPage = () => {
         setCurrentPage((prev) => Math.min(prev + 1, totalPages));
@@ -81,8 +94,6 @@ export default function MarketTable() {
     };
 
     const handleRowClick = async (coin: CoinData) => {
-        // For detailed view, we can use the 7d data for now,
-        // but a more detailed API call could be made here if needed.
         const priceHistory = coin.sparkline_in_7d.price.map((price, index) => {
             const date = new Date();
             date.setDate(date.getDate() - (coin.sparkline_in_7d.price.length - 1 - index));
@@ -101,6 +112,16 @@ export default function MarketTable() {
     return (
         <Dialog>
             <div className="w-full">
+                <div className="mb-4 relative">
+                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                    <Input
+                        type="text"
+                        placeholder="Search for a cryptocurrency..."
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                        className="w-full max-w-sm pl-10"
+                    />
+                </div>
                 <div className="overflow-x-auto">
                     <Table>
                         <TableHeader>
@@ -146,19 +167,21 @@ export default function MarketTable() {
                         </TableBody>
                     </Table>
                 </div>
-                <div className="flex items-center justify-center gap-4 py-8">
-                    <Button variant="outline" size="icon" onClick={handlePrevPage} disabled={currentPage === 1}>
-                        <ChevronLeft className="h-4 w-4" />
-                        <span className="sr-only">Previous page</span>
-                    </Button>
-                    <span className="text-sm text-foreground/80">
-                        Page {currentPage} of {totalPages}
-                    </span>
-                    <Button variant="outline" size="icon" onClick={handleNextPage} disabled={currentPage === totalPages}>
-                        <ChevronRight className="h-4 w-4" />
-                        <span className="sr-only">Next page</span>
-                    </Button>
-                </div>
+                {totalPages > 1 && (
+                    <div className="flex items-center justify-center gap-4 py-8">
+                        <Button variant="outline" size="icon" onClick={handlePrevPage} disabled={currentPage === 1}>
+                            <ChevronLeft className="h-4 w-4" />
+                            <span className="sr-only">Previous page</span>
+                        </Button>
+                        <span className="text-sm text-foreground/80">
+                            Page {currentPage} of {totalPages}
+                        </span>
+                        <Button variant="outline" size="icon" onClick={handleNextPage} disabled={currentPage === totalPages}>
+                            <ChevronRight className="h-4 w-4" />
+                            <span className="sr-only">Next page</span>
+                        </Button>
+                    </div>
+                )}
             </div>
             {selectedCoin && (
                 <DialogContent className="sm:max-w-3xl">
