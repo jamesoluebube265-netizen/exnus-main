@@ -4,8 +4,8 @@ import ScrollReveal from "../scroll-reveal";
 const roadmapData = [
   {
     quarter: "Q1 2025",
-    title: "DeFi Integration & Liquidity Mining",
-    description: "Integration with major DeFi protocols and the launch of liquidity provision programs.",
+    title: "Protocol Enhancement & Strategic DeFi Integration",
+    description: "Implement core protocol upgrades for enhanced security and efficiency. Initiate partnerships with leading Solana DeFi platforms for seamless integration. Launch the first phase of the liquidity mining program to bootstrap ecosystem liquidity.",
     isComplete: false,
   },
   {
