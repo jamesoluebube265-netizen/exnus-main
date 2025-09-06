@@ -6,7 +6,6 @@ import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { explainExnusProtocol, type ExplainExnusProtocolOutput } from '@/ai/flows/explain-exnus-protocol';
 import { Loader2, Sparkles } from 'lucide-react';
@@ -56,57 +55,53 @@ export default function ProtocolSection() {
         </ScrollReveal>
 
         <ScrollReveal delay={200}>
-          <Card className="max-w-3xl mx-auto bg-card/50 backdrop-blur-xl border border-white/10">
-            <CardHeader>
-              <CardTitle className="text-white">Ask the AI Assistant</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                  <FormField
-                    control={form.control}
-                    name="query"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-white/80">Your Question</FormLabel>
-                        <FormControl>
-                          <Textarea
-                            placeholder="e.g., How does the staking mechanism work?"
-                            className="min-h-[100px] bg-transparent text-white"
-                            {...field}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <Button type="submit" disabled={isLoading}>
-                    {isLoading ? (
-                      <>
-                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                        Generating Explanation...
-                      </>
-                    ) : (
-                      'Explain Now'
-                    )}
-                  </Button>
-                </form>
-              </Form>
+          <div className="max-w-3xl mx-auto bg-card/50 backdrop-blur-xl border border-white/10 rounded-lg p-6">
+            <h3 className="text-white text-xl font-bold mb-4">Ask the AI Assistant</h3>
+            <Form {...form}>
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                <FormField
+                  control={form.control}
+                  name="query"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-white/80">Your Question</FormLabel>
+                      <FormControl>
+                        <Textarea
+                          placeholder="e.g., How does the staking mechanism work?"
+                          className="min-h-[100px] bg-transparent text-white"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <Button type="submit" disabled={isLoading}>
+                  {isLoading ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Generating Explanation...
+                    </>
+                  ) : (
+                    'Explain Now'
+                  )}
+                </Button>
+              </form>
+            </Form>
 
-              {explanation && (
-                <div className="mt-8 p-6 bg-black/20 rounded-lg border border-white/10">
-                  <h3 className="text-lg font-bold mb-4 flex items-center gap-2 text-accent">
-                    <Sparkles className="w-5 h-5" />
-                    AI Explanation
-                  </h3>
-                  <div className="space-y-4 text-white/90">
-                    {explanation.explanation.split('\n').filter(p => p.trim() !== "").map((paragraph, i) => <p key={i}>{paragraph}</p>)}
-                  </div>
+            {explanation && (
+              <div className="mt-8 p-6 bg-black/20 rounded-lg border border-white/10">
+                <h3 className="text-lg font-bold mb-4 flex items-center gap-2 text-accent">
+                  <Sparkles className="w-5 h-5" />
+                  AI Explanation
+                </h3>
+                <div className="space-y-4 text-white/90">
+                  {explanation.explanation.split('\n').filter(p => p.trim() !== "").map((paragraph, i) => <p key={i}>{paragraph}</p>)}
                 </div>
-              )}
-              {error && <p className="mt-4 text-destructive">{error}</p>}
-            </CardContent>
-          </Card>
+              </div>
+            )}
+            {error && <p className="mt-4 text-destructive">{error}</p>}
+          </div>
         </ScrollReveal>
       </div>
     </section>

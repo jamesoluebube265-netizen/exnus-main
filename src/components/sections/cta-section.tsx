@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import ScrollReveal from "@/components/scroll-reveal";
 import { ArrowRight, BookOpen } from "lucide-react";
 import Link from "next/link";
-import { Card, CardContent } from "../ui/card";
 
 const pageLinks = [
     { href: '/protocol', title: 'Protocol Details', description: 'Dive deep into the technical architecture and smart contracts.' },
@@ -25,14 +24,14 @@ export default function CtaSection() {
             {pageLinks.map((link, index) => (
                 <ScrollReveal key={link.href} delay={index * 150}>
                     <Link href={link.href}>
-                        <Card className="h-full bg-card/50 backdrop-blur-xl border border-white/10 hover:border-accent/50 transition-all duration-300 hover:shadow-2xl hover:shadow-accent/10 p-6 flex items-center gap-6">
+                        <div className="h-full bg-card/50 backdrop-blur-xl border border-white/10 hover:border-accent/50 transition-all duration-300 hover:shadow-2xl hover:shadow-accent/10 p-6 flex items-center gap-6 rounded-lg">
                             <BookOpen className="w-8 h-8 text-accent"/>
                             <div>
                                 <h3 className="text-xl font-bold text-white">{link.title}</h3>
                                 <p className="text-white/70">{link.description}</p>
                             </div>
                             <ArrowRight className="w-6 h-6 text-white/50 ml-auto"/>
-                        </Card>
+                        </div>
                     </Link>
                 </ScrollReveal>
             ))}

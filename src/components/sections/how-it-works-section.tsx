@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import ScrollReveal from '../scroll-reveal';
-import { Card, CardContent } from '@/components/ui/card';
 
 const steps = [
   {
@@ -43,18 +42,16 @@ export default function HowItWorksSection() {
                   <p className="text-white/80 text-lg">{step.description}</p>
                 </div>
                 <div className="md:w-1/2">
-                   <Card className="overflow-hidden bg-card/50 backdrop-blur-xl border border-white/10">
-                     <CardContent className="p-0">
-                      <Image
-                        src={step.image}
-                        alt={step.title}
-                        width={600}
-                        height={400}
-                        data-ai-hint={step.dataAiHint}
-                        className="w-full h-auto object-cover transition-transform duration-500 hover:scale-105"
-                      />
-                     </CardContent>
-                   </Card>
+                  <div className="overflow-hidden rounded-lg border border-white/10">
+                    <Image
+                      src={step.image}
+                      alt={step.title}
+                      width={600}
+                      height={400}
+                      data-ai-hint={step.dataAiHint}
+                      className="w-full h-auto object-cover transition-transform duration-500 hover:scale-105"
+                    />
+                  </div>
                 </div>
               </div>
             </ScrollReveal>

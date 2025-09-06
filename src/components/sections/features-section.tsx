@@ -1,4 +1,3 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Zap, ShieldCheck, Users, Award } from "lucide-react";
 import ScrollReveal from "../scroll-reveal";
 
@@ -40,17 +39,13 @@ export default function FeaturesSection() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
             <ScrollReveal key={feature.title} delay={index * 150}>
-              <Card className="h-full bg-card/50 backdrop-blur-xl border border-white/10 hover:border-accent/50 transition-all duration-300 hover:shadow-2xl hover:shadow-accent/10">
-                <CardHeader>
-                   <div className="p-4 bg-accent/10 rounded-full mb-4 w-fit">
-                    {feature.icon}
-                  </div>
-                  <CardTitle className="text-xl text-white">{feature.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-white/70">{feature.description}</p>
-                </CardContent>
-              </Card>
+              <div className="h-full bg-card/50 backdrop-blur-xl border border-white/10 hover:border-accent/50 transition-all duration-300 hover:shadow-2xl hover:shadow-accent/10 rounded-lg p-6">
+                 <div className="p-4 bg-accent/10 rounded-full mb-4 w-fit">
+                  {feature.icon}
+                </div>
+                <h3 className="text-xl text-white font-bold">{feature.title}</h3>
+                <p className="text-white/70 mt-2">{feature.description}</p>
+              </div>
             </ScrollReveal>
           ))}
         </div>

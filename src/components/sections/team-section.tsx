@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import { Card, CardContent } from '@/components/ui/card';
 import { Github, Linkedin, Twitter } from 'lucide-react';
 import ScrollReveal from '../scroll-reveal';
 import Link from 'next/link';
@@ -24,30 +23,28 @@ export default function TeamSection() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
           {teamMembers.map((member, index) => (
             <ScrollReveal key={member.name} delay={index * 150}>
-              <Card className="text-center bg-transparent border-0 shadow-none">
-                <CardContent className="p-0">
-                  <div className="relative group overflow-hidden rounded-lg">
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      width={400}
-                      height={400}
-                      data-ai-hint={member.dataAiHint}
-                      className="w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-300 group-hover:scale-105"
-                    />
-                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-lg"></div>
-                     <div className="absolute bottom-4 left-4 right-4 text-white">
-                        <h3 className="font-bold text-lg">{member.name}</h3>
-                        <p className="text-sm text-primary">{member.role}</p>
-                     </div>
-                  </div>
-                  <div className="flex justify-center gap-4 mt-4">
-                    <Link href={member.socials.twitter}><Twitter className="w-5 h-5 text-white/60 hover:text-white" /></Link>
-                    <Link href={member.socials.linkedin}><Linkedin className="w-5 h-5 text-white/60 hover:text-white" /></Link>
-                    <Link href={member.socials.github}><Github className="w-5 h-5 text-white/60 hover:text-white" /></Link>
-                  </div>
-                </CardContent>
-              </Card>
+              <div className="text-center">
+                <div className="relative group overflow-hidden rounded-lg">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    width={400}
+                    height={400}
+                    data-ai-hint={member.dataAiHint}
+                    className="w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-300 group-hover:scale-105"
+                  />
+                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-lg"></div>
+                   <div className="absolute bottom-4 left-4 right-4 text-white">
+                      <h3 className="font-bold text-lg">{member.name}</h3>
+                      <p className="text-sm text-primary">{member.role}</p>
+                   </div>
+                </div>
+                <div className="flex justify-center gap-4 mt-4">
+                  <Link href={member.socials.twitter}><Twitter className="w-5 h-5 text-white/60 hover:text-white" /></Link>
+                  <Link href={member.socials.linkedin}><Linkedin className="w-5 h-5 text-white/60 hover:text-white" /></Link>
+                  <Link href={member.socials.github}><Github className="w-5 h-5 text-white/60 hover:text-white" /></Link>
+                </div>
+              </div>
             </ScrollReveal>
           ))}
         </div>

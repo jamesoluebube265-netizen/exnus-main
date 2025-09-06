@@ -1,7 +1,15 @@
 import { Button } from "@/components/ui/button";
 import ScrollReveal from "@/components/scroll-reveal";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, FileText } from "lucide-react";
 import Link from "next/link";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
 
 
 export default function HeroSection() {
@@ -28,9 +36,9 @@ export default function HeroSection() {
                 Join Presale
               </Link>
             </Button>
-             <Button size="lg" variant="outline" asChild>
+            <Button size="lg" variant="outline" asChild>
               <Link href="/protocol">
-                Explore Protocol
+                View Whitepaper
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>

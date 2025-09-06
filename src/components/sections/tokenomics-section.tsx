@@ -10,7 +10,6 @@ import {
   XAxis,
   YAxis,
 } from 'recharts';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import ScrollReveal from '../scroll-reveal';
 
 const tokenomicsData = [
@@ -48,55 +47,49 @@ export default function TokenomicsSection() {
           </p>
         </ScrollReveal>
         <ScrollReveal delay={200}>
-          <Card className="max-w-5xl mx-auto bg-card/50 backdrop-blur-xl border-white/10 mt-12">
-            <CardHeader>
-              <CardTitle className="text-white">Token Allocation Chart</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="w-full h-[400px]">
-                <ResponsiveContainer width="100%" height="100%">
-                  <BarChart data={tokenomicsData} layout="vertical" margin={{ left: 20, right: 60 }}>
-                    <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border) / 0.5)" />
-                    <XAxis type="number" hide />
-                    <YAxis
-                      type="category"
-                      dataKey="name"
-                      stroke="hsl(var(--foreground))"
-                      axisLine={false}
-                      tickLine={false}
-                      tick={{ fill: 'hsl(var(--foreground))', fontSize: 14 }}
-                      width={120}
-                    />
-                    <Bar dataKey="value" background={{ fill: 'hsl(var(--background))' }}>
-                      <LabelList dataKey="value" position="right" formatter={(value: number) => `${value}%`} style={{ fill: 'hsl(var(--foreground))', fontSize: 14 }}/>
-                      {tokenomicsData.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={entry.color} />
-                      ))}
-                    </Bar>
-                  </BarChart>
-                </ResponsiveContainer>
-              </div>
-            </CardContent>
-          </Card>
+          <div className="max-w-5xl mx-auto bg-card/50 backdrop-blur-xl border-white/10 mt-12 rounded-lg p-6">
+            <h3 className="text-white text-xl font-bold">Token Allocation Chart</h3>
+            <div className="w-full h-[400px] mt-4">
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart data={tokenomicsData} layout="vertical" margin={{ left: 20, right: 60 }}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border) / 0.5)" />
+                  <XAxis type="number" hide />
+                  <YAxis
+                    type="category"
+                    dataKey="name"
+                    stroke="hsl(var(--foreground))"
+                    axisLine={false}
+                    tickLine={false}
+                    tick={{ fill: 'hsl(var(--foreground))', fontSize: 14 }}
+                    width={120}
+                  />
+                  <Bar dataKey="value" background={{ fill: 'hsl(var(--background))' }}>
+                    <LabelList dataKey="value" position="right" formatter={(value: number) => `${value}%`} style={{ fill: 'hsl(var(--foreground))', fontSize: 14 }}/>
+                    {tokenomicsData.map((entry, index) => (
+                      <Cell key={`cell-${index}`} fill={entry.color} />
+                    ))}
+                  </Bar>
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
+          </div>
         </ScrollReveal>
 
         <ScrollReveal delay={400} className="mt-12">
-            <Card className="max-w-5xl mx-auto bg-card/50 backdrop-blur-xl border-white/10">
-                <CardHeader>
-                    <CardTitle className="text-white">Allocation Breakdown</CardTitle>
-                    <CardDescription className="text-white/70">
-                        The Exnus Protocol tokenomics is carefully crafted to ensure a balanced and sustainable ecosystem.
-                    </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-6">
+            <div className="max-w-5xl mx-auto bg-card/50 backdrop-blur-xl border-white/10 rounded-lg p-6">
+                <h3 className="text-white text-xl font-bold">Allocation Breakdown</h3>
+                <p className="text-white/70 mt-1">
+                    The Exnus Protocol tokenomics is carefully crafted to ensure a balanced and sustainable ecosystem.
+                </p>
+                <div className="space-y-6 mt-6">
                     {allocationDetails.map((item) => (
                         <div key={item.name}>
-                            <h3 className="font-bold text-lg text-accent">{item.name} ({item.percentage}) - <span className="font-mono text-base text-white/80">{item.amount}</span></h3>
+                            <h4 className="font-bold text-lg text-accent">{item.name} ({item.percentage}) - <span className="font-mono text-base text-white/80">{item.amount}</span></h4>
                             <p className="text-white/80 mt-1">{item.description}</p>
                         </div>
                     ))}
-                </CardContent>
-            </Card>
+                </div>
+            </div>
              <p className="text-sm text-center mt-8 text-white/60 max-w-5xl mx-auto">
                 The pre-sale is a pivotal opportunity for early investors to participate in the project's growth, as it provides access to tokens before they become limited and potentially more expensive after the pre-sale concludes. As interest in the Exnus token grows and its utility in the ecosystem expands, we anticipate an increase in demand, ultimately leading to a scarcity that enhances its value.
               </p>
