@@ -21,25 +21,35 @@ export default function ProtocolDialog({ children }: { children: React.ReactNode
             <span className="text-white">Exnus Protocol</span>
           </div>
           <DialogTitle className="text-2xl font-bold text-accent">
-            Redefining User Engagement in Web3
+            Pioneering the Future of Decentralized Collaboration
           </DialogTitle>
           <DialogDescription className="text-white/70 pt-2">
-            An innovative reward system on Solana designed to incentivize meaningful contributions and foster a vibrant, collaborative ecosystem.
+            Exnus is a revolutionary protocol on Solana that redefines ecosystem participation by rewarding meaningful contributions.
           </DialogDescription>
         </DialogHeader>
         <div className="prose prose-invert text-white/80 max-w-none">
+          <h4 className="text-accent text-lg font-semibold mt-6 mb-2">
+            What We Are Building
+          </h4>
           <p>
-            The Exnus protocol introduces an innovative reward system designed to actively incentivize users to contribute meaningfully to the growth and development of the ecosystem. Unlike traditional models that often prioritize passive engagement, Exnus fosters a culture of collaboration and continuous improvement by recognizing and rewarding the diverse efforts of its community members.
+            At Exnus, we are engineering a robust framework to address the core challenges of Web3: low user engagement and fragmented incentives. Our protocol is designed to cultivate a vibrant, self-sustaining community by recognizing and rewarding a wide spectrum of contributions—from development and governance to community building. We are creating an environment where every user is empowered to become a true stakeholder.
           </p>
+
+          <h4 className="text-accent text-lg font-semibold mt-6 mb-2">
+            Our Core Mission
+          </h4>
           <p>
-            At its core, the Exnus protocol aims to cultivate a vibrant and inclusive environment where users feel a genuine sense of ownership and belonging. By aligning individual incentives with the collective success of the network, Exnus not only encourages sustained participation but also drives innovation that benefits all stakeholders.
+            Our mission is to build a truly decentralized ecosystem where value is generated and shared by its active participants. By leveraging Solana’s high-performance blockchain, we provide a scalable, secure, and efficient platform for collaboration. Exnus moves beyond passive token-holding and transforms users into vital partners in innovation and growth.
           </p>
-          <h4 className="text-accent">What We Are Building:</h4>
+
+          <h4 className="text-accent text-lg font-semibold mt-6 mb-2">
+            Key Innovations:
+          </h4>
           <ul>
-            <li><strong>Holistic Reward Framework:</strong> Rewarding a broad spectrum of activities, including development, governance, and community building.</li>
-            <li><strong>User Ownership:</strong> Aligning incentives with meaningful contributions to cultivate a strong sense of ownership.</li>
-            <li><strong>Scalability and Efficiency:</strong> Leveraging the high-performance Solana blockchain for rapid, low-cost transactions.</li>
-            <li><strong>Robust Security:</strong> Ensuring a secure and reliable reward distribution system through rigorous smart contract audits and permissioned functions.</li>
+            <li><strong>Holistic Rewards:</strong> A unified system that values all forms of positive engagement.</li>
+            <li><strong>True Ownership:</strong> Aligning protocol success with the rewards of its contributors.</li>
+            <li><strong>Scalable & Secure:</strong> Built on Solana for high-speed, low-cost, and secure operations.</li>
+            <li><strong>Decentralized Governance:</strong> Empowering the community to guide the protocol's future.</li>
           </ul>
         </div>
       </DialogContent>
