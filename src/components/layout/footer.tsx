@@ -16,7 +16,7 @@ export default function Footer() {
             <a href="https://x.com/exnusprotocol?t=erRcFQecZLsl-pW3MGFC9g&s=09" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><Twitter className="w-5 h-5 text-foreground/60 hover:text-foreground" /></a>
             <a href="https://t.me/exnusprotocolchat" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><Send className="w-5 h-5 text-foreground/60 hover:text-foreground" /></a>
             <a href="#" aria-label="GitHub"><Github className="w-5 h-5 text-foreground/60 hover:text-foreground" /></a>
-            <a href="#" aria-label="LinkedIn"><Linkedin className="w-5 h-5 text-foreground/60 hover:text-foreground" /></a>
+            <a href="https://www.linkedin.com/in/exnus-protocol-248a85277?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><Linkedin className="w-5 h-5 text-foreground/60 hover:text-foreground" /></a>
           </div>
         </div>
       </div>
