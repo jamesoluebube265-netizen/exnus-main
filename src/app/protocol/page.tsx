@@ -4,6 +4,7 @@ import { Zap } from "lucide-react";
 import { ArchitectureDiagram } from "@/components/sections/diagrams/architecture-diagram";
 import { StakingDiagram } from "@/components/sections/diagrams/staking-diagram";
 import { SecurityDiagram } from "@/components/sections/diagrams/security-diagram";
+import { RewardingDiagram } from "@/components/sections/diagrams/rewarding-diagram";
 
 export default function ProtocolPage() {
   return (
@@ -110,6 +111,12 @@ export default function ProtocolPage() {
             <section id="rewarding-system">
                 <h2 className="text-3xl font-bold text-accent border-b border-accent/30 pb-2 mb-4">[ 6 ] Rewarding System</h2>
                 <p>The Exnus protocol’s rewarding system is a cornerstone of its strategy to drive active participation and sustained growth. By recognizing and compensating diverse user contributions, Exnus fosters a vibrant, collaborative community where every effort is valued.</p>
+                <div className="not-prose my-8 text-black">
+                  <div className="overflow-hidden p-6 md:p-8">
+                     <RewardingDiagram />
+                  </div>
+                  <p className="text-center text-sm text-black/60 mt-2">Diagram: An overview of the types of contributions rewarded by the Exnus Protocol.</p>
+                </div>
                 <h3 className="text-2xl font-semibold text-accent mt-6 mb-3">Types of Rewarded Contributions</h3>
                  <ul className="list-disc pl-6 space-y-2">
                     <li><strong>Development:</strong> Code commits, bug fixes, feature proposals, and documentation.</li>
