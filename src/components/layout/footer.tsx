@@ -1,5 +1,7 @@
 
+
 import { Twitter, Linkedin, Send, GitMerge } from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -23,7 +25,7 @@ export default function Footer() {
               <span>Twitter</span>
             </a>
             <a href="https://t.me/exnusprotocolchat" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-accent/80 hover:text-accent">
-              <Send className="w-5 h-5" />
+              <Image src="/tg.jpg" alt="Telegram" width={20} height={20} />
               <span>Telegram</span>
             </a>
             <a href="httpss://discord.gg/v8MpYYFdP8" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-accent/80 hover:text-accent">
@@ -31,7 +33,7 @@ export default function Footer() {
                 <span>Discord</span>
             </a>
             <a href="https://www.linkedin.com/in/exnus-protocol-248a85277?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-accent/80 hover:text-accent">
-              <Linkedin className="w-5 h-5" />
+              <Image src="/link.jpg" alt="LinkedIn" width={20} height={20} />
               <span>LinkedIn</span>
             </a>
           </div>
