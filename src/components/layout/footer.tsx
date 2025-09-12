@@ -21,8 +21,8 @@ export default function Footer() {
           </p>
           <div className="flex flex-wrap justify-center gap-6">
             <a href="https://x.com/exnusprotocol?t=erRcFQecZLsl-pW3MGFC9g&s=09" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-accent/80 hover:text-accent">
-              <Twitter className="w-5 h-5" />
-              <span>Twitter</span>
+              <Image src="/x.jpg" alt="X" width={20} height={20} />
+              <span>X</span>
             </a>
             <a href="https://t.me/exnusprotocolchat" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-accent/80 hover:text-accent">
               <Image src="/tg.jpg" alt="Telegram" width={20} height={20} />
