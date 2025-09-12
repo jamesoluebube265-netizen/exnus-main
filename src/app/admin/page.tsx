@@ -10,8 +10,48 @@ import {
 import { getSubmittedMessages } from "../contact/actions";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import ScrollReveal from "@/components/scroll-reveal";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
-export default async function AdminPage() {
+export default async function AdminPage({
+  searchParams,
+}: {
+  searchParams: { code: string };
+}) {
+  const accessCode = searchParams.code;
+  const correctCode = "203040";
+
+  if (accessCode !== correctCode) {
+    return (
+      <div className="w-full py-16 md:py-24">
+        <ScrollReveal>
+          <div className="text-center mb-10 px-4 md:px-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-accent mb-4">
+              Admin Access
+            </h1>
+            <p className="text-lg text-foreground/70 max-w-md mx-auto">
+              Please enter the access code to view the dashboard.
+            </p>
+          </div>
+        </ScrollReveal>
+        <ScrollReveal delay={200}>
+          <div className="container mx-auto px-4 md:px-6 max-w-sm">
+            <Card>
+              <CardContent className="pt-6">
+                <form className="flex flex-col gap-4">
+                  <Input name="code" placeholder="Enter access code" type="password" />
+                  <Button type="submit">
+                    View Dashboard
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+          </div>
+        </ScrollReveal>
+      </div>
+    );
+  }
+
   const messages = await getSubmittedMessages();
 
   return (
