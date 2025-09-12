@@ -29,7 +29,7 @@ export default function Footer() {
               <span>Telegram</span>
             </a>
             <a href="httpss://discord.gg/v8MpYYFdP8" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-accent/80 hover:text-accent">
-                <GitMerge className="w-5 h-5" />
+                <Image src="/discord.jpg" alt="Discord" width={20} height={20} />
                 <span>Discord</span>
             </a>
             <a href="https://www.linkedin.com/in/exnus-protocol-248a85277?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-accent/80 hover:text-accent">
