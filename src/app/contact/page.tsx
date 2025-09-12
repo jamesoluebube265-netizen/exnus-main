@@ -21,7 +21,6 @@ import { sendMessage } from "./actions";
 import { ArrowRight, MessageSquare, User, HelpCircle, Briefcase, Gift, Info, Star, MessageCircle, HeartHandshake, Zap, Volume2, Mail } from "lucide-react";
 import { useState } from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Twitter, Send, GitMerge } from "lucide-react";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -31,6 +30,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
+import Image from "next/image";
 
 const faqItems = [
     {
@@ -99,6 +99,7 @@ export default function ContactPage() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccessDialog, setShowSuccessDialog] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -210,17 +211,17 @@ export default function ContactPage() {
                              <h3 className="text-2xl font-bold text-accent mb-4">Join Our Community</h3>
                              <p className="text-black/70 mb-6">Stay updated and engage with the community on our social platforms:</p>
                              <div className="flex gap-6">
-                                 <a href="https://x.com/exnusprotocol?t=erRcFQecZLsl-pW3MGFC9g&s=09" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-black hover:text-accent transition-colors">
-                                    <Twitter className="w-5 h-5"/>
-                                    Twitter
+                                <a href="https://x.com/exnusprotocol?t=erRcFQecZLsl-pW3MGFC9g&s=09" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-black hover:text-accent transition-colors">
+                                    <Image src="/x.jpg" alt="X" width={20} height={20} />
+                                    <span>X</span>
                                 </a>
-                                <a href="https://t.me/Exnusprotocol" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-black hover:text-accent transition-colors">
-                                    <Send className="w-5 h-5"/>
-                                    Telegram
+                                <a href="https://t.me/exnusprotocolchat" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-black hover:text-accent transition-colors">
+                                    <Image src="/tg.jpg" alt="Telegram" width={20} height={20} />
+                                    <span>Telegram</span>
                                 </a>
-                                <a href="https://discord.gg/v8MpYYFdP8" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-black hover:text-accent transition-colors">
-                                    <GitMerge className="w-5 h-5"/>
-                                    Discord
+                                <a href="httpss://discord.gg/v8MpYYFdP8" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-black hover:text-accent transition-colors">
+                                    <Image src="/discord.jpg" alt="Discord" width={20} height={20} />
+                                    <span>Discord</span>
                                 </a>
                              </div>
                          </div>
