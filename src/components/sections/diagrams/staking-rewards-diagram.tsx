@@ -25,7 +25,7 @@ export function StakingRewardsDiagram() {
         <FlowStep 
           icon={<Coins className="w-7 h-7 text-accent" />} 
           title="Total Rewards Pool" 
-          description="1.93 Billion Exnus Tokens allocated for staking."
+          description="1.895 Billion Exnus Tokens allocated for staking."
         />
         <Arrow />
         <FlowStep 

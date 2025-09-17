@@ -267,17 +267,18 @@ export default function ProtocolPage() {
             </div>
             <h3 className="text-2xl font-semibold text-accent mt-6 mb-3">Allocation Breakdown</h3>
             <ul className="list-disc pl-6 space-y-2 mt-6">
-                <li><strong>Staking Rewards (77.2%):</strong> 1.930 Billion Tokens. The largest portion of tokens is set aside for staking rewards, encouraging token holders to participate in network validation and governance while earning additional tokens.</li>
+                <li><strong>Staking Rewards (75.8%):</strong> 1.895 Billion Tokens. The largest portion of tokens is set aside for staking rewards, encouraging token holders to participate in network validation and governance while earning additional tokens.</li>
                 <li><strong>Liquidity Provision (8%):</strong> 200 Million Tokens. A substantial allocation to liquidity provision ensures that there will be sufficient tokens available in the market, enhancing trading efficiency and stability.</li>
                 <li><strong>Community Airdrop (8%):</strong> 200 Million Tokens. A significant portion of tokens is reserved for community engagement through airdrops, incentivizing early adopters and community members.</li>
                 <li><strong>Team Allocation (4%):</strong> 100 Million Tokens. A small allocation to the team ensures that the core development group is incentivized and aligned with the long-term success of Exnus Protocol.</li>
                 <li><strong>DAO Treasury (2%):</strong> 50 Million Tokens. The DAO treasury is designed to fund community-driven initiatives and governance proposals, fostering decentralization and community participation.</li>
+                <li><strong>Presale (1.4%):</strong> 35 Million Tokens. This allocation is for early supporters of the project through a presale event.</li>
                 <li><strong>Advisors Allocation (0.8%):</strong> 20 Million Tokens. This allocation rewards strategic advisors for their guidance and expertise in the project's development and market strategy.</li>
             </ul>
 
             <h3 className="text-2xl font-semibold text-accent mt-6 mb-3">Staking Reward Distribution Schedule</h3>
             <p>
-                The 1.93 billion tokens allocated for staking rewards are subject to a structured vesting schedule to ensure the long-term health and stability of the network. The rewards will be distributed linearly over a period of ten years (120 months) starting from the Token Generation Event (TGE).
+                The 1.895 billion tokens allocated for staking rewards are subject to a structured vesting schedule to ensure the long-term health and stability of the network. The rewards will be distributed linearly over a period of ten years (120 months) starting from the Token Generation Event (TGE).
             </p>
             <div className="not-prose my-8">
                 <div className="overflow-hidden p-6 md:p-8 bg-card rounded-lg">
@@ -287,7 +288,7 @@ export default function ProtocolPage() {
             </div>
             <ul className="list-disc pl-6 space-y-2 mt-4">
                 <li><strong>Total Vesting Period:</strong> 10 years (120 months).</li>
-                <li><strong>Monthly Distribution:</strong> Approximately 16.08 million tokens will be released to the staking rewards pool each month.</li>
+                <li><strong>Monthly Distribution:</strong> Approximately 15.79 million tokens will be released to the staking rewards pool each month.</li>
             </ul>
             <p className="mt-4">
                 This linear distribution model is designed to create a predictable and sustainable rewards flow, preventing market inflation while consistently incentivizing long-term stakers. By aligning rewards with the protocol's growth over an extended period, we ensure that our most committed community members are continuously recognized and compensated for their role in securing the network and participating in governance.
