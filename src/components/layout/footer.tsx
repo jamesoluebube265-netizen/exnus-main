@@ -5,12 +5,9 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-border">
+    <footer className="border-t border-white/10">
       <div 
-        className="px-4 md:px-6 py-8"
-        style={{
-            background: 'linear-gradient(135deg, hsl(0 0% 10%) 0%, hsl(45 90% 20% / 0.3) 100%), hsl(0 0% 5%)'
-        }}
+        className="px-4 md:px-6 py-8 bg-black/30 backdrop-blur-lg"
       >
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2 font-headline text-lg font-bold">
