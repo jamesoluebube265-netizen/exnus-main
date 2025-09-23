@@ -32,7 +32,7 @@ export default function Header() {
     const isActive = isClient && pathname === href;
     return cn(
       'text-sm font-medium transition-colors',
-      isActive ? 'text-white font-bold' : 'text-white/80 hover:text-white'
+      isActive ? 'text-foreground font-bold' : 'text-foreground/80 hover:text-foreground'
     );
   };
 
@@ -45,10 +45,10 @@ export default function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-animated-gradient">
+    <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/80 backdrop-blur-sm">
       <div className="container flex h-20 items-center justify-between px-4 md:px-6">
         <a href="/" className="flex items-center gap-2 font-headline text-2xl font-bold">
-          <span className="text-white">Exnus</span>
+          <span className="text-foreground">Exnus</span>
         </a>
 
         <nav className="hidden md:flex items-center gap-6">
@@ -62,7 +62,7 @@ export default function Header() {
         <div className="md:hidden">
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="outline" size="icon" className="bg-transparent text-white border-white/50 hover:bg-white/10 hover:text-white">
+                <Button variant="outline" size="icon">
                   <Menu className="h-6 w-6" />
                   <span className="sr-only">Toggle navigation menu</span>
                 </Button>
