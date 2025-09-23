@@ -4,46 +4,46 @@
 
 @layer base {
   :root {
-    --background: 216 28% 30%;
+    --background: 240 10% 4%;
     --foreground: 0 0% 98%;
-    --card: 216 28% 35%;
+    --card: 216 28% 12%;
     --card-foreground: 0 0% 98%;
-    --popover: 216 28% 35%;
+    --popover: 216 28% 12%;
     --popover-foreground: 0 0% 98%;
     --primary: 45 90% 50%;
     --primary-foreground: 0 0% 10%;
-    --secondary: 216 28% 30%;
+    --secondary: 216 28% 20%;
     --secondary-foreground: 0 0% 98%;
-    --muted: 216 28% 40%;
+    --muted: 216 28% 25%;
     --muted-foreground: 0 0% 60%;
     --accent: 45 90% 50%;
     --accent-foreground: 0 0% 10%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 216 28% 45%;
-    --input: 216 28% 45%;
+    --border: 216 28% 30%;
+    --input: 216 28% 30%;
     --ring: 45 90% 50%;
   }
  
   .dark {
-    --background: 216 28% 30%;
+    --background: 240 10% 4%;
     --foreground: 0 0% 98%;
-    --card: 216 28% 35%;
+    --card: 216 28% 12%;
     --card-foreground: 0 0% 98%;
-    --popover: 216 28% 35%;
+    --popover: 216 28% 12%;
     --popover-foreground: 0 0% 98%;
     --primary: 45 90% 50%;
     --primary-foreground: 0 0% 10%;
-    --secondary: 216 28% 35%;
+    --secondary: 216 28% 20%;
     --secondary-foreground: 0 0% 98%;
-    --muted: 216 28% 40%;
+    --muted: 216 28% 25%;
     --muted-foreground: 0 0% 60%;
     --accent: 45 90% 50%;
     --accent-foreground: 0 0% 10%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 216 28% 45%;
-    --input: 216 28% 45%;
+    --border: 216 28% 30%;
+    --input: 216 28% 30%;
     --ring: 45 90% 50%;
   }
 }
@@ -98,7 +98,6 @@
   .sparkle-animation {
     animation: sparkle 4s ease-in-out infinite;
   }
-  
 }
 
 /* Invert prose for dark mode */
