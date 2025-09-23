@@ -14,7 +14,7 @@ import { HeroBackground } from "./hero-background";
 
 export default function HeroSection() {
   return (
-    <section className="relative py-24 md:py-32 lg:py-48 text-center overflow-hidden bg-black-10">
+    <section className="relative py-24 md:py-32 lg:py-48 text-center overflow-hidden">
       <HeroBackground />
       
       <div className="px-4 md:px-6 relative">
@@ -42,7 +42,7 @@ export default function HeroSection() {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </DialogTrigger>
-              <DialogContent className="sm:max-w-[625px] bg-background/95 backdrop-blur-sm border-black/10 text-foreground">
+              <DialogContent className="sm:max-w-[625px] bg-background/95 backdrop-blur-sm border-border/50 text-foreground">
                 <DialogHeader>
                   <DialogTitle className="text-2xl text-accent">Exnus Protocol</DialogTitle>
                   <DialogDescription className="text-foreground/70 pt-2">

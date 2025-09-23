@@ -1,9 +1,8 @@
-
 import { Users, GitCommit, MessageSquare, Award, Cpu, ShieldCheck, Scale, Vote } from 'lucide-react';
 
 const DiagramIcon = ({ icon: Icon, label }: { icon: React.ElementType, label: string }) => (
     <div className="flex flex-col items-center text-center gap-2">
-        <div className="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center">
+        <div className="w-16 h-16 bg-accent/10 text-accent rounded-full flex items-center justify-center">
             <Icon className="w-8 h-8" />
         </div>
         <span className="text-xs font-medium text-foreground/80">{label}</span>
