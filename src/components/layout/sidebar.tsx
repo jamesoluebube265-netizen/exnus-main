@@ -18,10 +18,14 @@ const navLinks = [
   { href: '/contact', label: 'Contact', icon: <Mail className="w-5 h-5" /> },
 ];
 
-export default function Sidebar() {
+interface SidebarProps {
+  isMobileMenuOpen: boolean;
+  setMobileMenuOpen: (isOpen: boolean) => void;
+}
+
+export default function Sidebar({ isMobileMenuOpen, setMobileMenuOpen }: SidebarProps) {
   const pathname = usePathname();
   const [activePath, setActivePath] = useState(pathname);
-  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   
   useEffect(() => {
     setActivePath(pathname);
@@ -37,13 +41,10 @@ export default function Sidebar() {
 
   const NavContent = () => (
     <div className="flex flex-col h-full">
-      <div className="flex items-center justify-between h-16 px-4 border-b">
+      <div className="flex items-center justify-between h-14 px-4 border-b">
         <a href="/" className="flex items-center gap-2 font-bold text-lg">
           Exnus
         </a>
-        <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setMobileMenuOpen(false)}>
-            <X className="h-6 w-6" />
-        </Button>
       </div>
       <nav className="flex-1 overflow-auto p-4 space-y-2">
         {navLinks.map((link) => (
@@ -59,11 +60,6 @@ export default function Sidebar() {
   return (
     <>
       {/* Mobile Sidebar */}
-      <div className="md:hidden fixed top-4 left-4 z-50">
-        <Button variant="outline" size="icon" onClick={() => setMobileMenuOpen(true)}>
-            <Menu className="h-6 w-6" />
-        </Button>
-      </div>
       <Sheet open={isMobileMenuOpen} onOpenChange={setMobileMenuOpen}>
         <SheetContent side="left" className="p-0 w-64">
             <NavContent />
