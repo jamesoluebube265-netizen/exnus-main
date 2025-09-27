@@ -81,7 +81,7 @@ export default function AirdropPage() {
               <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                   {steps.map((step, index) => (
                       <ScrollReveal key={step.title} delay={index * 150}>
-                      <div className="h-full p-6 text-center border rounded-lg bg-card">
+                      <div className="h-full p-6 text-center border rounded-lg bg-card bg-primary/5">
                           <div className="flex justify-center mb-4">
                               <div className="p-4 bg-primary/10 rounded-full w-fit">
                                   {step.icon}
