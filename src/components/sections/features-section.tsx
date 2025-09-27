@@ -48,7 +48,7 @@ export default function FeaturesSection() {
                   backgroundPosition: "center"
                 }}
               >
-                <div className="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+                <div className="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
                 <div className="relative z-10">
                   <div className="p-4 bg-accent/10 rounded-full mb-4 w-fit">
                     {feature.icon}
