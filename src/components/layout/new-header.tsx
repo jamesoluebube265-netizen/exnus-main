@@ -1,10 +1,13 @@
 'use client';
-import { Search, Bell, User, Menu } from "lucide-react";
+import { Search, Bell, Menu } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect, useRef } from "react";
 import { navLinks, type NavLink } from "@/lib/nav-links.tsx";
 import { usePathname } from "next/navigation";
+import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator } from "@/components/ui/dropdown-menu";
+import { getNews, NewsPost } from "@/app/admin/actions";
+import { formatDistanceToNow } from "date-fns";
 
 interface NewHeaderProps {
     onMenuClick: () => void;
@@ -16,6 +19,15 @@ export default function NewHeader({ onMenuClick }: NewHeaderProps) {
     const [isSearchFocused, setIsSearchFocused] = useState(false);
     const searchRef = useRef<HTMLDivElement>(null);
     const pathname = usePathname();
+    const [news, setNews] = useState<NewsPost[]>([]);
+
+    useEffect(() => {
+        const fetchNews = async () => {
+            const newsItems = await getNews();
+            setNews(newsItems);
+        }
+        fetchNews();
+    }, []);
 
     useEffect(() => {
         if (searchQuery) {
@@ -77,12 +89,33 @@ export default function NewHeader({ onMenuClick }: NewHeaderProps) {
                 )}
             </div>
             <div className="flex flex-shrink-0 items-center justify-end gap-2 md:gap-4">
-                <Button variant="ghost" size="icon">
-                    <Bell className="h-5 w-5" />
-                </Button>
-                <Button variant="ghost" size="icon">
-                    <User className="h-5 w-5" />
-                </Button>
+                 <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                        <Button variant="ghost" size="icon">
+                            <Bell className="h-5 w-5" />
+                        </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent align="end" className="w-80">
+                        <DropdownMenuLabel>Recent News</DropdownMenuLabel>
+                        <DropdownMenuSeparator />
+                        {news.length > 0 ? (
+                            news.slice(0, 5).map(item => (
+                                <DropdownMenuItem key={item.id} asChild>
+                                    <a href={`/news/${item.id}`} className="cursor-pointer">
+                                        <div>
+                                            <p className="font-semibold">{item.title}</p>
+                                            <p className="text-xs text-muted-foreground">
+                                                {formatDistanceToNow(new Date(item.createdAt), { addSuffix: true })}
+                                            </p>
+                                        </div>
+                                    </a>
+                                </DropdownMenuItem>
+                            ))
+                        ) : (
+                            <DropdownMenuItem disabled>No news yet.</DropdownMenuItem>
+                        )}
+                    </DropdownMenuContent>
+                </DropdownMenu>
             </div>
         </header>
     );
