@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-border/20">
       <div 
-        className="px-4 md:px-6 py-8 bg-background/50 backdrop-blur-lg"
+        className="px-4 md:px-6 py-8 bg-background/80 backdrop-blur-sm"
       >
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2 font-headline text-lg font-bold">
@@ -16,19 +16,19 @@ export default function Footer() {
           </p>
           <div className="flex flex-wrap justify-center gap-6">
             <a href="https://x.com/exnusprotocol?t=erRcFQecZLsl-pW3MGFC9g&s=09" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground/80 hover:text-accent">
-              <Image src="/x.jpg" alt="X" width={20} height={20} />
+              <Image src="/x.jpg" alt="X" width={20} height={20} className="invert"/>
               <span>X</span>
             </a>
             <a href="https.t.me/exnusprotocolchat" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground/80 hover:text-accent">
-              <Image src="/tg.jpg" alt="Telegram" width={20} height={20} />
+              <Image src="/tg.jpg" alt="Telegram" width={20} height={20} className="invert"/>
               <span>Telegram</span>
             </a>
             <a href="httpss://discord.gg/v8MpYYFdP8" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground/80 hover:text-accent">
-                <Image src="/discord.jpg" alt="Discord" width={20} height={20} />
+                <Image src="/discord.jpg" alt="Discord" width={20} height={20} className="invert"/>
                 <span>Discord</span>
             </a>
             <a href="https://www.linkedin.com/in/exnus-protocol-248a85277?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground/80 hover:text-accent">
-              <Image src="/link.jpg" alt="LinkedIn" width={20} height={20} />
+              <Image src="/link.jpg" alt="LinkedIn" width={20} height={20} className="invert"/>
               <span>LinkedIn</span>
             </a>
           </div>

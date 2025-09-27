@@ -66,7 +66,7 @@ export function TokenomicsDiagram() {
                         label={renderCustomizedLabel}
                     >
                         {data.map((entry, index) => (
-                            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} stroke={COLORS[index % COLORS.length]} />
+                            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} stroke={"hsl(var(--background))"} />
                         ))}
                     </Pie>
                     <Tooltip content={<CustomTooltip />} />

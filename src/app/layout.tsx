@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -23,7 +23,7 @@ export default function RootLayout({
       </head>
       <body className="font-body antialiased bg-background text-foreground">
         <div className="relative flex flex-col min-h-screen">
-          <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
+          <div className="absolute inset-0 bg-grid-pattern opacity-30"></div>
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background"></div>
           <Header />
           <main className="flex-grow z-10">

@@ -64,7 +64,7 @@ export default function HowItWorksSection() {
                         <p className="text-foreground/80 text-lg">{step.description}</p>
                       </div>
                       <div className="md:w-1/2">
-                          <div className="w-full aspect-video rounded-lg bg-card/50 border border-border/50 p-8 flex items-center justify-center backdrop-blur-sm">
+                          <div className="w-full aspect-video rounded-lg bg-card/80 border border-border/50 p-8 flex items-center justify-center backdrop-blur-sm">
                             {step.diagram}
                           </div>
                       </div>

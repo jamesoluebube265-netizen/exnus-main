@@ -70,7 +70,7 @@ export default function AirdropPage() {
           </div>
       </section>
 
-      <section id="how-to-participate" className="py-20 md:py-28 bg-card/50">
+      <section id="how-to-participate" className="py-20 md:py-28 bg-black/20">
           <div className="container px-4 md:px-6">
               <ScrollReveal>
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
@@ -83,13 +83,13 @@ export default function AirdropPage() {
               <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                   {steps.map((step, index) => (
                       <ScrollReveal key={step.title} delay={index * 150}>
-                      <div className="h-full p-6 text-center border border-border/80 rounded-lg bg-card/80">
+                      <div className="h-full p-6 text-center border border-border/80 rounded-lg bg-card/80 backdrop-blur-sm">
                           <div className="flex justify-center mb-4">
                               <div className="p-4 bg-accent/10 rounded-full w-fit">
                                   {step.icon}
                               </div>
                           </div>
-                          <h3 className="text-xl font-bold">{step.title}</h3>
+                          <h3 className="text-xl font-bold text-white">{step.title}</h3>
                           <p className="text-foreground/70 mt-2">{step.description}</p>
                       </div>
                       </ScrollReveal>
@@ -112,7 +112,7 @@ export default function AirdropPage() {
           <div className="max-w-5xl mx-auto mt-12 grid md:grid-cols-2 gap-8 text-left">
             {airdropDetails.map((detail, index) => (
               <ScrollReveal key={detail.title} delay={index * 150}>
-                <div className="p-6 border border-border/50 rounded-lg flex items-start gap-4 h-full bg-card/50">
+                <div className="p-6 border border-border/50 rounded-lg flex items-start gap-4 h-full bg-card/80 backdrop-blur-sm">
                   <div className="p-2 bg-accent/10 rounded-full mt-1">
                     {detail.icon}
                   </div>
@@ -131,7 +131,7 @@ export default function AirdropPage() {
       <section className="py-20 border-t border-border/50">
         <div className="container px-4 md:px-6">
           <ScrollReveal>
-            <div className="max-w-3xl mx-auto p-8 border border-border/50 rounded-lg bg-card text-center">
+            <div className="max-w-3xl mx-auto p-8 border border-border/50 rounded-lg bg-card/80 backdrop-blur-sm text-center">
               <h3 className="font-bold text-xl text-accent">Important Notice</h3>
               <p className="mt-4 text-foreground/70">
                   Airdrop rewards will be distributed after the Token Generation Event (TGE). The number of tokens you receive will be proportional to the points you accumulate. Stay tuned to our official channels for more announcements.

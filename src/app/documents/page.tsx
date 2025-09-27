@@ -9,7 +9,7 @@ import ScrollReveal from "@/components/scroll-reveal";
 
 export default function ProtocolPage() {
   return (
-    <div className="bg-muted">
+    <div className="bg-black/20">
       <div className="text-center pt-16 md:pt-24 mb-12">
         <div className="inline-flex items-center gap-3 font-headline text-3xl font-bold mb-4">
           <span className="text-foreground">Exnus Protocol</span>
@@ -22,7 +22,7 @@ export default function ProtocolPage() {
         </p>
       </div>
 
-      <div id="download-content" className="prose max-w-none">
+      <div id="download-content" className="prose max-w-none prose-invert">
         <ScrollReveal>
           <section id="introduction" className="a4-page">
             <h2 className="text-3xl font-bold text-accent border-b border-accent/30 pb-2 mb-4">[ 1 ] Introduction</h2>
@@ -70,27 +70,27 @@ export default function ProtocolPage() {
             <p>The Web3 space, while brimming with potential, faces several inherent challenges that impede the growth and sustainability of decentralized ecosystems. The Exnus protocol is designed specifically to address these obstacles through innovative solutions that foster engagement, security, and scalability.</p>
             <div className="space-y-6 mt-6">
               <div>
-                <h4 className="font-semibold text-lg">Challenge 1: Low User Engagement</h4>
+                <h4 className="font-semibold text-lg text-white">Challenge 1: Low User Engagement</h4>
                 <p className="mt-1"><strong className="text-accent/80">Problem:</strong> Many decentralized platforms experience low active participation, with users often adopting a passive role. This limits the network’s ability to evolve and adapt dynamically.</p>
                 <p className="mt-1"><strong className="text-accent/80">Exnus Solution:</strong> The Exnus protocol introduces a reward system that incentivizes active contributions such as development, governance participation, and community support. By directly linking rewards to user actions, Exnus motivates continuous involvement and fosters a vibrant ecosystem.</p>
               </div>
               <div>
-                <h4 className="font-semibold text-lg">Challenge 2: Fragmented Incentive Models</h4>
+                <h4 className="font-semibold text-lg text-white">Challenge 2: Fragmented Incentive Models</h4>
                 <p className="mt-1"><strong className="text-accent/80">Problem:</strong> Current incentive structures are often siloed, rewarding specific actions without integrating the broader spectrum of contributions, leading to user confusion and reduced motivation.</p>
                 <p className="mt-1"><strong className="text-accent/80">Exnus Solution:</strong> Exnus unifies diverse contribution types under a comprehensive reward framework. Whether through code commits, voting, or community engagement, all meaningful efforts are recognized and rewarded, creating a cohesive incentive environment.</p>
               </div>
               <div>
-                  <h4 className="font-semibold text-lg">Challenge 3: Security Vulnerabilities</h4>
+                  <h4 className="font-semibold text-lg text-white">Challenge 3: Security Vulnerabilities</h4>
                   <p className="mt-1"><strong className="text-accent/80">Problem:</strong> Reward mechanisms can be exploited through malicious activities such as sybil attacks or smart contract vulnerabilities, undermining trust and network integrity.</p>
                   <p className="mt-1"><strong className="text-accent/80">Exnus Solution:</strong> Exnus employs robust smart contract designs with rigorous security audits and leverages Solana’s secure blockchain infrastructure. Permissioned functions, immutable logic, and fail-safe protocols ensure safe and reliable reward distribution.</p>
               </div>
               <div>
-                  <h4 className="font-semibold text-lg">Challenge 4: Scalability Constraints</h4>
+                  <h4 className="font-semibold text-lg text-white">Challenge 4: Scalability Constraints</h4>
                   <p className="mt-1"><strong className="text-accent/80">Problem:</strong> As user bases grow, many protocols face performance bottlenecks, high transaction costs, and latency issues that degrade user experience.</p>
                   <p className="mt-1"><strong className="text-accent/80">Exnus Solution:</strong> By integrating with Solana, known for its high throughput and low fees, Exnus ensures scalable operations that accommodate increasing network activity without compromising speed or cost-efficiency.</p>
               </div>
               <div>
-                  <h4 className="font-semibold text-lg">Challenge 5: Lack of User Ownership</h4>
+                  <h4 className="font-semibold text-lg text-white">Challenge 5: Lack of User Ownership</h4>
                   <p className="mt-1"><strong className="text-accent/80">Problem:</strong> Users often feel disconnected from the platforms they participate in, reducing their incentive to contribute meaningfully.</p>
                   <p className="mt-1"><strong className="text-accent/80">Exnus Solution:</strong> Through token rewards and staking mechanisms, Exnus fosters a sense of ownership and alignment between individual contributions and the network’s success, promoting long-term commitment.</p>
               </div>
@@ -103,7 +103,7 @@ export default function ProtocolPage() {
             <h2 className="text-3xl font-bold text-accent border-b border-accent/30 pb-2 mb-4">[ 4 ] Technical Architecture</h2>
             <p>The Exnus protocol is engineered with a modular and scalable architecture designed to efficiently manage user contributions, reward calculations, and secure token distribution. Its technical framework ensures high performance, security, and seamless integration with the Solana blockchain.</p>
             <div className="not-prose my-8">
-              <div className="overflow-hidden p-0 md:p-4 bg-card rounded-lg">
+              <div className="overflow-hidden p-0 md:p-4 bg-card/80 backdrop-blur-sm rounded-lg">
                   <ArchitectureDiagram />
               </div>
               <p className="text-center text-sm text-foreground/60 mt-2">Diagram: High-level overview of the Exnus technical architecture.</p>
@@ -136,7 +136,7 @@ export default function ProtocolPage() {
               <h2 className="text-3xl font-bold text-accent border-b border-accent/30 pb-2 mb-4">[ 5 ] Smart Contract Design and Security</h2>
               <p>The Exnus protocol’s smart contract framework is central to its ability to securely and transparently manage user rewards, staking, and governance. Designed with a multi-layered security approach, the contracts ensure trustless interactions and immutable enforcement of protocol rules.</p>
               <div className="not-prose my-8">
-                <div className="overflow-hidden p-6 md:p-8 bg-card rounded-lg">
+                <div className="overflow-hidden p-6 md:p-8 bg-card/80 backdrop-blur-sm rounded-lg">
                    <SecurityDiagram />
                 </div>
                 <p className="text-center text-sm text-foreground/60 mt-2">Diagram: An overview of the multi-layered security approach for Exnus smart contracts.</p>
@@ -170,7 +170,7 @@ export default function ProtocolPage() {
               <h2 className="text-3xl font-bold text-accent border-b border-accent/30 pb-2 mb-4">[ 6 ] Rewarding System: Incentivizing User Engagement</h2>
               <p>The Exnus protocol’s rewarding system is a cornerstone of its strategy to drive active participation and sustained growth within the ecosystem. By recognizing and compensating diverse user contributions, Exnus fosters a vibrant, collaborative community where every effort is valued.</p>
               <div className="not-prose my-8">
-                <div className="overflow-hidden p-6 md:p-8 bg-card rounded-lg">
+                <div className="overflow-hidden p-6 md:p-8 bg-card/80 backdrop-blur-sm rounded-lg">
                    <RewardingDiagram />
                 </div>
                 <p className="text-center text-sm text-foreground/60 mt-2">Diagram: An overview of the types of contributions rewarded by the Exnus Protocol.</p>
@@ -227,7 +227,7 @@ export default function ProtocolPage() {
               <h2 className="text-3xl font-bold text-accent border-b border-accent/30 pb-2 mb-4">[ 8 ] Staking Mechanism</h2>
               <p>The Exnus protocol incorporates a robust staking mechanism designed to incentivize long-term commitment and active participation within the ecosystem. By allowing users to lock their tokens, staking not only rewards loyalty but also strengthens network security and governance.</p>
                <div className="not-prose my-8">
-                  <div className="overflow-hidden p-6 md:p-8 bg-card rounded-lg">
+                  <div className="overflow-hidden p-6 md:p-8 bg-card/80 backdrop-blur-sm rounded-lg">
                      <StakingDiagram />
                   </div>
                   <p className="text-center text-sm text-foreground/60 mt-2">Diagram: The staking flow for users and its benefits to the network.</p>
@@ -260,7 +260,7 @@ export default function ProtocolPage() {
             <p>Total Supply: 2.5 Billion Tokens.</p>
             <p>The total supply of Exnus tokens is strategically allocated to ensure sustainability, community engagement, and rewards for stakeholders. Below is the detailed breakdown of the token allocation:</p>
             <div className="not-prose my-8">
-                <div className="overflow-hidden p-6 md:p-8 bg-card rounded-lg">
+                <div className="overflow-hidden p-6 md:p-8 bg-card/80 backdrop-blur-sm rounded-lg">
                    <TokenomicsDiagram />
                 </div>
                 <p className="text-center text-sm text-foreground/60 mt-2">Diagram: An overview of the token allocation for the Exnus Protocol.</p>
@@ -281,7 +281,7 @@ export default function ProtocolPage() {
                 The 1.895 billion tokens allocated for staking rewards are subject to a structured vesting schedule to ensure the long-term health and stability of the network. The rewards will be distributed linearly over a period of ten years (120 months) starting from the Token Generation Event (TGE).
             </p>
             <div className="not-prose my-8">
-                <div className="overflow-hidden p-6 md:p-8 bg-card rounded-lg">
+                <div className="overflow-hidden p-6 md:p-8 bg-card/80 backdrop-blur-sm rounded-lg">
                    <StakingRewardsDiagram />
                 </div>
                 <p className="text-center text-sm text-foreground/60 mt-2">Diagram: An overview of the staking rewards distribution model.</p>

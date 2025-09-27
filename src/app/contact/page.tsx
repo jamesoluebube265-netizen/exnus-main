@@ -147,7 +147,7 @@ export default function ContactPage() {
         <div className="container px-4 md:px-6">
             <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
                 <ScrollReveal>
-                    <div className="p-8 border rounded-lg bg-card h-full">
+                    <div className="p-8 border rounded-lg bg-card/80 backdrop-blur-sm h-full">
                         <div className="text-left mb-8">
                             <h2 className="text-3xl md:text-4xl font-bold text-accent mb-2">Get in Touch</h2>
                             <p className="text-foreground/70">Fill out the form below and we'll get back to you as soon as possible.</p>
@@ -159,9 +159,9 @@ export default function ContactPage() {
                                 name="name"
                                 render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel className="flex items-center gap-2"><User className="w-4 h-4" /> Name</FormLabel>
+                                    <FormLabel className="flex items-center gap-2 text-white"><User className="w-4 h-4" /> Name</FormLabel>
                                     <FormControl>
-                                    <Input placeholder="Enter your name" {...field} className="bg-background" />
+                                    <Input placeholder="Enter your name" {...field} className="bg-background/50" />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -172,9 +172,9 @@ export default function ContactPage() {
                                 name="email"
                                 render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel className="flex items-center gap-2"><Mail className="w-4 h-4" /> Email</FormLabel>
+                                    <FormLabel className="flex items-center gap-2 text-white"><Mail className="w-4 h-4" /> Email</FormLabel>
                                     <FormControl>
-                                    <Input placeholder="Enter your email address" {...field} className="bg-background" />
+                                    <Input placeholder="Enter your email address" {...field} className="bg-background/50" />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -185,9 +185,9 @@ export default function ContactPage() {
                                 name="message"
                                 render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel className="flex items-center gap-2"><MessageSquare className="w-4 h-4" /> Message</FormLabel>
+                                    <FormLabel className="flex items-center gap-2 text-white"><MessageSquare className="w-4 h-4" /> Message</FormLabel>
                                     <FormControl>
-                                    <Textarea placeholder="Type your message here..." {...field} rows={6} className="bg-background" />
+                                    <Textarea placeholder="Type your message here..." {...field} rows={6} className="bg-background/50" />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -203,21 +203,21 @@ export default function ContactPage() {
                 </ScrollReveal>
                 <ScrollReveal delay={200}>
                     <div className="space-y-8">
-                         <div className="p-8 border rounded-lg bg-card">
+                         <div className="p-8 border rounded-lg bg-card/80 backdrop-blur-sm">
                              <h3 className="text-2xl font-bold text-accent mb-4">Join Our Community</h3>
                              <p className="text-foreground/70 mb-6">Stay updated and engage with the community on our social platforms:</p>
                              <div className="flex gap-6">
                                 <a href="https://x.com/exnusprotocol?t=erRcFQecZLsl-pW3MGFC9g&s=09" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground hover:text-accent transition-colors">
                                     <Image src="/x.jpg" alt="X" width={20} height={20} className="invert" />
-                                    <span>X</span>
+                                    <span className="text-white">X</span>
                                 </a>
                                 <a href="https://t.me/exnusprotocolchat" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground hover:text-accent transition-colors">
-                                    <Image src="/tg.jpg" alt="Telegram" width={20} height={20} />
-                                    <span>Telegram</span>
+                                    <Image src="/tg.jpg" alt="Telegram" width={20} height={20} className="invert"/>
+                                    <span className="text-white">Telegram</span>
                                 </a>
                                 <a href="httpss://discord.gg/v8MpYYFdP8" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground hover:text-accent transition-colors">
                                     <Image src="/discord.jpg" alt="Discord" width={20} height={20} className="invert" />
-                                    <span>Discord</span>
+                                    <span className="text-white">Discord</span>
                                 </a>
                              </div>
                          </div>
@@ -261,7 +261,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="py-20 md:py-28 border-t bg-card/20">
+      <section className="py-20 md:py-28 border-t bg-black/20">
           <div className="container px-4 md:px-6">
               <ScrollReveal>
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-foreground">
@@ -274,7 +274,7 @@ export default function ContactPage() {
               <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                   {commitmentPoints.map((point, index) => (
                       <ScrollReveal key={point.title} delay={index * 150}>
-                          <div className="h-full p-6 text-center border rounded-lg bg-card">
+                          <div className="h-full p-6 text-center border rounded-lg bg-card/80 backdrop-blur-sm">
                               <div className="flex justify-center mb-4">
                                   <div className="p-4 bg-accent/10 rounded-full w-fit">
                                       {point.icon}

@@ -2,11 +2,11 @@ import { ShieldCheck, Layers, Bot, AlertTriangle, ScrollText } from "lucide-reac
 import { Card } from "@/components/ui/card";
 
 const DiagramNode = ({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) => (
-  <Card className="bg-card/70 border-accent/20 p-4 text-center flex flex-col items-center justify-center text-card-foreground h-full">
+  <Card className="bg-card/80 backdrop-blur-sm border-accent/20 p-4 text-center flex flex-col items-center justify-center text-card-foreground h-full">
     <div className="p-3 bg-accent/10 rounded-full mb-3 w-fit">
       {icon}
     </div>
-    <p className="font-bold text-sm text-card-foreground">{title}</p>
+    <p className="font-bold text-sm text-white">{title}</p>
     <p className="text-xs text-muted-foreground mt-1">{description}</p>
   </Card>
 );

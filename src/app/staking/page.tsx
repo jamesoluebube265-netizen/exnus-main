@@ -48,7 +48,7 @@ export default function StakingPage() {
           </div>
       </section>
 
-      <section id="staking-benefits" className="py-20 md:py-28 bg-card/50">
+      <section id="staking-benefits" className="py-20 md:py-28 bg-black/20">
           <div className="container px-4 md:px-6">
               <ScrollReveal>
                 <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
@@ -61,13 +61,13 @@ export default function StakingPage() {
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
                   {stakingBenefits.map((benefit, index) => (
                       <ScrollReveal key={benefit.title} delay={index * 150}>
-                      <div className="h-full p-6 text-center border border-border/80 rounded-lg bg-card/80">
+                      <div className="h-full p-6 text-center border border-border/80 rounded-lg bg-card/80 backdrop-blur-sm">
                           <div className="flex justify-center mb-4">
                               <div className="p-4 bg-accent/10 rounded-full w-fit">
                                   {benefit.icon}
                               </div>
                           </div>
-                          <h3 className="text-xl font-bold">{benefit.title}</h3>
+                          <h3 className="text-xl font-bold text-white">{benefit.title}</h3>
                           <p className="text-foreground/70 mt-2">{benefit.description}</p>
                       </div>
                       </ScrollReveal>
@@ -89,7 +89,7 @@ export default function StakingPage() {
             </div>
           </ScrollReveal>
           <div className="max-w-5xl mx-auto mt-12 grid md:grid-cols-1 gap-8 text-left">
-             <Card className="p-6 flex items-start gap-6 h-full border-border/50 bg-card/50">
+             <Card className="p-6 flex items-start gap-6 h-full border-border/50 bg-card/80 backdrop-blur-sm">
                 <div className="p-3 bg-accent/10 rounded-full mt-1">
                     <Lock className="w-8 h-8 text-accent" />
                 </div>
@@ -100,7 +100,7 @@ export default function StakingPage() {
                     </p>
                 </div>
              </Card>
-             <Card className="p-6 flex items-start gap-6 h-full border-border/50 bg-card/50">
+             <Card className="p-6 flex items-start gap-6 h-full border-border/50 bg-card/80 backdrop-blur-sm">
                 <div className="p-3 bg-accent/10 rounded-full mt-1">
                     <BrainCircuit className="w-8 h-8 text-accent" />
                 </div>
@@ -118,7 +118,7 @@ export default function StakingPage() {
       <section className="py-20 border-t border-border/50">
         <div className="container px-4 md:px-6">
           <ScrollReveal>
-            <div className="max-w-3xl mx-auto p-8 border border-border/50 rounded-lg bg-card text-center">
+            <div className="max-w-3xl mx-auto p-8 border border-border/50 rounded-lg bg-card/80 backdrop-blur-sm text-center">
               <h3 className="font-bold text-xl text-accent">Stay Updated</h3>
               <p className="mt-4 text-foreground/70">
                   The official launch of our staking platform is a top priority on our roadmap. Follow our social channels and subscribe to our newsletter for the latest announcements and to be notified as soon as staking is live.

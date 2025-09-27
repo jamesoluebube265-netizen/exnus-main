@@ -2,11 +2,11 @@ import { Share2, Database, Users, GitBranch, ShieldCheck, FileText, Zap, ArrowDo
 import { Card } from "@/components/ui/card";
 
 const DiagramNode = ({ icon, title, description, className }: { icon: React.ReactNode, title: string, description: string, className?: string }) => (
-  <Card className={`bg-card/70 border-accent/20 p-4 text-center flex flex-col items-center justify-center text-card-foreground ${className}`}>
+  <Card className={`bg-card/80 backdrop-blur-sm border-accent/20 p-4 text-center flex flex-col items-center justify-center text-card-foreground ${className}`}>
     <div className="p-2 bg-accent/10 rounded-full mb-2 w-fit">
       {icon}
     </div>
-    <p className="font-bold text-sm text-card-foreground">{title}</p>
+    <p className="font-bold text-sm text-white">{title}</p>
     <p className="text-xs text-muted-foreground">{description}</p>
   </Card>
 );
@@ -28,7 +28,7 @@ const Arrow = () => (
 
 export function ArchitectureDiagram() {
   return (
-    <div className="w-full font-sans p-4 bg-card rounded-lg">
+    <div className="w-full font-sans p-4 rounded-lg">
       <h3 className="text-center font-bold text-lg mb-6 text-accent">Exnus Protocol Architecture</h3>
       
       <div className="flex flex-col items-center gap-4">

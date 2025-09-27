@@ -42,7 +42,7 @@ export function DetailedCoinChart({ data }: DetailedCoinChartProps) {
                     tickFormatter={(value) => `$${value.toLocaleString()}`}
                 />
                 <Tooltip content={<CustomTooltip />} />
-                <Legend wrapperStyle={{ fontSize: '14px' }} />
+                <Legend wrapperStyle={{ fontSize: '14px', color: 'hsl(var(--foreground))' }} />
                 <Line 
                     type="monotone" 
                     dataKey="price" 

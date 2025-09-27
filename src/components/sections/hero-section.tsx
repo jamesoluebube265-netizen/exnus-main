@@ -19,7 +19,7 @@ export default function HeroSection() {
       
       <div className="px-4 md:px-6 relative">
         <ScrollReveal>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-6 text-foreground">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-6 text-white">
             <span className="text-accent">Exnus Protocol:</span> Fostering Innovation Through Incentivized Participation.
           </h1>
         </ScrollReveal>
@@ -50,18 +50,18 @@ export default function HeroSection() {
                   </DialogDescription>
                 </DialogHeader>
                 <div className="grid gap-4 py-4 text-left">
-                  <h3 className="font-bold text-lg text-foreground">What is Exnus?</h3>
+                  <h3 className="font-bold text-lg text-white">What is Exnus?</h3>
                   <p className="text-foreground/80">
                     Exnus is a decentralized protocol built on Solana that introduces a novel incentive layer for Web3 ecosystems. Our primary goal is to solve the persistent problem of low user engagement by creating a framework that rewards all forms of meaningful participation—from software development and governance to community support and content creation.
                   </p>
-                  <h3 className="font-bold text-lg text-foreground">What Are We Building?</h3>
+                  <h3 className="font-bold text-lg text-white">What Are We Building?</h3>
                   <p className="text-foreground/80">
                     We are building a highly scalable and secure platform that allows any project to integrate our reward system. Key components include:
                   </p>
                   <ul className="list-disc list-inside text-foreground/80 space-y-2">
-                    <li><span className="font-semibold text-foreground/90">A Dynamic Reward Engine:</span> Smart contracts that can be configured to distribute token rewards based on a project's specific goals.</li>
-                    <li><span className="font-semibold text-foreground/90">Contribution Tracking:</span> A combination of on-chain and off-chain tools to verify and value user contributions fairly.</li>
-                    <li><span className="font-semibold text-foreground/90">Decentralized Governance:</span> A DAO structure that empowers the community to guide the protocol's evolution and treasury.</li>
+                    <li><span className="font-semibold text-white">A Dynamic Reward Engine:</span> Smart contracts that can be configured to distribute token rewards based on a project's specific goals.</li>
+                    <li><span className="font-semibold text-white">Contribution Tracking:</span> A combination of on-chain and off-chain tools to verify and value user contributions fairly.</li>
+                    <li><span className="font-semibold text-white">Decentralized Governance:</span> A DAO structure that empowers the community to guide the protocol's evolution and treasury.</li>
                   </ul>
                   <p className="text-foreground/80 pt-2">
                     By rewarding the actions that create real value, Exnus aims to help projects build stronger, more active, and more loyal communities.

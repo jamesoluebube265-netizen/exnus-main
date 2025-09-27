@@ -22,17 +22,14 @@ const navLinks = [
 
 export default function Header() {
   const pathname = usePathname();
-  const [isClient, setIsClient] = useState(false);
-
+  const [activePath, setActivePath] = useState(pathname);
+  
   useEffect(() => {
-    setIsClient(true);
-  }, []);
+      setActivePath(pathname);
+  }, [pathname]);
 
   const getLinkClass = (href: string) => {
-    if (!isClient) {
-      return 'text-sm font-medium transition-colors text-foreground/80 hover:text-primary';
-    }
-    const isActive = pathname === href;
+    const isActive = activePath === href;
     return cn(
       'text-sm font-medium transition-colors',
       isActive ? 'text-primary' : 'text-foreground/80 hover:text-primary'
@@ -40,12 +37,9 @@ export default function Header() {
   };
 
   const getMobileLinkClass = (href: string) => {
-    if (!isClient) {
-        return 'text-sm font-medium transition-colors text-foreground/80 hover:text-primary';
-    }
-    const isActive = pathname === href;
+    const isActive = activePath === href;
     return cn(
-      'text-sm font-medium transition-colors',
+      'text-lg font-medium transition-colors',
       isActive ? 'text-primary' : 'text-foreground/80 hover:text-primary'
     );
   }
@@ -54,7 +48,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/80 backdrop-blur-sm">
       <div className="container flex h-20 items-center justify-between px-4 md:px-6">
         <a href="/" className="flex items-center gap-2 font-headline text-2xl font-bold">
-          <span className="text-foreground">Exnus</span>
+          <span className="text-white">Exnus</span>
         </a>
 
         <nav className="hidden md:flex items-center gap-6">
@@ -80,7 +74,7 @@ export default function Header() {
                 </VisuallyHidden.Root>
                 <div className="flex flex-col gap-6 p-6">
                   <a href="/" className="flex items-center gap-2 font-headline text-2xl font-bold">
-                    <span className="text-foreground">Exnus</span>
+                    <span className="text-white">Exnus</span>
                   </a>
                   <nav className="flex flex-col gap-4 mt-4">
                     {navLinks.map((link) => (

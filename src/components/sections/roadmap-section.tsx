@@ -101,7 +101,7 @@ export default function RoadmapSection() {
                     <RoadmapIcon status={status} />
                   </div>
                   <p className="text-sm font-semibold text-accent">{item.quarter}</p>
-                  <h3 className="font-bold text-lg mt-1 text-foreground">{item.title}</h3>
+                  <h3 className="font-bold text-lg mt-1 text-white">{item.title}</h3>
                   <p className="text-foreground/70 mt-1">{item.description}</p>
                 </div>
               </ScrollReveal>

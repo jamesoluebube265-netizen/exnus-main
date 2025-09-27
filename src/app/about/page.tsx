@@ -65,7 +65,7 @@ export default function AboutPage() {
           </div>
       </section>
 
-      <section className="py-20 md:py-28 bg-card/50">
+      <section className="py-20 md:py-28 bg-black/20">
           <div className="container px-4 md:px-6">
               <div className="grid md:grid-cols-2 gap-12 items-center">
                   <ScrollReveal>
@@ -82,7 +82,7 @@ export default function AboutPage() {
                   </ScrollReveal>
                   <ScrollReveal delay={200}>
                     <div className="not-prose my-8">
-                        <div className="overflow-hidden p-6 md:p-8 bg-card rounded-lg shadow-lg border border-border/50">
+                        <div className="overflow-hidden p-6 md:p-8 bg-card/80 backdrop-blur-sm rounded-lg shadow-lg border border-border/50">
                             <RewardingDiagram />
                         </div>
                     </div>
@@ -106,7 +106,7 @@ export default function AboutPage() {
           <div className="max-w-5xl mx-auto mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
             {values.map((value, index) => (
               <ScrollReveal key={value.title} delay={index * 150}>
-                <div className="p-6 border border-border/50 rounded-lg flex flex-col items-center text-center h-full bg-card/50">
+                <div className="p-6 border border-border/50 rounded-lg flex flex-col items-center text-center h-full bg-card/80 backdrop-blur-sm">
                    <div className="p-4 bg-accent/10 rounded-full w-fit mb-4">
                     {value.icon}
                   </div>
@@ -123,7 +123,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section id="philosophy" className="py-20 md:py-28 bg-card/50">
+      <section id="philosophy" className="py-20 md:py-28 bg-black/20">
           <div className="container px-4 md:px-6">
               <ScrollReveal>
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
@@ -136,13 +136,13 @@ export default function AboutPage() {
               <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                   {philosophyPoints.map((point, index) => (
                       <ScrollReveal key={point.title} delay={index * 150}>
-                          <div className="h-full p-6 text-center border border-border/80 rounded-lg bg-card/80">
+                          <div className="h-full p-6 text-center border border-border/80 rounded-lg bg-card/80 backdrop-blur-sm">
                               <div className="flex justify-center mb-4">
                                   <div className="p-4 bg-accent/10 rounded-full w-fit">
                                       {point.icon}
                                   </div>
                               </div>
-                              <h3 className="text-xl font-bold">{point.title}</h3>
+                              <h3 className="text-xl font-bold text-white">{point.title}</h3>
                               <p className="text-foreground/70 mt-2">{point.description}</p>
                           </div>
                       </ScrollReveal>
@@ -155,7 +155,7 @@ export default function AboutPage() {
       <section className="py-20 border-t border-border/50">
         <div className="container px-4 md:px-6">
           <ScrollReveal>
-            <div className="max-w-3xl mx-auto p-8 border border-border/50 rounded-lg bg-card text-center">
+            <div className="max-w-3xl mx-auto p-8 border border-border/50 rounded-lg bg-card/80 backdrop-blur-sm text-center">
               <h3 className="font-bold text-xl text-accent">Join Our Mission</h3>
               <p className="mt-4 text-foreground/70">
                   The future of Web3 is collaborative. If you share our vision and want to contribute to a more decentralized world, we invite you to join our community and help us build the future of incentivized participation.

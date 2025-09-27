@@ -5,7 +5,7 @@ const DiagramIcon = ({ icon: Icon, label }: { icon: React.ElementType, label: st
         <div className="w-16 h-16 bg-accent/10 text-accent rounded-full flex items-center justify-center">
             <Icon className="w-8 h-8" />
         </div>
-        <span className="text-xs font-medium text-foreground/80">{label}</span>
+        <span className="text-xs font-medium text-white">{label}</span>
     </div>
 );
 

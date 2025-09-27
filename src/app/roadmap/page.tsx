@@ -20,13 +20,13 @@ export default function RoadmapPage() {
           </ScrollReveal>
           <ScrollReveal delay={200}>
             <div className="max-w-5xl mx-auto mt-12 grid md:grid-cols-2 gap-8 text-left">
-              <div className="p-6 border border-border/50 rounded-lg">
+              <div className="p-6 border border-border/50 rounded-lg bg-card/80 backdrop-blur-sm">
                 <h3 className="font-bold text-xl text-accent">Ecosystem Expansion</h3>
                 <p className="mt-2 text-foreground/80">
                   We plan to forge strategic partnerships with other innovative projects and platforms to broaden the utility of the Exnus protocol. Our goal is to create a seamless, interconnected network of dApps that leverage our unique incentive models to foster vibrant and engaged communities across the Web3 space.
                 </p>
               </div>
-              <div className="p-6 border border-border/50 rounded-lg">
+              <div className="p-6 border border-border/50 rounded-lg bg-card/80 backdrop-blur-sm">
                 <h3 className="font-bold text-xl text-accent">Decentralization & Autonomy</h3>
                 <p className="mt-2 text-foreground/80">
                   True decentralization is our ultimate objective. As the protocol matures, we will progressively hand over more control to the Exnus DAO. We envision a future where all protocol upgrades, treasury management, and strategic decisions are governed entirely by our community of token holders, creating a self-sustaining and autonomous organization.
