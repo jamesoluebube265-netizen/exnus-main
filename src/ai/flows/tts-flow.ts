@@ -5,15 +5,17 @@ import { ai } from '@/ai/genkit';
 import { z } from 'genkit';
 import wav from 'wav';
 
-export const TextToSpeechInputSchema = z.object({
+// Schemas are now defined in `src/app/admin/actions.ts` to avoid exporting non-functions from a 'use server' file.
+// We still define them here for internal use by the flow.
+const TextToSpeechInputSchema = z.object({
     text: z.string().describe('The text to be converted to speech.'),
 });
-export type TextToSpeechInput = z.infer<typeof TextToSpeechInputSchema>;
+type TextToSpeechInput = z.infer<typeof TextToSpeechInputSchema>;
 
-export const TextToSpeechOutputSchema = z.object({
+const TextToSpeechOutputSchema = z.object({
     audioDataUri: z.string().describe('The generated audio as a data URI.'),
 });
-export type TextToSpeechOutput = z.infer<typeof TextToSpeechOutputSchema>;
+type TextToSpeechOutput = z.infer<typeof TextToSpeechOutputSchema>;
 
 
 async function toWav(
@@ -80,7 +82,6 @@ const textToSpeechFlow = ai.defineFlow(
     }
 );
 
-
-export async function generateSpeech(input: TextToSpeechInput): Promise<TextToSpeechOutput> {
+export async function generateSpeech(input: { text: string }): Promise<{ audioDataUri: string }> {
     return textToSpeechFlow(input);
 }

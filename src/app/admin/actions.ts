@@ -42,7 +42,7 @@ export async function postNews(values: z.infer<typeof newsSchema>) {
     
     let audioDataUri: string | undefined = undefined;
 
-    if (validatedData.generateAudio) {
+    if (validatedData.generateAudio && validatedData.content) {
         try {
             const ttsResponse = await generateSpeech({ text: validatedData.content });
             audioDataUri = ttsResponse.audioDataUri;
