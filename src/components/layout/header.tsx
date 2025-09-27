@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -28,7 +29,10 @@ export default function Header() {
   }, []);
 
   const getLinkClass = (href: string) => {
-    const isActive = isClient && pathname === href;
+    if (!isClient) {
+      return 'text-sm font-medium transition-colors text-foreground/80 hover:text-primary';
+    }
+    const isActive = pathname === href;
     return cn(
       'text-sm font-medium transition-colors',
       isActive ? 'text-primary' : 'text-foreground/80 hover:text-primary'
@@ -36,7 +40,10 @@ export default function Header() {
   };
 
   const getMobileLinkClass = (href: string) => {
-    const isActive = isClient && pathname === href;
+    if (!isClient) {
+        return 'text-sm font-medium transition-colors text-foreground/80 hover:text-primary';
+    }
+    const isActive = pathname === href;
     return cn(
       'text-sm font-medium transition-colors',
       isActive ? 'text-primary' : 'text-foreground/80 hover:text-primary'
