@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Sheet, SheetContent } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import { usePathname } from 'next/navigation';
 import { navLinks } from '@/lib/nav-links.tsx';
@@ -27,37 +27,44 @@ export default function Sidebar({ isMobileMenuOpen, setMobileMenuOpen }: Sidebar
     );
   };
 
-  const NavContent = () => (
-    <div className="flex flex-col h-full">
-      <div className="flex items-center justify-between h-14 px-4 border-b">
-        <a href="/" className="flex items-center gap-2 font-bold text-lg">
-          Exnus
+  const NavLinks = () => (
+    <nav className="flex-1 overflow-auto p-4 space-y-2">
+      {navLinks.map((link) => (
+        <a key={link.href} href={link.href} className={getLinkClass(link.href)} onClick={() => setMobileMenuOpen(false)}>
+          {link.icon}
+          {link.label}
         </a>
-      </div>
-      <nav className="flex-1 overflow-auto p-4 space-y-2">
-        {navLinks.map((link) => (
-          <a key={link.href} href={link.href} className={getLinkClass(link.href)} onClick={() => setMobileMenuOpen(false)}>
-            {link.icon}
-            {link.label}
-          </a>
-        ))}
-      </nav>
-    </div>
+      ))}
+    </nav>
   );
 
   return (
     <>
       {/* Mobile Sidebar */}
       <Sheet open={isMobileMenuOpen} onOpenChange={setMobileMenuOpen}>
-        <SheetContent side="left" className="p-0 w-64">
-            <NavContent />
+        <SheetContent side="left" className="p-0 w-64 flex flex-col">
+            <SheetHeader className='border-b'>
+              <SheetTitle asChild>
+                <div className="flex items-center justify-between h-14 px-4">
+                  <a href="/" className="flex items-center gap-2 font-bold text-lg">
+                    Exnus
+                  </a>
+                </div>
+              </SheetTitle>
+            </SheetHeader>
+            <NavLinks />
         </SheetContent>
       </Sheet>
 
 
       {/* Desktop Sidebar */}
-      <aside className="hidden md:block w-64 border-r bg-card">
-        <NavContent />
+      <aside className="hidden md:flex md:flex-col w-64 border-r bg-card">
+        <div className="flex items-center justify-between h-14 px-4 border-b">
+          <a href="/" className="flex items-center gap-2 font-bold text-lg">
+            Exnus
+          </a>
+        </div>
+        <NavLinks />
       </aside>
     </>
   );
