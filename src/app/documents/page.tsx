@@ -10,7 +10,7 @@ import { TokenomicsDiagram } from "@/components/sections/diagrams/tokenomics-dia
 import { StakingRewardsDiagram } from "@/components/sections/diagrams/staking-rewards-diagram";
 import ScrollReveal from "@/components/scroll-reveal";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, ArrowRight, BookText, GitCommit, FileText, Share2, ShieldCheck, Database, PieChart, TrendingUp, ThumbsUp } from "lucide-react";
+import { ArrowLeft, ArrowRight, BookText, GitCommit, FileText, Share2, ShieldCheck, Database, PieChart, TrendingUp, ThumbsUp, Zap } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
 const documentSections = [
@@ -422,7 +422,7 @@ export default function ProtocolPage() {
                                     }`}
                                 >
                                     {section.icon}
-                                    {section.label}
+                                    {section.title}
                                 </a>
                             ))}
                         </nav>
@@ -448,3 +448,4 @@ export default function ProtocolPage() {
         </div>
     );
 }
+
