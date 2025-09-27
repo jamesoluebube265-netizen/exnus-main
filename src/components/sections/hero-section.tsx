@@ -41,9 +41,9 @@ export default function HeroSection() {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </DialogTrigger>
-              <DialogContent className="sm:max-w-[625px] bg-background/95 backdrop-blur-sm border-border/50 text-foreground">
+              <DialogContent className="sm:max-w-[625px] bg-card border-border/50 text-foreground">
                 <DialogHeader>
-                  <DialogTitle className="text-2xl text-accent">Exnus Protocol</DialogTitle>
+                  <DialogTitle className="text-2xl text-primary">Exnus Protocol</DialogTitle>
                   <DialogDescription className="text-foreground/70 pt-2">
                     A brief overview of our mission and the technology we're building. For a complete technical deep-dive, please refer to our full whitepaper.
                   </DialogDescription>

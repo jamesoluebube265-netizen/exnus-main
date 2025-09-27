@@ -60,11 +60,11 @@ export default function HowItWorksSection() {
                 >
                   <div className={`flex flex-col gap-8 md:gap-12 items-center ${index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
                       <div className="md:w-1/2">
-                        <h3 className="text-2xl md:text-3xl font-bold mb-4 text-accent">{step.title}</h3>
+                        <h3 className="text-2xl md:text-3xl font-bold mb-4 text-primary">{step.title}</h3>
                         <p className="text-foreground/80 text-lg">{step.description}</p>
                       </div>
                       <div className="md:w-1/2">
-                          <div className="w-full aspect-video rounded-lg bg-card/80 border border-border/50 p-8 flex items-center justify-center backdrop-blur-sm">
+                          <div className="w-full aspect-video rounded-lg bg-card border border-border/50 p-8 flex items-center justify-center">
                             {step.diagram}
                           </div>
                       </div>

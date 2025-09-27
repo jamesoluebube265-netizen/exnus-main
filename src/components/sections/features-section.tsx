@@ -4,22 +4,22 @@ import ScrollReveal from "../scroll-reveal";
 
 const features = [
   {
-    icon: <Award className="w-10 h-10 text-accent" />,
+    icon: <Award className="w-10 h-10 text-primary" />,
     title: "Holistic Reward Framework",
     description: "Exnus rewards a broad spectrum of activities—including development, governance, and community building—to foster a well-rounded, engaged user base that drives sustainable growth.",
   },
   {
-    icon: <Users className="w-10 h-10 text-accent" />,
+    icon: <Users className="w-10 h-10 text-primary" />,
     title: "User Ownership and Empowerment",
     description: "By aligning incentives with meaningful contributions, Exnus cultivates a strong sense of ownership that encourages long-term participation and transforms users into true stakeholders.",
   },
   {
-    icon: <Zap className="w-10 h-10 text-accent" />,
+    icon: <Zap className="w-10 h-10 text-primary" />,
     title: "Scalability and Efficiency",
     description: "Built on Solana, Exnus leverages rapid transaction speeds and low costs to support a growing, active user base without compromising performance or security.",
   },
   {
-    icon: <ShieldCheck className="w-10 h-10 text-accent" />,
+    icon: <ShieldCheck className="w-10 h-10 text-primary" />,
     title: "Robust Security",
     description: "With rigorous smart contract audits, permissioned functions, and immutable logic, Exnus ensures a secure and reliable reward distribution system that protects against vulnerabilities.",
   },
@@ -41,10 +41,10 @@ export default function FeaturesSection() {
           {features.map((feature, index) => (
             <ScrollReveal key={feature.title} delay={index * 150}>
               <div 
-                className="relative h-full p-6 border border-border/50 rounded-lg overflow-hidden bg-card/80 backdrop-blur-sm transition-all duration-300 hover:border-accent hover:shadow-2xl hover:shadow-accent/10"
+                className="relative h-full p-6 border border-border/50 rounded-lg overflow-hidden bg-card transition-all duration-300 hover:border-primary/50 hover:shadow-lg"
               >
                 <div className="relative z-10">
-                  <div className="p-4 bg-accent/10 rounded-full mb-4 w-fit">
+                  <div className="p-4 bg-primary/10 rounded-full mb-4 w-fit">
                     {feature.icon}
                   </div>
                   <h3 className="text-xl text-primary font-bold">{feature.title}</h3>

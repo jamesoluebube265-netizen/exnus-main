@@ -70,12 +70,12 @@ const getQuarterStatus = (quarter: string) => {
 const RoadmapIcon = ({ status }: { status: 'complete' | 'current' | 'future' }) => {
     switch (status) {
         case "complete":
-            return <CheckCircle className="w-5 h-5 text-primary bg-background" />;
+            return <CheckCircle className="w-5 h-5 text-green-500 bg-background" />;
         case "current":
-            return <Loader className="w-5 h-5 text-accent bg-background animate-spin" />;
+            return <Loader className="w-5 h-5 text-primary bg-background animate-spin" />;
         case "future":
         default:
-            return <Milestone className="w-5 h-5 text-border bg-background" />;
+            return <Milestone className="w-5 h-5 text-muted-foreground bg-background" />;
     }
 };
 
