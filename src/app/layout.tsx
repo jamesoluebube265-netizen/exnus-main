@@ -26,7 +26,7 @@ export default function RootLayout({
           className="flex flex-col min-h-screen bg-cover bg-center bg-fixed"
           style={{ backgroundImage: "url(/4.jpg)" }}
         >
-          <div className="flex flex-col min-h-screen bg-background/80 backdrop-blur-sm">
+          <div className="flex flex-col min-h-screen bg-background/70 backdrop-blur-sm">
             <Header />
             <main className="flex-grow">
               {children}
