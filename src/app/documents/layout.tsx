@@ -13,18 +13,19 @@ import {
 } from "@/components/ui/sidebar"
 import { BookText, GitCommit, FileText, Share2, ShieldCheck, Database, PieChart, Users, Zap, Scale, ThumbsUp } from "lucide-react";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const sections = [
-    { href: "#introduction", label: "Introduction", icon: <FileText /> },
-    { href: "#market-analysis", label: "Market Analysis", icon: <TrendingUp /> },
-    { href: "#challenges-solutions", label: "Challenges & Solutions", icon: <ThumbsUp /> },
-    { href: "#technical-architecture", label: "Technical Architecture", icon: <GitCommit /> },
-    { href: "#smart-contracts", label: "Smart Contracts & Security", icon: <ShieldCheck /> },
-    { href: "#rewarding-system", label: "Rewarding System", icon: <Zap /> },
-    { href: "#solana-integration", label: "Solana Integration", icon: <Share2 /> },
-    { href: "#staking", label: "Staking Mechanism", icon: <Database /> },
-    { href: "#tokenomics-details", label: "Tokenomics", icon: <PieChart /> },
-    { href: "#conclusion", label: "Conclusion", icon: <BookText /> },
+    { href: "/documents#introduction", id: "introduction", label: "Introduction", icon: <FileText /> },
+    { href: "/documents#market-analysis", id: "market-analysis", label: "Market Analysis", icon: <TrendingUp /> },
+    { href: "/documents#challenges-solutions", id: "challenges-solutions", label: "Challenges & Solutions", icon: <ThumbsUp /> },
+    { href: "/documents#technical-architecture", id: "technical-architecture", label: "Technical Architecture", icon: <GitCommit /> },
+    { href: "/documents#smart-contracts", id: "smart-contracts", label: "Smart Contracts & Security", icon: <ShieldCheck /> },
+    { href: "/documents#rewarding-system", id: "rewarding-system", label: "Rewarding System", icon: <Zap /> },
+    { href: "/documents#solana-integration", id: "solana-integration", label: "Solana Integration", icon: <Share2 /> },
+    { href: "/documents#staking", id: "staking", label: "Staking Mechanism", icon: <Database /> },
+    { href: "/documents#tokenomics-details", id: "tokenomics-details", label: "Tokenomics", icon: <PieChart /> },
+    { href: "/documents#conclusion", id: "conclusion", label: "Conclusion", icon: <BookText /> },
 ]
 
 function TrendingUp(props: React.SVGProps<SVGSVGElement>) {
@@ -48,7 +49,18 @@ function TrendingUp(props: React.SVGProps<SVGSVGElement>) {
 }
 
 export default function DocsLayout({ children }: { children: React.ReactNode }) {
-    const pathname = usePathname();
+    const [activeId, setActiveId] = useState(sections[0].id);
+
+    useEffect(() => {
+        const handleHashChange = () => {
+            const hash = window.location.hash.substring(1);
+            setActiveId(hash || sections[0].id);
+        };
+        
+        handleHashChange();
+        window.addEventListener('hashchange', handleHashChange);
+        return () => window.removeEventListener('hashchange', handleHashChange);
+    }, []);
   
     return (
         <SidebarProvider>
@@ -60,7 +72,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
                                 <SidebarMenuItem key={section.href}>
                                     <SidebarMenuButton
                                         asChild
-                                        isActive={pathname === section.href}
+                                        isActive={activeId === section.id}
                                     >
                                         <a href={section.href}>
                                             {section.icon}
@@ -79,3 +91,5 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
         </SidebarProvider>
     )
 }
+
+    
