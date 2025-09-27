@@ -24,16 +24,18 @@ export default async function AdminPage({
   if (accessCode !== correctCode) {
     return (
       <div className="w-full">
-        <ScrollReveal>
-          <div className="text-center mb-10">
+        <div className="header-card text-center mb-10">
+          <ScrollReveal>
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
               Admin Access
             </h1>
+          </ScrollReveal>
+          <ScrollReveal delay={200}>
             <p className="text-lg text-foreground/70 max-w-md mx-auto">
               Please enter the access code to view the dashboard.
             </p>
-          </div>
-        </ScrollReveal>
+          </ScrollReveal>
+        </div>
         <ScrollReveal delay={200}>
           <div className="max-w-sm mx-auto">
             <Card>
@@ -56,16 +58,16 @@ export default async function AdminPage({
 
   return (
     <div className="w-full space-y-8">
-       <ScrollReveal>
-        <div className="text-center">
+       <div className="header-card text-center">
+        <ScrollReveal>
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Admin Dashboard
             </h1>
             <p className="text-lg text-foreground/70 max-w-4xl mx-auto">
             View messages submitted through the contact form.
             </p>
-        </div>
-      </ScrollReveal>
+        </ScrollReveal>
+      </div>
       <ScrollReveal delay={200}>
         <Card>
           <CardHeader>

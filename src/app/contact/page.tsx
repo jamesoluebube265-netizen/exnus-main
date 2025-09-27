@@ -127,7 +127,8 @@ export default function ContactPage() {
 
   return (
     <div className="space-y-12">
-      <section className="text-center">
+      <section>
+        <div className="header-card text-center">
           <ScrollReveal>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-foreground">
                 Contact Us
@@ -138,6 +139,7 @@ export default function ContactPage() {
                 Have questions or want to get involved? We'd love to hear from you. Reach out through our contact form or connect with us on our social channels.
             </p>
           </ScrollReveal>
+        </div>
       </section>
 
       <section>

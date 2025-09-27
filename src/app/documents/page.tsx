@@ -394,7 +394,7 @@ export default function ProtocolPage() {
 
     return (
         <div className="space-y-8">
-            <div className="text-center">
+            <div className="header-card text-center">
                 <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
                 Technical Documents
                 </h1>
@@ -448,4 +448,3 @@ export default function ProtocolPage() {
         </div>
     );
 }
-

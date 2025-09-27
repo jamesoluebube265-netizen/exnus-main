@@ -14,9 +14,9 @@ import {
 
 export default function HeroSection() {
   return (
-    <section className="text-center">
+    <section>
       
-      <div>
+      <div className="header-card text-center">
         <ScrollReveal>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-6 text-foreground">
             <span className="text-primary">Exnus Protocol:</span> Fostering Innovation Through Incentivized Participation.

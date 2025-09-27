@@ -47,7 +47,8 @@ const airdropDetails = [
 export default function AirdropPage() {
   return (
     <div className="space-y-12">
-      <section className="text-center">
+      <section>
+        <div className="header-card text-center">
           <ScrollReveal>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-foreground">
               Join the <span className="text-primary">Exnus Protocol</span> Airdrop
@@ -66,6 +67,7 @@ export default function AirdropPage() {
                   </a>
               </Button>
           </ScrollReveal>
+        </div>
       </section>
 
       <section id="how-to-participate">

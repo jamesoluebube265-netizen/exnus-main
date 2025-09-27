@@ -82,7 +82,7 @@ const RoadmapIcon = ({ status }: { status: 'complete' | 'current' | 'future' }) 
 export default function RoadmapSection() {
   return (
     <section id="roadmap">
-      <div className="text-center mb-12">
+      <div className="header-card text-center mb-12">
         <ScrollReveal>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">Our Roadmap</h2>
           <p className="max-w-2xl mx-auto text-foreground/70 mt-4">

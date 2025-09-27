@@ -31,7 +31,8 @@ const stakingBenefits = [
 export default function StakingPage() {
   return (
     <div className="space-y-12">
-      <section className="text-center">
+      <section>
+        <div className="header-card text-center">
           <ScrollReveal>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-foreground">
                 Exnus Protocol Staking
@@ -42,6 +43,7 @@ export default function StakingPage() {
               Staking is a core function of the Exnus ecosystem, allowing token holders to actively participate in the network's security and governance while earning rewards. By locking your tokens, you help secure the protocol and gain a voice in its future.
           </p>
           </ScrollReveal>
+        </div>
       </section>
 
       <section id="staking-benefits">
