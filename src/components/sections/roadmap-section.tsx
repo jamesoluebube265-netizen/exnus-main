@@ -81,33 +81,33 @@ const RoadmapIcon = ({ status }: { status: 'complete' | 'current' | 'future' }) 
 
 export default function RoadmapSection() {
   return (
-    <section id="roadmap" className="py-20 md:py-28">
-      <div className="px-4 md:px-6">
-        <ScrollReveal className="text-center mb-16">
+    <section id="roadmap">
+      <div className="text-center mb-12">
+        <ScrollReveal>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">Our Roadmap</h2>
           <p className="max-w-2xl mx-auto text-foreground/70 mt-4">
             Follow our journey as we build the future of decentralized technology, one milestone at a time.
           </p>
         </ScrollReveal>
+      </div>
 
-        <div className="relative max-w-2xl mx-auto">
-          <div className="absolute left-5 top-2 h-full w-0.5 bg-border -translate-x-1/2"></div>
-          {roadmapData.map((item, index) => {
-            const status = getQuarterStatus(item.quarter);
-            return (
-              <ScrollReveal key={item.quarter} delay={index * 150}>
-                <div className="relative pl-12 mb-10">
-                  <div className="absolute left-5 top-2 -translate-x-1/2">
-                    <RoadmapIcon status={status} />
-                  </div>
-                  <p className="text-sm font-semibold text-primary">{item.quarter}</p>
-                  <h3 className="font-bold text-lg mt-1 text-foreground">{item.title}</h3>
-                  <p className="text-foreground/70 mt-1">{item.description}</p>
+      <div className="relative max-w-2xl mx-auto">
+        <div className="absolute left-5 top-2 h-full w-0.5 bg-border -translate-x-1/2"></div>
+        {roadmapData.map((item, index) => {
+          const status = getQuarterStatus(item.quarter);
+          return (
+            <ScrollReveal key={item.quarter} delay={index * 150}>
+              <div className="relative pl-12 mb-10">
+                <div className="absolute left-5 top-2 -translate-x-1/2">
+                  <RoadmapIcon status={status} />
                 </div>
-              </ScrollReveal>
-            )
-          })}
-        </div>
+                <p className="text-sm font-semibold text-primary">{item.quarter}</p>
+                <h3 className="font-bold text-lg mt-1 text-foreground">{item.title}</h3>
+                <p className="text-foreground/70 mt-1">{item.description}</p>
+              </div>
+            </ScrollReveal>
+          )
+        })}
       </div>
     </section>
   );

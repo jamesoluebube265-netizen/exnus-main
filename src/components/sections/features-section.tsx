@@ -27,8 +27,8 @@ const features = [
 
 export default function FeaturesSection() {
   return (
-    <section id="features" className="py-20 md:py-28">
-      <div className="px-4 md:px-6">
+    <section id="features">
+      <div className="text-center">
         <ScrollReveal>
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-foreground">
             Overcoming Web3's Core Challenges
@@ -37,23 +37,23 @@ export default function FeaturesSection() {
             The Exnus protocol is engineered to solve critical hurdles that limit ecosystem growth, from low user engagement and fragmented incentives to pervasive security vulnerabilities and a lack of user ownership.
           </p>
         </ScrollReveal>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {features.map((feature, index) => (
-            <ScrollReveal key={feature.title} delay={index * 150}>
-              <div 
-                className="relative h-full p-6 border border-border/50 rounded-lg overflow-hidden bg-card transition-all duration-300 hover:border-primary/50 hover:shadow-lg"
-              >
-                <div className="relative z-10">
-                  <div className="p-4 bg-primary/10 rounded-full mb-4 w-fit">
-                    {feature.icon}
-                  </div>
-                  <h3 className="text-xl text-primary font-bold">{feature.title}</h3>
-                  <p className="text-foreground/70 mt-2">{feature.description}</p>
+      </div>
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {features.map((feature, index) => (
+          <ScrollReveal key={feature.title} delay={index * 150}>
+            <div 
+              className="relative h-full p-6 border rounded-lg overflow-hidden bg-card transition-all duration-300 hover:border-primary/50 hover:shadow-lg"
+            >
+              <div className="relative z-10">
+                <div className="p-4 bg-primary/10 rounded-full mb-4 w-fit">
+                  {feature.icon}
                 </div>
+                <h3 className="text-xl text-primary font-bold">{feature.title}</h3>
+                <p className="text-foreground/70 mt-2">{feature.description}</p>
               </div>
-            </ScrollReveal>
-          ))}
-        </div>
+            </div>
+          </ScrollReveal>
+        ))}
       </div>
     </section>
   );

@@ -23,9 +23,9 @@ export default async function AdminPage({
 
   if (accessCode !== correctCode) {
     return (
-      <div className="w-full py-16 md:py-24">
+      <div className="w-full">
         <ScrollReveal>
-          <div className="text-center mb-10 px-4 md:px-6">
+          <div className="text-center mb-10">
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
               Admin Access
             </h1>
@@ -35,7 +35,7 @@ export default async function AdminPage({
           </div>
         </ScrollReveal>
         <ScrollReveal delay={200}>
-          <div className="container mx-auto px-4 md:px-6 max-w-sm">
+          <div className="max-w-sm mx-auto">
             <Card>
               <CardContent className="pt-6">
                 <form className="flex flex-col gap-4">
@@ -55,9 +55,9 @@ export default async function AdminPage({
   const messages = await getSubmittedMessages();
 
   return (
-    <div className="w-full py-16 md:py-24">
+    <div className="w-full space-y-8">
        <ScrollReveal>
-        <div className="text-center mb-10 px-4 md:px-6">
+        <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Admin Dashboard
             </h1>
@@ -66,42 +66,40 @@ export default async function AdminPage({
             </p>
         </div>
       </ScrollReveal>
-      <div className="container mx-auto px-4 md:px-6">
-        <ScrollReveal delay={200}>
-          <Card>
-            <CardHeader>
-              <CardTitle>Contact Form Submissions</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead className="w-[200px]">Received At</TableHead>
-                    <TableHead>Name</TableHead>
-                    <TableHead>Email</TableHead>
-                    <TableHead>Message</TableHead>
+      <ScrollReveal delay={200}>
+        <Card>
+          <CardHeader>
+            <CardTitle>Contact Form Submissions</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead className="w-[200px]">Received At</TableHead>
+                  <TableHead>Name</TableHead>
+                  <TableHead>Email</TableHead>
+                  <TableHead>Message</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {messages.map((msg, index) => (
+                  <TableRow key={index}>
+                    <TableCell>{new Date(msg.receivedAt).toLocaleString()}</TableCell>
+                    <TableCell>{msg.name}</TableCell>
+                    <TableCell>{msg.email}</TableCell>
+                    <TableCell>{msg.message}</TableCell>
                   </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {messages.map((msg, index) => (
-                    <TableRow key={index}>
-                      <TableCell>{new Date(msg.receivedAt).toLocaleString()}</TableCell>
-                      <TableCell>{msg.name}</TableCell>
-                      <TableCell>{msg.email}</TableCell>
-                      <TableCell>{msg.message}</TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-               {messages.length === 0 && (
-                <div className="text-center py-10 text-foreground/70">
-                    No messages have been submitted yet.
-                </div>
-               )}
-            </CardContent>
-          </Card>
-        </ScrollReveal>
-      </div>
+                ))}
+              </TableBody>
+            </Table>
+             {messages.length === 0 && (
+              <div className="text-center py-10 text-foreground/70">
+                  No messages have been submitted yet.
+              </div>
+             )}
+          </CardContent>
+        </Card>
+      </ScrollReveal>
     </div>
   );
 }

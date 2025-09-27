@@ -14,9 +14,9 @@ import {
 
 export default function HeroSection() {
   return (
-    <section className="relative py-24 md:py-32 lg:py-48 text-center overflow-hidden">
+    <section className="text-center">
       
-      <div className="px-4 md:px-6 relative">
+      <div>
         <ScrollReveal>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-6 text-foreground">
             <span className="text-primary">Exnus Protocol:</span> Fostering Innovation Through Incentivized Participation.
@@ -41,7 +41,7 @@ export default function HeroSection() {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </DialogTrigger>
-              <DialogContent className="sm:max-w-[625px] bg-card border-border/50 text-foreground">
+              <DialogContent className="sm:max-w-[625px]">
                 <DialogHeader>
                   <DialogTitle className="text-2xl text-primary">Exnus Protocol</DialogTitle>
                   <DialogDescription className="text-foreground/70 pt-2">
@@ -66,7 +66,7 @@ export default function HeroSection() {
                     By rewarding the actions that create real value, Exnus aims to help projects build stronger, more active, and more loyal communities.
                   </p>
                 </div>
-                 <div className="text-center pt-4 border-t border-border/50">
+                 <div className="text-center pt-4 border-t">
                   <Button asChild>
                     <a href="/documents">
                       Read Full Whitepaper

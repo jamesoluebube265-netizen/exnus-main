@@ -10,38 +10,38 @@ import { TokenomicsDiagram } from "@/components/sections/diagrams/tokenomics-dia
 import { StakingRewardsDiagram } from "@/components/sections/diagrams/staking-rewards-diagram";
 import ScrollReveal from "@/components/scroll-reveal";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, ArrowRight } from "lucide-react";
-import { usePathname } from 'next/navigation'
+import { ArrowLeft, ArrowRight, BookText, GitCommit, FileText, Share2, ShieldCheck, Database, PieChart, TrendingUp, ThumbsUp } from "lucide-react";
+import { Card } from "@/components/ui/card";
 
 const documentSections = [
-    { id: "introduction", title: "Introduction" },
-    { id: "market-analysis", title: "Market Analysis" },
-    { id: "challenges-solutions", title: "Web3 Challenges and Exnus Solutions" },
-    { id: "technical-architecture", title: "Technical Architecture" },
-    { id: "smart-contracts", title: "Smart Contract Design and Security" },
-    { id: "rewarding-system", title: "Rewarding System: Incentivizing User Engagement" },
-    { id: "solana-integration", title: "Integration with Solana Blockchain" },
-    { id: "staking", title: "Staking Mechanism" },
-    { id: "tokenomics-details", title: "Tokenomics" },
-    { id: "conclusion", title: "Conclusion" },
+    { id: "introduction", title: "Introduction", icon: <FileText /> },
+    { id: "market-analysis", title: "Market Analysis", icon: <TrendingUp /> },
+    { id: "challenges-solutions", title: "Challenges & Solutions", icon: <ThumbsUp /> },
+    { id: "technical-architecture", title: "Technical Architecture", icon: <GitCommit /> },
+    { id: "smart-contracts", title: "Smart Contracts & Security", icon: <ShieldCheck /> },
+    { id: "rewarding-system", title: "Rewarding System", icon: <Zap /> },
+    { id: "solana-integration", title: "Solana Integration", icon: <Share2 /> },
+    { id: "staking", title: "Staking Mechanism", icon: <Database /> },
+    { id: "tokenomics-details", title: "Tokenomics", icon: <PieChart /> },
+    { id: "conclusion", title: "Conclusion", icon: <BookText /> },
 ];
 
 const SectionContent = ({ id }: { id: string }) => {
     switch (id) {
         case "introduction":
             return (
-                <>
+                <div className="prose max-w-none prose-invert text-foreground/80">
                     <p>
                       The rapid evolution of decentralized technologies has transformed the way communities and networks operate, placing greater emphasis on user participation and shared governance. Within this landscape, the Exnus protocol introduces an innovative reward system designed to actively incentivize users to contribute meaningfully to the growth and development of the ecosystem. Unlike traditional models that often prioritize passive engagement, Exnus fosters a culture of collaboration and continuous improvement by recognizing and rewarding the diverse efforts of its community members.
                     </p>
                     <p>
                       At its core, the Exnus protocol aims to cultivate a vibrant and inclusive environment where users feel a genuine sense of ownership and belonging. By aligning individual incentives with the collective success of the network, Exnus not only encourages sustained participation but also drives innovation that benefits all stakeholders. This white paper delves into the mechanisms, architecture, and strategic vision behind the protocol, outlining how Exnus stands poised to redefine user engagement within the Web3 space, leveraging the power and scalability of the Solana blockchain. Through this comprehensive exploration, presale investors, community members, and ecosystem participants will gain insight into the unique value proposition of Exnus, its technical foundations, and the roadmap that will guide its evolution into a cornerstone of the ecosystem’s future.
                     </p>
-                </>
+                </div>
             );
         case "market-analysis":
             return (
-                <>
+                <div className="prose max-w-none prose-invert text-foreground/80">
                     <p>
                       The blockchain and Web3 sectors are witnessing unprecedented growth, with decentralized applications (dApps) and ecosystems expanding rapidly. However, despite this growth, many projects face significant challenges in cultivating active and engaged user bases. User retention and meaningful participation remain critical hurdles, often limiting the potential for sustained network effects and long-term success.
                     </p>
@@ -65,11 +65,11 @@ const SectionContent = ({ id }: { id: string }) => {
                       <p>
                           As decentralized ecosystems continue to mature, protocols that effectively engage and reward their communities will capture significant market share. Exnus’s innovative approach positions it to become a leading model for sustainable network growth, driving value for presale investors and community members.
                       </p>
-                </>
+                </div>
             );
         case "challenges-solutions":
             return (
-                 <>
+                 <div className="prose max-w-none prose-invert text-foreground/80">
                     <p>The Web3 space, while brimming with potential, faces several inherent challenges that impede the growth and sustainability of decentralized ecosystems. The Exnus protocol is designed specifically to address these obstacles through innovative solutions that foster engagement, security, and scalability.</p>
                     <div className="space-y-6 mt-6">
                       <div>
@@ -98,14 +98,14 @@ const SectionContent = ({ id }: { id: string }) => {
                           <p className="mt-1"><strong className="text-primary/80">Exnus Solution:</strong> Through token rewards and staking mechanisms, Exnus fosters a sense of ownership and alignment between individual contributions and the network’s success, promoting long-term commitment.</p>
                       </div>
                     </div>
-                </>
+                </div>
             );
         case "technical-architecture":
             return (
-                <>
+                <div className="prose max-w-none prose-invert text-foreground/80">
                     <p>The Exnus protocol is engineered with a modular and scalable architecture designed to efficiently manage user contributions, reward calculations, and secure token distribution. Its technical framework ensures high performance, security, and seamless integration with the Solana blockchain.</p>
                     <div className="not-prose my-8">
-                      <div className="overflow-hidden p-0 md:p-4 bg-card rounded-lg">
+                      <div className="overflow-hidden p-0 md:p-4 bg-background rounded-lg">
                           <ArchitectureDiagram />
                       </div>
                       <p className="text-center text-sm text-foreground/60 mt-2">Diagram: High-level overview of the Exnus technical architecture.</p>
@@ -130,14 +130,14 @@ const SectionContent = ({ id }: { id: string }) => {
                           <li><strong>Permissioned Access Controls:</strong> Restricts critical functions to authorized entities to prevent unauthorized manipulation.</li>
                           <li><strong>Automated Auditing Tools:</strong> Continuously monitor transactions and contract interactions to detect anomalies and potential exploits.</li>
                       </ul>
-                </>
+                </div>
             );
         case "smart-contracts":
             return (
-                 <>
+                 <div className="prose max-w-none prose-invert text-foreground/80">
                     <p>The Exnus protocol’s smart contract framework is central to its ability to securely and transparently manage user rewards, staking, and governance. Designed with a multi-layered security approach, the contracts ensure trustless interactions and immutable enforcement of protocol rules.</p>
                     <div className="not-prose my-8">
-                        <div className="overflow-hidden p-6 md:p-8 bg-card rounded-lg">
+                        <div className="overflow-hidden p-6 md:p-8 bg-background rounded-lg">
                            <SecurityDiagram />
                         </div>
                         <p className="text-center text-sm text-foreground/60 mt-2">Diagram: An overview of the multi-layered security approach for Exnus smart contracts.</p>
@@ -163,14 +163,14 @@ const SectionContent = ({ id }: { id: string }) => {
                         <li><strong>Sybil Attack Prevention:</strong> The protocol incorporates identity verification and contribution validation techniques to prevent manipulation through fake accounts.</li>
                         <li><strong>Immutable Logic:</strong> Once deployed, core contract logic is immutable, ensuring consistent and tamper-proof enforcement of reward and governance rules.</li>
                     </ul>
-                </>
+                </div>
             );
         case "rewarding-system":
             return (
-                <>
+                <div className="prose max-w-none prose-invert text-foreground/80">
                     <p>The Exnus protocol’s rewarding system is a cornerstone of its strategy to drive active participation and sustained growth within the ecosystem. By recognizing and compensating diverse user contributions, Exnus fosters a vibrant, collaborative community where every effort is valued.</p>
                     <div className="not-prose my-8">
-                        <div className="overflow-hidden p-6 md:p-8 bg-card rounded-lg">
+                        <div className="overflow-hidden p-6 md:p-8 bg-background rounded-lg">
                            <RewardingDiagram />
                         </div>
                         <p className="text-center text-sm text-foreground/60 mt-2">Diagram: An overview of the types of contributions rewarded by the Exnus Protocol.</p>
@@ -196,11 +196,11 @@ const SectionContent = ({ id }: { id: string }) => {
                     </ul>
                      <h3 className="text-2xl font-semibold text-primary mt-6 mb-3">Creating a Positive Feedback Loop</h3>
                      <p>By rewarding meaningful participation, Exnus cultivates a self-reinforcing cycle where engaged users are motivated to contribute more, attracting new members and accelerating ecosystem growth. This approach not only benefits individual users through token earnings but also enhances the overall health and innovation capacity of the network.</p>
-                </>
+                </div>
             );
         case "solana-integration":
             return (
-                <>
+                <div className="prose max-w-none prose-invert text-foreground/80">
                     <p>The Exnus protocol’s integration with the Solana blockchain is a strategic choice that enhances its performance, security, and scalability within the ecosystem. Solana’s cutting-edge technology provides the foundational infrastructure that enables Exnus to deliver a seamless and efficient user experience.</p>
                      <h3 className="text-2xl font-semibold text-primary mt-6 mb-3">Benefits of Solana Integration</h3>
                      <ul className="list-disc pl-6 space-y-2">
@@ -218,14 +218,14 @@ const SectionContent = ({ id }: { id: string }) => {
                     </ul>
                     <h3 className="text-2xl font-semibold text-primary mt-6 mb-3">Impact on User Experience</h3>
                     <p>By leveraging Solana, Exnus offers users fast, cost-effective, and reliable interactions with the protocol. This integration removes common barriers such as high fees and slow confirmations, making participation in rewarding, staking, and governance processes smooth and accessible.</p>
-                </>
+                </div>
             );
         case "staking":
             return (
-                <>
+                <div className="prose max-w-none prose-invert text-foreground/80">
                     <p>The Exnus protocol incorporates a robust staking mechanism designed to incentivize long-term commitment and active participation within the ecosystem. By allowing users to lock their tokens, staking not only rewards loyalty but also strengthens network security and governance.</p>
                      <div className="not-prose my-8">
-                        <div className="overflow-hidden p-6 md:p-8 bg-card rounded-lg">
+                        <div className="overflow-hidden p-6 md:p-8 bg-background rounded-lg">
                            <StakingDiagram />
                         </div>
                         <p className="text-center text-sm text-foreground/60 mt-2">Diagram: The staking flow for users and its benefits to the network.</p>
@@ -249,15 +249,15 @@ const SectionContent = ({ id }: { id: string }) => {
                         <li><strong>Aligned Incentives:</strong> Stakers have a vested interest in the protocol’s success, aligning individual goals with the health and growth of the ecosystem.</li>
                         <li><strong>Enhanced Governance:</strong> Staking empowers active users with governance influence, promoting decentralized and community-driven decision-making.</li>
                     </ul>
-                </>
+                </div>
             );
         case "tokenomics-details":
             return (
-                <>
+                <div className="prose max-w-none prose-invert text-foreground/80">
                     <p>Total Supply: 2.5 Billion Tokens.</p>
                     <p>The total supply of Exnus tokens is strategically allocated to ensure sustainability, community engagement, and rewards for stakeholders. Below is the detailed breakdown of the token allocation:</p>
                     <div className="not-prose my-8">
-                        <div className="overflow-hidden p-6 md:p-8 bg-card rounded-lg">
+                        <div className="overflow-hidden p-6 md:p-8 bg-background rounded-lg">
                            <TokenomicsDiagram />
                         </div>
                         <p className="text-center text-sm text-foreground/60 mt-2">Diagram: An overview of the token allocation for the Exnus Protocol.</p>
@@ -278,7 +278,7 @@ const SectionContent = ({ id }: { id: string }) => {
                         The 1.895 billion tokens allocated for staking rewards are subject to a structured vesting schedule to ensure the long-term health and stability of the network. The rewards will be distributed linearly over a period of ten years (120 months) starting from the Token Generation Event (TGE).
                     </p>
                     <div className="not-prose my-8">
-                        <div className="overflow-hidden p-6 md:p-8 bg-card rounded-lg">
+                        <div className="overflow-hidden p-6 md:p-8 bg-background rounded-lg">
                            <StakingRewardsDiagram />
                         </div>
                         <p className="text-center text-sm text-foreground/60 mt-2">Diagram: An overview of the staking rewards distribution model.</p>
@@ -315,30 +315,30 @@ const SectionContent = ({ id }: { id: string }) => {
                     <p className="mt-4">
                         This vesting schedule is designed to empower our community from day one while encouraging sustained engagement and mitigating initial market volatility.
                     </p>
-                </>
+                </div>
             );
         case "conclusion":
             return (
-                <>
+                <div className="prose max-w-none prose-invert text-foreground/80">
                     <p>
                       The Exnus protocol represents a forward-thinking model for decentralized ecosystem growth that prioritizes active user participation and equitable reward distribution. By integrating with Solana’s blockchain and implementing a secure, transparent smart contract infrastructure, Exnus fosters a collaborative community that drives continuous innovation and shared success within the ecosystem. This white paper outlines a comprehensive vision for sustainable network development powered by its users.
                     </p>
-                </>
+                </div>
             );
         default:
             return <p>Section not found.</p>;
     }
 };
 
-const SectionNavigation = ({ currentIndex }: { currentIndex: number }) => {
+const SectionNavigation = ({ currentIndex, onNavigate }: { currentIndex: number, onNavigate: (id: string) => void }) => {
     const prevSection = currentIndex > 0 ? documentSections[currentIndex - 1] : null;
     const nextSection = currentIndex < documentSections.length - 1 ? documentSections[currentIndex + 1] : null;
 
     return (
-        <div className="mt-12 flex justify-between border-t border-border/50 pt-8">
+        <div className="mt-12 flex justify-between border-t pt-8">
             {prevSection ? (
                 <Button variant="outline" asChild>
-                    <a href={`#${prevSection.id}`}>
+                    <a href={`#${prevSection.id}`} onClick={() => onNavigate(prevSection.id)}>
                         <ArrowLeft className="mr-2 h-4 w-4" />
                         <div>
                             <div className="text-xs text-foreground/70">Previous</div>
@@ -349,7 +349,7 @@ const SectionNavigation = ({ currentIndex }: { currentIndex: number }) => {
             ) : <div></div>}
             {nextSection ? (
                 <Button variant="outline" asChild>
-                     <a href={`#${nextSection.id}`} className="text-right">
+                     <a href={`#${nextSection.id}`} onClick={() => onNavigate(nextSection.id)} className="text-right">
                         <div>
                             <div className="text-xs text-foreground/70">Next</div>
                             <div className="text-foreground font-semibold">{nextSection.title}</div>
@@ -363,7 +363,7 @@ const SectionNavigation = ({ currentIndex }: { currentIndex: number }) => {
 }
 
 export default function ProtocolPage() {
-    const [activeSectionId, setActiveSectionId] = useState<string | null>(null);
+    const [activeSectionId, setActiveSectionId] = useState(documentSections[0].id);
 
     useEffect(() => {
         const handleHashChange = () => {
@@ -371,57 +371,80 @@ export default function ProtocolPage() {
             const section = documentSections.find(s => s.id === hash);
             if (section) {
                 setActiveSectionId(section.id);
-                window.scrollTo(0, 0);
             } else {
-                // Default to the first section if hash is invalid or missing
                 setActiveSectionId(documentSections[0].id);
-                // Optionally update the URL hash
-                // window.history.replaceState(null, '', `#${documentSections[0].id}`);
             }
+            window.scrollTo(0, 0);
         };
-
-        // Call once on mount to handle initial load
-        handleHashChange();
-
+        
+        handleHashChange(); // Initial check
         window.addEventListener('hashchange', handleHashChange);
-
         return () => {
             window.removeEventListener('hashchange', handleHashChange);
         };
     }, []);
-    
-    if (activeSectionId === null) {
-        // You can render a loading state here if you prefer
-        return null;
-    }
 
+    const handleNavigate = (id: string) => {
+        setActiveSectionId(id);
+        window.scrollTo(0, 0);
+    }
+    
     const activeIndex = documentSections.findIndex(s => s.id === activeSectionId);
     const activeSection = documentSections[activeIndex];
 
     return (
-        <div className="bg-background text-foreground">
-        <div className="text-center pt-16 md:pt-24 mb-12 px-4">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Technical Documents
-            </h1>
-            <p className="text-lg text-foreground/70 max-w-4xl mx-auto">
-            An in-depth exploration of the mechanisms, architecture, and strategic vision behind the protocol.
-            </p>
-        </div>
+        <div className="space-y-8">
+            <div className="text-center">
+                <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+                Technical Documents
+                </h1>
+                <p className="text-lg text-foreground/70 max-w-4xl mx-auto">
+                An in-depth exploration of the mechanisms, architecture, and strategic vision behind the protocol.
+                </p>
+            </div>
 
-        <div className="prose max-w-4xl mx-auto prose-invert">
-            {activeSection && (
-                <ScrollReveal key={activeSection.id}>
-                    <section id={activeSection.id} className="document-section scroll-mt-24">
-                        <h2 className="text-3xl font-bold text-primary border-b border-primary/30 pb-2 mb-4">
-                            [ {activeIndex + 1} ] {activeSection.title}
-                        </h2>
-                        <SectionContent id={activeSection.id} />
-                        <SectionNavigation currentIndex={activeIndex} />
-                    </section>
-                </ScrollReveal>
-            )}
-        </div>
+            <div className="flex gap-8">
+                <aside className="hidden lg:block w-1/4">
+                    <Card className="sticky top-24 p-4">
+                        <nav className="flex flex-col gap-2">
+                            {documentSections.map(section => (
+                                <a
+                                    key={section.id}
+                                    href={`#${section.id}`}
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        handleNavigate(section.id);
+                                    }}
+                                    className={`flex items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors ${
+                                        activeSectionId === section.id
+                                        ? "bg-secondary text-foreground font-medium"
+                                        : "text-foreground/70 hover:bg-secondary hover:text-foreground"
+                                    }`}
+                                >
+                                    {section.icon}
+                                    {section.label}
+                                </a>
+                            ))}
+                        </nav>
+                    </Card>
+                </aside>
+
+                <div className="w-full lg:w-3/4">
+                     {activeSection && (
+                        <Card className="p-6 md:p-8" key={activeSection.id}>
+                            <ScrollReveal>
+                                <section id={activeSection.id}>
+                                    <h2 className="text-3xl font-bold text-primary mb-6">
+                                        {activeSection.title}
+                                    </h2>
+                                    <SectionContent id={activeSection.id} />
+                                    <SectionNavigation currentIndex={activeIndex} onNavigate={handleNavigate}/>
+                                </section>
+                            </ScrollReveal>
+                        </Card>
+                    )}
+                </div>
+            </div>
         </div>
     );
 }
