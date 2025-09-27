@@ -2,19 +2,19 @@ import { Users, GitCommit, MessageSquare, Award, Cpu, ShieldCheck, Scale, Vote }
 
 const DiagramIcon = ({ icon: Icon, label }: { icon: React.ElementType, label: string }) => (
     <div className="flex flex-col items-center text-center gap-2">
-        <div className="w-16 h-16 bg-accent/10 text-accent rounded-full flex items-center justify-center">
+        <div className="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center">
             <Icon className="w-8 h-8" />
         </div>
-        <span className="text-xs font-medium text-white">{label}</span>
+        <span className="text-xs font-medium text-foreground">{label}</span>
     </div>
 );
 
 const AnimatedArrow = () => (
     <div className="flex items-center justify-center w-full h-16">
         <div className="flex gap-2">
-            <div className="w-2 h-2 rounded-full bg-accent sparkle-animation" style={{ animationDelay: '0s' }}></div>
-            <div className="w-2 h-2 rounded-full bg-accent sparkle-animation" style={{ animationDelay: '0.2s' }}></div>
-            <div className="w-2 h-2 rounded-full bg-accent sparkle-animation" style={{ animationDelay: '0.4s' }}></div>
+            <div className="w-2 h-2 rounded-full bg-primary sparkle-animation" style={{ animationDelay: '0s' }}></div>
+            <div className="w-2 h-2 rounded-full bg-primary sparkle-animation" style={{ animationDelay: '0.2s' }}></div>
+            <div className="w-2 h-2 rounded-full bg-primary sparkle-animation" style={{ animationDelay: '0.4s' }}></div>
         </div>
     </div>
 );

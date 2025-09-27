@@ -81,7 +81,7 @@ const RoadmapIcon = ({ status }: { status: 'complete' | 'current' | 'future' }) 
 
 export default function RoadmapSection() {
   return (
-    <section id="roadmap" className="py-20 md:py-28 bg-background/50 backdrop-blur-sm">
+    <section id="roadmap" className="py-20 md:py-28">
       <div className="px-4 md:px-6">
         <ScrollReveal className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">Our Roadmap</h2>
@@ -100,8 +100,8 @@ export default function RoadmapSection() {
                   <div className="absolute left-5 top-2 -translate-x-1/2">
                     <RoadmapIcon status={status} />
                   </div>
-                  <p className="text-sm font-semibold text-accent">{item.quarter}</p>
-                  <h3 className="font-bold text-lg mt-1 text-white">{item.title}</h3>
+                  <p className="text-sm font-semibold text-primary">{item.quarter}</p>
+                  <h3 className="font-bold text-lg mt-1 text-foreground">{item.title}</h3>
                   <p className="text-foreground/70 mt-1">{item.description}</p>
                 </div>
               </ScrollReveal>

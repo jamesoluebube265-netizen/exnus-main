@@ -16,19 +16,19 @@ export default function Footer() {
           </p>
           <div className="flex flex-wrap justify-center gap-6">
             <a href="https://x.com/exnusprotocol?t=erRcFQecZLsl-pW3MGFC9g&s=09" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground/80 hover:text-accent">
-              <Image src="/x.jpg" alt="X" width={20} height={20} className="invert"/>
+              <Image src="/x.jpg" alt="X" width={20} height={20} />
               <span>X</span>
             </a>
             <a href="https.t.me/exnusprotocolchat" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground/80 hover:text-accent">
-              <Image src="/tg.jpg" alt="Telegram" width={20} height={20} className="invert"/>
+              <Image src="/tg.jpg" alt="Telegram" width={20} height={20} />
               <span>Telegram</span>
             </a>
             <a href="httpss://discord.gg/v8MpYYFdP8" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground/80 hover:text-accent">
-                <Image src="/discord.jpg" alt="Discord" width={20} height={20} className="invert"/>
+                <Image src="/discord.jpg" alt="Discord" width={20} height={20} />
                 <span>Discord</span>
             </a>
             <a href="https://www.linkedin.com/in/exnus-protocol-248a85277?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground/80 hover:text-accent">
-              <Image src="/link.jpg" alt="LinkedIn" width={20} height={20} className="invert"/>
+              <Image src="/link.jpg" alt="LinkedIn" width={20} height={20} />
               <span>LinkedIn</span>
             </a>
           </div>

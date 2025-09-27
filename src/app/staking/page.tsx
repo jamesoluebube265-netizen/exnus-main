@@ -6,22 +6,22 @@ import { Award, ShieldCheck, Lock, TrendingUp, Handshake, BrainCircuit } from "l
 
 const stakingBenefits = [
     {
-      icon: <Award className="w-8 h-8 text-accent" />,
+      icon: <Award className="w-8 h-8 text-primary" />,
       title: "Earn Rewards",
       description: "Stake your Exnus tokens to earn passive rewards. The longer you stake, the more you earn, compounding your holdings over time."
     },
     {
-      icon: <ShieldCheck className="w-8 h-8 text-accent" />,
+      icon: <ShieldCheck className="w-8 h-8 text-primary" />,
       title: "Enhance Security",
       description: "By staking, you contribute directly to the security and stability of the network, helping to validate transactions and maintain protocol integrity."
     },
     {
-      icon: <Handshake className="w-8 h-8 text-accent" />,
+      icon: <Handshake className="w-8 h-8 text-primary" />,
       title: "Governance Rights",
       description: "Staked tokens grant you voting power in the Exnus DAO. Participate in key decisions and shape the future of the protocol."
     },
     {
-      icon: <TrendingUp className="w-8 h-8 text-accent" />,
+      icon: <TrendingUp className="w-8 h-8 text-primary" />,
       title: "Network Stability",
       description: "Incentivizing token locking reduces market volatility and fosters a stable, long-term token economy, benefiting all ecosystem participants."
     }
@@ -33,7 +33,7 @@ export default function StakingPage() {
       <section className="relative py-24 md:py-32 text-center overflow-hidden">
           <div className="container px-4 md:px-6 relative">
               <ScrollReveal>
-                <div className="inline-block bg-accent/10 text-accent font-semibold py-2 px-4 rounded-full mb-4">
+                <div className="inline-block bg-primary/10 text-primary font-semibold py-2 px-4 rounded-full mb-4">
                     Coming Soon
                 </div>
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-6 text-foreground">
@@ -48,7 +48,7 @@ export default function StakingPage() {
           </div>
       </section>
 
-      <section id="staking-benefits" className="py-20 md:py-28 bg-black/20">
+      <section id="staking-benefits" className="py-20 md:py-28 bg-secondary/50">
           <div className="container px-4 md:px-6">
               <ScrollReveal>
                 <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
@@ -63,11 +63,11 @@ export default function StakingPage() {
                       <ScrollReveal key={benefit.title} delay={index * 150}>
                       <div className="h-full p-6 text-center border border-border/80 rounded-lg bg-card/80 backdrop-blur-sm">
                           <div className="flex justify-center mb-4">
-                              <div className="p-4 bg-accent/10 rounded-full w-fit">
+                              <div className="p-4 bg-primary/10 rounded-full w-fit">
                                   {benefit.icon}
                               </div>
                           </div>
-                          <h3 className="text-xl font-bold text-white">{benefit.title}</h3>
+                          <h3 className="text-xl font-bold text-foreground">{benefit.title}</h3>
                           <p className="text-foreground/70 mt-2">{benefit.description}</p>
                       </div>
                       </ScrollReveal>
@@ -90,22 +90,22 @@ export default function StakingPage() {
           </ScrollReveal>
           <div className="max-w-5xl mx-auto mt-12 grid md:grid-cols-1 gap-8 text-left">
              <Card className="p-6 flex items-start gap-6 h-full border-border/50 bg-card/80 backdrop-blur-sm">
-                <div className="p-3 bg-accent/10 rounded-full mt-1">
-                    <Lock className="w-8 h-8 text-accent" />
+                <div className="p-3 bg-primary/10 rounded-full mt-1">
+                    <Lock className="w-8 h-8 text-primary" />
                 </div>
                 <div>
-                    <h3 className="font-bold text-xl text-accent">Flexible Staking Options</h3>
+                    <h3 className="font-bold text-xl text-primary">Flexible Staking Options</h3>
                     <p className="mt-2 text-foreground/80">
                       The protocol will support multiple staking tiers with varying lock-up durations and reward rates. This will provide you with options that balance your liquidity needs and reward optimization goals.
                     </p>
                 </div>
              </Card>
              <Card className="p-6 flex items-start gap-6 h-full border-border/50 bg-card/80 backdrop-blur-sm">
-                <div className="p-3 bg-accent/10 rounded-full mt-1">
-                    <BrainCircuit className="w-8 h-8 text-accent" />
+                <div className="p-3 bg-primary/10 rounded-full mt-1">
+                    <BrainCircuit className="w-8 h-8 text-primary" />
                 </div>
                 <div>
-                    <h3 className="font-bold text-xl text-accent">Secure Smart Contracts</h3>
+                    <h3 className="font-bold text-xl text-primary">Secure Smart Contracts</h3>
                     <p className="mt-2 text-foreground/80">
                       All staking activities will be managed by fully-audited smart contracts on the Solana blockchain. Features like slashing mechanisms and controlled withdrawals will be implemented to ensure the security and fairness of the system.
                     </p>
@@ -119,7 +119,7 @@ export default function StakingPage() {
         <div className="container px-4 md:px-6">
           <ScrollReveal>
             <div className="max-w-3xl mx-auto p-8 border border-border/50 rounded-lg bg-card/80 backdrop-blur-sm text-center">
-              <h3 className="font-bold text-xl text-accent">Stay Updated</h3>
+              <h3 className="font-bold text-xl text-primary">Stay Updated</h3>
               <p className="mt-4 text-foreground/70">
                   The official launch of our staking platform is a top priority on our roadmap. Follow our social channels and subscribe to our newsletter for the latest announcements and to be notified as soon as staking is live.
               </p>
