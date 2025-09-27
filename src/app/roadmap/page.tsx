@@ -10,7 +10,7 @@ export default function RoadmapPage() {
         <div className="container px-4 md:px-6">
           <ScrollReveal>
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+              <h2 className="text-3xl md:text-4xl font-bold text-primary">
                 Beyond the Roadmap: Our Vision for the Future
               </h2>
               <p className="mt-4 text-foreground/70">

@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import ScrollReveal from "@/components/scroll-reveal";
 import { ArrowRight, BookOpen } from "lucide-react";
@@ -11,7 +12,7 @@ export default function CtaSection() {
     <section>
       <div className="text-center">
         <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-foreground">Explore the Exnus Ecosystem</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-primary">Explore the Exnus Ecosystem</h2>
             <p className="max-w-2xl mx-auto text-center text-foreground/70 mb-12">
                 Learn more about the core components of our protocol and what makes Exnus a revolutionary platform.
             </p>

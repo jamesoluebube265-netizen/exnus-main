@@ -1,3 +1,4 @@
+
 import { CheckCircle, Loader, Milestone } from "lucide-react";
 import ScrollReveal from "../scroll-reveal";
 
@@ -84,7 +85,7 @@ export default function RoadmapSection() {
     <section id="roadmap">
       <div className="header-card text-center mb-12">
         <ScrollReveal>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">Our Roadmap</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Roadmap</h2>
           <p className="max-w-2xl mx-auto text-foreground/70 mt-4">
             Follow our journey as we build the future of decentralized technology, one milestone at a time.
           </p>

@@ -1,3 +1,4 @@
+
 'use client';
 import { useState } from 'react';
 import ScrollReveal from '../scroll-reveal';
@@ -30,7 +31,7 @@ export default function HowItWorksSection() {
     <section id="how-it-works">
       <div className="text-center mb-12">
         <ScrollReveal>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">How to Engage with the Exnus Ecosystem</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-primary">How to Engage with the Exnus Ecosystem</h2>
           <p className="max-w-2xl mx-auto text-foreground/70 mt-4">
             Our protocol creates a powerful feedback loop where active participation is recognized, rewarded, and empowers the community to drive innovation and growth.
           </p>

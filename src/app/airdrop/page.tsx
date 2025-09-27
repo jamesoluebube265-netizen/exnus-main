@@ -73,7 +73,7 @@ export default function AirdropPage() {
       <section id="how-to-participate">
           <div className="text-center">
               <ScrollReveal>
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-primary">
                   How to Participate
               </h2>
               <p className="max-w-3xl mx-auto text-center text-foreground/70 mb-8">
@@ -100,7 +100,7 @@ export default function AirdropPage() {
       <section>
         <div className="text-center">
           <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary">
               Airdrop Campaign Details
             </h2>
             <p className="mt-4 text-foreground/70 mb-8">

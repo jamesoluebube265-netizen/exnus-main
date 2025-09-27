@@ -1,3 +1,4 @@
+
 'use client';
 
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -227,7 +228,7 @@ export default function ContactPage() {
       <section>
         <div className="text-center">
             <ScrollReveal>
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+                <h2 className="text-3xl md:text-4xl font-bold text-primary">
                     Frequently Asked Questions
                 </h2>
                 <p className="mt-4 text-foreground/70">
@@ -259,7 +260,7 @@ export default function ContactPage() {
       <section>
           <div className="text-center">
               <ScrollReveal>
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-foreground">
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-primary">
                   Our Commitment to Open Communication
               </h2>
               <p className="max-w-3xl mx-auto text-center text-foreground/70 mb-8">
