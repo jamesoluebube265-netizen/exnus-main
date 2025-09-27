@@ -23,13 +23,16 @@ export default function RootLayout({
       </head>
       <body className="font-body antialiased bg-background text-foreground">
         <div 
-          className="flex flex-col min-h-screen"
+          className="flex flex-col min-h-screen bg-cover bg-center bg-fixed"
+          style={{ backgroundImage: "url('/4.jpg')" }}
         >
-          <Header />
-          <main className="flex-grow">
-            {children}
-          </main>
-          <Footer />
+          <div className="flex flex-col min-h-screen bg-white/80 backdrop-blur-sm">
+            <Header />
+            <main className="flex-grow">
+              {children}
+            </main>
+            <Footer />
+          </div>
         </div>
         <Toaster />
       </body>
