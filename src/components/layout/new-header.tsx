@@ -1,5 +1,5 @@
 'use client';
-import { Search, Gift, Bell, User, Menu } from "lucide-react";
+import { Search, Bell, User, Menu } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect, useRef } from "react";
@@ -77,10 +77,6 @@ export default function NewHeader({ onMenuClick }: NewHeaderProps) {
                 )}
             </div>
             <div className="flex flex-shrink-0 items-center justify-end gap-2 md:gap-4">
-                <Button variant="outline" size="sm" className="hidden sm:flex items-center gap-2">
-                    <Gift className="h-4 w-4" />
-                    <span>Refer & earn up to 200 USD</span>
-                </Button>
                 <Button variant="ghost" size="icon">
                     <Bell className="h-5 w-5" />
                 </Button>
