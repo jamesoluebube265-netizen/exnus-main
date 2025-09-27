@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Sidebar from '@/components/layout/sidebar';
 import NewHeader from '@/components/layout/new-header';
+import Footer from './footer';
 
 export default function ClientLayout({
   children,
@@ -19,6 +20,7 @@ export default function ClientLayout({
         <main className="flex-grow p-6 md:p-8 overflow-y-auto">
           {children}
         </main>
+        <Footer />
       </div>
     </div>
   );
