@@ -24,7 +24,7 @@ export default function RootLayout({
       <body className="font-body antialiased bg-background text-foreground">
         <div 
           className="flex flex-col min-h-screen bg-cover bg-center bg-fixed"
-          style={{ backgroundImage: "url('/4.jpg')" }}
+          style={{ backgroundImage: "url('/4.JPEG')" }}
         >
           <div className="flex flex-col min-h-screen bg-white/80 backdrop-blur-sm">
             <Header />
