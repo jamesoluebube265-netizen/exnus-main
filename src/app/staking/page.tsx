@@ -2,7 +2,8 @@
 import ScrollReveal from "@/components/scroll-reveal";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Award, ShieldCheck, Lock, TrendingUp, Handshake, BrainCircuit } from "lucide-react";
+import { StakingModelDiagram } from "@/components/sections/diagrams/staking-model-diagram";
+import { Award, ShieldCheck, Handshake, TrendingUp } from "lucide-react";
 
 const stakingBenefits = [
     {
@@ -78,32 +79,33 @@ export default function StakingPage() {
               How Our Staking Mechanism Works
             </h2>
             <p className="mt-4 text-foreground/70 mb-8">
-              We have designed a flexible, secure, and user-friendly staking mechanism to provide a seamless experience for our community.
+              Our staking model is designed to reward long-term commitment. By locking your tokens for specific monthly periods, you can access higher reward tiers, maximizing your returns while contributing to the network's stability.
             </p>
           </ScrollReveal>
         </div>
         <div className="max-w-5xl mx-auto grid md:grid-cols-1 gap-8 text-left">
-           <Card className="p-6 flex items-start gap-6 h-full border bg-card">
-              <div className="p-3 bg-primary/10 rounded-full mt-1">
-                  <Lock className="w-8 h-8 text-primary" />
-              </div>
-              <div>
-                  <h3 className="font-bold text-xl text-primary">Flexible Staking Options</h3>
-                  <p className="mt-2 text-foreground/80">
-                    The protocol supports multiple staking tiers with varying lock-up durations and reward rates. This provides users with options that balance their liquidity needs with their reward optimization goals. Longer staking periods will yield higher returns, incentivizing long-term commitment.
+           <Card className="p-8 border bg-card">
+                <StakingModelDiagram />
+                <div className="mt-8 prose prose-invert max-w-none text-foreground/80">
+                  <h3 className="text-2xl font-bold text-primary mb-3">Locked Staking for Higher Rewards</h3>
+                  <p>
+                    The Exnus staking mechanism operates on a time-locked model. Unlike flexible staking, our system requires you to lock your tokens for defined monthly intervals. This approach is designed to foster a stable and secure network by encouraging long-term participation.
                   </p>
-              </div>
-           </Card>
-           <Card className="p-6 flex items-start gap-6 h-full border bg-card">
-              <div className="p-3 bg-primary/10 rounded-full mt-1">
-                  <BrainCircuit className="w-8 h-8 text-primary" />
-              </div>
-              <div>
-                  <h3 className="font-bold text-xl text-primary">Secure & Audited Smart Contracts</h3>
-                  <p className="mt-2 text-foreground/80">
-                    All staking activities are managed by fully-audited smart contracts on the Solana blockchain. To protect the network and its participants, features like slashing mechanisms for malicious behavior and controlled withdrawal periods are implemented to ensure the fairness and security of the entire system.
-                  </p>
-              </div>
+                  <ul className="list-disc pl-6 space-y-2 mt-4">
+                    <li>
+                      <strong>Structured Lock-in Periods:</strong> Choose from various monthly lock-up periods. The longer you commit your tokens, the higher the Annual Percentage Yield (APY) you will receive.
+                    </li>
+                    <li>
+                      <strong>Predictable, High-Yield Returns:</strong> This model provides a predictable reward structure, allowing you to forecast your earnings based on your stake amount and lock-in duration.
+                    </li>
+                     <li>
+                      <strong>Enhanced Network Security:</strong> By locking tokens, you directly contribute to reducing market volatility and strengthening the protocol's security, which in turn protects the value of your holdings.
+                    </li>
+                     <li>
+                      <strong>Audited Smart Contracts:</strong> All staking operations are executed by rigorously audited smart contracts, ensuring your assets are managed with the highest level of security.
+                    </li>
+                  </ul>
+                </div>
            </Card>
         </div>
       </section>
