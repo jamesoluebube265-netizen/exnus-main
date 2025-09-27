@@ -6,7 +6,7 @@ export default function MarketPage() {
     <div className="w-full">
       <ScrollReveal>
         <div className="text-center pt-16 md:pt-24 mb-10 px-4 md:px-6">
-            <h1 className="text-4xl md:text-5xl font-bold text-accent mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Crypto Market
             </h1>
             <p className="text-lg text-foreground/70 max-w-4xl mx-auto">
@@ -34,13 +34,13 @@ export default function MarketPage() {
           <ScrollReveal delay={200}>
             <div className="max-w-5xl mx-auto mt-12 grid md:grid-cols-2 gap-8 text-left">
               <div className="p-6 border border-border/50 rounded-lg bg-card/80 backdrop-blur-sm">
-                <h3 className="font-bold text-xl text-accent">Data Accuracy</h3>
+                <h3 className="font-bold text-xl text-primary">Data Accuracy</h3>
                 <p className="mt-2 text-foreground/80">
                   The data presented on this page is aggregated from various sources and is intended for informational purposes only. While we strive for accuracy, we cannot guarantee the timeliness or completeness of the information.
                 </p>
               </div>
               <div className="p-6 border border-border/50 rounded-lg bg-card/80 backdrop-blur-sm">
-                <h3 className="font-bold text-xl text-accent">Investment Risk</h3>
+                <h3 className="font-bold text-xl text-primary">Investment Risk</h3>
                 <p className="mt-2 text-foreground/80">
                   Investing in cryptocurrencies involves significant risk, including the potential for loss of principal. This is not investment advice. Always conduct your own research and consult with a qualified financial advisor before making any investment decisions.
                 </p>

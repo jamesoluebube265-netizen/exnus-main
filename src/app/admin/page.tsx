@@ -26,7 +26,7 @@ export default async function AdminPage({
       <div className="w-full py-16 md:py-24">
         <ScrollReveal>
           <div className="text-center mb-10 px-4 md:px-6">
-            <h1 className="text-4xl md:text-5xl font-bold text-accent mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
               Admin Access
             </h1>
             <p className="text-lg text-foreground/70 max-w-md mx-auto">
@@ -58,7 +58,7 @@ export default async function AdminPage({
     <div className="w-full py-16 md:py-24">
        <ScrollReveal>
         <div className="text-center mb-10 px-4 md:px-6">
-            <h1 className="text-4xl md:text-5xl font-bold text-accent mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Admin Dashboard
             </h1>
             <p className="text-lg text-foreground/70 max-w-4xl mx-auto">

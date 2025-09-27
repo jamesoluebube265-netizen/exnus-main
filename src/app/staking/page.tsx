@@ -48,7 +48,7 @@ export default function StakingPage() {
           </div>
       </section>
 
-      <section id="staking-benefits" className="py-20 md:py-28 bg-secondary/50">
+      <section id="staking-benefits" className="py-20 md:py-28 bg-background/50">
           <div className="container px-4 md:px-6">
               <ScrollReveal>
                 <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">

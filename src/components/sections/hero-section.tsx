@@ -66,7 +66,7 @@ export default function HeroSection() {
                     By rewarding the actions that create real value, Exnus aims to help projects build stronger, more active, and more loyal communities.
                   </p>
                 </div>
-                 <div className="text-center pt-4">
+                 <div className="text-center pt-4 border-t border-border/50">
                   <Button asChild>
                     <a href="/documents">
                       Read Full Whitepaper

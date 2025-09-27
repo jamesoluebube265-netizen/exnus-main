@@ -65,7 +65,7 @@ export default function AboutPage() {
           </div>
       </section>
 
-      <section className="py-20 md:py-28 bg-secondary/50">
+      <section className="py-20 md:py-28 bg-background/50">
           <div className="container px-4 md:px-6">
               <div className="grid md:grid-cols-2 gap-12 items-center">
                   <ScrollReveal>
@@ -123,7 +123,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section id="philosophy" className="py-20 md:py-28 bg-secondary/50">
+      <section id="philosophy" className="py-20 md:py-28 bg-background/50">
           <div className="container px-4 md:px-6">
               <ScrollReveal>
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">

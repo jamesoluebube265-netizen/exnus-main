@@ -134,11 +134,11 @@ export default function MarketTable() {
                         className="w-full max-w-sm pl-10"
                     />
                 </div>
-                <div className="overflow-x-auto rounded-lg border border-border/50 bg-card/80 backdrop-blur-sm">
+                <div className="overflow-x-auto rounded-lg border border-border/50 bg-card">
                     <Table>
                         <TableHeader>
                             <TableRow>
-                                <TableHead className="w-[200px] pl-6 sticky left-0 bg-card/80 backdrop-blur-sm">Name</TableHead>
+                                <TableHead className="w-[200px] pl-6 sticky left-0 bg-card">Name</TableHead>
                                 <TableHead>Price</TableHead>
                                 <TableHead>24h %</TableHead>
                                 <TableHead>24h High</TableHead>
@@ -152,7 +152,7 @@ export default function MarketTable() {
                             {paginatedData.map((coin) => (
                                 <DialogTrigger asChild key={coin.id}>
                                     <TableRow onClick={() => handleRowClick(coin)} className="cursor-pointer">
-                                        <TableCell className="font-medium pl-6 sticky left-0 bg-card/80 backdrop-blur-sm">
+                                        <TableCell className="font-medium pl-6 sticky left-0 bg-card">
                                             <div className="flex items-center gap-3">
                                                 <Image src={coin.image} alt={coin.name} width={24} height={24} className="w-6 h-6 rounded-full" />
                                                 <div>
@@ -163,7 +163,7 @@ export default function MarketTable() {
                                         </TableCell>
                                         <TableCell>{formatCurrency(coin.current_price)}</TableCell>
                                         <TableCell>
-                                            <Badge variant={coin.price_change_percentage_24h >= 0 ? "default" : "destructive"} className={coin.price_change_percentage_24h >= 0 ? 'bg-primary/20 text-primary' : 'bg-red-500/20 text-red-500'}>
+                                            <Badge variant={coin.price_change_percentage_24h >= 0 ? "default" : "destructive"}>
                                                 {coin.price_change_percentage_24h >= 0 ? '+' : ''}{coin.price_change_percentage_24h.toFixed(2)}%
                                             </Badge>
                                         </TableCell>
@@ -202,7 +202,7 @@ export default function MarketTable() {
                 )}
             </div>
             {selectedCoin && (
-                <DialogContent className="sm:max-w-3xl bg-card/80 backdrop-blur-sm">
+                <DialogContent className="sm:max-w-3xl bg-card">
                     <DialogHeader>
                         <DialogTitle>{selectedCoin.name} ({selectedCoin.symbol.toUpperCase()}) Price Chart</DialogTitle>
                     </DialogHeader>
