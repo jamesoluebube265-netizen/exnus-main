@@ -27,7 +27,7 @@ export default function HowItWorksSection() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section id="how-it-works" className="py-20 md:py-28 bg-background/80">
+    <section id="how-it-works" className="py-20 md:py-28">
       <div className="px-4 md:px-6">
         <ScrollReveal className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">How to Engage with the Exnus Ecosystem</h2>
@@ -64,7 +64,7 @@ export default function HowItWorksSection() {
                         <p className="text-foreground/80 text-lg">{step.description}</p>
                       </div>
                       <div className="md:w-1/2">
-                          <div className="w-full aspect-video rounded-lg p-8 flex items-center justify-center">
+                          <div className="w-full aspect-video rounded-lg bg-card border p-8 flex items-center justify-center">
                             {step.diagram}
                           </div>
                       </div>

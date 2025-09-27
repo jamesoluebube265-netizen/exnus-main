@@ -1,4 +1,3 @@
-
 'use client';
 
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -128,19 +127,19 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="bg-white text-black">
+    <div className="bg-background text-foreground">
       <section className="relative py-24 md:py-32 text-center overflow-hidden">
-          <div className="absolute inset-0 bg-grid-pattern opacity-10" style={{ backgroundImage: 'linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px), linear-gradient(to right, rgba(0,0,0,0.1) 1px, transparent 1px)'}}></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white"></div>
+          <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background"></div>
           
           <div className="container px-4 md:px-6 relative">
               <ScrollReveal>
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-6 text-black">
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-6 text-foreground">
                     Contact Us
                 </h1>
               </ScrollReveal>
               <ScrollReveal delay={200}>
-                <p className="max-w-3xl mx-auto text-lg md:text-xl text-black/80 mb-10">
+                <p className="max-w-3xl mx-auto text-lg md:text-xl text-foreground/80 mb-10">
                     Have questions or want to get involved? We'd love to hear from you. Reach out through our contact form or connect with us on our social channels.
                 </p>
               </ScrollReveal>
@@ -151,10 +150,10 @@ export default function ContactPage() {
         <div className="container px-4 md:px-6">
             <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
                 <ScrollReveal>
-                    <div className="p-8 border border-gray-200/80 rounded-lg bg-gray-50/50 h-full">
+                    <div className="p-8 border rounded-lg bg-card h-full">
                         <div className="text-left mb-8">
                             <h2 className="text-3xl md:text-4xl font-bold text-accent mb-2">Get in Touch</h2>
-                            <p className="text-black/70">Fill out the form below and we'll get back to you as soon as possible.</p>
+                            <p className="text-foreground/70">Fill out the form below and we'll get back to you as soon as possible.</p>
                         </div>
                         <Form {...form}>
                             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -163,9 +162,9 @@ export default function ContactPage() {
                                 name="name"
                                 render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel className="flex items-center gap-2 text-black"><User className="w-4 h-4" /> Name</FormLabel>
+                                    <FormLabel className="flex items-center gap-2"><User className="w-4 h-4" /> Name</FormLabel>
                                     <FormControl>
-                                    <Input placeholder="Enter your name" {...field} className="bg-white" />
+                                    <Input placeholder="Enter your name" {...field} className="bg-background" />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -176,9 +175,9 @@ export default function ContactPage() {
                                 name="email"
                                 render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel className="flex items-center gap-2 text-black"><Mail className="w-4 h-4" /> Email</FormLabel>
+                                    <FormLabel className="flex items-center gap-2"><Mail className="w-4 h-4" /> Email</FormLabel>
                                     <FormControl>
-                                    <Input placeholder="Enter your email address" {...field} className="bg-white" />
+                                    <Input placeholder="Enter your email address" {...field} className="bg-background" />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -189,9 +188,9 @@ export default function ContactPage() {
                                 name="message"
                                 render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel className="flex items-center gap-2 text-black"><MessageSquare className="w-4 h-4" /> Message</FormLabel>
+                                    <FormLabel className="flex items-center gap-2"><MessageSquare className="w-4 h-4" /> Message</FormLabel>
                                     <FormControl>
-                                    <Textarea placeholder="Type your message here..." {...field} rows={6} className="bg-white" />
+                                    <Textarea placeholder="Type your message here..." {...field} rows={6} className="bg-background" />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -207,19 +206,19 @@ export default function ContactPage() {
                 </ScrollReveal>
                 <ScrollReveal delay={200}>
                     <div className="space-y-8">
-                         <div className="p-8 border border-gray-200/80 rounded-lg bg-gray-50/50">
+                         <div className="p-8 border rounded-lg bg-card">
                              <h3 className="text-2xl font-bold text-accent mb-4">Join Our Community</h3>
-                             <p className="text-black/70 mb-6">Stay updated and engage with the community on our social platforms:</p>
+                             <p className="text-foreground/70 mb-6">Stay updated and engage with the community on our social platforms:</p>
                              <div className="flex gap-6">
-                                <a href="https://x.com/exnusprotocol?t=erRcFQecZLsl-pW3MGFC9g&s=09" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-black hover:text-accent transition-colors">
+                                <a href="https://x.com/exnusprotocol?t=erRcFQecZLsl-pW3MGFC9g&s=09" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground hover:text-accent transition-colors">
                                     <Image src="/x.jpg" alt="X" width={20} height={20} />
                                     <span>X</span>
                                 </a>
-                                <a href="https://t.me/exnusprotocolchat" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-black hover:text-accent transition-colors">
+                                <a href="https://t.me/exnusprotocolchat" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground hover:text-accent transition-colors">
                                     <Image src="/tg.jpg" alt="Telegram" width={20} height={20} />
                                     <span>Telegram</span>
                                 </a>
-                                <a href="httpss://discord.gg/v8MpYYFdP8" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-black hover:text-accent transition-colors">
+                                <a href="httpss://discord.gg/v8MpYYFdP8" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground hover:text-accent transition-colors">
                                     <Image src="/discord.jpg" alt="Discord" width={20} height={20} />
                                     <span>Discord</span>
                                 </a>
@@ -231,14 +230,14 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="py-20 md:py-28 border-t border-gray-200/80">
+      <section className="py-20 md:py-28 border-t">
         <div className="container px-4 md:px-6">
             <ScrollReveal>
                 <div className="max-w-3xl mx-auto text-center">
-                <h2 className="text-3xl md:text-4xl font-bold text-black">
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground">
                     Frequently Asked Questions
                 </h2>
-                <p className="mt-4 text-black/70">
+                <p className="mt-4 text-foreground/70">
                     Find quick answers to common questions about the Exnus Protocol.
                 </p>
                 </div>
@@ -247,14 +246,14 @@ export default function ContactPage() {
                 <div className="max-w-3xl mx-auto mt-12">
                 <Accordion type="single" collapsible className="w-full">
                     {faqItems.map((item) => (
-                    <AccordionItem value={item.value} key={item.value} className="border-b border-gray-200/80">
-                        <AccordionTrigger className="text-lg font-semibold text-black/90 hover:text-accent text-left">
+                    <AccordionItem value={item.value} key={item.value} className="border-b">
+                        <AccordionTrigger className="text-lg font-semibold text-foreground/90 hover:text-accent text-left">
                           <div className="flex items-center gap-4">
                             {item.icon}
                             {item.question}
                           </div>
                         </AccordionTrigger>
-                        <AccordionContent className="text-black/80 pl-11">
+                        <AccordionContent className="text-foreground/80 pl-11">
                             {item.answer}
                         </AccordionContent>
                     </AccordionItem>
@@ -265,27 +264,27 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="py-20 md:py-28 border-t border-gray-200/80 bg-gray-50/50">
+      <section className="py-20 md:py-28 border-t bg-muted/40">
           <div className="container px-4 md:px-6">
               <ScrollReveal>
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-black">
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-foreground">
                   Our Commitment to Open Communication
               </h2>
-              <p className="max-w-3xl mx-auto text-center text-black/70 mb-12">
+              <p className="max-w-3xl mx-auto text-center text-foreground/70 mb-12">
                   At Exnus Protocol, we believe that clear, consistent communication is the cornerstone of a healthy and thriving decentralized community. We are dedicated to maintaining an open dialogue with our users, partners, and supporters.
               </p>
               </ScrollReveal>
               <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                   {commitmentPoints.map((point, index) => (
                       <ScrollReveal key={point.title} delay={index * 150}>
-                          <div className="h-full p-6 text-center border border-gray-200/80 rounded-lg">
+                          <div className="h-full p-6 text-center border rounded-lg bg-card">
                               <div className="flex justify-center mb-4">
                                   <div className="p-4 bg-accent/10 rounded-full w-fit">
                                       {point.icon}
                                   </div>
                               </div>
                               <h3 className="text-xl font-bold text-accent">{point.title}</h3>
-                              <p className="text-black/80 mt-2">{point.description}</p>
+                              <p className="text-foreground/80 mt-2">{point.description}</p>
                           </div>
                       </ScrollReveal>
                   ))}

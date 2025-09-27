@@ -41,14 +41,8 @@ export default function FeaturesSection() {
           {features.map((feature, index) => (
             <ScrollReveal key={feature.title} delay={index * 150}>
               <div 
-                className="relative h-full p-6 border border-border/50 rounded-lg overflow-hidden"
-                style={{
-                  backgroundImage: "url(/10.jpg)",
-                  backgroundSize: "cover",
-                  backgroundPosition: "center"
-                }}
+                className="relative h-full p-6 border border-border/50 rounded-lg overflow-hidden bg-card/50"
               >
-                <div className="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
                 <div className="relative z-10">
                   <div className="p-4 bg-accent/10 rounded-full mb-4 w-fit">
                     {feature.icon}
