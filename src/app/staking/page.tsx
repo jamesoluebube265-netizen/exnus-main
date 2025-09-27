@@ -32,16 +32,13 @@ export default function StakingPage() {
     <div className="space-y-12">
       <section className="text-center">
           <ScrollReveal>
-            <div className="inline-block bg-primary/10 text-primary font-semibold py-2 px-4 rounded-full mb-4">
-                Coming Soon
-            </div>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-foreground">
-                Stake Your Tokens, Power the Future
+                Exnus Protocol Staking
             </h1>
           </ScrollReveal>
           <ScrollReveal delay={200}>
           <p className="max-w-3xl mx-auto text-lg text-foreground/80">
-              Our staking platform is currently under development. Soon, you will be able to stake your Exnus tokens to earn rewards, secure the network, and participate in governance.
+              Staking is a core function of the Exnus ecosystem, allowing token holders to actively participate in the network's security and governance while earning rewards. By locking your tokens, you help secure the protocol and gain a voice in its future.
           </p>
           </ScrollReveal>
       </section>
@@ -50,10 +47,10 @@ export default function StakingPage() {
           <div className="text-center">
               <ScrollReveal>
                 <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-                    Why Stake with Exnus?
+                    The Benefits of Staking with Exnus
                 </h2>
                 <p className="max-w-3xl mx-auto text-center text-foreground/70 mb-8">
-                    Staking is a cornerstone of the Exnus ecosystem. It aligns the incentives of token holders with the long-term success of the protocol, creating a secure and prosperous network for everyone.
+                    Staking aligns the incentives of token holders with the long-term success of the protocol, creating a secure, decentralized, and prosperous network for everyone.
                 </p>
               </ScrollReveal>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
@@ -78,10 +75,10 @@ export default function StakingPage() {
         <div className="text-center">
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              How Staking Will Work
+              How Our Staking Mechanism Works
             </h2>
             <p className="mt-4 text-foreground/70 mb-8">
-              We are designing a flexible and secure staking mechanism to provide a seamless experience for our community.
+              We have designed a flexible, secure, and user-friendly staking mechanism to provide a seamless experience for our community.
             </p>
           </ScrollReveal>
         </div>
@@ -93,7 +90,7 @@ export default function StakingPage() {
               <div>
                   <h3 className="font-bold text-xl text-primary">Flexible Staking Options</h3>
                   <p className="mt-2 text-foreground/80">
-                    The protocol will support multiple staking tiers with varying lock-up durations and reward rates. This will provide you with options that balance your liquidity needs and reward optimization goals.
+                    The protocol supports multiple staking tiers with varying lock-up durations and reward rates. This provides users with options that balance their liquidity needs with their reward optimization goals. Longer staking periods will yield higher returns, incentivizing long-term commitment.
                   </p>
               </div>
            </Card>
@@ -102,9 +99,9 @@ export default function StakingPage() {
                   <BrainCircuit className="w-8 h-8 text-primary" />
               </div>
               <div>
-                  <h3 className="font-bold text-xl text-primary">Secure Smart Contracts</h3>
+                  <h3 className="font-bold text-xl text-primary">Secure & Audited Smart Contracts</h3>
                   <p className="mt-2 text-foreground/80">
-                    All staking activities will be managed by fully-audited smart contracts on the Solana blockchain. Features like slashing mechanisms and controlled withdrawals will be implemented to ensure the security and fairness of the system.
+                    All staking activities are managed by fully-audited smart contracts on the Solana blockchain. To protect the network and its participants, features like slashing mechanisms for malicious behavior and controlled withdrawal periods are implemented to ensure the fairness and security of the entire system.
                   </p>
               </div>
            </Card>
@@ -114,14 +111,14 @@ export default function StakingPage() {
       <section>
           <ScrollReveal>
             <div className="max-w-3xl mx-auto p-8 border rounded-lg bg-card text-center">
-              <h3 className="font-bold text-xl text-primary">Stay Updated</h3>
+              <h3 className="font-bold text-xl text-primary">Get Ready to Participate</h3>
               <p className="mt-4 text-foreground/70">
-                  The official launch of our staking platform is a top priority on our roadmap. Follow our social channels and subscribe to our newsletter for the latest announcements and to be notified as soon as staking is live.
+                  The official launch of our staking platform is a top priority on our roadmap. While the feature is under active development, you can prepare by learning more about our tokenomics and the role staking plays in our ecosystem.
               </p>
                <div className="mt-8">
                   <Button asChild>
-                    <a href="/roadmap">
-                      View Roadmap
+                    <a href="/documents#tokenomics-details">
+                      View Tokenomics
                     </a>
                   </Button>
                 </div>
