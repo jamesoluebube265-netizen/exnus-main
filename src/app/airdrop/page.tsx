@@ -48,9 +48,6 @@ export default function AirdropPage() {
   return (
     <>
       <section className="relative py-24 md:py-32 text-center overflow-hidden">
-          <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background"></div>
-          
           <div className="px-4 md:px-6 relative">
               <ScrollReveal>
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-6 text-foreground">
@@ -73,27 +70,27 @@ export default function AirdropPage() {
           </div>
       </section>
 
-      <section id="how-to-participate" className="py-20 md:py-28 bg-white text-black">
+      <section id="how-to-participate" className="py-20 md:py-28 bg-card/50">
           <div className="container px-4 md:px-6">
               <ScrollReveal>
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
                   How to Participate
               </h2>
-              <p className="max-w-3xl mx-auto text-center text-black/70 mb-12">
+              <p className="max-w-3xl mx-auto text-center text-foreground/70 mb-12">
                   Earning your share of the Exnus airdrop is simple. Just follow these three easy steps to get started.
               </p>
               </ScrollReveal>
               <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                   {steps.map((step, index) => (
                       <ScrollReveal key={step.title} delay={index * 150}>
-                      <div className="h-full p-6 text-center border border-gray-200/80 rounded-lg">
+                      <div className="h-full p-6 text-center border border-border/80 rounded-lg bg-card/80">
                           <div className="flex justify-center mb-4">
                               <div className="p-4 bg-accent/10 rounded-full w-fit">
                                   {step.icon}
                               </div>
                           </div>
                           <h3 className="text-xl font-bold">{step.title}</h3>
-                          <p className="text-black/70 mt-2">{step.description}</p>
+                          <p className="text-foreground/70 mt-2">{step.description}</p>
                       </div>
                       </ScrollReveal>
                   ))}
@@ -115,7 +112,7 @@ export default function AirdropPage() {
           <div className="max-w-5xl mx-auto mt-12 grid md:grid-cols-2 gap-8 text-left">
             {airdropDetails.map((detail, index) => (
               <ScrollReveal key={detail.title} delay={index * 150}>
-                <div className="p-6 border border-border/50 rounded-lg flex items-start gap-4 h-full">
+                <div className="p-6 border border-border/50 rounded-lg flex items-start gap-4 h-full bg-card/50">
                   <div className="p-2 bg-accent/10 rounded-full mt-1">
                     {detail.icon}
                   </div>

@@ -31,9 +31,6 @@ export default function StakingPage() {
   return (
     <>
       <section className="relative py-24 md:py-32 text-center overflow-hidden">
-          <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background"></div>
-          
           <div className="container px-4 md:px-6 relative">
               <ScrollReveal>
                 <div className="inline-block bg-accent/10 text-accent font-semibold py-2 px-4 rounded-full mb-4">
@@ -51,27 +48,27 @@ export default function StakingPage() {
           </div>
       </section>
 
-      <section id="staking-benefits" className="py-20 md:py-28 bg-white text-black">
+      <section id="staking-benefits" className="py-20 md:py-28 bg-card/50">
           <div className="container px-4 md:px-6">
               <ScrollReveal>
                 <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
                     Why Stake with Exnus?
                 </h2>
-                <p className="max-w-3xl mx-auto text-center text-black/70 mb-12">
+                <p className="max-w-3xl mx-auto text-center text-foreground/70 mb-12">
                     Staking is a cornerstone of the Exnus ecosystem. It aligns the incentives of token holders with the long-term success of the protocol, creating a secure and prosperous network for everyone.
                 </p>
               </ScrollReveal>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
                   {stakingBenefits.map((benefit, index) => (
                       <ScrollReveal key={benefit.title} delay={index * 150}>
-                      <div className="h-full p-6 text-center border border-gray-200/80 rounded-lg">
+                      <div className="h-full p-6 text-center border border-border/80 rounded-lg bg-card/80">
                           <div className="flex justify-center mb-4">
                               <div className="p-4 bg-accent/10 rounded-full w-fit">
                                   {benefit.icon}
                               </div>
                           </div>
                           <h3 className="text-xl font-bold">{benefit.title}</h3>
-                          <p className="text-black/70 mt-2">{benefit.description}</p>
+                          <p className="text-foreground/70 mt-2">{benefit.description}</p>
                       </div>
                       </ScrollReveal>
                   ))}
@@ -92,7 +89,7 @@ export default function StakingPage() {
             </div>
           </ScrollReveal>
           <div className="max-w-5xl mx-auto mt-12 grid md:grid-cols-1 gap-8 text-left">
-             <Card className="p-6 flex items-start gap-6 h-full border-border/50">
+             <Card className="p-6 flex items-start gap-6 h-full border-border/50 bg-card/50">
                 <div className="p-3 bg-accent/10 rounded-full mt-1">
                     <Lock className="w-8 h-8 text-accent" />
                 </div>
@@ -103,7 +100,7 @@ export default function StakingPage() {
                     </p>
                 </div>
              </Card>
-             <Card className="p-6 flex items-start gap-6 h-full border-border/50">
+             <Card className="p-6 flex items-start gap-6 h-full border-border/50 bg-card/50">
                 <div className="p-3 bg-accent/10 rounded-full mt-1">
                     <BrainCircuit className="w-8 h-8 text-accent" />
                 </div>

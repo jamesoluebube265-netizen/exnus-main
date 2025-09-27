@@ -51,9 +51,6 @@ export default function AboutPage() {
   return (
     <>
       <section className="relative py-24 md:py-32 text-center overflow-hidden">
-          <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background"></div>
-          
           <div className="container px-4 md:px-6 relative">
               <ScrollReveal>
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-6 text-foreground">
@@ -68,24 +65,24 @@ export default function AboutPage() {
           </div>
       </section>
 
-      <section className="py-20 md:py-28 bg-white text-black">
+      <section className="py-20 md:py-28 bg-card/50">
           <div className="container px-4 md:px-6">
               <div className="grid md:grid-cols-2 gap-12 items-center">
                   <ScrollReveal>
                       <div>
                           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-accent">Our Mission</h2>
-                          <p className="text-black/80 text-lg mb-6">
+                          <p className="text-foreground/80 text-lg mb-6">
                             Our mission is to build the incentive layer for the decentralized world. We empower Web3 projects to cultivate vibrant, engaged, and loyal communities by creating a universal framework that rewards all forms of meaningful participation—from core development to community governance.
                           </p>
                            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-accent">Our Vision</h2>
-                          <p className="text-black/80 text-lg">
+                          <p className="text-foreground/80 text-lg">
                             We envision a future where digital ecosystems are built, owned, and governed by their users. By aligning incentives and fostering a true sense of ownership, we aim to unlock the full potential of decentralized collaboration and create a more innovative, transparent, and equitable internet for everyone.
                           </p>
                       </div>
                   </ScrollReveal>
                   <ScrollReveal delay={200}>
                     <div className="not-prose my-8">
-                        <div className="overflow-hidden p-6 md:p-8 bg-card rounded-lg shadow-lg">
+                        <div className="overflow-hidden p-6 md:p-8 bg-card rounded-lg shadow-lg border border-border/50">
                             <RewardingDiagram />
                         </div>
                     </div>
@@ -109,7 +106,7 @@ export default function AboutPage() {
           <div className="max-w-5xl mx-auto mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
             {values.map((value, index) => (
               <ScrollReveal key={value.title} delay={index * 150}>
-                <div className="p-6 border border-border/50 rounded-lg flex flex-col items-center text-center h-full">
+                <div className="p-6 border border-border/50 rounded-lg flex flex-col items-center text-center h-full bg-card/50">
                    <div className="p-4 bg-accent/10 rounded-full w-fit mb-4">
                     {value.icon}
                   </div>
@@ -126,27 +123,27 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section id="philosophy" className="py-20 md:py-28 bg-white text-black">
+      <section id="philosophy" className="py-20 md:py-28 bg-card/50">
           <div className="container px-4 md:px-6">
               <ScrollReveal>
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
                   The Exnus Philosophy
               </h2>
-              <p className="max-w-3xl mx-auto text-center text-black/70 mb-12">
+              <p className="max-w-3xl mx-auto text-center text-foreground/70 mb-12">
                   We built Exnus to solve the fundamental challenges that hold back the growth of decentralized ecosystems. Our philosophy is rooted in three core solutions.
               </p>
               </ScrollReveal>
               <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                   {philosophyPoints.map((point, index) => (
                       <ScrollReveal key={point.title} delay={index * 150}>
-                          <div className="h-full p-6 text-center border border-gray-200/80 rounded-lg">
+                          <div className="h-full p-6 text-center border border-border/80 rounded-lg bg-card/80">
                               <div className="flex justify-center mb-4">
                                   <div className="p-4 bg-accent/10 rounded-full w-fit">
                                       {point.icon}
                                   </div>
                               </div>
                               <h3 className="text-xl font-bold">{point.title}</h3>
-                              <p className="text-black/70 mt-2">{point.description}</p>
+                              <p className="text-foreground/70 mt-2">{point.description}</p>
                           </div>
                       </ScrollReveal>
                   ))}

@@ -129,9 +129,6 @@ export default function ContactPage() {
   return (
     <div className="bg-background text-foreground">
       <section className="relative py-24 md:py-32 text-center overflow-hidden">
-          <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background"></div>
-          
           <div className="container px-4 md:px-6 relative">
               <ScrollReveal>
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-6 text-foreground">
@@ -211,7 +208,7 @@ export default function ContactPage() {
                              <p className="text-foreground/70 mb-6">Stay updated and engage with the community on our social platforms:</p>
                              <div className="flex gap-6">
                                 <a href="https://x.com/exnusprotocol?t=erRcFQecZLsl-pW3MGFC9g&s=09" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground hover:text-accent transition-colors">
-                                    <Image src="/x.jpg" alt="X" width={20} height={20} />
+                                    <Image src="/x.jpg" alt="X" width={20} height={20} className="invert" />
                                     <span>X</span>
                                 </a>
                                 <a href="https://t.me/exnusprotocolchat" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground hover:text-accent transition-colors">
@@ -219,7 +216,7 @@ export default function ContactPage() {
                                     <span>Telegram</span>
                                 </a>
                                 <a href="httpss://discord.gg/v8MpYYFdP8" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground hover:text-accent transition-colors">
-                                    <Image src="/discord.jpg" alt="Discord" width={20} height={20} />
+                                    <Image src="/discord.jpg" alt="Discord" width={20} height={20} className="invert" />
                                     <span>Discord</span>
                                 </a>
                              </div>
@@ -246,7 +243,7 @@ export default function ContactPage() {
                 <div className="max-w-3xl mx-auto mt-12">
                 <Accordion type="single" collapsible className="w-full">
                     {faqItems.map((item) => (
-                    <AccordionItem value={item.value} key={item.value} className="border-b">
+                    <AccordionItem value={item.value} key={item.value} className="border-b border-border/50">
                         <AccordionTrigger className="text-lg font-semibold text-foreground/90 hover:text-accent text-left">
                           <div className="flex items-center gap-4">
                             {item.icon}
@@ -264,7 +261,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="py-20 md:py-28 border-t bg-muted/40">
+      <section className="py-20 md:py-28 border-t bg-card/20">
           <div className="container px-4 md:px-6">
               <ScrollReveal>
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-foreground">

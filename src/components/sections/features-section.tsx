@@ -41,7 +41,7 @@ export default function FeaturesSection() {
           {features.map((feature, index) => (
             <ScrollReveal key={feature.title} delay={index * 150}>
               <div 
-                className="relative h-full p-6 border border-border/50 rounded-lg overflow-hidden bg-card/50"
+                className="relative h-full p-6 border border-border/50 rounded-lg overflow-hidden bg-card/50 backdrop-blur-sm transition-all duration-300 hover:border-accent hover:shadow-2xl hover:shadow-accent/10"
               >
                 <div className="relative z-10">
                   <div className="p-4 bg-accent/10 rounded-full mb-4 w-fit">
