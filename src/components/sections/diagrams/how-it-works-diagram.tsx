@@ -1,50 +1,45 @@
-import { Users, GitCommit, MessageSquare, Award, Cpu, ShieldCheck, Scale, Vote } from 'lucide-react';
+import { Users, GitCommit, MessageSquare, Award, Cpu, ShieldCheck, Scale, Vote, ArrowRight } from 'lucide-react';
+import { Card } from '@/components/ui/card';
 
-const DiagramIcon = ({ icon: Icon, label }: { icon: React.ElementType, label: string }) => (
-    <div className="flex flex-col items-center text-center gap-2">
-        <div className="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center">
-            <Icon className="w-8 h-8" />
+const DiagramNode = ({ icon: Icon, label, className }: { icon: React.ElementType, label: string, className?: string }) => (
+    <Card className={`flex flex-col items-center justify-center text-center gap-2 p-3 bg-card/80 border-primary/20 ${className}`}>
+        <div className="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center">
+            <Icon className="w-6 h-6" />
         </div>
         <span className="text-xs font-medium text-foreground">{label}</span>
-    </div>
+    </Card>
 );
 
-const AnimatedArrow = () => (
-    <div className="flex items-center justify-center w-full h-16">
-        <div className="flex gap-2">
-            <div className="w-2 h-2 rounded-full bg-primary sparkle-animation" style={{ animationDelay: '0s' }}></div>
-            <div className="w-2 h-2 rounded-full bg-primary sparkle-animation" style={{ animationDelay: '0.2s' }}></div>
-            <div className="w-2 h-2 rounded-full bg-primary sparkle-animation" style={{ animationDelay: '0.4s' }}></div>
-        </div>
+const Arrow = () => (
+    <div className="flex items-center justify-center w-full">
+        <ArrowRight className="w-6 h-6 text-border" />
     </div>
 );
 
 
 const ContributeDiagram = () => (
-    <div className="w-full flex items-center justify-center gap-4 md:gap-8">
-        <DiagramIcon icon={GitCommit} label="Development" />
-        <DiagramIcon icon={Users} label="Community" />
-        <DiagramIcon icon={MessageSquare} label="Content" />
+    <div className="w-full flex flex-col items-center justify-center gap-4">
+        <div className="grid grid-cols-3 gap-4 w-full">
+             <DiagramNode icon={GitCommit} label="Development" />
+             <DiagramNode icon={Users} label="Community" />
+             <DiagramNode icon={MessageSquare} label="Content" />
+        </div>
     </div>
 );
 
 const RewardsDiagram = () => (
-    <div className="w-full flex items-center justify-around gap-4 md:gap-8">
-        <DiagramIcon icon={Cpu} label="Contribution" />
-        <div className="w-1/4">
-            <AnimatedArrow />
-        </div>
-        <DiagramIcon icon={Award} label="Rewards" />
+    <div className="w-full grid grid-cols-3 items-center justify-items-center gap-2">
+        <DiagramNode icon={Cpu} label="Contribution Validated" />
+        <Arrow />
+        <DiagramNode icon={Award} label="Rewards Distributed" />
     </div>
 );
 
 const GovernDiagram = () => (
-    <div className="w-full flex items-center justify-around gap-4 md:gap-8">
-        <DiagramIcon icon={ShieldCheck} label="Staking" />
-        <div className="w-1/4">
-             <AnimatedArrow />
-        </div>
-        <DiagramIcon icon={Vote} label="Governance" />
+    <div className="w-full grid grid-cols-3 items-center justify-items-center gap-2">
+        <DiagramNode icon={ShieldCheck} label="Stake Tokens" />
+        <Arrow />
+        <DiagramNode icon={Vote} label="Gain Voting Power" />
     </div>
 );
 

@@ -51,7 +51,7 @@ export default function HowItWorksSection() {
           ))}
       </div>
 
-      <div className="relative min-h-[450px] md:min-h-[350px] overflow-hidden">
+      <div className="relative min-h-[350px] md:min-h-[300px] overflow-hidden">
           {steps.map((step, index) => (
               <div
                 key={step.title}
@@ -66,7 +66,7 @@ export default function HowItWorksSection() {
                       <p className="text-foreground/80 text-lg">{step.description}</p>
                     </div>
                     <div className="md:w-1/2 w-full">
-                        <div className="w-full aspect-video rounded-lg bg-card border p-8 flex items-center justify-center">
+                        <div className="w-full rounded-lg bg-card border p-8 flex items-center justify-center min-h-[220px]">
                           {step.diagram}
                         </div>
                     </div>
