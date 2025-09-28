@@ -27,7 +27,16 @@ const features = [
 
 export default function FeaturesSection() {
   return (
-    <section id="features">
+    <section 
+      id="features"
+      className="p-8 rounded-lg"
+      style={{
+        backgroundImage: `url(/2.jpeg)`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}
+    >
       <div className="text-center">
         <ScrollReveal>
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-primary">
