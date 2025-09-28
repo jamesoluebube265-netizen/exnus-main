@@ -83,7 +83,8 @@ export default function Sidebar({ isMobileMenuOpen, setMobileMenuOpen }: Sidebar
               <SheetTitle asChild>
                 <div className="flex items-center justify-between h-14 px-4">
                   <a href="/" className="flex items-center gap-2 font-bold text-lg">
-                    Exnus
+                     <Image src="/exnus.jpg" alt="Exnus Protocol" width={32} height={32} className="h-8 w-8 rounded-full object-cover" />
+                    <span>Exnus Protocol</span>
                   </a>
                 </div>
               </SheetTitle>
