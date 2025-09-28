@@ -18,9 +18,7 @@ export default function ClientLayout({
       <div className="flex-1 flex flex-col overflow-hidden">
         <NewHeader onMenuClick={() => setMobileMenuOpen(true)} />
         <main className="flex-grow p-6 md:p-8 overflow-y-auto">
-          <div className="container mx-auto">
-            {children}
-          </div>
+          {children}
         </main>
         <Footer />
       </div>
