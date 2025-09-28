@@ -78,8 +78,9 @@ export default function HowItWorksSection() {
                                     <div className="relative z-10">{step.diagram}</div>
                                 </div>
                             ) : (
-                                <div className="w-full h-full p-8 flex items-center justify-center bg-card min-h-[220px]">
-                                    {step.diagram}
+                                <div className="w-full h-full p-8 flex items-center justify-center min-h-[220px] relative bg-cover bg-center" style={{backgroundImage: "url('/3.jpeg')"}}>
+                                    <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+                                    <div className="relative z-10">{step.diagram}</div>
                                 </div>
                             )}
                         </div>
@@ -108,8 +109,9 @@ export default function HowItWorksSection() {
                                <div className="relative z-10">{step.diagram}</div>
                            </div>
                         ) : (
-                            <div className="w-full h-full p-8 flex items-center justify-center bg-card min-h-[220px]">
-                                {step.diagram}
+                            <div className="w-full h-full p-8 flex items-center justify-center min-h-[220px] relative bg-cover bg-center" style={{backgroundImage: "url('/3.jpeg')"}}>
+                                <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+                                <div className="relative z-10">{step.diagram}</div>
                             </div>
                         )}
                     </div>
