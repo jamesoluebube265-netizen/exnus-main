@@ -1,3 +1,4 @@
+
 'use client';
 import { Search, Bell, Menu } from "lucide-react";
 import { Input } from "@/components/ui/input";
@@ -7,7 +8,7 @@ import { navLinks, type NavLink } from "@/lib/nav-links.tsx";
 import { usePathname } from "next/navigation";
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator } from "@/components/ui/dropdown-menu";
 import { getNews, NewsPost } from "@/app/admin/actions";
-import { formatDistanceToNow } from "date-fns";
+import { formatDistanceToNow, sub } from "date-fns";
 
 interface NewHeaderProps {
     onMenuClick: () => void;
@@ -20,11 +21,15 @@ export default function NewHeader({ onMenuClick }: NewHeaderProps) {
     const searchRef = useRef<HTMLDivElement>(null);
     const pathname = usePathname();
     const [news, setNews] = useState<NewsPost[]>([]);
+    const [hasRecentNews, setHasRecentNews] = useState(false);
 
     useEffect(() => {
         const fetchNews = async () => {
             const newsItems = await getNews();
             setNews(newsItems);
+            const twentyFourHoursAgo = sub(new Date(), { hours: 24 });
+            const recentNews = newsItems.some(item => new Date(item.createdAt) > twentyFourHoursAgo);
+            setHasRecentNews(recentNews);
         }
         fetchNews();
     }, []);
@@ -91,8 +96,9 @@ export default function NewHeader({ onMenuClick }: NewHeaderProps) {
             <div className="flex flex-shrink-0 items-center justify-end gap-2 md:gap-4">
                  <DropdownMenu>
                     <DropdownMenuTrigger asChild>
-                        <Button variant="ghost" size="icon">
+                        <Button variant="ghost" size="icon" className="relative">
                             <Bell className="h-5 w-5" />
+                            {hasRecentNews && <span className="absolute top-1 right-1 h-2 w-2 rounded-full bg-destructive" />}
                         </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end" className="w-80">

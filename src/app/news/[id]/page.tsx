@@ -1,8 +1,9 @@
 
 import { getNewsById } from "@/app/admin/actions";
 import ScrollReveal from "@/components/scroll-reveal";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { format } from "date-fns";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 
 export default async function NewsDetailPage({ params }: { params: { id: string } }) {
@@ -16,7 +17,7 @@ export default async function NewsDetailPage({ params }: { params: { id: string 
     <div className="space-y-8">
       <div className="header-card text-center">
         <ScrollReveal>
-          <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
+          <h1 className="text-3xl md:text-4xl font-bold text-primary mb-2">
             {newsItem.title}
           </h1>
           <p className="text-sm text-foreground/70">
@@ -27,6 +28,16 @@ export default async function NewsDetailPage({ params }: { params: { id: string 
 
       <ScrollReveal delay={200}>
         <Card>
+          {newsItem.imageUrl && (
+            <div className="aspect-video relative w-full rounded-t-lg overflow-hidden">
+                <Image 
+                    src={newsItem.imageUrl}
+                    alt={newsItem.title}
+                    fill
+                    className="object-cover"
+                />
+            </div>
+          )}
           <CardContent className="p-6 md:p-8">
             {newsItem.audioUrl && (
               <div className="mb-6">
@@ -37,7 +48,7 @@ export default async function NewsDetailPage({ params }: { params: { id: string 
                 </audio>
               </div>
             )}
-            <div className="prose prose-invert max-w-none text-foreground/80">
+            <div className="prose prose-invert max-w-none text-foreground/80 whitespace-pre-wrap">
               <p>{newsItem.content}</p>
             </div>
           </CardContent>

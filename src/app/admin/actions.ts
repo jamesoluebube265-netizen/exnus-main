@@ -11,6 +11,7 @@ import { revalidatePath } from 'next/cache';
 const newsSchema = z.object({
   title: z.string().min(1, "Title is required."),
   content: z.string().min(1, "Content is required."),
+  imageUrl: z.string().url().optional().or(z.literal('')),
   generateAudio: z.boolean().optional(),
 });
 
@@ -18,6 +19,7 @@ export type NewsPost = {
   id: string;
   title: string;
   content: string;
+  imageUrl?: string;
   createdAt: string;
   audioUrl?: string;
 };
@@ -57,6 +59,7 @@ export async function postNews(values: z.infer<typeof newsSchema>) {
       id: uuidv4(),
       title: validatedData.title,
       content: validatedData.content,
+      imageUrl: validatedData.imageUrl,
       createdAt: new Date().toISOString(),
       audioUrl: audioDataUri,
     };
@@ -67,6 +70,7 @@ export async function postNews(values: z.infer<typeof newsSchema>) {
     
     revalidatePath('/admin');
     revalidatePath('/news');
+    revalidatePath('/news/[id]', 'page');
 
 
     return { success: true, post: newPost };
@@ -84,6 +88,7 @@ export async function deleteNews(id: string) {
 
     revalidatePath('/admin');
     revalidatePath('/news');
+    revalidatePath('/news/[id]', 'page');
   
     return { success: true };
 }

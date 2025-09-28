@@ -42,6 +42,7 @@ import { Trash2 } from "lucide-react";
 const newsFormSchema = z.object({
   title: z.string().min(2, "Title must be at least 2 characters."),
   content: z.string().min(10, "Content must be at least 10 characters."),
+  imageUrl: z.string().url({ message: "Please enter a valid URL." }).optional().or(z.literal('')),
   generateAudio: z.boolean().default(false).optional(),
 });
 
@@ -65,9 +66,10 @@ export default function AdminPage() {
     const newsForm = useForm<z.infer<typeof newsFormSchema>>({
         resolver: zodResolver(newsFormSchema),
         defaultValues: {
-        title: "",
-        content: "",
-        generateAudio: false,
+            title: "",
+            content: "",
+            imageUrl: "",
+            generateAudio: false,
         },
     });
 
@@ -122,7 +124,7 @@ export default function AdminPage() {
       <div className="w-full">
         <div className="header-card text-center mb-10">
           <ScrollReveal>
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">
               Admin Access
             </h1>
           </ScrollReveal>
@@ -154,7 +156,7 @@ export default function AdminPage() {
     <div className="w-full space-y-8">
        <div className="header-card text-center">
         <ScrollReveal>
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">
             Admin Dashboard
             </h1>
             <p className="text-lg text-foreground/70 max-w-4xl mx-auto">
@@ -180,6 +182,19 @@ export default function AdminPage() {
                                     <FormLabel>Title</FormLabel>
                                     <FormControl>
                                         <Input placeholder="Enter news title" {...field} />
+                                    </FormControl>
+                                    <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                            <FormField
+                                control={newsForm.control}
+                                name="imageUrl"
+                                render={({ field }) => (
+                                    <FormItem>
+                                    <FormLabel>Image URL</FormLabel>
+                                    <FormControl>
+                                        <Input placeholder="https://example.com/image.png" {...field} />
                                     </FormControl>
                                     <FormMessage />
                                     </FormItem>
