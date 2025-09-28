@@ -49,21 +49,20 @@ const philosophyPoints = [
 
 export default function AboutPage() {
   return (
-    <div className="space-y-12">
-       <section 
-        className="relative overflow-hidden"
-      >
-        <div 
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `url(/2.jpeg)`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundAttachment: 'fixed'
-          }}
-        />
-        <div className="absolute inset-0 bg-black/50 backdrop-blur-sm z-0" />
-        <div className="relative z-10 p-8 md:p-12 lg:p-20">
+    <div className="relative">
+      <div 
+        className="absolute inset-0"
+        style={{
+          backgroundImage: `url(/6.jpeg)`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
+        }}
+      />
+      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm z-0" />
+
+      <div className="relative z-10 space-y-12 p-4 md:p-8">
+        <section>
           <div className="header-card text-center bg-transparent border-0">
               <ScrollReveal>
               <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-white">
@@ -76,114 +75,114 @@ export default function AboutPage() {
               </p>
               </ScrollReveal>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="bg-card p-6 md:p-8 rounded-lg border">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-              <ScrollReveal>
-                  <div>
-                      <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">Our Mission</h2>
-                      <p className="text-foreground/80 text-lg mb-6">
-                        Our mission is to build the incentive layer for the decentralized world. We empower Web3 projects to cultivate vibrant, engaged, and loyal communities by creating a universal framework that rewards all forms of meaningful participation—from core development to community governance.
-                      </p>
-                       <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">Our Vision</h2>
-                      <p className="text-foreground/80 text-lg">
-                        We envision a future where digital ecosystems are built, owned, and governed by their users. By aligning incentives and fostering a true sense of ownership, we aim to unlock the full potential of decentralized collaboration and create a more innovative, transparent, and equitable internet for everyone.
-                      </p>
-                  </div>
-              </ScrollReveal>
-              <ScrollReveal delay={200}>
-                <div className="not-prose my-8 relative overflow-hidden rounded-lg shadow-inner">
-                    <div 
-                      className="absolute inset-0 bg-cover bg-center"
-                      style={{ backgroundImage: `url(/4.jpeg)` }}
-                    />
-                    <div className="absolute inset-0 bg-black/30 backdrop-blur-sm" />
-                    <div className="relative z-10 p-6 md:p-8">
-                        <RewardingDiagram />
+        <section className="bg-card/80 p-6 md:p-8 rounded-lg border border-border/50">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+                <ScrollReveal>
+                    <div>
+                        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">Our Mission</h2>
+                        <p className="text-foreground/80 text-lg mb-6">
+                          Our mission is to build the incentive layer for the decentralized world. We empower Web3 projects to cultivate vibrant, engaged, and loyal communities by creating a universal framework that rewards all forms of meaningful participation—from core development to community governance.
+                        </p>
+                         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">Our Vision</h2>
+                        <p className="text-foreground/80 text-lg">
+                          We envision a future where digital ecosystems are built, owned, and governed by their users. By aligning incentives and fostering a true sense of ownership, we aim to unlock the full potential of decentralized collaboration and create a more innovative, transparent, and equitable internet for everyone.
+                        </p>
                     </div>
-                </div>
-              </ScrollReveal>
-          </div>
-      </section>
+                </ScrollReveal>
+                <ScrollReveal delay={200}>
+                  <div className="not-prose my-8 relative overflow-hidden rounded-lg shadow-inner border border-border/50">
+                      <div 
+                        className="absolute inset-0 bg-cover bg-center"
+                        style={{ backgroundImage: `url(/4.jpeg)` }}
+                      />
+                      <div className="absolute inset-0 bg-black/30 backdrop-blur-sm" />
+                      <div className="relative z-10 p-6 md:p-8">
+                          <RewardingDiagram />
+                      </div>
+                  </div>
+                </ScrollReveal>
+            </div>
+        </section>
 
-      <section>
-        <div className="text-center">
-          <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-bold text-primary">
-              Our Core Values
-            </h2>
-            <p className="mt-4 text-foreground/70">
-              These principles guide every decision we make and every line of code we write, ensuring we stay true to our mission and our community.
-            </p>
-          </ScrollReveal>
-        </div>
-        <div className="max-w-5xl mx-auto mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
-          {values.map((value, index) => (
-            <ScrollReveal key={value.title} delay={index * 150}>
-              <div className="p-6 border rounded-lg flex flex-col items-center text-center h-full bg-card">
-                 <div className="p-4 bg-primary/10 rounded-full w-fit mb-4">
-                  {value.icon}
-                </div>
-                <div>
-                  <h3 className="font-bold text-xl text-primary">{value.title}</h3>
-                  <p className="mt-2 text-foreground/80">
-                    {value.description}
-                  </p>
-                </div>
-              </div>
-            </ScrollReveal>
-          ))}
-        </div>
-      </section>
-
-      <section id="philosophy">
+        <section>
           <div className="text-center">
-              <ScrollReveal>
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-primary">
-                  The Exnus Philosophy
+            <ScrollReveal>
+              <h2 className="text-3xl md:text-4xl font-bold text-primary">
+                Our Core Values
               </h2>
-              <p className="max-w-3xl mx-auto text-center text-foreground/70 mb-8">
-                  We built Exnus to solve the fundamental challenges that hold back the growth of decentralized ecosystems. Our philosophy is rooted in three core solutions.
+              <p className="mt-4 text-white/80">
+                These principles guide every decision we make and every line of code we write, ensuring we stay true to our mission and our community.
               </p>
-              </ScrollReveal>
-              <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                  {philosophyPoints.map((point, index) => (
-                      <ScrollReveal key={point.title} delay={index * 150}>
-                          <div className="h-full p-6 text-center border rounded-lg bg-card">
-                              <div className="flex justify-center mb-4">
-                                  <div className="p-4 bg-primary/10 rounded-full w-fit">
-                                      {point.icon}
-                                  </div>
-                              </div>
-                              <h3 className="text-xl font-bold text-foreground">{point.title}</h3>
-                              <p className="text-foreground/70 mt-2">{point.description}</p>
-                          </div>
-                      </ScrollReveal>
-                  ))}
-              </div>
+            </ScrollReveal>
           </div>
-      </section>
+          <div className="max-w-5xl mx-auto mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
+            {values.map((value, index) => (
+              <ScrollReveal key={value.title} delay={index * 150}>
+                <div className="p-6 border rounded-lg flex flex-col items-center text-center h-full bg-card/80 border-border/50">
+                   <div className="p-4 bg-primary/10 rounded-full w-fit mb-4">
+                    {value.icon}
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-xl text-primary">{value.title}</h3>
+                    <p className="mt-2 text-foreground/80">
+                      {value.description}
+                    </p>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </section>
 
-
-      <section>
-          <ScrollReveal>
-            <div className="max-w-3xl mx-auto p-8 border rounded-lg bg-card text-center">
-              <h3 className="font-bold text-xl text-primary">Join Our Mission</h3>
-              <p className="mt-4 text-foreground/70">
-                  The future of Web3 is collaborative. If you share our vision and want to contribute to a more decentralized world, we invite you to join our community and help us build the future of incentivized participation.
-              </p>
-               <div className="mt-8">
-                  <Button asChild>
-                    <a href="/airdrop">
-                      Participate in Airdrop
-                    </a>
-                  </Button>
+        <section id="philosophy">
+            <div className="text-center">
+                <ScrollReveal>
+                <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-primary">
+                    The Exnus Philosophy
+                </h2>
+                <p className="max-w-3xl mx-auto text-center text-white/80 mb-8">
+                    We built Exnus to solve the fundamental challenges that hold back the growth of decentralized ecosystems. Our philosophy is rooted in three core solutions.
+                </p>
+                </ScrollReveal>
+                <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    {philosophyPoints.map((point, index) => (
+                        <ScrollReveal key={point.title} delay={index * 150}>
+                            <div className="h-full p-6 text-center border rounded-lg bg-card/80 border-border/50">
+                                <div className="flex justify-center mb-4">
+                                    <div className="p-4 bg-primary/10 rounded-full w-fit">
+                                        {point.icon}
+                                    </div>
+                                </div>
+                                <h3 className="text-xl font-bold text-foreground">{point.title}</h3>
+                                <p className="text-foreground/70 mt-2">{point.description}</p>
+                            </div>
+                        </ScrollReveal>
+                    ))}
                 </div>
             </div>
-          </ScrollReveal>
-      </section>
+        </section>
+
+
+        <section>
+            <ScrollReveal>
+              <div className="max-w-3xl mx-auto p-8 border rounded-lg bg-card/80 border-border/50 text-center">
+                <h3 className="font-bold text-xl text-primary">Join Our Mission</h3>
+                <p className="mt-4 text-foreground/70">
+                    The future of Web3 is collaborative. If you share our vision and want to contribute to a more decentralized world, we invite you to join our community and help us build the future of incentivized participation.
+                </p>
+                 <div className="mt-8">
+                    <Button asChild>
+                      <a href="/airdrop">
+                        Participate in Airdrop
+                      </a>
+                    </Button>
+                  </div>
+              </div>
+            </ScrollReveal>
+        </section>
+      </div>
     </div>
   );
 }
