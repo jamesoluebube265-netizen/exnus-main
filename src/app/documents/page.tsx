@@ -3,7 +3,6 @@
 
 import { useState, useEffect } from "react";
 import { ArchitectureDiagram } from "@/components/sections/diagrams/architecture-diagram";
-import { StakingDiagram } from "@/components/sections/diagrams/staking-diagram";
 import { SecurityDiagram } from "@/components/sections/diagrams/security-diagram";
 import { RewardingDiagram } from "@/components/sections/diagrams/rewarding-diagram";
 import { TokenomicsDiagram } from "@/components/sections/diagrams/tokenomics-diagram";
@@ -21,7 +20,6 @@ const documentSections = [
     { id: "smart-contracts", title: "Smart Contracts & Security", icon: <ShieldCheck /> },
     { id: "rewarding-system", title: "Rewarding System", icon: <Zap /> },
     { id: "solana-integration", title: "Solana Integration", icon: <Share2 /> },
-    { id: "staking", title: "Staking Mechanism", icon: <Database /> },
     { id: "tokenomics-details", title: "Tokenomics", icon: <PieChart /> },
     { id: "conclusion", title: "Conclusion", icon: <BookText /> },
 ];
@@ -218,37 +216,6 @@ const SectionContent = ({ id }: { id: string }) => {
                     </ul>
                     <h3 className="text-2xl font-semibold text-primary mt-6 mb-3">Impact on User Experience</h3>
                     <p>By leveraging Solana, Exnus offers users fast, cost-effective, and reliable interactions with the protocol. This integration removes common barriers such as high fees and slow confirmations, making participation in rewarding, staking, and governance processes smooth and accessible.</p>
-                </div>
-            );
-        case "staking":
-            return (
-                <div className="prose max-w-none prose-invert text-foreground/80">
-                    <p>The Exnus protocol incorporates a robust staking mechanism designed to incentivize long-term commitment and active participation within the ecosystem. By allowing users to lock their tokens, staking not only rewards loyalty but also strengthens network security and governance.</p>
-                     <div className="not-prose my-8">
-                        <div className="overflow-hidden p-6 md:p-8 bg-background rounded-lg">
-                           <StakingDiagram />
-                        </div>
-                        <p className="text-center text-sm text-foreground/60 mt-2">Diagram: The staking flow for users and its benefits to the network.</p>
-                      </div>
-                     <h3 className="text-2xl font-semibold text-primary mt-6 mb-3">Staking Features</h3>
-                     <ul className="list-disc pl-6 space-y-2">
-                        <li><strong>Token Locking:</strong> Users can stake their native Exnus tokens for predetermined periods, during which their tokens are locked and cannot be transferred or sold.</li>
-                        <li><strong>Reward Accrual:</strong> Stakers earn additional tokens as rewards, which are distributed proportionally based on the amount and duration of staking. This encourages users to maintain longer staking periods to maximize returns.</li>
-                        <li><strong>Governance Rights:</strong> Staked tokens confer voting power in the protocol’s decentralized governance system, empowering users to influence decisions such as protocol upgrades, reward adjustments, and ecosystem initiatives.</li>
-                        <li><strong>Flexible Staking Options:</strong> The protocol supports multiple staking tiers with varying lock-up durations and reward rates, providing users with options that balance liquidity needs and reward optimization.</li>
-                    </ul>
-                    <h3 className="text-2xl font-semibold text-primary mt-6 mb-3">Security and Fairness</h3>
-                    <ul className="list-disc pl-6 space-y-2">
-                        <li><strong>Slashing Mechanisms:</strong> To discourage malicious behavior or protocol violations, the staking contract includes slashing provisions that can penalize bad actors by reducing their staked tokens.</li>
-                        <li><strong>Withdrawal Controls:</strong> Users can withdraw their staked tokens only after the lock-up period expires, preventing premature withdrawals that could destabilize the network.</li>
-                        <li><strong>Transparent Accounting:</strong> All staking activities, including deposits, rewards, and withdrawals, are recorded on-chain for full transparency and auditability.</li>
-                    </ul>
-                     <h3 className="text-2xl font-semibold text-primary mt-6 mb-3">Benefits to the Ecosystem</h3>
-                    <ul className="list-disc pl-6 space-y-2">
-                        <li><strong>Network Stability:</strong> By incentivizing token locking, staking reduces circulating supply volatility and enhances the overall stability of the Exnus token economy.</li>
-                        <li><strong>Aligned Incentives:</strong> Stakers have a vested interest in the protocol’s success, aligning individual goals with the health and growth of the ecosystem.</li>
-                        <li><strong>Enhanced Governance:</strong> Staking empowers active users with governance influence, promoting decentralized and community-driven decision-making.</li>
-                    </ul>
                 </div>
             );
         case "tokenomics-details":
