@@ -54,13 +54,13 @@ export default function HowItWorksSection() {
       </div>
 
       {/* Desktop Content */}
-      <div className="hidden md:block relative min-h-[350px] md:min-h-[300px] overflow-hidden">
+      <div className="hidden md:block relative">
           {steps.map((step, index) => (
               <div
                 key={step.title}
                 className={cn(
-                  "absolute top-0 left-0 w-full h-full transition-opacity duration-700 ease-in-out",
-                  activeIndex === index ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                  "w-full transition-opacity duration-700 ease-in-out",
+                  activeIndex !== index && 'hidden'
                 )}
               >
                 <div className={`flex flex-col gap-8 md:gap-12 items-center ${index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
@@ -71,7 +71,7 @@ export default function HowItWorksSection() {
                     <div className="md:w-1/2 w-full">
                         <div className="w-full rounded-lg border overflow-hidden">
                            {index === 0 ? (
-                                <div className="w-full h-auto bg-card flex items-center justify-center">{step.diagram}</div>
+                                <div className="w-full h-auto bg-card flex items-center justify-center p-4">{step.diagram}</div>
                             ) : (
                                 <div className="w-full h-full p-8 flex items-center justify-center bg-card min-h-[220px]">
                                     {step.diagram}
