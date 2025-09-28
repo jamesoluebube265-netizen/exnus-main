@@ -192,7 +192,7 @@ export default function AdminPage() {
                                 )}
                             />
                             <FormField
-                                control={news_form.control}
+                                control={newsForm.control}
                                 name="content"
                                 render={({ field }) => (
                                     <FormItem>
@@ -205,7 +205,7 @@ export default function AdminPage() {
                                 )}
                             />
                             <FormField
-                                control={news_form.control}
+                                control={newsForm.control}
                                 name="generateAudio"
                                 render={({ field }) => (
                                     <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
