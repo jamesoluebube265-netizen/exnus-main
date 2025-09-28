@@ -6,6 +6,7 @@ import path from 'path';
 import { z } from 'zod';
 import { v4 as uuidv4 } from 'uuid';
 import { generateSpeech } from '@/ai/flows/tts-flow';
+import { revalidatePath } from 'next/cache';
 
 const newsSchema = z.object({
   title: z.string().min(1, "Title is required."),
@@ -63,9 +64,30 @@ export async function postNews(values: z.infer<typeof newsSchema>) {
     news.unshift(newPost);
 
     await fs.writeFile(newsFilePath, JSON.stringify(news, null, 2));
+    
+    revalidatePath('/admin');
+    revalidatePath('/news');
+
 
     return { success: true, post: newPost };
 }
+
+export async function deleteNews(id: string) {
+    const news = await getNews();
+    const updatedNews = news.filter(post => post.id !== id);
+  
+    if (news.length === updatedNews.length) {
+      return { success: false, message: 'Post not found.' };
+    }
+  
+    await fs.writeFile(newsFilePath, JSON.stringify(updatedNews, null, 2));
+
+    revalidatePath('/admin');
+    revalidatePath('/news');
+  
+    return { success: true };
+}
+
 
 export async function getNewsById(id: string): Promise<NewsPost | null> {
     const news = await getNews();

@@ -13,17 +13,30 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { getSubmittedMessages } from "../contact/actions";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import ScrollReveal from "@/components/scroll-reveal";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { postNews } from "./actions";
+import { deleteNews, getNews, postNews, type NewsPost } from "./actions";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
+import { format } from "date-fns";
+import { Trash2 } from "lucide-react";
 
 
 const newsFormSchema = z.object({
@@ -46,6 +59,7 @@ export default function AdminPage() {
 
     const { toast } = useToast();
     const [messages, setMessages] = useState<Message[]>([]);
+    const [news, setNews] = useState<NewsPost[]>([]);
     const [isSubmittingNews, setIsSubmittingNews] = useState(false);
 
     const newsForm = useForm<z.infer<typeof newsFormSchema>>({
@@ -60,13 +74,15 @@ export default function AdminPage() {
     useEffect(() => {
         if (accessCode === correctCode) {
             getSubmittedMessages().then(setMessages);
+            getNews().then(setNews);
         }
     }, [accessCode]);
 
     async function onNewsSubmit(values: z.infer<typeof newsFormSchema>) {
         setIsSubmittingNews(true);
         try {
-            await postNews(values);
+            const result = await postNews(values);
+            setNews(prevNews => [result.post, ...prevNews]);
             toast({
                 title: "News posted successfully!",
                 description: "The announcement is now live.",
@@ -80,6 +96,23 @@ export default function AdminPage() {
             });
         } finally {
             setIsSubmittingNews(false);
+        }
+    }
+
+    async function handleDelete(id: string) {
+        try {
+            await deleteNews(id);
+            setNews(prevNews => prevNews.filter(post => post.id !== id));
+            toast({
+                title: "Post deleted!",
+                description: "The news post has been removed.",
+            });
+        } catch (error) {
+             toast({
+                variant: "destructive",
+                title: "Deletion failed",
+                description: "There was a problem deleting the post.",
+            });
         }
     }
 
@@ -125,106 +158,166 @@ export default function AdminPage() {
             Admin Dashboard
             </h1>
             <p className="text-lg text-foreground/70 max-w-4xl mx-auto">
-            View messages and post news announcements.
+            Manage your application content and view user submissions.
             </p>
         </ScrollReveal>
       </div>
-      <div className="grid md:grid-cols-2 gap-8">
+      <div className="grid lg:grid-cols-2 gap-8">
         <ScrollReveal>
             <Card>
-            <CardHeader>
-                <CardTitle>Post News</CardTitle>
-            </CardHeader>
-            <CardContent>
-                <Form {...newsForm}>
-                    <form onSubmit={newsForm.handleSubmit(onNewsSubmit)} className="space-y-6">
-                        <FormField
-                            control={newsForm.control}
-                            name="title"
-                            render={({ field }) => (
-                                <FormItem>
-                                <FormLabel>Title</FormLabel>
-                                <FormControl>
-                                    <Input placeholder="Enter news title" {...field} />
-                                </FormControl>
-                                <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-                        <FormField
-                            control={newsForm.control}
-                            name="content"
-                            render={({ field }) => (
-                                <FormItem>
-                                <FormLabel>Content</FormLabel>
-                                <FormControl>
-                                    <Textarea placeholder="Type your announcement here..." {...field} rows={6}/>
-                                </FormControl>
-                                <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-                        <FormField
-                            control={newsForm.control}
-                            name="generateAudio"
-                            render={({ field }) => (
-                                <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
-                                <FormControl>
-                                    <Checkbox
-                                        checked={field.value}
-                                        onCheckedChange={field.onChange}
-                                    />
-                                </FormControl>
-                                <div className="space-y-1 leading-none">
-                                    <FormLabel>
-                                    Generate Audio Version
-                                    </FormLabel>
-                                </div>
-                                </FormItem>
-                            )}
-                         />
-                        <Button type="submit" disabled={isSubmittingNews} className="w-full">
-                            {isSubmittingNews ? 'Posting...' : 'Post Announcement'}
-                        </Button>
-                    </form>
-                </Form>
-            </CardContent>
+                <CardHeader>
+                    <CardTitle>Post News</CardTitle>
+                    <CardDescription>Create and publish a new announcement.</CardDescription>
+                </CardHeader>
+                <CardContent>
+                    <Form {...newsForm}>
+                        <form onSubmit={newsForm.handleSubmit(onNewsSubmit)} className="space-y-6">
+                            <FormField
+                                control={newsForm.control}
+                                name="title"
+                                render={({ field }) => (
+                                    <FormItem>
+                                    <FormLabel>Title</FormLabel>
+                                    <FormControl>
+                                        <Input placeholder="Enter news title" {...field} />
+                                    </FormControl>
+                                    <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                            <FormField
+                                control={newsForm.control}
+                                name="content"
+                                render={({ field }) => (
+                                    <FormItem>
+                                    <FormLabel>Content</FormLabel>
+                                    <FormControl>
+                                        <Textarea placeholder="Type your announcement here..." {...field} rows={6}/>
+                                    </FormControl>
+                                    <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                            <FormField
+                                control={newsForm.control}
+                                name="generateAudio"
+                                render={({ field }) => (
+                                    <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
+                                    <FormControl>
+                                        <Checkbox
+                                            checked={field.value}
+                                            onCheckedChange={field.onChange}
+                                        />
+                                    </FormControl>
+                                    <div className="space-y-1 leading-none">
+                                        <FormLabel>
+                                        Generate Audio Version
+                                        </FormLabel>
+                                    </div>
+                                    </FormItem>
+                                )}
+                            />
+                            <Button type="submit" disabled={isSubmittingNews} className="w-full">
+                                {isSubmittingNews ? 'Posting...' : 'Post Announcement'}
+                            </Button>
+                        </form>
+                    </Form>
+                </CardContent>
             </Card>
         </ScrollReveal>
-        <ScrollReveal delay={200}>
+         <ScrollReveal delay={200}>
             <Card>
-            <CardHeader>
-                <CardTitle>Contact Form Submissions</CardTitle>
-            </CardHeader>
-            <CardContent>
-                <div className="overflow-y-auto max-h-[500px]">
-                    <Table>
-                    <TableHeader>
-                        <TableRow>
-                        <TableHead>Received</TableHead>
-                        <TableHead>Name</TableHead>
-                        <TableHead>Email</TableHead>
-                        <TableHead>Message</TableHead>
-                        </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                        {messages.map((msg, index) => (
-                        <TableRow key={index}>
-                            <TableCell>{new Date(msg.receivedAt).toLocaleDateString()}</TableCell>
-                            <TableCell>{msg.name}</TableCell>
-                            <TableCell>{msg.email}</TableCell>
-                            <TableCell className="max-w-[200px] truncate">{msg.message}</TableCell>
-                        </TableRow>
-                        ))}
-                    </TableBody>
-                    </Table>
-                </div>
-                {messages.length === 0 && (
-                <div className="text-center py-10 text-foreground/70">
-                    No messages have been submitted yet.
-                </div>
-                )}
-            </CardContent>
+                <CardHeader>
+                    <CardTitle>Manage News</CardTitle>
+                    <CardDescription>Review and delete existing news posts.</CardDescription>
+                </CardHeader>
+                <CardContent>
+                    <div className="overflow-y-auto max-h-[500px] border rounded-md">
+                        {news.length > 0 ? (
+                             <Table>
+                                <TableHeader>
+                                    <TableRow>
+                                    <TableHead>Title</TableHead>
+                                    <TableHead>Date</TableHead>
+                                    <TableHead className="text-right">Actions</TableHead>
+                                    </TableRow>
+                                </TableHeader>
+                                <TableBody>
+                                    {news.map((post) => (
+                                    <TableRow key={post.id}>
+                                        <TableCell className="font-medium truncate max-w-[200px]">{post.title}</TableCell>
+                                        <TableCell>{format(new Date(post.createdAt), "PPP")}</TableCell>
+                                        <TableCell className="text-right">
+                                             <AlertDialog>
+                                                <AlertDialogTrigger asChild>
+                                                    <Button variant="ghost" size="icon">
+                                                        <Trash2 className="h-4 w-4 text-destructive" />
+                                                    </Button>
+                                                </AlertDialogTrigger>
+                                                <AlertDialogContent>
+                                                    <AlertDialogHeader>
+                                                    <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+                                                    <AlertDialogDescription>
+                                                        This action cannot be undone. This will permanently delete the post titled "{post.title}".
+                                                    </AlertDialogDescription>
+                                                    </AlertDialogHeader>
+                                                    <AlertDialogFooter>
+                                                    <AlertDialogCancel>Cancel</AlertDialogCancel>
+                                                    <AlertDialogAction onClick={() => handleDelete(post.id)} className="bg-destructive hover:bg-destructive/90">
+                                                        Delete
+                                                    </AlertDialogAction>
+                                                    </AlertDialogFooter>
+                                                </AlertDialogContent>
+                                            </AlertDialog>
+                                        </TableCell>
+                                    </TableRow>
+                                    ))}
+                                </TableBody>
+                            </Table>
+                        ) : (
+                             <div className="text-center py-10 text-foreground/70">
+                                No news posts have been created yet.
+                            </div>
+                        )}
+                    </div>
+                </CardContent>
+            </Card>
+        </ScrollReveal>
+        <ScrollReveal delay={400} className="lg:col-span-2">
+            <Card>
+                <CardHeader>
+                    <CardTitle>Contact Form Submissions</CardTitle>
+                    <CardDescription>Messages sent from the contact page.</CardDescription>
+                </CardHeader>
+                <CardContent>
+                    <div className="overflow-y-auto max-h-[500px] border rounded-md">
+                        <Table>
+                        <TableHeader>
+                            <TableRow>
+                            <TableHead>Received</TableHead>
+                            <TableHead>Name</TableHead>
+                            <TableHead>Email</TableHead>
+                            <TableHead>Message</TableHead>
+                            </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                            {messages.map((msg, index) => (
+                            <TableRow key={index}>
+                                <TableCell>{new Date(msg.receivedAt).toLocaleDateString()}</TableCell>
+                                <TableCell>{msg.name}</TableCell>
+                                <TableCell>{msg.email}</TableCell>
+                                <TableCell className="max-w-[200px] truncate">{msg.message}</TableCell>
+                            </TableRow>
+                            ))}
+                        </TableBody>
+                        </Table>
+                    </div>
+                    {messages.length === 0 && (
+                    <div className="text-center py-10 text-foreground/70">
+                        No messages have been submitted yet.
+                    </div>
+                    )}
+                </CardContent>
             </Card>
         </ScrollReveal>
       </div>
