@@ -12,6 +12,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
+import Image from 'next/image';
 
 interface SidebarProps {
   isMobileMenuOpen: boolean;
@@ -96,7 +97,7 @@ export default function Sidebar({ isMobileMenuOpen, setMobileMenuOpen }: Sidebar
       <aside className="hidden md:flex md:flex-col w-20 border-r bg-card fixed inset-y-0 z-50">
         <div className="flex h-14 items-center justify-center border-b">
           <a href="/" className="flex items-center justify-center">
-             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 text-primary"><path d="M15.5 3.84a1 1 0 0 1 1.25 1.57l-3.42 4.1a1 1 0 0 0-.25.58v4.82a1 1 0 0 1-1.6.8L9.2 14.5a1 1 0 0 1-.4-.8v-4.82a1 1 0 0 0-.25-.58L5.25 4.16a1 1 0 0 1 1.25-1.57L9.9 5.4a1 1 0 0 0 1.1 0z"/></svg>
+             <Image src="/exnus.jpg" alt="Exnus Protocol" width={32} height={32} className="h-8 w-8 rounded-full object-cover" />
              <span className="sr-only">Exnus</span>
           </a>
         </div>
