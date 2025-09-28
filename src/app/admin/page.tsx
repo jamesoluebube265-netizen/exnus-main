@@ -1,3 +1,4 @@
+
 'use client';
 
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -21,7 +22,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Checkbox } from "@/components/ui/checkbox";
-import { useEffect, useState, type ChangeEvent } from "react";
+import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import {
   AlertDialog,
@@ -117,21 +118,6 @@ export default function AdminPage() {
         }
     }
     
-    const handleImageChange = (e: ChangeEvent<HTMLInputElement>, fieldChange: (value: string) => void) => {
-        const file = e.target.files?.[0];
-        if (!file) return;
-
-        const reader = new FileReader();
-        reader.onload = (loadEvent) => {
-            const result = loadEvent.target?.result;
-            if (typeof result === 'string') {
-                fieldChange(result);
-            }
-        };
-        reader.readAsDataURL(file);
-    };
-
-
   if (accessCode !== correctCode) {
     return (
       <div className="w-full">
@@ -205,14 +191,9 @@ export default function AdminPage() {
                                 name="imageUrl"
                                 render={({ field }) => (
                                     <FormItem>
-                                    <FormLabel>Image</FormLabel>
+                                    <FormLabel>Image URL (Optional)</FormLabel>
                                     <FormControl>
-                                        <Input 
-                                            type="file" 
-                                            accept="image/*"
-                                            onChange={(e) => handleImageChange(e, field.onChange)} 
-                                            className="pt-2"
-                                        />
+                                        <Input placeholder="Enter image URL" {...field} />
                                     </FormControl>
                                     <FormMessage />
                                     </FormItem>
