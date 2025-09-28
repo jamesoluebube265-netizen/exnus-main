@@ -94,7 +94,7 @@ export default function AirdropPage() {
               <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                   {steps.map((step, index) => (
                       <ScrollReveal key={step.title} delay={index * 150}>
-                        <div className="relative h-full p-6 text-center border rounded-lg overflow-hidden">
+                        <div className="relative h-full p-6 text-center border rounded-lg overflow-hidden theme-gold">
                           <div
                               className="absolute inset-0 bg-cover bg-center"
                               style={{ backgroundImage: `url(/2.jpeg)` }}
@@ -106,7 +106,7 @@ export default function AirdropPage() {
                                     {step.icon}
                                 </div>
                             </div>
-                            <h3 className="text-xl font-bold text-foreground">{step.title}</h3>
+                            <h3 className="text-xl font-bold text-primary">{step.title}</h3>
                             <p className="text-white/80 mt-2">{step.description}</p>
                           </div>
                         </div>
@@ -129,7 +129,7 @@ export default function AirdropPage() {
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 text-left">
           {airdropDetails.map((detail, index) => (
             <ScrollReveal key={detail.title} delay={index * 150}>
-              <div className="relative p-6 border rounded-lg flex items-start gap-4 h-full overflow-hidden">
+              <div className="relative p-6 border rounded-lg flex items-start gap-4 h-full overflow-hidden theme-gold">
                 <div
                     className="absolute inset-0 bg-cover bg-center"
                     style={{ backgroundImage: `url(/2.jpeg)` }}
@@ -153,7 +153,7 @@ export default function AirdropPage() {
       </section>
       <section>
           <ScrollReveal>
-            <div className="relative max-w-3xl mx-auto p-8 border rounded-lg text-center overflow-hidden">
+            <div className="relative max-w-3xl mx-auto p-8 border rounded-lg text-center overflow-hidden theme-gold">
                <div
                   className="absolute inset-0 bg-cover bg-center"
                   style={{ backgroundImage: `url(/2.jpeg)` }}
