@@ -12,7 +12,6 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { getSubmittedMessages } from "../contact/actions";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import ScrollReveal from "@/components/scroll-reveal";
 import { Button } from "@/components/ui/button";
@@ -46,20 +45,12 @@ const newsFormSchema = z.object({
   generateAudio: z.boolean().default(false).optional(),
 });
 
-interface Message {
-  name: string;
-  email: string;
-  message: string;
-  receivedAt: string;
-}
-
 export default function AdminPage() {
     const searchParams = useSearchParams();
     const accessCode = searchParams.get('code');
     const correctCode = "203040";
 
     const { toast } = useToast();
-    const [messages, setMessages] = useState<Message[]>([]);
     const [news, setNews] = useState<NewsPost[]>([]);
     const [isSubmittingNews, setIsSubmittingNews] = useState(false);
 
@@ -75,7 +66,6 @@ export default function AdminPage() {
 
     useEffect(() => {
         if (accessCode === correctCode) {
-            getSubmittedMessages().then(setMessages);
             getNews().then(setNews);
         }
     }, [accessCode]);
@@ -84,7 +74,9 @@ export default function AdminPage() {
         setIsSubmittingNews(true);
         try {
             const result = await postNews(values);
-            setNews(prevNews => [result.post, ...prevNews]);
+            if (result.post) {
+                setNews(prevNews => [result.post, ...prevNews]);
+            }
             toast({
                 title: "News posted successfully!",
                 description: "The announcement is now live.",
@@ -200,7 +192,7 @@ export default function AdminPage() {
                                 )}
                             />
                             <FormField
-                                control={newsForm.control}
+                                control={news_form.control}
                                 name="content"
                                 render={({ field }) => (
                                     <FormItem>
@@ -213,7 +205,7 @@ export default function AdminPage() {
                                 )}
                             />
                             <FormField
-                                control={newsForm.control}
+                                control={news_form.control}
                                 name="generateAudio"
                                 render={({ field }) => (
                                     <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
@@ -294,43 +286,6 @@ export default function AdminPage() {
                             </div>
                         )}
                     </div>
-                </CardContent>
-            </Card>
-        </ScrollReveal>
-        <ScrollReveal delay={400} className="lg:col-span-2">
-            <Card>
-                <CardHeader>
-                    <CardTitle>Contact Form Submissions</CardTitle>
-                    <CardDescription>Messages sent from the contact page.</CardDescription>
-                </CardHeader>
-                <CardContent>
-                    <div className="overflow-y-auto max-h-[500px] border rounded-md">
-                        <Table>
-                        <TableHeader>
-                            <TableRow>
-                            <TableHead>Received</TableHead>
-                            <TableHead>Name</TableHead>
-                            <TableHead>Email</TableHead>
-                            <TableHead>Message</TableHead>
-                            </TableRow>
-                        </TableHeader>
-                        <TableBody>
-                            {messages.map((msg, index) => (
-                            <TableRow key={index}>
-                                <TableCell>{new Date(msg.receivedAt).toLocaleDateString()}</TableCell>
-                                <TableCell>{msg.name}</TableCell>
-                                <TableCell>{msg.email}</TableCell>
-                                <TableCell className="max-w-[200px] truncate">{msg.message}</TableCell>
-                            </TableRow>
-                            ))}
-                        </TableBody>
-                        </Table>
-                    </div>
-                    {messages.length === 0 && (
-                    <div className="text-center py-10 text-foreground/70">
-                        No messages have been submitted yet.
-                    </div>
-                    )}
                 </CardContent>
             </Card>
         </ScrollReveal>

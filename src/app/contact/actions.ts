@@ -1,9 +1,9 @@
 
 'use server';
 
-import fs from 'fs/promises';
-import path from 'path';
 import { z } from 'zod';
+import nodemailer from 'nodemailer';
+import 'dotenv/config'
 
 const formSchema = z.object({
   name: z.string(),
@@ -11,38 +11,38 @@ const formSchema = z.object({
   message: z.string(),
 });
 
-type Message = z.infer<typeof formSchema> & { receivedAt: string };
-
-const messagesFilePath = path.join(process.cwd(), 'messages.json');
-
-async function getMessages(): Promise<Message[]> {
-  try {
-    const data = await fs.readFile(messagesFilePath, 'utf-8');
-    return JSON.parse(data);
-  } catch (error: any) {
-    if (error.code === 'ENOENT') {
-      return [];
-    }
-    throw error;
-  }
-}
-
 export async function sendMessage(values: z.infer<typeof formSchema>) {
     const validatedData = formSchema.parse(values);
-    const messages = await getMessages();
-    
-    const newMessage: Message = {
-      ...validatedData,
-      receivedAt: new Date().toISOString(),
+
+    const transporter = nodemailer.createTransport({
+        host: "smtp.gmail.com",
+        port: 587,
+        secure: false, // true for 465, false for other ports
+        auth: {
+            user: process.env.EMAIL_SERVER_USER,
+            pass: process.env.EMAIL_SERVER_PASSWORD,
+        },
+    });
+
+    const mailOptions = {
+        from: `"${validatedData.name}" <${validatedData.email}>`,
+        to: 'contact@exnus.xyz',
+        subject: 'New message from contact form',
+        text: validatedData.message,
+        html: `
+            <h1>New message from contact form</h1>
+            <p><strong>Name:</strong> ${validatedData.name}</p>
+            <p><strong>Email:</strong> ${validatedData.email}</p>
+            <p><strong>Message:</strong></p>
+            <p>${validatedData.message}</p>
+        `,
     };
 
-    messages.unshift(newMessage);
-
-    await fs.writeFile(messagesFilePath, JSON.stringify(messages, null, 2));
-
-    return { success: true };
-}
-
-export async function getSubmittedMessages(): Promise<Message[]> {
-    return await getMessages();
+    try {
+        await transporter.sendMail(mailOptions);
+        return { success: true };
+    } catch (error) {
+        console.error('Error sending email:', error);
+        throw new Error('Failed to send message.');
+    }
 }
