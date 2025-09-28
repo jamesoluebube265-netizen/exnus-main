@@ -18,7 +18,7 @@ export default function ClientLayout({
       <Sidebar isMobileMenuOpen={isMobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
       <div className="flex flex-col md:pl-20">
         <NewHeader onMenuClick={() => setMobileMenuOpen(true)} />
-        <main className="flex-1 p-4 sm:px-6 md:gap-8">
+        <main className="flex-1 md:gap-8">
           {children}
         </main>
         <Footer />
