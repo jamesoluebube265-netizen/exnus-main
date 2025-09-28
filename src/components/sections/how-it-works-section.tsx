@@ -11,7 +11,7 @@ const steps = [
   {
     title: '1. Contribute & Participate',
     description: 'Engage with the ecosystem through development, governance, or community building. The protocol tracks all meaningful contributions, from code commits to forum moderation, ensuring all efforts are recognized.',
-    diagram: <Image src="/7.jpeg" alt="Contribute" width={400} height={200} className="w-full h-full object-cover" />
+    diagram: <Image src="/7.jpeg" alt="Contribute" width={400} height={200} className="w-full h-auto object-contain" />
   },
   {
     title: '2. Earn Rewards',
@@ -69,11 +69,11 @@ export default function HowItWorksSection() {
                       <p className="text-foreground/80 text-lg">{step.description}</p>
                     </div>
                     <div className="md:w-1/2 w-full">
-                        <div className="w-full rounded-lg border overflow-hidden min-h-[220px]">
+                        <div className="w-full rounded-lg border overflow-hidden">
                            {index === 0 ? (
-                                <div className="w-full h-[220px]">{step.diagram}</div>
+                                <div className="w-full h-auto bg-card flex items-center justify-center p-4">{step.diagram}</div>
                             ) : (
-                                <div className="w-full h-full p-8 flex items-center justify-center">
+                                <div className="w-full h-full p-8 flex items-center justify-center bg-card min-h-[220px]">
                                     {step.diagram}
                                 </div>
                             )}
@@ -94,11 +94,11 @@ export default function HowItWorksSection() {
                   <p className="text-foreground/80 text-lg">{step.description}</p>
                 </div>
                 <div className="w-full">
-                    <div className="w-full rounded-lg border overflow-hidden min-h-[220px]">
+                    <div className="w-full rounded-lg border overflow-hidden">
                        {index === 0 ? (
-                            <div className="w-full h-full">{step.diagram}</div>
+                            <div className="w-full h-auto bg-card flex items-center justify-center p-4">{step.diagram}</div>
                         ) : (
-                            <div className="w-full h-full p-8 flex items-center justify-center bg-card">
+                            <div className="w-full h-full p-8 flex items-center justify-center bg-card min-h-[220px]">
                                 {step.diagram}
                             </div>
                         )}
