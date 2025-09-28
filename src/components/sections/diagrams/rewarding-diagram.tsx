@@ -40,7 +40,7 @@ export function RewardingDiagram() {
       <div className="flex justify-center mt-6">
         <div className="flex items-center gap-3 text-center p-3 rounded-lg bg-primary/10">
             <Star className="w-5 h-5 text-primary" />
-            <p className="font-semibold text-sm text-foreground">All contributions are valued and rewarded to foster a vibrant ecosystem.</p>
+            <p className="font-semibold text-sm text-primary">All contributions are valued and rewarded to foster a vibrant ecosystem.</p>
         </div>
       </div>
     </div>
