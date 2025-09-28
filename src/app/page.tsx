@@ -8,8 +8,12 @@ export default function Home() {
     <div className="space-y-20">
       <HeroSection />
       <FeaturesSection />
-      <HowItWorksSection />
-      <CtaSection />
+      <div className="p-8 md:p-12 lg:p-20">
+        <HowItWorksSection />
+      </div>
+      <div className="p-8 md:p-12 lg:p-20">
+        <CtaSection />
+      </div>
     </div>
   );
 }

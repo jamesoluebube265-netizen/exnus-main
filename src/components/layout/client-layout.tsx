@@ -17,7 +17,7 @@ export default function ClientLayout({
       <Sidebar isMobileMenuOpen={isMobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
       <div className="flex-1 flex flex-col overflow-hidden">
         <NewHeader onMenuClick={() => setMobileMenuOpen(true)} />
-        <main className="flex-grow p-6 md:p-8 overflow-y-auto">
+        <main className="flex-grow overflow-y-auto">
           {children}
         </main>
         <Footer />

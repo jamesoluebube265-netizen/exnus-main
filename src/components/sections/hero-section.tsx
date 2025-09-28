@@ -14,7 +14,7 @@ import {
 export default function HeroSection() {
   return (
     <section 
-      className="relative overflow-hidden rounded-lg"
+      className="relative overflow-hidden"
       style={{
         backgroundImage: `url(/4.jpeg)`,
         backgroundSize: 'cover',
@@ -67,7 +67,7 @@ export default function HeroSection() {
                     <ul className="list-disc list-inside text-foreground/80 space-y-2">
                       <li><span className="font-semibold text-foreground">A Dynamic Reward Engine:</span> Smart contracts that can be configured to distribute token rewards based on a project's specific goals.</li>
                       <li><span className="font-semibold text-foreground">Contribution Tracking:</span> A combination of on-chain and off-chain tools to verify and value user contributions fairly.</li>
-                      <li><span className="font-semibold text-foreground">Decentralized Governance:</span> A DAO structure that empowers the community to guide the protocol's evolution and treasury.</li>
+                      <li><span className="font-semibold text-foreground">Decentralized Governance:</span> A DAO structure that empowers the community to guide the protocol's evolution and a treasury.</li>
                     </ul>
                     <p className="text-foreground/80 pt-2">
                       By rewarding the actions that create real value, Exnus aims to help projects build stronger, more active, and more loyal communities.
