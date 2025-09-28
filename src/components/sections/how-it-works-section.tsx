@@ -38,7 +38,8 @@ export default function HowItWorksSection() {
         </ScrollReveal>
       </div>
       
-      <div className="flex flex-col md:flex-row gap-4 mb-8 justify-center">
+      {/* Desktop Tabs */}
+      <div className="hidden md:flex flex-col md:flex-row gap-4 mb-8 justify-center">
           {steps.map((step, index) => (
               <Button
                   key={step.title}
@@ -51,7 +52,8 @@ export default function HowItWorksSection() {
           ))}
       </div>
 
-      <div className="relative min-h-[350px] md:min-h-[300px] overflow-hidden">
+      {/* Desktop Content */}
+      <div className="hidden md:block relative min-h-[350px] md:min-h-[300px] overflow-hidden">
           {steps.map((step, index) => (
               <div
                 key={step.title}
@@ -73,6 +75,25 @@ export default function HowItWorksSection() {
                 </div>
               </div>
           ))}
+      </div>
+
+      {/* Mobile Accordion/List */}
+      <div className="md:hidden space-y-12">
+        {steps.map((step, index) => (
+           <ScrollReveal key={step.title} delay={index * 150}>
+             <div className="flex flex-col gap-8 items-center">
+                <div className="w-full">
+                  <h3 className="text-2xl font-bold mb-4 text-primary">{step.title}</h3>
+                  <p className="text-foreground/80 text-lg">{step.description}</p>
+                </div>
+                <div className="w-full">
+                    <div className="w-full rounded-lg bg-card border p-8 flex items-center justify-center min-h-[220px]">
+                      {step.diagram}
+                    </div>
+                </div>
+            </div>
+           </ScrollReveal>
+        ))}
       </div>
     </section>
   );
