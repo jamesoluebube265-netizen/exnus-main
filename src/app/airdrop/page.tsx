@@ -48,25 +48,36 @@ export default function AirdropPage() {
   return (
     <div className="space-y-12">
       <section>
-        <div className="header-card text-center">
-          <ScrollReveal>
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-foreground">
-              Join the <span className="text-primary">Exnus Protocol</span> Airdrop
-          </h1>
-          </ScrollReveal>
-          <ScrollReveal delay={200}>
-          <p className="max-w-3xl mx-auto text-lg text-foreground/80 mb-8">
-              Become an early member of our community and earn exclusive rewards. Participate in our airdrop campaign by completing simple tasks in our Telegram mini-app.
-          </p>
-          </ScrollReveal>
-          <ScrollReveal delay={400}>
-              <Button size="lg" asChild>
-                  <a href="https://t.me/Exnusprotocol" target="_blank" rel="noopener noreferrer">
-                      Join Airdrop Now
-                      <ArrowRight className="ml-2 h-5 w-5" />
-                  </a>
-              </Button>
-          </ScrollReveal>
+        <div className="header-card text-center relative overflow-hidden">
+            <div 
+                className="absolute inset-0"
+                style={{
+                backgroundImage: `url(/6.jpeg)`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                }}
+            />
+            <div className="absolute inset-0 bg-black/50 backdrop-blur-sm z-0" />
+            <div className="relative z-10">
+              <ScrollReveal>
+              <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-white">
+                  Join the <span className="text-primary">Exnus Protocol</span> Airdrop
+              </h1>
+              </ScrollReveal>
+              <ScrollReveal delay={200}>
+              <p className="max-w-3xl mx-auto text-lg text-white/80 mb-8">
+                  Become an early member of our community and earn exclusive rewards. Participate in our airdrop campaign by completing simple tasks in our Telegram mini-app.
+              </p>
+              </ScrollReveal>
+              <ScrollReveal delay={400}>
+                  <Button size="lg" asChild>
+                      <a href="https://t.me/Exnusprotocol" target="_blank" rel="noopener noreferrer">
+                          Join Airdrop Now
+                          <ArrowRight className="ml-2 h-5 w-5" />
+                      </a>
+                  </Button>
+              </ScrollReveal>
+            </div>
         </div>
       </section>
 
