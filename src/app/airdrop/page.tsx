@@ -46,19 +46,20 @@ const airdropDetails = [
 
 export default function AirdropPage() {
   return (
-    <div className="space-y-12">
-      <section>
-        <div className="header-card text-center relative overflow-hidden">
-            <div 
-                className="absolute inset-0"
-                style={{
-                backgroundImage: `url(/6.jpeg)`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                }}
-            />
-            <div className="absolute inset-0 bg-black/50 backdrop-blur-sm z-0" />
-            <div className="relative z-10">
+    <div className="relative">
+       <div 
+        className="absolute inset-0"
+        style={{
+          backgroundImage: `url(/4.jpeg)`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
+        }}
+      />
+      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm z-0" />
+      <div className="relative z-10 space-y-12 p-4 md:p-8">
+        <section>
+          <div className="header-card text-center bg-transparent border-0">
               <ScrollReveal>
               <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-white">
                   Join the <span className="text-primary">Exnus Protocol</span> Airdrop
@@ -77,76 +78,76 @@ export default function AirdropPage() {
                       </a>
                   </Button>
               </ScrollReveal>
-            </div>
-        </div>
-      </section>
-
-      <section id="how-to-participate">
-          <div className="text-center">
-              <ScrollReveal>
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-primary">
-                  How to Participate
-              </h2>
-              <p className="max-w-3xl mx-auto text-center text-foreground/70 mb-8">
-                  Earning your share of the Exnus airdrop is simple. Just follow these three easy steps to get started.
-              </p>
-              </ScrollReveal>
-              <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                  {steps.map((step, index) => (
-                      <ScrollReveal key={step.title} delay={index * 150}>
-                      <div className="h-full p-6 text-center border rounded-lg bg-card bg-primary/5">
-                          <div className="flex justify-center mb-4">
-                              <div className="p-4 bg-primary/10 rounded-full w-fit">
-                                  {step.icon}
-                              </div>
-                          </div>
-                          <h3 className="text-xl font-bold text-foreground">{step.title}</h3>
-                          <p className="text-foreground/70 mt-2">{step.description}</p>
-                      </div>
-                      </ScrollReveal>
-                  ))}
-              </div>
           </div>
-      </section>
-      <section>
-        <div className="text-center">
-          <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-bold text-primary">
-              Airdrop Campaign Details
-            </h2>
-            <p className="mt-4 text-foreground/70 mb-8">
-              Everything you need to know about participating in the Exnus Protocol airdrop and maximizing your rewards.
-            </p>
-          </ScrollReveal>
-        </div>
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 text-left">
-          {airdropDetails.map((detail, index) => (
-            <ScrollReveal key={detail.title} delay={index * 150}>
-              <div className="p-6 border rounded-lg flex items-start gap-4 h-full bg-card">
-                <div className="p-2 bg-primary/10 rounded-full mt-1">
-                  {detail.icon}
+        </section>
+
+        <section id="how-to-participate">
+            <div className="text-center">
+                <ScrollReveal>
+                <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-primary">
+                    How to Participate
+                </h2>
+                <p className="max-w-3xl mx-auto text-center text-white/80 mb-8">
+                    Earning your share of the Exnus airdrop is simple. Just follow these three easy steps to get started.
+                </p>
+                </ScrollReveal>
+                <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    {steps.map((step, index) => (
+                        <ScrollReveal key={step.title} delay={index * 150}>
+                        <div className="h-full p-6 text-center border rounded-lg bg-card/80 border-border/50">
+                            <div className="flex justify-center mb-4">
+                                <div className="p-4 bg-primary/10 rounded-full w-fit">
+                                    {step.icon}
+                                </div>
+                            </div>
+                            <h3 className="text-xl font-bold text-foreground">{step.title}</h3>
+                            <p className="text-foreground/70 mt-2">{step.description}</p>
+                        </div>
+                        </ScrollReveal>
+                    ))}
                 </div>
-                <div>
-                  <h3 className="font-bold text-xl text-primary">{detail.title}</h3>
-                  <p className="mt-2 text-foreground/80">
-                    {detail.description}
-                  </p>
+            </div>
+        </section>
+        <section>
+          <div className="text-center">
+            <ScrollReveal>
+              <h2 className="text-3xl md:text-4xl font-bold text-primary">
+                Airdrop Campaign Details
+              </h2>
+              <p className="mt-4 text-white/80 mb-8">
+                Everything you need to know about participating in the Exnus Protocol airdrop and maximizing your rewards.
+              </p>
+            </ScrollReveal>
+          </div>
+          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 text-left">
+            {airdropDetails.map((detail, index) => (
+              <ScrollReveal key={detail.title} delay={index * 150}>
+                <div className="p-6 border rounded-lg flex items-start gap-4 h-full bg-card/80 border-border/50">
+                  <div className="p-2 bg-primary/10 rounded-full mt-1">
+                    {detail.icon}
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-xl text-primary">{detail.title}</h3>
+                    <p className="mt-2 text-foreground/80">
+                      {detail.description}
+                    </p>
+                  </div>
                 </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </section>
+        <section>
+            <ScrollReveal>
+              <div className="max-w-3xl mx-auto p-8 border rounded-lg bg-card/80 border-border/50 text-center">
+                <h3 className="font-bold text-xl text-primary">Important Notice</h3>
+                <p className="mt-4 text-foreground/70">
+                    Airdrop rewards will be distributed after the Token Generation Event (TGE). The number of tokens you receive will be proportional to the points you accumulate. Stay tuned to our official channels for more announcements.
+                </p>
               </div>
             </ScrollReveal>
-          ))}
-        </div>
-      </section>
-      <section>
-          <ScrollReveal>
-            <div className="max-w-3xl mx-auto p-8 border rounded-lg bg-card text-center">
-              <h3 className="font-bold text-xl text-primary">Important Notice</h3>
-              <p className="mt-4 text-foreground/70">
-                  Airdrop rewards will be distributed after the Token Generation Event (TGE). The number of tokens you receive will be proportional to the points you accumulate. Stay tuned to our official channels for more announcements.
-              </p>
-            </div>
-          </ScrollReveal>
-      </section>
+        </section>
+      </div>
     </div>
   );
 }
