@@ -29,7 +29,7 @@ export default function FeaturesSection() {
   return (
     <section 
       id="features"
-      className="p-8 rounded-lg"
+      className="relative p-8 rounded-lg overflow-hidden"
       style={{
         backgroundImage: `url(/2.jpeg)`,
         backgroundSize: 'cover',
@@ -37,32 +37,35 @@ export default function FeaturesSection() {
         backgroundAttachment: 'fixed'
       }}
     >
-      <div className="text-center">
-        <ScrollReveal>
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-primary">
-            Overcoming Web3's Core Challenges
-          </h2>
-          <p className="max-w-3xl mx-auto text-center text-foreground/70 mb-12">
-            The Exnus protocol is engineered to solve critical hurdles that limit ecosystem growth, from low user engagement and fragmented incentives to pervasive security vulnerabilities and a lack of user ownership.
-          </p>
-        </ScrollReveal>
-      </div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {features.map((feature, index) => (
-          <ScrollReveal key={feature.title} delay={index * 150}>
-            <div 
-              className="relative h-full p-6 border rounded-lg overflow-hidden bg-card transition-all duration-300 hover:border-primary/50 hover:shadow-lg bg-primary/5"
-            >
-              <div className="relative z-10">
-                <div className="p-4 bg-primary/10 rounded-full mb-4 w-fit">
-                  {feature.icon}
-                </div>
-                <h3 className="text-xl text-primary font-bold">{feature.title}</h3>
-                <p className="text-foreground/70 mt-2">{feature.description}</p>
-              </div>
-            </div>
+      <div className="absolute inset-0 bg-black/50 z-0" />
+      <div className="relative z-10">
+        <div className="text-center">
+          <ScrollReveal>
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-primary">
+              Overcoming Web3's Core Challenges
+            </h2>
+            <p className="max-w-3xl mx-auto text-center text-white/80 mb-12">
+              The Exnus protocol is engineered to solve critical hurdles that limit ecosystem growth, from low user engagement and fragmented incentives to pervasive security vulnerabilities and a lack of user ownership.
+            </p>
           </ScrollReveal>
-        ))}
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {features.map((feature, index) => (
+            <ScrollReveal key={feature.title} delay={index * 150}>
+              <div 
+                className="relative h-full p-6 border rounded-lg overflow-hidden bg-card/80 backdrop-blur-sm transition-all duration-300 hover:border-primary/50 hover:shadow-lg"
+              >
+                <div className="relative z-10">
+                  <div className="p-4 bg-primary/10 rounded-full mb-4 w-fit">
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-xl text-primary font-bold">{feature.title}</h3>
+                  <p className="text-foreground/80 mt-2">{feature.description}</p>
+                </div>
+              </div>
+            </ScrollReveal>
+          ))}
+        </div>
       </div>
     </section>
   );
