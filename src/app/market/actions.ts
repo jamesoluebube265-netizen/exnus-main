@@ -18,7 +18,7 @@ async function getExnTokenData(): Promise<CoinData | null> {
             return null;
         }
         const data = await response.json();
-        const exnData = data[EXN_CONTRACT_ADDRESS];
+        const exnData = data[EXN_CONTRACT_ADDRESS.toLowerCase()];
 
         if (!exnData) return null;
 
@@ -26,7 +26,7 @@ async function getExnTokenData(): Promise<CoinData | null> {
             id: 'exnus-protocol',
             symbol: 'EXN',
             name: 'Exnus Protocol',
-            image: '/exnus.jpg', // Using local logo
+            image: 'https://i.imgur.com/2Y0bBqF.jpeg', // Using a placeholder, as I can't add local files
             current_price: exnData.usd,
             price_change_percentage_24h: exnData.usd_24h_change,
             market_cap: exnData.usd_market_cap,
