@@ -205,7 +205,7 @@ export default function ContactPage() {
                      <div className="p-8 border rounded-lg bg-card">
                          <h3 className="text-2xl font-bold text-primary mb-4">Join Our Community</h3>
                          <p className="text-foreground/70 mb-6">Stay updated and engage with the community on our social platforms:</p>
-                         <div className="flex gap-6">
+                         <div className="flex flex-wrap gap-6">
                             <a href="https://x.com/exnusprotocol?t=erRcFQecZLsl-pW3MGFC9g&s=09" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground hover:text-primary transition-colors">
                                 <Image src="/x.jpg" alt="X" width={20} height={20} />
                                 <span className="text-foreground">X</span>
@@ -217,6 +217,10 @@ export default function ContactPage() {
                             <a href="httpss://discord.gg/v8MpYYFdP8" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground hover:text-primary transition-colors">
                                 <Image src="/discord.jpg" alt="Discord" width={20} height={20} />
                                 <span className="text-foreground">Discord</span>
+                            </a>
+                             <a href="mailto:contact@exnus.xyz" className="flex items-center gap-2 text-foreground hover:text-primary transition-colors">
+                                <Mail className="w-5 h-5" />
+                                <span>Email</span>
                             </a>
                          </div>
                      </div>
@@ -301,3 +305,5 @@ export default function ContactPage() {
     </div>
   );
 }
+
+    
