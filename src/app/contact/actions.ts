@@ -29,8 +29,9 @@ export async function sendMessage(values: z.infer<typeof formSchema>) {
     });
 
     const mailOptions = {
-        from: `"${validatedData.name}" <${validatedData.email}>`,
+        from: `"${validatedData.name}" <${process.env.EMAIL_SERVER_USER}>`,
         to: 'contact@exnus.xyz',
+        replyTo: validatedData.email,
         subject: 'New message from contact form',
         text: validatedData.message,
         html: `
