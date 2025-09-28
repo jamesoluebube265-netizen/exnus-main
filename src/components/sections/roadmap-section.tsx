@@ -83,13 +83,24 @@ const RoadmapIcon = ({ status }: { status: 'complete' | 'current' | 'future' }) 
 export default function RoadmapSection() {
   return (
     <section id="roadmap">
-      <div className="header-card text-center mb-12">
-        <ScrollReveal>
-          <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Roadmap</h2>
-          <p className="max-w-2xl mx-auto text-foreground/70 mt-4">
-            Follow our journey as we build the future of decentralized technology, one milestone at a time.
-          </p>
-        </ScrollReveal>
+      <div className="header-card text-center mb-12 relative overflow-hidden">
+        <div 
+            className="absolute inset-0"
+            style={{
+            backgroundImage: `url(/4.jpeg)`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            }}
+        />
+        <div className="absolute inset-0 bg-black/50 backdrop-blur-sm z-0" />
+        <div className="relative z-10">
+            <ScrollReveal>
+            <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Roadmap</h2>
+            <p className="max-w-2xl mx-auto text-white/80 mt-4">
+                Follow our journey as we build the future of decentralized technology, one milestone at a time.
+            </p>
+            </ScrollReveal>
+        </div>
       </div>
 
       <div className="relative max-w-2xl mx-auto">
