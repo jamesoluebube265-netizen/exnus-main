@@ -20,17 +20,31 @@ export default function RoadmapPage() {
           </ScrollReveal>
           <ScrollReveal delay={200}>
             <div className="max-w-5xl mx-auto mt-12 grid md:grid-cols-2 gap-8 text-left">
-              <div className="p-6 border rounded-lg bg-card bg-primary/5">
-                <h3 className="font-bold text-xl text-primary">Ecosystem Expansion</h3>
-                <p className="mt-2 text-foreground/80">
-                  We plan to forge strategic partnerships with other innovative projects and platforms to broaden the utility of the Exnus protocol. Our goal is to create a seamless, interconnected network of dApps that leverage our unique incentive models to foster vibrant and engaged communities across the Web3 space.
-                </p>
+              <div className="relative p-6 border rounded-lg bg-card overflow-hidden">
+                <div 
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{ backgroundImage: `url(/2.jpeg)` }}
+                />
+                <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
+                <div className="relative z-10">
+                  <h3 className="font-bold text-xl text-primary">Ecosystem Expansion</h3>
+                  <p className="mt-2 text-white/80">
+                    We plan to forge strategic partnerships with other innovative projects and platforms to broaden the utility of the Exnus protocol. Our goal is to create a seamless, interconnected network of dApps that leverage our unique incentive models to foster vibrant and engaged communities across the Web3 space.
+                  </p>
+                </div>
               </div>
-              <div className="p-6 border rounded-lg bg-card bg-primary/5">
-                <h3 className="font-bold text-xl text-primary">Decentralization & Autonomy</h3>
-                <p className="mt-2 text-foreground/80">
-                  True decentralization is our ultimate objective. As the protocol matures, we will progressively hand over more control to the Exnus DAO. We envision a future where all protocol upgrades, treasury management, and strategic decisions are governed entirely by our community of token holders, creating a self-sustaining and autonomous organization.
-                </p>
+              <div className="relative p-6 border rounded-lg bg-card overflow-hidden">
+                <div 
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{ backgroundImage: `url(/2.jpeg)` }}
+                />
+                <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
+                <div className="relative z-10">
+                  <h3 className="font-bold text-xl text-primary">Decentralization & Autonomy</h3>
+                  <p className="mt-2 text-white/80">
+                    True decentralization is our ultimate objective. As the protocol matures, we will progressively hand over more control to the Exnus DAO. We envision a future where all protocol upgrades, treasury management, and strategic decisions are governed entirely by our community of token holders, creating a self-sustaining and autonomous organization.
+                  </p>
+                </div>
               </div>
             </div>
           </ScrollReveal>
