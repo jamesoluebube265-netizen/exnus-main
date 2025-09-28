@@ -71,7 +71,7 @@ export default function HowItWorksSection() {
                     <div className="md:w-1/2 w-full">
                         <div className="w-full rounded-lg border overflow-hidden">
                            {index === 0 ? (
-                                <div className="w-full h-auto bg-card flex items-center justify-center p-4">{step.diagram}</div>
+                                <div className="w-full h-auto bg-card flex items-center justify-center">{step.diagram}</div>
                             ) : (
                                 <div className="w-full h-full p-8 flex items-center justify-center bg-card min-h-[220px]">
                                     {step.diagram}
