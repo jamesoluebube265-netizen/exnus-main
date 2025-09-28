@@ -5,12 +5,13 @@ import ScrollReveal from '../scroll-reveal';
 import { HowItWorksDiagram } from './diagrams/how-it-works-diagram';
 import { Button } from '../ui/button';
 import { cn } from '@/lib/utils';
+import Image from 'next/image';
 
 const steps = [
   {
     title: '1. Contribute & Participate',
     description: 'Engage with the ecosystem through development, governance, or community building. The protocol tracks all meaningful contributions, from code commits to forum moderation, ensuring all efforts are recognized.',
-    diagram: <HowItWorksDiagram variant="contribute" />
+    diagram: <Image src="/7.jpeg" alt="Contribute" width={400} height={200} className="rounded-lg object-cover" />
   },
   {
     title: '2. Earn Rewards',
