@@ -11,7 +11,7 @@ const steps = [
   {
     title: '1. Contribute & Participate',
     description: 'Engage with the ecosystem through development, governance, or community building. The protocol tracks all meaningful contributions, from code commits to forum moderation, ensuring all efforts are recognized.',
-    diagram: <Image src="/7.jpeg" alt="Contribute" width={400} height={200} className="rounded-lg object-cover" />
+    diagram: <Image src="/7.jpeg" alt="Contribute" width={400} height={200} className="w-full h-full object-cover" />
   },
   {
     title: '2. Earn Rewards',
@@ -69,8 +69,14 @@ export default function HowItWorksSection() {
                       <p className="text-foreground/80 text-lg">{step.description}</p>
                     </div>
                     <div className="md:w-1/2 w-full">
-                        <div className="w-full rounded-lg bg-card border p-8 flex items-center justify-center min-h-[220px]">
-                          {step.diagram}
+                        <div className="w-full rounded-lg border overflow-hidden min-h-[220px]">
+                           {index === 0 ? (
+                                <div className="w-full h-[220px]">{step.diagram}</div>
+                            ) : (
+                                <div className="w-full h-full p-8 flex items-center justify-center">
+                                    {step.diagram}
+                                </div>
+                            )}
                         </div>
                     </div>
                 </div>
@@ -88,8 +94,14 @@ export default function HowItWorksSection() {
                   <p className="text-foreground/80 text-lg">{step.description}</p>
                 </div>
                 <div className="w-full">
-                    <div className="w-full rounded-lg bg-card border p-8 flex items-center justify-center min-h-[220px]">
-                      {step.diagram}
+                    <div className="w-full rounded-lg border overflow-hidden min-h-[220px]">
+                       {index === 0 ? (
+                            <div className="w-full h-full">{step.diagram}</div>
+                        ) : (
+                            <div className="w-full h-full p-8 flex items-center justify-center bg-card">
+                                {step.diagram}
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>
