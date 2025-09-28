@@ -115,11 +115,11 @@ export default function ContactPage() {
       await sendMessage(values);
       setShowSuccessDialog(true);
       form.reset();
-    } catch (error) {
+    } catch (error: any) {
       toast({
         variant: "destructive",
         title: "Uh oh! Something went wrong.",
-        description: "There was a problem with your request. Please try again.",
+        description: error.message || "There was a problem with your request. Please try again.",
       });
     } finally {
       setIsSubmitting(false);
@@ -314,7 +314,3 @@ export default function ContactPage() {
     </div>
   );
 }
-
-    
-
-    

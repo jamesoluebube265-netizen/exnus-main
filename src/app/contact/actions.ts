@@ -14,6 +14,10 @@ const formSchema = z.object({
 export async function sendMessage(values: z.infer<typeof formSchema>) {
     const validatedData = formSchema.parse(values);
 
+    if (!process.env.EMAIL_SERVER_USER || !process.env.EMAIL_SERVER_PASSWORD) {
+        throw new Error('Email server is not configured. Please set EMAIL_SERVER_USER and EMAIL_SERVER_PASSWORD in your environment variables.');
+    }
+
     const transporter = nodemailer.createTransport({
         host: "smtp.gmail.com",
         port: 587,
