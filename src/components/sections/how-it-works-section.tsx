@@ -72,6 +72,11 @@ export default function HowItWorksSection() {
                         <div className="w-full rounded-lg border overflow-hidden">
                            {index === 0 ? (
                                 <div className="w-full h-auto bg-card flex items-center justify-center p-4">{step.diagram}</div>
+                            ) : index === 1 ? (
+                                <div className="w-full h-full p-8 flex items-center justify-center min-h-[220px] relative bg-cover bg-center" style={{backgroundImage: "url('/6.jpeg')"}}>
+                                    <div className="absolute inset-0 bg-black/50"></div>
+                                    <div className="relative z-10">{step.diagram}</div>
+                                </div>
                             ) : (
                                 <div className="w-full h-full p-8 flex items-center justify-center bg-card min-h-[220px]">
                                     {step.diagram}
@@ -97,6 +102,11 @@ export default function HowItWorksSection() {
                     <div className="w-full rounded-lg border overflow-hidden">
                        {index === 0 ? (
                             <div className="w-full h-auto bg-card flex items-center justify-center">{step.diagram}</div>
+                        ) : index === 1 ? (
+                           <div className="w-full h-full p-8 flex items-center justify-center min-h-[220px] relative bg-cover bg-center" style={{backgroundImage: "url('/6.jpeg')"}}>
+                               <div className="absolute inset-0 bg-black/50"></div>
+                               <div className="relative z-10">{step.diagram}</div>
+                           </div>
                         ) : (
                             <div className="w-full h-full p-8 flex items-center justify-center bg-card min-h-[220px]">
                                 {step.diagram}
