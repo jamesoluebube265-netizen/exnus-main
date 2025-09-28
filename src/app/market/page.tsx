@@ -5,15 +5,26 @@ import ScrollReveal from "@/components/scroll-reveal";
 export default function MarketPage() {
   return (
     <div className="w-full space-y-8">
-      <div className="header-card text-center">
-        <ScrollReveal>
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Crypto Market
-            </h1>
-            <p className="text-lg text-foreground/70 max-w-4xl mx-auto">
-            Stay updated with the latest cryptocurrency prices and market trends.
-            </p>
-        </ScrollReveal>
+      <div className="header-card text-center relative overflow-hidden">
+         <div 
+            className="absolute inset-0"
+            style={{
+            backgroundImage: `url(/4.jpeg)`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            }}
+        />
+        <div className="absolute inset-0 bg-black/50 backdrop-blur-sm z-0" />
+        <div className="relative z-10">
+          <ScrollReveal>
+              <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">
+              Crypto Market
+              </h1>
+              <p className="text-lg text-white/80 max-w-4xl mx-auto">
+              Stay updated with the latest cryptocurrency prices and market trends.
+              </p>
+          </ScrollReveal>
+        </div>
       </div>
       <ScrollReveal delay={200}>
         <div>
