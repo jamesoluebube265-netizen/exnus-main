@@ -68,12 +68,15 @@ export default function NewHeader({ onMenuClick }: NewHeaderProps) {
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Toggle Menu</span>
             </Button>
+            <div className="hidden sm:block font-bold text-lg">
+                Exnus Protocol
+            </div>
             <div className="relative flex-1" ref={searchRef}>
                 <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
                 <Input
                     type="search"
                     placeholder="Search..."
-                    className="pl-8 sm:w-full md:w-1/3"
+                    className="pl-8 sm:w-full"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     onFocus={() => setIsSearchFocused(true)}
