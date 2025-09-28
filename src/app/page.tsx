@@ -7,9 +7,19 @@ export default function Home() {
   return (
     <div className="space-y-20">
       <HeroSection />
-      <FeaturesSection />
-      <HowItWorksSection />
-      <CtaSection />
+      <div 
+        className="space-y-20 rounded-lg p-8"
+        style={{
+          backgroundImage: `url(/2.jpeg)`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        <FeaturesSection />
+        <HowItWorksSection />
+        <CtaSection />
+      </div>
     </div>
   );
 }
