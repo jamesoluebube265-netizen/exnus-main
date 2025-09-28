@@ -28,6 +28,12 @@ const nextConfig: NextConfig = {
         hostname: 'coin-images.coingecko.com',
         port: '',
         pathname: '/coins/images/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'i.imgur.com',
+        port: '',
+        pathname: '/**',
       }
     ],
   },
