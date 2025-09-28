@@ -49,7 +49,7 @@ export default function FeaturesSection() {
             </p>
           </ScrollReveal>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           {features.map((feature, index) => (
             <ScrollReveal key={feature.title} delay={index * 150}>
               <div 
