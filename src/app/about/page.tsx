@@ -59,7 +59,7 @@ export default function AboutPage() {
           backgroundAttachment: 'fixed'
         }}
       >
-        <div className="absolute inset-0 bg-black/50 z-0" />
+        <div className="absolute inset-0 bg-black/50 backdrop-blur-sm z-0" />
         <div className="relative z-10 p-8 md:p-12 lg:p-20">
           <div className="header-card text-center bg-transparent border-0">
               <ScrollReveal>
