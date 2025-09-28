@@ -1,4 +1,3 @@
-
 'use client';
 
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -22,7 +21,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Checkbox } from "@/components/ui/checkbox";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ChangeEvent } from "react";
 import { useSearchParams } from "next/navigation";
 import {
   AlertDialog,
@@ -42,7 +41,7 @@ import { Trash2 } from "lucide-react";
 const newsFormSchema = z.object({
   title: z.string().min(2, "Title must be at least 2 characters."),
   content: z.string().min(10, "Content must be at least 10 characters."),
-  imageUrl: z.string().url({ message: "Please enter a valid URL." }).optional().or(z.literal('')),
+  imageUrl: z.string().optional().or(z.literal('')),
   generateAudio: z.boolean().default(false).optional(),
 });
 
@@ -117,6 +116,20 @@ export default function AdminPage() {
             });
         }
     }
+    
+    const handleImageChange = (e: ChangeEvent<HTMLInputElement>, fieldChange: (value: string) => void) => {
+        const file = e.target.files?.[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = (loadEvent) => {
+            const result = loadEvent.target?.result;
+            if (typeof result === 'string') {
+                fieldChange(result);
+            }
+        };
+        reader.readAsDataURL(file);
+    };
 
 
   if (accessCode !== correctCode) {
@@ -187,14 +200,19 @@ export default function AdminPage() {
                                     </FormItem>
                                 )}
                             />
-                            <FormField
+                             <FormField
                                 control={newsForm.control}
                                 name="imageUrl"
                                 render={({ field }) => (
                                     <FormItem>
-                                    <FormLabel>Image URL</FormLabel>
+                                    <FormLabel>Image</FormLabel>
                                     <FormControl>
-                                        <Input placeholder="https://example.com/image.png" {...field} />
+                                        <Input 
+                                            type="file" 
+                                            accept="image/*"
+                                            onChange={(e) => handleImageChange(e, field.onChange)} 
+                                            className="pt-2"
+                                        />
                                     </FormControl>
                                     <FormMessage />
                                     </FormItem>

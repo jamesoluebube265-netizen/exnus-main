@@ -11,7 +11,7 @@ import { revalidatePath } from 'next/cache';
 const newsSchema = z.object({
   title: z.string().min(1, "Title is required."),
   content: z.string().min(1, "Content is required."),
-  imageUrl: z.string().url().optional().or(z.literal('')),
+  imageUrl: z.string().optional().or(z.literal('')),
   generateAudio: z.boolean().optional(),
 });
 
