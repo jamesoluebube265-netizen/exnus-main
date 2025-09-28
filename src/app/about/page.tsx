@@ -52,13 +52,16 @@ export default function AboutPage() {
     <div className="space-y-12">
        <section 
         className="relative overflow-hidden"
-        style={{
-          backgroundImage: `url(/2.jpeg)`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed'
-        }}
       >
+        <div 
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url(/2.jpeg)`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundAttachment: 'fixed'
+          }}
+        />
         <div className="absolute inset-0 bg-black/50 backdrop-blur-sm z-0" />
         <div className="relative z-10 p-8 md:p-12 lg:p-20">
           <div className="header-card text-center bg-transparent border-0">
@@ -91,8 +94,13 @@ export default function AboutPage() {
                   </div>
               </ScrollReveal>
               <ScrollReveal delay={200}>
-                <div className="not-prose my-8">
-                    <div className="overflow-hidden p-6 md:p-8 bg-background rounded-lg shadow-inner">
+                <div className="not-prose my-8 relative overflow-hidden rounded-lg shadow-inner">
+                    <div 
+                      className="absolute inset-0 bg-cover bg-center"
+                      style={{ backgroundImage: `url(/4.jpeg)` }}
+                    />
+                    <div className="absolute inset-0 bg-black/30 backdrop-blur-sm" />
+                    <div className="relative z-10 p-6 md:p-8">
                         <RewardingDiagram />
                     </div>
                 </div>
