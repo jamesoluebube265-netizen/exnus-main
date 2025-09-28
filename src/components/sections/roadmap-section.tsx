@@ -92,7 +92,7 @@ export default function RoadmapSection() {
         backgroundAttachment: 'fixed'
       }}
     >
-      <div className="absolute inset-0 bg-black/50 z-0" />
+      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm z-0" />
       <div className="relative z-10">
         <div className="header-card text-center mb-12 bg-transparent border-0">
           <ScrollReveal>
