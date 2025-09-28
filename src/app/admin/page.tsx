@@ -17,6 +17,7 @@ import ScrollReveal from "@/components/scroll-reveal";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { deleteNews, getNews, postNews, type NewsPost } from "./actions";
+import { getSubmittedMessages, type Message } from "@/app/contact/actions";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
@@ -52,6 +53,7 @@ export default function AdminPage() {
 
     const { toast } = useToast();
     const [news, setNews] = useState<NewsPost[]>([]);
+    const [messages, setMessages] = useState<Message[]>([]);
     const [isSubmittingNews, setIsSubmittingNews] = useState(false);
 
     const newsForm = useForm<z.infer<typeof newsFormSchema>>({
@@ -67,6 +69,7 @@ export default function AdminPage() {
     useEffect(() => {
         if (accessCode === correctCode) {
             getNews().then(setNews);
+            getSubmittedMessages().then(setMessages);
         }
     }, [accessCode]);
 
@@ -290,6 +293,46 @@ export default function AdminPage() {
             </Card>
         </ScrollReveal>
       </div>
+      <ScrollReveal delay={200}>
+        <Card>
+          <CardHeader>
+            <CardTitle>Contact Form Submissions</CardTitle>
+            <CardDescription>Messages sent from the contact form.</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="overflow-y-auto max-h-[500px] border rounded-md">
+                {messages.length > 0 ? (
+                    <Table>
+                        <TableHeader>
+                        <TableRow>
+                            <TableHead>Name</TableHead>
+                            <TableHead>Email</TableHead>
+                            <TableHead>Message</TableHead>
+                            <TableHead>Received</TableHead>
+                        </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                        {messages.map((message) => (
+                            <TableRow key={message.email + message.receivedAt}>
+                                <TableCell className="font-medium">{message.name}</TableCell>
+                                <TableCell>{message.email}</TableCell>
+                                <TableCell className="max-w-xs truncate">{message.message}</TableCell>
+                                <TableCell>{format(new Date(message.receivedAt), "PPP p")}</TableCell>
+                            </TableRow>
+                        ))}
+                        </TableBody>
+                    </Table>
+                ) : (
+                    <div className="text-center py-10 text-foreground/70">
+                        No messages have been submitted yet.
+                    </div>
+                )}
+            </div>
+          </CardContent>
+        </Card>
+      </ScrollReveal>
     </div>
   );
 }
+
+    

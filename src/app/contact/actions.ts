@@ -1,53 +1,58 @@
 
 'use server';
 
+import fs from 'fs/promises';
+import path from 'path';
 import { z } from 'zod';
-import nodemailer from 'nodemailer';
-import 'dotenv/config'
+
+const messagesFilePath = path.join(process.cwd(), 'messages.json');
 
 const formSchema = z.object({
-  name: z.string(),
-  email: z.string().email(),
-  message: z.string(),
+  name: z.string().min(2, "Name must be at least 2 characters."),
+  email: z.string().email("Please enter a valid email address."),
+  message: z.string().min(10, "Message must be at least 10 characters."),
 });
+
+export type Message = {
+    name: string;
+    email: string;
+    message: string;
+    receivedAt: string;
+}
+
+export async function getSubmittedMessages(): Promise<Message[]> {
+  try {
+    const data = await fs.readFile(messagesFilePath, 'utf-8');
+    const messages: Message[] = JSON.parse(data);
+    // Sort messages by received date, newest first
+    return messages.sort((a, b) => new Date(b.receivedAt).getTime() - new Date(a.receivedAt).getTime());
+  } catch (error: any) {
+    if (error.code === 'ENOENT') {
+      return []; // Return empty array if file doesn't exist
+    }
+    throw error;
+  }
+}
 
 export async function sendMessage(values: z.infer<typeof formSchema>) {
     const validatedData = formSchema.parse(values);
+    
+    const messages = await getSubmittedMessages();
 
-    if (!process.env.EMAIL_SERVER_USER || !process.env.EMAIL_SERVER_PASSWORD) {
-        throw new Error('Email server is not configured. Please set EMAIL_SERVER_USER and EMAIL_SERVER_PASSWORD in your environment variables.');
-    }
-
-    const transporter = nodemailer.createTransport({
-        host: "smtp.hostinger.com",
-        port: 465,
-        secure: true, // true for 465, false for other ports
-        auth: {
-            user: process.env.EMAIL_SERVER_USER,
-            pass: process.env.EMAIL_SERVER_PASSWORD,
-        },
-    });
-
-    const mailOptions = {
-        from: `"${validatedData.name}" <${process.env.EMAIL_SERVER_USER}>`,
-        to: 'contact@exnus.xyz',
-        replyTo: validatedData.email,
-        subject: 'New message from contact form',
-        text: validatedData.message,
-        html: `
-            <h1>New message from contact form</h1>
-            <p><strong>Name:</strong> ${validatedData.name}</p>
-            <p><strong>Email:</strong> ${validatedData.email}</p>
-            <p><strong>Message:</strong></p>
-            <p>${validatedData.message}</p>
-        `,
+    const newMessage: Message = {
+      ...validatedData,
+      receivedAt: new Date().toISOString(),
     };
 
+    messages.unshift(newMessage); // Add new message to the beginning
+
     try {
-        await transporter.sendMail(mailOptions);
+        await fs.writeFile(messagesFilePath, JSON.stringify(messages, null, 2));
         return { success: true };
     } catch (error) {
-        console.error('Error sending email:', error);
-        throw new Error('Failed to send message.');
+        console.error('Error saving message:', error);
+        throw new Error('Failed to save message.');
     }
 }
+
+    
