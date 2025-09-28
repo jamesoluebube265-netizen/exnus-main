@@ -50,18 +50,29 @@ const philosophyPoints = [
 export default function AboutPage() {
   return (
     <div className="space-y-12">
-       <section>
-        <div className="header-card text-center">
-            <ScrollReveal>
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-foreground">
-                About <span className="text-primary">Exnus Protocol</span>
-            </h1>
-            </ScrollReveal>
-            <ScrollReveal delay={200}>
-            <p className="max-w-3xl mx-auto text-lg text-foreground/80">
-                We are a passionate team of builders, innovators, and decentralization advocates dedicated to creating a more equitable and participatory Web3.
-            </p>
-            </ScrollReveal>
+       <section 
+        className="relative overflow-hidden"
+        style={{
+          backgroundImage: `url(/2.jpeg)`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        <div className="absolute inset-0 bg-black/50 z-0" />
+        <div className="relative z-10 p-8 md:p-12 lg:p-20">
+          <div className="header-card text-center bg-transparent border-0">
+              <ScrollReveal>
+              <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-white">
+                  About <span className="text-primary">Exnus Protocol</span>
+              </h1>
+              </ScrollReveal>
+              <ScrollReveal delay={200}>
+              <p className="max-w-3xl mx-auto text-lg text-white/80">
+                  We are a passionate team of builders, innovators, and decentralization advocates dedicated to creating a more equitable and participatory Web3.
+              </p>
+              </ScrollReveal>
+          </div>
         </div>
       </section>
 
