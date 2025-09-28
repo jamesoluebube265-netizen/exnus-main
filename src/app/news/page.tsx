@@ -13,17 +13,28 @@ export default async function NewsPage() {
     return (
         <div className="space-y-12">
             <section>
-                <div className="header-card text-center">
-                    <ScrollReveal>
-                        <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-primary">
-                            News & Announcements
-                        </h1>
-                    </ScrollReveal>
-                    <ScrollReveal delay={200}>
-                        <p className="max-w-3xl mx-auto text-lg text-foreground/80">
-                            Stay up to date with the latest developments, partnerships, and announcements from the Exnus Protocol team.
-                        </p>
-                    </ScrollReveal>
+                <div className="header-card text-center relative overflow-hidden">
+                    <div 
+                        className="absolute inset-0"
+                        style={{
+                        backgroundImage: `url(/4.jpeg)`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        }}
+                    />
+                    <div className="absolute inset-0 bg-black/50 backdrop-blur-sm z-0" />
+                    <div className="relative z-10">
+                        <ScrollReveal>
+                            <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-primary">
+                                News & Announcements
+                            </h1>
+                        </ScrollReveal>
+                        <ScrollReveal delay={200}>
+                            <p className="max-w-3xl mx-auto text-lg text-white/80">
+                                Stay up to date with the latest developments, partnerships, and announcements from the Exnus Protocol team.
+                            </p>
+                        </ScrollReveal>
+                    </div>
                 </div>
             </section>
             <section>
