@@ -105,7 +105,4 @@
   .header-card {
     @apply bg-primary/10 p-8 rounded-lg border border-primary/20;
   }
-  .bg-dark-gold {
-    @apply bg-[hsl(38_92%_50%)];
-  }
 }
