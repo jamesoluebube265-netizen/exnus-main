@@ -20,9 +20,9 @@ import { deleteNews, getNews, postNews, type NewsPost } from "./actions";
 import { getSubmittedMessages, type Message } from "@/app/contact/actions";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Checkbox } from "@/components/ui/checkbox";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useSearchParams } from "next/navigation";
 import {
   AlertDialog,
@@ -42,7 +42,7 @@ import { Trash2 } from "lucide-react";
 const newsFormSchema = z.object({
   title: z.string().min(2, "Title must be at least 2 characters."),
   content: z.string().min(10, "Content must be at least 10 characters."),
-  imageUrl: z.string().optional().or(z.literal('')),
+  image: z.any().optional(),
   generateAudio: z.boolean().default(false).optional(),
 });
 
@@ -55,13 +55,13 @@ export default function AdminPage() {
     const [news, setNews] = useState<NewsPost[]>([]);
     const [messages, setMessages] = useState<Message[]>([]);
     const [isSubmittingNews, setIsSubmittingNews] = useState(false);
+    const formRef = useRef<HTMLFormElement>(null);
 
     const newsForm = useForm<z.infer<typeof newsFormSchema>>({
         resolver: zodResolver(newsFormSchema),
         defaultValues: {
             title: "",
             content: "",
-            imageUrl: "",
             generateAudio: false,
         },
     });
@@ -73,10 +73,13 @@ export default function AdminPage() {
         }
     }, [accessCode]);
 
-    async function onNewsSubmit(values: z.infer<typeof newsFormSchema>) {
+    async function onNewsSubmit() {
+        if (!formRef.current) return;
+
+        const formData = new FormData(formRef.current);
         setIsSubmittingNews(true);
         try {
-            const result = await postNews(values);
+            const result = await postNews(formData);
             if (result.post) {
                 setNews(prevNews => [result.post, ...prevNews]);
             }
@@ -85,6 +88,9 @@ export default function AdminPage() {
                 description: "The announcement is now live.",
             });
             newsForm.reset();
+            if (formRef.current) {
+                formRef.current.reset();
+            }
         } catch (error) {
             toast({
                 variant: "destructive",
@@ -167,7 +173,7 @@ export default function AdminPage() {
                 </CardHeader>
                 <CardContent>
                     <Form {...newsForm}>
-                        <form onSubmit={newsForm.handleSubmit(onNewsSubmit)} className="space-y-6">
+                        <form ref={formRef} action={onNewsSubmit} className="space-y-6">
                             <FormField
                                 control={newsForm.control}
                                 name="title"
@@ -183,12 +189,12 @@ export default function AdminPage() {
                             />
                              <FormField
                                 control={newsForm.control}
-                                name="imageUrl"
+                                name="image"
                                 render={({ field }) => (
                                     <FormItem>
-                                    <FormLabel>Image URL (Optional)</FormLabel>
+                                    <FormLabel>Image (Optional)</FormLabel>
                                     <FormControl>
-                                        <Input placeholder="Enter image URL" {...field} />
+                                        <Input type="file" accept="image/*" name="image" />
                                     </FormControl>
                                     <FormMessage />
                                     </FormItem>
@@ -216,6 +222,7 @@ export default function AdminPage() {
                                         <Checkbox
                                             checked={field.value}
                                             onCheckedChange={field.onChange}
+                                            name="generateAudio"
                                         />
                                     </FormControl>
                                     <div className="space-y-1 leading-none">
@@ -334,5 +341,3 @@ export default function AdminPage() {
     </div>
   );
 }
-
-    

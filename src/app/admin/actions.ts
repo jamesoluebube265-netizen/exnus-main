@@ -11,7 +11,7 @@ import { revalidatePath } from 'next/cache';
 const newsSchema = z.object({
   title: z.string().min(1, "Title is required."),
   content: z.string().min(1, "Content is required."),
-  imageUrl: z.string().optional().or(z.literal('')),
+  image: z.any().optional(),
   generateAudio: z.boolean().optional(),
 });
 
@@ -39,11 +39,17 @@ export async function getNews(): Promise<NewsPost[]> {
   }
 }
 
-export async function postNews(values: z.infer<typeof newsSchema>) {
-    const validatedData = newsSchema.parse(values);
+export async function postNews(formData: FormData) {
+    const values = Object.fromEntries(formData.entries());
+    const validatedData = newsSchema.parse({
+        ...values,
+        generateAudio: values.generateAudio === 'on',
+    });
+    
     const news = await getNews();
     
     let audioDataUri: string | undefined = undefined;
+    let imageDataUri: string | undefined = undefined;
 
     if (validatedData.generateAudio && validatedData.content) {
         try {
@@ -51,15 +57,21 @@ export async function postNews(values: z.infer<typeof newsSchema>) {
             audioDataUri = ttsResponse.audioDataUri;
         } catch (error) {
             console.error("TTS generation failed:", error);
-            // Decide if you want to proceed without audio or return an error
         }
+    }
+
+    if (validatedData.image && validatedData.image.size > 0) {
+        const imageFile = validatedData.image as File;
+        const imageBuffer = await imageFile.arrayBuffer();
+        const imageBase64 = Buffer.from(imageBuffer).toString('base64');
+        imageDataUri = `data:${imageFile.type};base64,${imageBase64}`;
     }
 
     const newPost: NewsPost = {
       id: uuidv4(),
       title: validatedData.title,
       content: validatedData.content,
-      imageUrl: validatedData.imageUrl,
+      imageUrl: imageDataUri,
       createdAt: new Date().toISOString(),
       audioUrl: audioDataUri,
     };
