@@ -22,7 +22,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Checkbox } from "@/components/ui/checkbox";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import {
   AlertDialog,
@@ -46,7 +46,8 @@ const newsFormSchema = z.object({
   generateAudio: z.boolean().default(false).optional(),
 });
 
-export default function AdminPage() {
+
+function AdminDashboard() {
     const searchParams = useSearchParams();
     const accessCode = searchParams.get('code');
     const correctCode = "203040";
@@ -340,4 +341,12 @@ export default function AdminPage() {
       </ScrollReveal>
     </div>
   );
+}
+
+export default function AdminPage() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <AdminDashboard />
+        </Suspense>
+    );
 }
