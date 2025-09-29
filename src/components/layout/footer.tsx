@@ -15,7 +15,7 @@ const DiscordIcon = () => (
 
 export default function Footer() {
   return (
-    <footer className="bg-primary text-primary-foreground">
+    <footer className="bg-primary text-primary-foreground theme-gold">
       <div 
         className="px-6 py-4"
       >
