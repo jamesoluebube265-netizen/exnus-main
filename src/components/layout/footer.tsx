@@ -1,3 +1,4 @@
+
 import { Twitter, Linkedin, Send } from "lucide-react";
 
 const DiscordIcon = () => (
@@ -15,14 +16,8 @@ const DiscordIcon = () => (
 
 export default function Footer() {
   return (
-    <footer className="relative text-primary-foreground">
-      <div 
-        className="absolute inset-0"
-        style={{ backgroundColor: 'hsl(var(--gold))' }}
-      />
-      <div 
-        className="relative px-6 py-4"
-      >
+    <footer className="bg-primary text-primary-foreground theme-gold">
+      <div className="px-6 py-4">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-primary-foreground/80">
             &copy; {new Date().getFullYear()} Exnus Protocol. All rights reserved.
