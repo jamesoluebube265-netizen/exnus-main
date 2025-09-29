@@ -222,5 +222,9 @@ export default function NewsDetailPage({ params }: { params: { id: string } }) {
         setIsClient(true);
     }, []);
 
-    return isClient ? <NewsDetailClient id={params.id} /> : null;
+    if (!isClient) {
+        return null;
+    }
+
+    return <NewsDetailClient id={params.id} />;
 }
