@@ -25,6 +25,10 @@ export type NewsPost = {
 };
 
 const newsFilePath = path.join(process.cwd(), 'news.json');
+const commentsFilePath = path.join(process.cwd(), 'comments.json');
+
+
+// --------- News Actions ---------
 
 export async function getNews(): Promise<NewsPost[]> {
   try {
@@ -109,4 +113,95 @@ export async function deleteNews(id: string) {
 export async function getNewsById(id: string): Promise<NewsPost | null> {
     const news = await getNews();
     return news.find(post => post.id === id) || null;
+}
+
+
+// --------- Comment Actions ---------
+
+export type Comment = {
+  id: string;
+  postId: string;
+  parentId: string | null;
+  author: string;
+  content: string;
+  createdAt: string;
+  replies?: Comment[];
+};
+
+const commentFormSchema = z.object({
+  postId: z.string(),
+  parentId: z.string().nullable().optional(),
+  author: z.string().min(2, "Name must be at least 2 characters."),
+  content: z.string().min(1, "Comment cannot be empty."),
+});
+
+async function getAllComments(): Promise<Comment[]> {
+  try {
+    const data = await fs.readFile(commentsFilePath, 'utf-8');
+    return JSON.parse(data);
+  } catch (error: any) {
+    if (error.code === 'ENOENT') {
+      return [];
+    }
+    throw error;
+  }
+}
+
+export async function getComments(postId: string): Promise<Comment[]> {
+    const allComments = await getAllComments();
+    const postComments = allComments.filter(comment => comment.postId === postId);
+
+    const commentMap: Record<string, Comment> = {};
+    const rootComments: Comment[] = [];
+
+    // First pass: create a map of all comments by their ID
+    postComments.forEach(comment => {
+        commentMap[comment.id] = { ...comment, replies: [] };
+    });
+
+    // Second pass: build the nested structure
+    postComments.forEach(comment => {
+        if (comment.parentId) {
+            const parent = commentMap[comment.parentId];
+            if (parent) {
+                parent.replies?.push(commentMap[comment.id]);
+            } else {
+                 // This case handles replies to comments that might have been deleted
+                 rootComments.push(commentMap[comment.id]);
+            }
+        } else {
+            rootComments.push(commentMap[comment.id]);
+        }
+    });
+    
+    // Sort root comments and replies by creation date
+    const sortByDate = (a: Comment, b: Comment) => new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime();
+    rootComments.sort(sortByDate);
+    Object.values(commentMap).forEach(comment => {
+        comment.replies?.sort(sortByDate);
+    });
+
+    return rootComments;
+}
+
+export async function addComment(formData: FormData) {
+    const values = Object.fromEntries(formData.entries());
+    const validatedData = commentFormSchema.parse(values);
+    const allComments = await getAllComments();
+
+    const newComment: Comment = {
+        id: uuidv4(),
+        postId: validatedData.postId,
+        parentId: validatedData.parentId ? validatedData.parentId : null,
+        author: validatedData.author,
+        content: validatedData.content,
+        createdAt: new Date().toISOString(),
+    };
+
+    allComments.push(newComment);
+    await fs.writeFile(commentsFilePath, JSON.stringify(allComments, null, 2));
+
+    revalidatePath(`/news/${validatedData.postId}`);
+
+    return { success: true, comment: newComment };
 }
