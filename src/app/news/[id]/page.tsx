@@ -117,11 +117,11 @@ export default function NewsDetailPage({ params }: { params: { id: string } }) {
   const [comments, setComments] = useState<CommentType[]>([]);
   const [loading, setLoading] = useState(true);
 
-  const fetchPostAndComments = async () => {
+  const fetchPostAndComments = async (id: string) => {
       try {
           const [postData, commentsData] = await Promise.all([
-              getNewsById(params.id),
-              getComments(params.id)
+              getNewsById(id),
+              getComments(id)
           ]);
           if (!postData) {
               notFound();
@@ -136,7 +136,7 @@ export default function NewsDetailPage({ params }: { params: { id: string } }) {
   };
 
   useEffect(() => {
-    fetchPostAndComments();
+    fetchPostAndComments(params.id);
   }, [params.id]);
 
 
@@ -197,7 +197,7 @@ export default function NewsDetailPage({ params }: { params: { id: string } }) {
           </CardHeader>
           <CardContent className="space-y-6">
              {comments.length > 0 ? (
-                    comments.map(comment => <Comment key={comment.id} comment={comment} postId={newsItem.id} onCommentAdded={fetchPostAndComments} />)
+                    comments.map(comment => <Comment key={comment.id} comment={comment} postId={newsItem.id} onCommentAdded={() => fetchPostAndComments(params.id)} />)
                 ) : (
                     <p className="text-foreground/70">Be the first to comment.</p>
                 )}
@@ -205,7 +205,7 @@ export default function NewsDetailPage({ params }: { params: { id: string } }) {
           <CardFooter>
             <div className="w-full">
                 <h3 className="font-bold text-lg mb-2">Leave a Comment</h3>
-                <CommentForm postId={newsItem.id} onCommentAdded={fetchPostAndComments} />
+                <CommentForm postId={newsItem.id} onCommentAdded={() => fetchPostAndComments(params.id)} />
             </div>
           </CardFooter>
         </Card>
