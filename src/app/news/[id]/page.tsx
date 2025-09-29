@@ -112,32 +112,32 @@ const Comment = ({ comment, postId, onCommentAdded }: { comment: CommentType, po
     );
 };
 
-export default function NewsDetailPage({ params }: { params: { id: string } }) {
+function NewsDetailClient({ id }: { id: string }) {
   const [newsItem, setNewsItem] = useState<Awaited<ReturnType<typeof getNewsById>>>(null);
   const [comments, setComments] = useState<CommentType[]>([]);
   const [loading, setLoading] = useState(true);
 
-  const fetchPostAndComments = async (id: string) => {
-      try {
-          const [postData, commentsData] = await Promise.all([
-              getNewsById(id),
-              getComments(id)
-          ]);
-          if (!postData) {
-              notFound();
-          }
-          setNewsItem(postData);
-          setComments(commentsData);
-      } catch (error) {
-          console.error("Failed to fetch data", error);
-      } finally {
-          setLoading(false);
+  const fetchPostAndComments = async (postId: string) => {
+    try {
+      const [postData, commentsData] = await Promise.all([
+        getNewsById(postId),
+        getComments(postId)
+      ]);
+      if (!postData) {
+        notFound();
       }
+      setNewsItem(postData);
+      setComments(commentsData);
+    } catch (error) {
+      console.error("Failed to fetch data", error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
-    fetchPostAndComments(params.id);
-  }, [params.id]);
+    fetchPostAndComments(id);
+  }, [id]);
 
 
   if (loading) {
@@ -197,7 +197,7 @@ export default function NewsDetailPage({ params }: { params: { id: string } }) {
           </CardHeader>
           <CardContent className="space-y-6">
              {comments.length > 0 ? (
-                    comments.map(comment => <Comment key={comment.id} comment={comment} postId={newsItem.id} onCommentAdded={() => fetchPostAndComments(params.id)} />)
+                    comments.map(comment => <Comment key={comment.id} comment={comment} postId={newsItem.id} onCommentAdded={() => fetchPostAndComments(id)} />)
                 ) : (
                     <p className="text-foreground/70">Be the first to comment.</p>
                 )}
@@ -205,11 +205,22 @@ export default function NewsDetailPage({ params }: { params: { id: string } }) {
           <CardFooter>
             <div className="w-full">
                 <h3 className="font-bold text-lg mb-2">Leave a Comment</h3>
-                <CommentForm postId={newsItem.id} onCommentAdded={() => fetchPostAndComments(params.id)} />
+                <CommentForm postId={newsItem.id} onCommentAdded={() => fetchPostAndComments(id)} />
             </div>
           </CardFooter>
         </Card>
       </ScrollReveal>
     </div>
   );
+}
+
+
+export default function NewsDetailPage({ params }: { params: { id: string } }) {
+    const [isClient, setIsClient] = useState(false);
+
+    useEffect(() => {
+        setIsClient(true);
+    }, []);
+
+    return isClient ? <NewsDetailClient id={params.id} /> : null;
 }
