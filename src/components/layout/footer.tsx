@@ -24,12 +24,16 @@ export default function Footer() {
     setIsClient(true);
   }, []);
 
+  if (!isClient) {
+    return null; // Render nothing on the server
+  }
+
   return (
     <footer className="bg-purple-700 text-white">
       <div className="px-6 py-4">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-white/80">
-            &copy; {isClient ? new Date().getFullYear() : '2025'} Exnus Protocol. All rights reserved.
+            &copy; {new Date().getFullYear()} Exnus Protocol. All rights reserved.
           </p>
           <div className="flex flex-wrap justify-center gap-6">
             <a href="https://x.com/exnusprotocol?t=erRcFQecZLsl-pW3MGFC9g&s=09" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white/90 hover:text-white">
