@@ -34,19 +34,20 @@
     --card-foreground: 0 0% 98%;
     --popover: 240 6% 10%;
     --popover-foreground: 0 0% 98%;
-    --primary: 262 84% 57%;
+    --primary: 196 84% 57%;
     --primary-foreground: 0 0% 98%;
     --secondary: 240 6% 20%;
     --secondary-foreground: 0 0% 98%;
     --muted: 240 6% 20%;
     --muted-foreground: 240 4% 60%;
-    --accent: 240 6% 20%;
+    --accent: 43 92% 50%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 63% 31%;
     --destructive-foreground: 0 0% 98%;
     --border: 240 6% 25%;
     --input: 240 6% 20%;
-    --ring: 262 84% 57%;
+    --ring: 196 84% 57%;
+    --gold: 38 92% 50%;
   }
 
   .theme-gold {
