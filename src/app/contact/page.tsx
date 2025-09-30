@@ -223,7 +223,7 @@ export default function ContactPage() {
                                 <Image src="/tg.jpg" alt="Telegram" width={20} height={20} />
                                 <span className="text-foreground">Telegram</span>
                             </a>
-                            <a href="httpss://discord.gg/v8MpYYFdP8" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground hover:text-primary transition-colors">
+                            <a href="https://discord.gg/v8MpYYFdP8" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground hover:text-primary transition-colors">
                                 <Image src="/discord.jpg" alt="Discord" width={20} height={20} />
                                 <span className="text-foreground">Discord</span>
                             </a>
