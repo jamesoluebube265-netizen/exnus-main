@@ -4,10 +4,10 @@ import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from 'recharts';
 
 const data = [
   { name: 'Staking Rewards', value: 75.8 },
-  { name: 'Liquidity Provision', value: 8 },
-  { name: 'Community Airdrop', value: 8 },
+  { name: 'Liquidity Provision', value: 10 },
+  { name: 'Community Airdrop', value: 4 },
   { name: 'Team Allocation', value: 4 },
-  { name: 'DAO Treasury', value: 2 },
+  { name: 'DAO Treasury', value: 4 },
   { name: 'Presale', value: 1.4 },
   { name: 'Advisors Allocation', value: 0.8 },
 ];
