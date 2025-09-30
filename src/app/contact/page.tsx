@@ -219,7 +219,7 @@ export default function ContactPage() {
                                 <Image src="/x.jpg" alt="X" width={20} height={20} />
                                 <span className="text-foreground">X</span>
                             </a>
-                            <a href="https://t.me/exnusprotocolchat" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground hover:text-primary transition-colors">
+                            <a href="https://t.me/Exnusprotocol" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground hover:text-primary transition-colors">
                                 <Image src="/tg.jpg" alt="Telegram" width={20} height={20} />
                                 <span className="text-foreground">Telegram</span>
                             </a>

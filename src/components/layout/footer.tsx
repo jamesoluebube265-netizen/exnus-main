@@ -24,7 +24,7 @@ export default function Footer() {
               <Twitter className="w-5 h-5" />
               <span>X</span>
             </a>
-            <a href="https://t.me/exnusprotocolchat" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white/90 hover:text-white">
+            <a href="https://t.me/Exnusprotocol" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white/90 hover:text-white">
               <Send className="w-5 h-5" />
               <span>Telegram</span>
             </a>
