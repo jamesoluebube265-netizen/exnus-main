@@ -47,7 +47,7 @@ export function StakingDiagram() {
         <FlowStep 
           icon={<GitPullRequest className="w-6 h-6 text-primary" />} 
           title="3. Gain Power" 
-          description="Staked tokens grant voting rights in the DAO."
+          description="Staked tokens grant voting rights in the Realms-powered DAO."
         />
       </div>
       <div className="flex justify-center mt-6">

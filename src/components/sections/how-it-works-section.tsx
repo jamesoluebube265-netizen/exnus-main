@@ -20,7 +20,7 @@ const steps = [
   },
   {
     title: '3. Stake & Govern',
-    description: 'Stake your Exnus tokens to earn additional rewards and gain voting power. Actively participate in decentralized governance to shape the future direction and development of the protocol.',
+    description: "Stake your Exnus tokens to earn additional rewards and gain voting power. Actively participate in decentralized governance through our secure, Realms-powered DAO to shape the future of the protocol.",
     diagram: <HowItWorksDiagram variant="govern" />
   },
 ];

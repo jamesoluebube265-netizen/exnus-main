@@ -150,7 +150,7 @@ const SectionContent = ({ id }: { id: string }) => {
                      <ul className="list-disc pl-6 space-y-2">
                         <li><strong>Reward Distribution Contract:</strong> Automates the calculation and transfer of native tokens to users based on validated contributions. It incorporates dynamic reward algorithms to fairly allocate tokens according to contribution type and impact.</li>
                         <li><strong>Staking Contract:</strong> Enables users to lock their tokens to earn additional rewards and governance rights. It manages staking periods, reward accrual, and withdrawal mechanisms with built-in safeguards against premature unlocking.</li>
-                        <li><strong>Governance Contract:</strong> Facilitates decentralized decision-making by allowing token holders to submit proposals, vote, and implement changes to protocol parameters or upgrades.</li>
+                        <li><strong>Governance Contract:</strong> Facilitates decentralized decision-making by allowing token holders to submit proposals, vote, and implement changes to protocol parameters or upgrades. Our governance module is built upon the trusted and battle-tested Realms framework, ensuring a secure and feature-rich DAO experience.</li>
                         <li><strong>Access Control Contract:</strong> Implements role-based permissions to restrict administrative functions and protect against unauthorized contract interactions.</li>
                     </ul>
                     <h3 className="text-2xl font-semibold text-primary mt-6 mb-3">Security Measures</h3>
@@ -205,14 +205,14 @@ const SectionContent = ({ id }: { id: string }) => {
                         <li><strong>High Throughput and Low Latency:</strong> Solana’s architecture supports over 65,000 transactions per second (TPS) with sub-second finality, allowing Exnus to process reward distributions, staking operations, and governance votes rapidly and without bottlenecks.</li>
                         <li><strong>Low Transaction Costs:</strong> Minimal gas fees on Solana make frequent user interactions economically viable, encouraging active participation without prohibitive costs.</li>
                         <li><strong>Robust Security Model:</strong> Solana’s Proof of History (PoH) combined with Proof of Stake (PoS) consensus ensures a secure and decentralized environment that safeguards user assets and protocol integrity.</li>
-                        <li><strong>Interoperability:</strong> Integration with Solana enables Exnus to interact seamlessly with other projects and services within the Solana ecosystem, fostering collaboration and expanding utility.</li>
+                        <li><strong>Interoperability and Composability:</strong> By building on Solana, Exnus integrates with leading platforms like Realms for governance. This allows us to leverage Realms' secure, battle-tested, and feature-rich framework for DAO operations, providing our users with a trusted and powerful governance experience from day one.</li>
                     </ul>
                      <h3 className="text-2xl font-semibold text-primary mt-6 mb-3">Technical Integration Details</h3>
                      <ul className="list-disc pl-6 space-y-2">
                         <li><strong>Smart Contract Deployment:</strong> Exnus smart contracts are written in Rust and deployed on Solana’s Sealevel runtime, which supports parallel transaction processing for enhanced scalability.</li>
                         <li><strong>Token Standards:</strong> The native Exnus token adheres to Solana’s SPL token standard, ensuring compatibility with wallets, exchanges, and DeFi platforms.</li>
                         <li><strong>Oracles and Off-Chain Data:</strong> Solana-compatible oracles facilitate secure off-chain data feeds, enabling accurate tracking of user contributions and external metrics essential for reward calculations.</li>
-                        <li><strong>Cross-Program Invocations (CPI):</strong> Exnus utilizes Solana’s CPI feature to interact with other on-chain programs, enabling modular functionality and extensibility.</li>
+                        <li><strong>Cross-Program Invocations (CPI):</strong> Exnus utilizes Solana’s CPI feature to interact with other on-chain programs, such as the Realms governance contracts, enabling modular functionality and extensibility.</li>
                     </ul>
                     <h3 className="text-2xl font-semibold text-primary mt-6 mb-3">Impact on User Experience</h3>
                     <p>By leveraging Solana, Exnus offers users fast, cost-effective, and reliable interactions with the protocol. This integration removes common barriers such as high fees and slow confirmations, making participation in rewarding, staking, and governance processes smooth and accessible.</p>
