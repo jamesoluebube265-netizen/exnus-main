@@ -49,7 +49,7 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
 export function TokenomicsDiagram() {
   return (
     <div className="relative w-full font-sans">
-        <h3 className="text-center font-bold text-lg mb-6 text-accent">Token Allocation Overview</h3>
+        <h3 className="text-center font-bold text-2xl mb-6 text-primary">Token Allocation Overview</h3>
         <div className="w-full h-[500px]">
             <ResponsiveContainer width="100%" height="100%">
                 <PieChart margin={{ top: 40, right: 50, left: 50, bottom: 40 }}>
