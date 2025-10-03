@@ -58,22 +58,17 @@ const getQuarterStatus = (quarter: string) => {
         return "complete";
     }
     if (year === currentYear) {
-        if (quarterNum < currentQuarter) {
+        if (quarterNum <= currentQuarter) {
             return "complete";
-        }
-        if (quarterNum === currentQuarter) {
-            return "current";
         }
     }
     return "future";
 }
 
-const RoadmapIcon = ({ status }: { status: 'complete' | 'current' | 'future' }) => {
+const RoadmapIcon = ({ status }: { status: 'complete' | 'future' }) => {
     switch (status) {
         case "complete":
             return <CheckCircle className="w-5 h-5 text-green-500 bg-background" />;
-        case "current":
-            return <Loader className="w-5 h-5 text-primary bg-background animate-spin" />;
         case "future":
         default:
             return <Milestone className="w-5 h-5 text-muted-foreground bg-background" />;
@@ -111,7 +106,7 @@ export default function RoadmapSection() {
               <ScrollReveal key={item.quarter} delay={index * 150}>
                 <div className="relative pl-12 mb-10">
                   <div className="absolute left-5 top-2 -translate-x-1/2">
-                    <RoadmapIcon status={status} />
+                    <RoadmapIcon status={status as 'complete' | 'future'} />
                   </div>
                   <p className="text-sm font-semibold text-primary">{item.quarter}</p>
                   <h3 className="font-bold text-lg mt-1 text-white">{item.title}</h3>
